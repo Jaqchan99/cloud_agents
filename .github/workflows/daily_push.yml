@@ -1,0 +1,38 @@
+name: AI 每日资讯推送
+
+on:
+  schedule:
+    # 每天 UTC 01:00 推送（北京时间 09:00）
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+    inputs:
+      force_push:
+        description: "手动触发推送"
+        required: false
+        default: "true"
+
+jobs:
+  daily-push:
+    name: 推送每日 AI 资讯
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout 代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 运行每日推送
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/daily_push.py

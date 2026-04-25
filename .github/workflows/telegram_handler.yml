@@ -1,0 +1,58 @@
+name: 处理 Telegram 命令
+
+on:
+  schedule:
+    # 每 15 分钟轮询一次用户消息
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      force_check:
+        description: "手动检查消息"
+        required: false
+        default: "true"
+
+jobs:
+  handle-commands:
+    name: 处理用户 Telegram 消息
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    # 避免并发冲突（上一次还在运行时跳过）
+    concurrency:
+      group: telegram-handler
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout 代码（含最新配置）
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 1
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 处理 Telegram 消息
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/telegram_handler.py
+
+      - name: 提交配置变更（如有更新）
+        run: |
+          git config user.name "AI News Bot"
+          git config user.email "bot@github-actions"
+          git add config/user_config.json config/last_update_id.txt 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "无配置变更，跳过提交"
+          else
+            git commit -m "chore: 自动更新用户配置 [skip ci]"
+            git push origin ${{ github.ref_name }}
+          fi

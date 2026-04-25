@@ -1,0 +1,19 @@
+{
+  "focus_topics": ["大语言模型", "AI Agent", "开源模型", "多模态"],
+  "include_keywords": [],
+  "exclude_keywords": [],
+  "max_items": 8,
+  "hours_back": 24,
+  "push_time": "01:00",
+  "include_hacker_news": true,
+  "user_note": "",
+  "enabled_sources": [
+    "Arxiv AI",
+    "Arxiv ML",
+    "HuggingFace Blog",
+    "OpenAI Blog",
+    "Google AI Blog",
+    "VentureBeat AI",
+    "The Verge AI"
+  ]
+}
