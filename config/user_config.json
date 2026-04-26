@@ -4,17 +4,20 @@
   "include_keywords": [],
   "exclude_keywords": [],
   "max_items": 8,
-  "hours_back": 24,
+  "hours_back": 72,
   "push_time": "01:00",
   "include_hacker_news": true,
   "user_note": "",
+  "weather_location": "Shanghai",
   "enabled_sources": [
-    "Arxiv AI",
-    "Arxiv ML",
+    "TechCrunch AI",
+    "VentureBeat AI",
+    "The Verge AI",
+    "Ars Technica",
     "HuggingFace Blog",
     "OpenAI Blog",
     "Google AI Blog",
-    "VentureBeat AI",
-    "The Verge AI"
+    "Arxiv AI",
+    "Arxiv ML"
   ]
 }
