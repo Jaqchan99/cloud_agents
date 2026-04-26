@@ -1,4 +1,5 @@
 {
+  "push_channel": "discord",
   "focus_topics": ["大语言模型", "AI Agent", "开源模型", "多模态"],
   "include_keywords": [],
   "exclude_keywords": [],

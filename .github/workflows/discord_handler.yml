@@ -1,7 +1,9 @@
-name: 处理 Telegram 命令
+name: 处理 Discord 命令
 
 on:
-  # 已切换至 Discord，此 workflow 暂停定时触发，保留供手动使用
+  schedule:
+    # 每 15 分钟轮询一次用户消息
+    - cron: "*/15 * * * *"
   workflow_dispatch:
     inputs:
       force_check:
@@ -11,13 +13,12 @@ on:
 
 jobs:
   handle-commands:
-    name: 处理用户 Telegram 消息
+    name: 处理用户 Discord 消息
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
-    # 避免并发冲突（上一次还在运行时跳过）
     concurrency:
-      group: telegram-handler
+      group: discord-handler
       cancel-in-progress: false
 
     steps:
@@ -36,18 +37,19 @@ jobs:
       - name: 安装依赖
         run: pip install -r requirements.txt
 
-      - name: 处理 Telegram 消息
+      - name: 处理 Discord 消息
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python scripts/telegram_handler.py
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+          DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
+        run: python scripts/discord_handler.py
 
       - name: 提交配置变更（如有更新）
         run: |
           git config user.name "AI News Bot"
           git config user.email "bot@github-actions"
-          git add config/user_config.json config/last_update_id.txt 2>/dev/null || true
+          git add config/user_config.json config/last_discord_msg_id.txt 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "无配置变更，跳过提交"
           else
