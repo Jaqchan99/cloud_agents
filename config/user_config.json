@@ -1,6 +1,11 @@
 {
   "push_channel": "discord",
-  "focus_topics": ["大语言模型", "AI Agent", "开源模型", "多模态"],
+  "focus_topics": [
+    "大语言模型",
+    "AI Agent",
+    "开源模型",
+    "多模态"
+  ],
   "include_keywords": [],
   "exclude_keywords": [],
   "max_items": 8,
@@ -8,7 +13,7 @@
   "push_time": "01:00",
   "include_hacker_news": true,
   "user_note": "",
-  "weather_location": "Shanghai",
+  "weather_location": "广州",
   "enabled_sources": [
     "TechCrunch AI",
     "VentureBeat AI",
