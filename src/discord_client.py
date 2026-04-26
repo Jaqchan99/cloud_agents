@@ -131,7 +131,7 @@ def format_digest_embeds(articles: list[dict], date_str: str) -> tuple[str, list
     if not articles:
         return f"📭 **{date_str} AI 日报**\n\n今日暂无符合条件的 AI 资讯。", []
 
-    header = f"🤖 **{date_str} AI 日报** — 精选 {len(articles)} 条\n"
+    header = f"📋 **{date_str} AI 日报** — 精选 {len(articles)} 条资讯"
 
     category_icons = {
         "论文": "📄",

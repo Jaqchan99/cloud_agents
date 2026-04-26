@@ -10,21 +10,33 @@ from typing import Optional
 
 
 FEED_SOURCES = [
+    # 高频更新源（每日发文）
     {
-        "name": "Arxiv AI",
-        "url": "https://rss.arxiv.org/rss/cs.AI",
-        "category": "论文",
+        "name": "TechCrunch AI",
+        "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "行业新闻",
     },
     {
-        "name": "Arxiv ML",
-        "url": "https://rss.arxiv.org/rss/cs.LG",
-        "category": "论文",
+        "name": "VentureBeat AI",
+        "url": "https://venturebeat.com/category/ai/feed/",
+        "category": "行业新闻",
     },
     {
-        "name": "Arxiv CV",
-        "url": "https://rss.arxiv.org/rss/cs.CV",
-        "category": "论文",
+        "name": "The Verge AI",
+        "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+        "category": "行业新闻",
     },
+    {
+        "name": "Ars Technica",
+        "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+        "category": "行业新闻",
+    },
+    {
+        "name": "MIT Technology Review AI",
+        "url": "https://www.technologyreview.com/feed/",
+        "category": "行业新闻",
+    },
+    # 官方博客（低频但权威）
     {
         "name": "HuggingFace Blog",
         "url": "https://huggingface.co/blog/feed.xml",
@@ -40,20 +52,16 @@ FEED_SOURCES = [
         "url": "https://blog.research.google/feeds/posts/default?alt=rss",
         "category": "行业动态",
     },
+    # 学术论文（工作日更新）
     {
-        "name": "MIT Technology Review AI",
-        "url": "https://www.technologyreview.com/feed/",
-        "category": "行业新闻",
+        "name": "Arxiv AI",
+        "url": "https://rss.arxiv.org/rss/cs.AI",
+        "category": "论文",
     },
     {
-        "name": "VentureBeat AI",
-        "url": "https://venturebeat.com/category/ai/feed/",
-        "category": "行业新闻",
-    },
-    {
-        "name": "The Verge AI",
-        "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
-        "category": "行业新闻",
+        "name": "Arxiv ML",
+        "url": "https://rss.arxiv.org/rss/cs.LG",
+        "category": "论文",
     },
 ]
 
@@ -188,7 +196,7 @@ def fetch_all_news(config: dict) -> list[dict]:
     Args:
         config: 用户配置，包含 include_keywords, exclude_keywords, hours_back 等字段
     """
-    hours_back = config.get("hours_back", 24)
+    hours_back = config.get("hours_back", 72)  # 默认 72 小时，覆盖周末不更新的情况
     include_keywords = config.get("include_keywords", [])
     exclude_keywords = config.get("exclude_keywords", [])
     enabled_sources = config.get("enabled_sources", [s["name"] for s in FEED_SOURCES])
