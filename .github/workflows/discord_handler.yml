@@ -2,8 +2,8 @@ name: 处理 Discord 命令
 
 on:
   schedule:
-    # 每 15 分钟轮询一次用户消息
-    - cron: "*/15 * * * *"
+    # 每 15 分钟轮询一次用户消息（错开整点）
+    - cron: "3,18,33,48 * * * *"
   workflow_dispatch:
     inputs:
       force_check:

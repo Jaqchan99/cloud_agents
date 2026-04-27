@@ -2,8 +2,8 @@ name: AI 每日资讯推送
 
 on:
   schedule:
-    # 每天 UTC 01:00 推送（北京时间 09:00）
-    - cron: "0 1 * * *"
+    # UTC 01:07（北京时间 09:07），错开整点避免 GitHub 限流排队
+    - cron: "7 1 * * *"
   workflow_dispatch:
     inputs:
       force_push:
@@ -15,7 +15,7 @@ jobs:
   daily-push:
     name: 推送每日 AI 资讯
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Checkout 代码
@@ -36,6 +36,5 @@ jobs:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
           DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
-          # 切换为 telegram 时改为 telegram，并配置 TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID
           PUSH_CHANNEL: "discord"
         run: python scripts/daily_push.py
