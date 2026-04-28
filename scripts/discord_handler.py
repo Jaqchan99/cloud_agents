@@ -1,10 +1,12 @@
 """
 Discord 命令处理脚本 - 由 GitHub Actions 每 15 分钟触发
 轮询频道消息，处理用户命令，配置变更自动 commit 持久化
+同时作为每日推送守卫：检测当天是否已推送，若漏推则在推送窗口内补发
 """
 import sys
 import json
 import os
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
@@ -14,6 +16,49 @@ from discord_client import get_messages, send_message, get_channel_id, get_user_
 
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "user_config.json"
 LAST_MSG_ID_PATH = Path(__file__).parent.parent / "config" / "last_discord_msg_id.txt"
+LAST_PUSH_DATE_PATH = Path(__file__).parent.parent / "config" / "last_push_date.txt"
+
+# 每日推送守卫：北京时间 09:00-11:00 窗口内若未推送则补发（UTC 01:00-03:00）
+PUSH_GUARD_START_UTC = 1   # UTC 01:00
+PUSH_GUARD_END_UTC = 3     # UTC 03:00
+
+
+def get_beijing_date_str() -> str:
+    now = datetime.now(timezone.utc) + timedelta(hours=8)
+    return str(now.date())
+
+
+def check_and_trigger_daily_push():
+    """
+    守卫检测：如果现在在推送窗口内且今天还没推送，触发补发
+    """
+    now_utc = datetime.now(timezone.utc)
+    current_hour_utc = now_utc.hour
+
+    # 只在窗口时间内检测
+    if not (PUSH_GUARD_START_UTC <= current_hour_utc < PUSH_GUARD_END_UTC):
+        return
+
+    today = get_beijing_date_str()
+    already_pushed = False
+    if LAST_PUSH_DATE_PATH.exists():
+        already_pushed = LAST_PUSH_DATE_PATH.read_text().strip() == today
+
+    if already_pushed:
+        print(f"[Guard] 今天（{today}）已推送，守卫检测跳过")
+        return
+
+    print(f"[Guard] ⚠️  今天（{today}）尚未推送！当前 UTC {current_hour_utc}:xx，触发补发...")
+    try:
+        from daily_push import run_daily_push
+        run_daily_push(force=False)
+        print("[Guard] ✅ 补发成功")
+    except Exception as e:
+        print(f"[Guard] ❌ 补发失败: {e}")
+        try:
+            send_message(f"⚠️ AI News Bot：今日早报补发失败，请手动触发。\n错误：{e}")
+        except Exception:
+            pass
 
 HELP_TEXT = """🤖 **AI News Bot 使用指南**
 
@@ -88,8 +133,11 @@ def handle_command(text: str, config: dict) -> tuple[str, dict | None]:
 
 
 def run_handler():
-    """轮询并处理新消息"""
+    """轮询并处理新消息，同时执行每日推送守卫检测"""
     print("[Handler] 开始处理 Discord 消息...")
+
+    # 每日推送守卫：优先检测是否需要补发
+    check_and_trigger_daily_push()
 
     my_user_id = get_user_id()
     last_msg_id = load_last_msg_id()

@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "AI News Bot"
           git config user.email "bot@github-actions"
-          git add config/user_config.json config/last_discord_msg_id.txt 2>/dev/null || true
+          git add config/user_config.json config/last_discord_msg_id.txt config/last_push_date.txt 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "无配置变更，跳过提交"
           else

@@ -18,8 +18,11 @@ jobs:
     timeout-minutes: 15
 
     steps:
-      - name: Checkout 代码
+      - name: Checkout 代码（含写入权限）
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 1
 
       - name: 设置 Python 环境
         uses: actions/setup-python@v5
@@ -38,3 +41,15 @@ jobs:
           DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
           PUSH_CHANNEL: "discord"
         run: python scripts/daily_push.py
+
+      - name: 保存推送状态
+        run: |
+          git config user.name "AI News Bot"
+          git config user.email "bot@github-actions"
+          git add config/last_push_date.txt 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "无状态变更"
+          else
+            git commit -m "chore: 记录今日推送完成 [skip ci]"
+            git push origin main
+          fi

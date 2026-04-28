@@ -16,10 +16,42 @@ from weather_fetcher import get_weather, weather_to_text
 from morning_greeter import generate_morning_greeting
 
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "user_config.json"
+LAST_PUSH_DATE_PATH = Path(__file__).parent.parent / "config" / "last_push_date.txt"
 
 
 def get_push_channel() -> str:
     return os.environ.get("PUSH_CHANNEL", "discord").lower()
+
+
+def get_today_str() -> str:
+    """返回北京时间今日日期字符串，用于去重"""
+    now_utc = datetime.now(timezone.utc)
+    # UTC+8
+    hour_offset = 8
+    beijing_hour = (now_utc.hour + hour_offset) % 24
+    if now_utc.hour + hour_offset >= 24:
+        from datetime import timedelta
+        beijing_date = (now_utc + timedelta(hours=hour_offset)).date()
+    else:
+        beijing_date = now_utc.date()
+    return str(beijing_date)
+
+
+def has_pushed_today() -> bool:
+    """检查今天是否已经成功推送过"""
+    if LAST_PUSH_DATE_PATH.exists():
+        last = LAST_PUSH_DATE_PATH.read_text().strip()
+        today = get_today_str()
+        if last == today:
+            print(f"[Guard] 今天（{today}）已推送过，跳过")
+            return True
+    return False
+
+
+def mark_pushed_today():
+    """记录今天已推送"""
+    LAST_PUSH_DATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    LAST_PUSH_DATE_PATH.write_text(get_today_str())
 
 
 def load_config() -> dict:
@@ -77,8 +109,11 @@ def send_via_telegram(greeting: str, articles: list[dict], date_str: str, fallba
     send_long_message(message)
 
 
-def run_daily_push():
+def run_daily_push(force: bool = False):
     print(f"[{datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC] 开始每日推送...")
+
+    if not force and has_pushed_today():
+        return
 
     channel = get_push_channel()
     print(f"[Config] 推送端: {channel}")
@@ -136,8 +171,14 @@ def run_daily_push():
     else:
         send_via_discord(greeting, selected, date_str)
 
+    # 记录今日已推送，防止重复发送
+    mark_pushed_today()
     print("[Done] 推送完成！")
 
 
 if __name__ == "__main__":
-    run_daily_push()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--force", action="store_true", help="强制推送，忽略今日已推送检测")
+    args = parser.parse_args()
+    run_daily_push(force=args.force)
