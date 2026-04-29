@@ -1,15 +1,13 @@
 name: AI 每日资讯推送
 
 on:
-  schedule:
-    # UTC 01:07（北京时间 09:07），错开整点避免 GitHub 限流排队
-    - cron: "7 1 * * *"
+  # 不使用 GitHub cron（不可靠），由外部 cron-job.org 通过 API 触发
   workflow_dispatch:
     inputs:
       force_push:
-        description: "手动触发推送"
+        description: "强制推送（忽略今日已推送检测）"
         required: false
-        default: "true"
+        default: "false"
 
 jobs:
   daily-push:
@@ -40,7 +38,13 @@ jobs:
           DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
           DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
           PUSH_CHANNEL: "discord"
-        run: python scripts/daily_push.py
+          FORCE_PUSH: ${{ github.event.inputs.force_push }}
+        run: |
+          if [ "$FORCE_PUSH" = "true" ]; then
+            python scripts/daily_push.py --force
+          else
+            python scripts/daily_push.py
+          fi
 
       - name: 保存推送状态
         run: |

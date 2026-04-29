@@ -50,8 +50,10 @@ def has_pushed_today() -> bool:
 
 def mark_pushed_today():
     """记录今天已推送"""
+    today = get_today_str()
     LAST_PUSH_DATE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    LAST_PUSH_DATE_PATH.write_text(get_today_str())
+    LAST_PUSH_DATE_PATH.write_text(today)
+    print(f"[Guard] 已写入推送记录: {LAST_PUSH_DATE_PATH} = {today}")
 
 
 def load_config() -> dict:

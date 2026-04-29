@@ -1,7 +1,7 @@
 """
 Discord 命令处理脚本 - 由 GitHub Actions 每 15 分钟触发
 轮询频道消息，处理用户命令，配置变更自动 commit 持久化
-同时作为每日推送守卫：检测当天是否已推送，若漏推则在推送窗口内补发
+同时作为每日推送守卫：检测当天是否已推送，若漏推则全天任意时刻补发
 """
 import sys
 import json
@@ -10,6 +10,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+sys.path.insert(0, str(Path(__file__).parent))  # 确保 daily_push 可被导入
 
 from ai_processor import process_user_command
 from discord_client import get_messages, send_message, get_channel_id, get_user_id
@@ -18,9 +19,10 @@ CONFIG_PATH = Path(__file__).parent.parent / "config" / "user_config.json"
 LAST_MSG_ID_PATH = Path(__file__).parent.parent / "config" / "last_discord_msg_id.txt"
 LAST_PUSH_DATE_PATH = Path(__file__).parent.parent / "config" / "last_push_date.txt"
 
-# 每日推送守卫：北京时间 09:00-11:00 窗口内若未推送则补发（UTC 01:00-03:00）
-PUSH_GUARD_START_UTC = 1   # UTC 01:00
-PUSH_GUARD_END_UTC = 3     # UTC 03:00
+# 守卫检测窗口：北京时间 08:00-23:00（UTC 00:00-15:00）
+# 扩大窗口，使任意一次 discord_handler 触发都能补发
+PUSH_GUARD_START_BJ = 8   # 北京时间 08:00
+PUSH_GUARD_END_BJ = 23    # 北京时间 23:00
 
 
 def get_beijing_date_str() -> str:
@@ -28,35 +30,43 @@ def get_beijing_date_str() -> str:
     return str(now.date())
 
 
+def get_beijing_hour() -> int:
+    now = datetime.now(timezone.utc) + timedelta(hours=8)
+    return now.hour
+
+
 def check_and_trigger_daily_push():
     """
-    守卫检测：如果现在在推送窗口内且今天还没推送，触发补发
+    守卫检测：北京时间 08:00-23:00 内若今天还没推送，直接补发
+    主推送由外部 cron-job.org 触发，此处作为最后一道保险
     """
-    now_utc = datetime.now(timezone.utc)
-    current_hour_utc = now_utc.hour
+    bj_hour = get_beijing_hour()
 
-    # 只在窗口时间内检测
-    if not (PUSH_GUARD_START_UTC <= current_hour_utc < PUSH_GUARD_END_UTC):
+    if not (PUSH_GUARD_START_BJ <= bj_hour < PUSH_GUARD_END_BJ):
+        print(f"[Guard] 当前北京时间 {bj_hour}:xx，不在守卫窗口（08-23），跳过")
         return
 
     today = get_beijing_date_str()
     already_pushed = False
     if LAST_PUSH_DATE_PATH.exists():
-        already_pushed = LAST_PUSH_DATE_PATH.read_text().strip() == today
+        last = LAST_PUSH_DATE_PATH.read_text().strip()
+        already_pushed = (last == today)
 
     if already_pushed:
-        print(f"[Guard] 今天（{today}）已推送，守卫检测跳过")
+        print(f"[Guard] 今天（{today}）已推送 ✅")
         return
 
-    print(f"[Guard] ⚠️  今天（{today}）尚未推送！当前 UTC {current_hour_utc}:xx，触发补发...")
+    print(f"[Guard] ⚠️  今天（{today}）尚未推送！北京时间 {bj_hour}:xx，开始补发...")
     try:
         from daily_push import run_daily_push
         run_daily_push(force=False)
         print("[Guard] ✅ 补发成功")
     except Exception as e:
+        import traceback
         print(f"[Guard] ❌ 补发失败: {e}")
+        traceback.print_exc()
         try:
-            send_message(f"⚠️ AI News Bot：今日早报补发失败，请手动触发。\n错误：{e}")
+            send_message(f"⚠️ **AI News Bot**：今日早报补发失败，请手动触发 GitHub Actions。\n错误：`{e}`")
         except Exception:
             pass
 
