@@ -75,7 +75,8 @@ HELP_TEXT = """🤖 **AI News Bot 使用指南**
 **内置命令：**
 `!help` - 查看帮助
 `!config` - 查看当前配置
-`!status` - 检查 Bot 状态
+`!status` - 检查运行状态和最后推送时间
+`!push` - 立即推送今日 AI 早报
 
 **自然语言调整（直接发消息即可）：**
 • 我只想看大模型相关的新闻
@@ -83,8 +84,9 @@ HELP_TEXT = """🤖 **AI News Bot 使用指南**
 • 每次推送改为 10 条
 • 帮我关注 AI 安全和 AI Agent 方向
 • 过滤掉关于图像生成的内容
+• 天气改成北京
 
-> ⚠️ 使用 GitHub Actions 简化版，消息响应可能有 5-15 分钟延迟。"""
+> ⚠️ 使用 GitHub Actions 简化版，命令响应可能有延迟（`!push` 除外，实时执行）。"""
 
 
 def load_config() -> dict:
@@ -125,7 +127,20 @@ def handle_command(text: str, config: dict) -> tuple[str, dict | None]:
         return f"⚙️ **当前配置：**\n```json\n{config_str}\n```", None
 
     if text == "!status":
-        return "✅ AI News Bot 运行正常！每天北京时间 09:00 自动推送。", None
+        last_push = "未知"
+        if LAST_PUSH_DATE_PATH.exists():
+            last_push = LAST_PUSH_DATE_PATH.read_text().strip()
+        return f"✅ AI News Bot 运行正常！\n📅 最后推送日期：{last_push}\n⏰ 每天北京时间 09:00 自动推送。", None
+
+    if text == "!push":
+        try:
+            from daily_push import run_daily_push
+            run_daily_push(force=True)
+            return "✅ 已立即推送今日 AI 早报！", None
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            return f"❌ 推送失败：{e}", None
 
     # 忽略 Bot 自身发的消息（以 emoji 开头的推送内容）
     if text.startswith("🤖") or text.startswith("📭") or text.startswith("_由 AI"):
