@@ -37,6 +37,8 @@ jobs:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
           DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           PUSH_CHANNEL: "discord"
           FORCE_PUSH: ${{ github.event.inputs.force_push }}
         run: |
@@ -50,7 +52,7 @@ jobs:
         run: |
           git config user.name "AI News Bot"
           git config user.email "bot@github-actions"
-          git add config/last_push_date.txt 2>/dev/null || true
+          git add config/last_push_date.txt config/today_thought_context.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "无状态变更"
           else

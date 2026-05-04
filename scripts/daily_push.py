@@ -1,6 +1,7 @@
 """
 每日推送主脚本 - 由 GitHub Actions 定时触发
 支持 Discord 和 Telegram 两种推送端，通过环境变量 PUSH_CHANNEL 切换（默认 discord）
+推送完成后生成每日思考题，等待用户回复后写入 Notion
 """
 import sys
 import os
@@ -17,6 +18,8 @@ from morning_greeter import generate_morning_greeting
 
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "user_config.json"
 LAST_PUSH_DATE_PATH = Path(__file__).parent.parent / "config" / "last_push_date.txt"
+# 保存当日思考题上下文，供 discord_handler 回复时使用
+THOUGHT_CONTEXT_PATH = Path(__file__).parent.parent / "config" / "today_thought_context.json"
 
 
 def get_push_channel() -> str:
@@ -87,6 +90,26 @@ def get_default_config() -> dict:
             "Arxiv ML",
         ],
     }
+
+
+def save_thought_context(question_data: dict, selected: list[dict], date_str: str):
+    """保存思考题上下文到本地，供 discord_handler 回复时读取"""
+    context = {
+        "date": date_str,
+        "question": question_data.get("question", ""),
+        "context": question_data.get("context", ""),
+        "related_articles": question_data.get("related_articles", []),
+        "all_articles": [
+            {"title": a.get("title", ""), "source": a.get("source", ""),
+             "link": a.get("link", ""), "ai_summary": a.get("ai_summary", "")}
+            for a in selected
+        ],
+        "answered": False,
+    }
+    THOUGHT_CONTEXT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(THOUGHT_CONTEXT_PATH, "w", encoding="utf-8") as f:
+        json.dump(context, f, ensure_ascii=False, indent=2)
+    print(f"[Thought] 思考题上下文已保存")
 
 
 def send_via_discord(greeting: str, articles: list[dict], date_str: str, fallback_text: str = ""):
@@ -166,12 +189,32 @@ def run_daily_push(force: bool = False):
     greeting = generate_morning_greeting(weather_text, len(selected), date_str)
     print(f"[Step 4] 问候语: {greeting[:80]}...")
 
-    # 5. 发送
+    # 5. 发送日报
     print(f"[Step 5] 通过 {channel} 发送...")
     if channel == "telegram":
         send_via_telegram(greeting, selected, date_str)
     else:
         send_via_discord(greeting, selected, date_str)
+
+    # 6. 生成并发送思考题
+    print("[Step 6] 生成每日思考题...")
+    try:
+        from thought_generator import generate_thought_question, format_thought_question_message
+        question_data = generate_thought_question(selected, date_str)
+        thought_msg = format_thought_question_message(question_data)
+
+        if channel == "telegram":
+            from telegram_client import send_long_message
+            send_long_message(thought_msg)
+        else:
+            from discord_client import send_message
+            send_message(thought_msg)
+
+        # 保存上下文供回复时使用
+        save_thought_context(question_data, selected, date_str)
+        print(f"[Step 6] 思考题已发送: {question_data.get('question','')[:60]}...")
+    except Exception as e:
+        print(f"[Step 6] 思考题生成失败（不影响日报推送）: {e}")
 
     # 记录今日已推送，防止重复发送
     mark_pushed_today()
