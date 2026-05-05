@@ -1,1 +1,68 @@
-{"date": "2026-05-04", "question": "Claude 4 主打推理能力，这对你日常使用 AI 工具的方式会有什么改变？", "context": "Anthropic 今日发布 Claude 4，在复杂推理任务上性能提升显著。", "related_articles": [{"title": "Anthropic releases Claude 4", "source": "TechCrunch AI", "link": "https://techcrunch.com/example"}], "all_articles": [], "answered": false}
+{
+  "date": "2026年05月05日",
+  "question": "在图像AI模型驱动应用增长（下载量提升6.5倍）但商业化困难的情况下，开发者应如何平衡用户获取与收入转化？这是否意味着多模态AI应用需要全新的商业模式，而非依赖传统广告或订阅？",
+  "context": "图像AI模型在用户获取上表现强劲，但多数应用未能将流量转化为收入，这揭示了技术与商业之间的鸿沟，对AI创业者和产品经理具有重要决策参考价值。",
+  "related_articles": [
+    {
+      "title": "Image AI models now drive app growth, beating chatbot upgrades",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/05/image-ai-models-app-growth"
+    },
+    {
+      "title": "Sierra raises $950M as the race to own enterprise AI gets serious",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/05/sierra-950m-enterprise-ai"
+    }
+  ],
+  "all_articles": [
+    {
+      "title": "How OpenAI delivers low-latency voice AI at scale",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale",
+      "ai_summary": "OpenAI 详细介绍了其如何重建 WebRTC 技术栈，以实现低延迟、全球可扩展的实时语音 AI 服务，并支持无缝的对话轮换。这一技术突破对语音交互应用（如语音助手、实时翻译）具有重要参考价值，展示了大规模部署语音 AI 的工程实践。"
+    },
+    {
+      "title": "Agent Skills",
+      "source": "Hacker News",
+      "link": "https://addyosmani.com/blog/agent-skills/",
+      "ai_summary": "文章探讨了 AI Agent 所需的核心技能，包括工具使用、任务规划和环境交互等，并提供了实践指南。该内容在 Hacker News 上获得高热度（78 分），反映了社区对 Agent 能力构建的强烈关注。"
+    },
+    {
+      "title": "Sierra raises $950M as the race to own enterprise AI gets serious",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/",
+      "ai_summary": "企业 AI 初创公司 Sierra 完成 9.5 亿美元融资，总资金超过 10 亿美元，旨在成为 AI 驱动客户体验的“全球标准”。这笔巨额融资凸显了企业级 AI 市场的激烈竞争和资本涌入。"
+    },
+    {
+      "title": "Anthropic and OpenAI are both launching joint ventures for enterprise AI services",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/",
+      "ai_summary": "Anthropic 和 OpenAI 分别与资产管理公司合作，成立合资企业以推广企业级 AI 服务。这表明两大 AI 巨头正加速商业化布局，争夺企业市场，可能推动 AI 在行业中的深度应用。"
+    },
+    {
+      "title": "Image AI models now drive app growth, beating chatbot upgrades",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/04/image-ai-models-now-drive-app-growth-beating-chatbot-upgrades/",
+      "ai_summary": "Appfigures 数据显示，图像 AI 模型的发布能带来 6.5 倍于聊天机器人升级的下载量增长，但多数应用未能将流量转化为收入。这揭示了多模态 AI（尤其是图像生成）在用户获取上的巨大潜力，以及商业化挑战。"
+    },
+    {
+      "title": "OpenAI, Google, and Microsoft Back Bill to Fund 'AI Literacy' in Schools",
+      "source": "Hacker News",
+      "link": "https://www.404media.co/literacy-in-future-technologies-artificial-intelligence-act-adam-schiff-mike-rounds/",
+      "ai_summary": "OpenAI、Google 和微软共同支持一项资助学校“AI 素养”教育的法案，旨在提升公众对 AI 的理解。此举反映了科技巨头对 AI 教育基础设施的重视，可能影响未来 AI 人才的培养和社会接受度。"
+    },
+    {
+      "title": "Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.00136",
+      "ai_summary": "这篇论文揭示了 LLM Agent 在使用工具时存在的“工具使用税”，即工具增强推理并不总是提升性能，反而可能带来额外开销。研究对 Agent 架构设计具有重要警示意义，提示开发者需谨慎评估工具调用的必要性。"
+    },
+    {
+      "title": "AgentFloor: How Far Up the tool use Ladder Can Small Open-Weight Models Go?",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.00334",
+      "ai_summary": "该论文探索了小型开源模型在 Agent 工具使用任务中的能力上限，发现它们在处理短、结构化任务时表现良好。这对开源社区和资源受限场景下的 Agent 部署具有指导意义，表明小模型在特定场景下可替代大模型。"
+    }
+  ],
+  "answered": false
+}
