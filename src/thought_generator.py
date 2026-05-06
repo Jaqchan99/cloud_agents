@@ -3,7 +3,57 @@
 """
 import os
 import json
+import re
 from openai import OpenAI
+
+
+# 明确要求 AI 整理/润色的关键词（快速规则匹配，避免不必要的 API 调用）
+_REFINE_KEYWORDS = [
+    "整理", "润色", "帮我整理", "帮我润色", "优化一下", "优化下",
+    "polish", "refine", "rewrite", "帮我写", "整理成", "帮我表达",
+    "文字不好", "写得不好", "表达一下", "更好地表达",
+]
+
+
+def should_refine(text: str) -> bool:
+    """
+    判断用户是否希望 AI 整理/润色回复。
+    先用关键词快速匹配，再用 DeepSeek 做兜底判断。
+
+    返回 True 表示需要整理，False 表示仅保存原文。
+    """
+    text_lower = text.lower()
+
+    # 快速关键词匹配
+    if any(kw in text_lower for kw in _REFINE_KEYWORDS):
+        return True
+
+    # 关键词未命中时，调用 DeepSeek 判断意图（短文本不必调用）
+    if len(text) < 60:
+        return False
+
+    try:
+        client = get_client()
+        resp = client.chat.completions.create(
+            model=DEEPSEEK_MODEL,
+            messages=[
+                {
+                    "role": "system",
+                    "content": "你判断用户的消息是否明确希望 AI 帮助整理、润色或优化他的文字表达。"
+                               "只回答 yes 或 no，不要有任何其他内容。",
+                },
+                {
+                    "role": "user",
+                    "content": f'用户消息："{text[:300]}"',
+                },
+            ],
+            temperature=0,
+            max_tokens=5,
+        )
+        answer = resp.choices[0].message.content.strip().lower()
+        return answer.startswith("yes")
+    except Exception:
+        return False
 
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"
 DEEPSEEK_MODEL = "deepseek-chat"
@@ -133,6 +183,57 @@ def refine_user_reply(
     raw = raw.strip()
 
     return json.loads(raw)
+
+
+def extract_keywords_and_sources(
+    question: str,
+    raw_reply: str,
+    related_articles: list[dict],
+) -> dict:
+    """
+    仅提取关键词和信息来源，不整理正文。
+    用于用户不要求润色时的轻量处理。
+
+    返回：
+    {
+        "keywords": [...],
+        "sources_mentioned": [...]
+    }
+    """
+    articles_context = "\n".join(
+        f"- [{a.get('source','')}] {a.get('title','')}" for a in related_articles
+    )
+
+    prompt = f"""问题：{question}
+相关文章：
+{articles_context}
+
+用户回复：{raw_reply[:500]}
+
+请完成：
+1. 提取 3-6 个核心关键词（名词或概念）
+2. 识别用户提到的信息来源（编号或名称）
+
+严格按 JSON 格式返回：
+{{"keywords": ["关键词1", ...], "sources_mentioned": ["来源1", ...]}}"""
+
+    try:
+        client = get_client()
+        resp = client.chat.completions.create(
+            model=DEEPSEEK_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.2,
+            max_tokens=200,
+        )
+        raw = resp.choices[0].message.content.strip()
+        if "```" in raw:
+            raw = raw.split("```")[1]
+            if raw.startswith("json"):
+                raw = raw[4:]
+        return json.loads(raw.strip())
+    except Exception as e:
+        print(f"[ThoughtGen] 关键词提取失败: {e}")
+        return {"keywords": [], "sources_mentioned": []}
 
 
 def format_thought_question_message(question_data: dict) -> str:

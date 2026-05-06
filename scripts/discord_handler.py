@@ -159,20 +159,31 @@ def try_handle_thought_reply(text: str) -> str | None:
     date_str = ctx.get("date", "")
 
     try:
-        # 用 DeepSeek 整理观点
-        from thought_generator import refine_user_reply
-        print(f"[Thought] 检测到思考题回复，开始整理观点...")
-        refined = refine_user_reply(question, text, related_articles)
+        from thought_generator import (
+            should_refine, refine_user_reply, extract_keywords_and_sources
+        )
 
-        refined_answer = refined.get("refined_answer", text)
-        keywords = refined.get("keywords", [])
-        sources_mentioned = refined.get("sources_mentioned", [])
+        # 判断是否需要 AI 整理润色
+        needs_refine = should_refine(text)
+        print(f"[Thought] 检测到思考题回复，需要润色: {needs_refine}")
 
-        # 解析用户提到的信息源（匹配到 all_articles 中的具体来源）
+        refined_answer = None
+        if needs_refine:
+            print("[Thought] 调用 DeepSeek 整理观点...")
+            refined = refine_user_reply(question, text, related_articles)
+            refined_answer = refined.get("refined_answer", "")
+            keywords = refined.get("keywords", [])
+            sources_mentioned = refined.get("sources_mentioned", [])
+        else:
+            print("[Thought] 仅提取关键词，保存原文...")
+            extracted = extract_keywords_and_sources(question, text, related_articles)
+            keywords = extracted.get("keywords", [])
+            sources_mentioned = extracted.get("sources_mentioned", [])
+
+        # 解析用户提到的信息源
         final_sources = []
         final_links = []
 
-        # 先加入思考题关联的文章来源
         for a in related_articles:
             src = a.get("source", "")
             if src and src not in final_sources:
@@ -181,7 +192,6 @@ def try_handle_thought_reply(text: str) -> str | None:
             if link and link not in final_links:
                 final_links.append(link)
 
-        # 再根据用户提到的内容匹配额外来源
         for mention in sources_mentioned:
             mention_lower = mention.lower()
             for a in all_articles:
@@ -197,6 +207,7 @@ def try_handle_thought_reply(text: str) -> str | None:
                         final_links.append(link)
 
         # 写入 Notion
+        # 回答 = 原文，整理后观点 = AI润色结果（可为空）
         notion_enabled = bool(os.environ.get("NOTION_TOKEN")) and bool(os.environ.get("NOTION_DATABASE_ID"))
         notion_url = ""
 
@@ -204,11 +215,12 @@ def try_handle_thought_reply(text: str) -> str | None:
             from notion_client import create_thought_record
             result = create_thought_record(
                 question=question,
-                answer=refined_answer,
+                answer=text,                   # 原文始终保存到"回答"
                 sources=final_sources,
                 keywords=keywords,
                 source_links=final_links,
                 date_str=date_str if date_str else None,
+                refined_answer=refined_answer, # 润色结果（None 则留空）
             )
             notion_url = result.get("url", "")
             print(f"[Notion] 记录写入成功: {notion_url}")
@@ -218,16 +230,22 @@ def try_handle_thought_reply(text: str) -> str | None:
         mark_thought_answered()
 
         # 构建回复
-        reply_lines = [
-            "✅ **观点已整理并存入 Notion！**\n",
-            f"**整理后的观点：**\n{refined_answer}\n",
-            f"**关键词：** {' · '.join(keywords)}\n",
+        reply_lines = ["✅ **回复已存入 Notion！**\n"]
+
+        if needs_refine and refined_answer:
+            reply_lines += [
+                f"**整理后观点：**\n{refined_answer}\n",
+            ]
+
+        reply_lines += [
+            f"**关键词：** {' · '.join(keywords) if keywords else '—'}",
             f"**信息来源：** {' | '.join(final_sources) if final_sources else '未指定'}",
         ]
+
         if notion_url:
             reply_lines.append(f"\n📝 [在 Notion 中查看]({notion_url})")
         if not notion_enabled:
-            reply_lines.append("\n⚠️ _Notion 未配置，观点仅整理未存储。配置 NOTION_TOKEN 后可自动存档。_")
+            reply_lines.append("\n⚠️ _Notion 未配置，记录未存储。_")
 
         return "\n".join(reply_lines)
 
@@ -235,7 +253,7 @@ def try_handle_thought_reply(text: str) -> str | None:
         import traceback
         traceback.print_exc()
         print(f"[Thought] 处理回复失败: {e}")
-        return f"❌ 整理观点时出错：{e}\n你的原始回复已收到，请稍后重试。"
+        return f"❌ 处理回复时出错：{e}\n你的原始回复已收到，请稍后重试。"
 
 
 def handle_command(text: str, config: dict) -> tuple[str, dict | None]:

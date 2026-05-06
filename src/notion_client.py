@@ -47,17 +47,19 @@ def create_thought_record(
     keywords: list[str],
     source_links: list[str],
     date_str: Optional[str] = None,
+    refined_answer: Optional[str] = None,
 ) -> dict:
     """
     在 Notion 数据库中创建一条思考记录
 
     Args:
         question: 当日思考题
-        answer: 整理后的用户观点
+        answer: 用户原始回复
         sources: 信息来源名称列表（如 ["TechCrunch AI", "HuggingFace Blog"]）
         keywords: 关键词列表
         source_links: 相关文章链接列表
         date_str: 日期字符串（YYYY-MM-DD），默认今天北京时间
+        refined_answer: AI 整理后的观点，仅在用户要求润色时传入
     """
     if not date_str:
         date_str = str((datetime.now(timezone.utc) + timedelta(hours=8)).date())
@@ -96,6 +98,9 @@ def create_thought_record(
         },
         "原文链接": {
             "rich_text": [{"text": {"content": links_text[:2000]}}]
+        },
+        "整理后观点": {
+            "rich_text": [{"text": {"content": (refined_answer or "")[:2000]}}]
         },
     }
 
