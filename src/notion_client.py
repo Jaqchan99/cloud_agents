@@ -62,6 +62,13 @@ def create_thought_record(
     if not date_str:
         date_str = str((datetime.now(timezone.utc) + timedelta(hours=8)).date())
 
+    # 防御：若是中文格式（2026年05月06日）自动转成 ISO（2026-05-06）
+    if "年" in date_str:
+        import re
+        m = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日", date_str)
+        if m:
+            date_str = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+
     # 标题取问题的前 50 字
     title_text = question[:50] + ("…" if len(question) > 50 else "")
 

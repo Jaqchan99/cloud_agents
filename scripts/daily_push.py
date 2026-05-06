@@ -94,8 +94,10 @@ def get_default_config() -> dict:
 
 def save_thought_context(question_data: dict, selected: list[dict], date_str: str):
     """保存思考题上下文到本地，供 discord_handler 回复时读取"""
+    # date 必须是 ISO 格式（YYYY-MM-DD），Notion API 需要
+    iso_date = get_today_str()
     context = {
-        "date": date_str,
+        "date": iso_date,
         "question": question_data.get("question", ""),
         "context": question_data.get("context", ""),
         "related_articles": question_data.get("related_articles", []),
