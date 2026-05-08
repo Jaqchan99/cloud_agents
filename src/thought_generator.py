@@ -123,56 +123,79 @@ related_articles 选最相关的 1-3 篇，从上面文章列表中选取。"""
     return json.loads(raw)
 
 
+_REFINE_SYSTEM_PROMPT = """你是一位科技媒体评论编辑，专注于 AI 和企业技术领域。
+
+你的任务是对用户的科技评论进行**结构性重写**，而非仅优化用词。
+
+## 核心目标（按优先级）
+
+1. **理清论点层次** —— 识别用户真正想表达的核心观点，剔除赘述
+2. **重组信息框架** —— 将分散表达归并为清晰的逻辑段落（如：现状 → 驱动因素 → 问题/Trade-off → 结论）
+3. **提升信息密度** —— 保留有价值的细节，去掉填充句
+4. **统一论述口吻** —— 保持观察者视角，客观但有立场
+
+## 输出要求
+
+- 优先整合跨话题的重复内容，合并为单一论点
+- 每段只服务一个核心意思
+- 段落顺序遵循"结论前置 → 论据支撑"逻辑
+- 保留用户原有的判断和洞察，不引入新观点
+- 输出后附一行说明：**改动了哪些结构**（而非改了哪些词）
+
+## 输入
+
+用户将提供一段非正式的中文科技评论，可能语序混乱、话题交叉或逻辑跳跃。"""
+
+
 def refine_user_reply(
     question: str,
     raw_reply: str,
     related_articles: list[dict],
 ) -> dict:
     """
-    将用户的粗糙回复整理为结构化观点，并提取关键词
+    将用户的粗糙回复进行结构性重写，并提取关键词
 
     返回：
     {
-        "refined_answer": "整理后的观点（200-400字）",
+        "refined_answer": "结构性重写后的观点",
         "keywords": ["关键词1", "关键词2", ...],
-        "sources_mentioned": ["用户提到的来源1", ...]  # 从用户回复中识别
+        "sources_mentioned": ["用户提到的来源1", ...]
     }
     """
     articles_context = "\n".join(
         f"- [{a.get('source','')}] {a.get('title','')}" for a in related_articles
     )
 
-    prompt = f"""用户回答了以下思考题：
+    user_prompt = f"""请对以下科技评论进行结构性重写。
 
-**问题：** {question}
+**背景问题：** {question}
 
 **相关文章：**
-{articles_context}
+{articles_context if articles_context else "（无特定关联文章）"}
 
-**用户的原始回复：**
+**用户的原始评论：**
 {raw_reply}
 
-请完成以下任务：
-1. 将用户回复整理为一段有条理的观点（150-300字），保留用户的核心想法，补充逻辑结构，语言更清晰有力
-2. 提取 3-6 个核心关键词（名词或概念，如"长上下文"、"工具调用"、"Agent框架"）
-3. 从用户回复中识别他明确提到的信息来源编号或名称（如"第2条"、"TechCrunch那篇"等）
+完成重写后，额外提取：
+1. 3-6 个核心关键词（概念名词，如"工具调用"、"Agent框架"、"长上下文"）
+2. 用户明确提到的信息来源（如"第2条"、"TechCrunch那篇"）
 
-严格按以下 JSON 格式返回：
+严格按以下 JSON 格式返回，不要有其他文字：
 {{
-  "refined_answer": "<整理后的观点>",
-  "keywords": ["关键词1", "关键词2", ...],
-  "sources_mentioned": ["来源名称或描述1", ...]
+  "refined_answer": "<结构性重写后的完整内容，含末尾的改动说明>",
+  "keywords": ["关键词1", ...],
+  "sources_mentioned": ["来源描述1", ...]
 }}"""
 
     client = get_client()
     response = client.chat.completions.create(
         model=DEEPSEEK_MODEL,
         messages=[
-            {"role": "system", "content": "你是一个帮助用户整理和表达思考的助手，风格清晰、专业、保留用户个人视角。"},
-            {"role": "user", "content": prompt},
+            {"role": "system", "content": _REFINE_SYSTEM_PROMPT},
+            {"role": "user", "content": user_prompt},
         ],
         temperature=0.4,
-        max_tokens=800,
+        max_tokens=1200,
     )
 
     raw = response.choices[0].message.content.strip()
@@ -271,10 +294,20 @@ def format_thought_question_message(question_data: dict) -> str:
 
 # ── 快速规则：config 调整类关键词 ──────────────────────────────────
 _CONFIG_KEYWORDS = [
-    "每次推送", "推送改为", "推送数量", "关注话题", "只想看", "不想看",
-    "过滤掉", "去掉", "排除", "加上", "添加", "天气改", "天气换",
-    "换成", "改为", "修改配置", "更新配置", "hours_back", "max_items",
-    "enabled_sources", "focus_topics", "user_note", "weather_location",
+    # 推送数量/频率
+    "每次推送", "推送改为", "推送数量", "推送条数",
+    # 话题/来源
+    "关注话题", "只想看", "不想看", "我想看", "想看",
+    "过滤掉", "去掉", "排除", "加上", "添加",
+    "关注方向", "新闻方向", "领域",
+    # 天气
+    "天气改", "天气换", "城市改", "城市换", "城市设置",
+    "把城市", "改成", "换成",
+    # 通用配置
+    "修改配置", "更新配置", "配置修改",
+    # 字段名直接提及
+    "hours_back", "max_items", "enabled_sources",
+    "focus_topics", "user_note", "weather_location",
 ]
 
 

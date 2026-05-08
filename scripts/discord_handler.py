@@ -231,6 +231,14 @@ def handle_capture(text: str) -> str | None:
 
     不再使用 answered 标志锁死：每条消息通过消息 ID 去重，均可独立存档。
     """
+    from thought_generator import classify_message_intent, generate_question_from_thought, _CONFIG_KEYWORDS
+
+    # config 关键词检查优先于长度过滤：
+    # 短命令如"把城市设置为北京"应直接落到 process_user_command，而非被跳过
+    if any(kw in text for kw in _CONFIG_KEYWORDS):
+        return None  # 交由 process_user_command 处理
+
+    # 对长度 < 20 字的非 config 消息不做 capture（排除短感叹、单字等噪音）
     if len(text) < 20:
         return None
 
@@ -239,8 +247,6 @@ def handle_capture(text: str) -> str | None:
     related_articles = ctx.get("related_articles", []) if ctx else []
     all_articles = ctx.get("all_articles", []) if ctx else []
     date_str = ctx.get("date", "") if ctx else ""
-
-    from thought_generator import classify_message_intent, generate_question_from_thought
 
     intent = classify_message_intent(text, today_question)
     print(f"[Intent] 消息意图: {intent}")
