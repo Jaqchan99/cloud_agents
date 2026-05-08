@@ -64,5 +64,5 @@
       "ai_summary": "论文提出无损上下文管理（LCM）架构，一种用于 LLM 记忆的确定性方法，在长上下文任务上优于 Claude Code。该研究解决了大语言模型在处理超长文本时的记忆瓶颈问题，对提升模型实用性具有重要意义。"
     }
   ],
-  "answered": false
+  "answered": true
 }
