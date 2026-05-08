@@ -267,3 +267,97 @@ def format_thought_question_message(question_data: dict) -> str:
         "_回复时可指出参考了哪几条资讯（如「参考第2、3条」）_",
     ]
     return "\n".join(lines)
+
+
+# ── 快速规则：config 调整类关键词 ──────────────────────────────────
+_CONFIG_KEYWORDS = [
+    "每次推送", "推送改为", "推送数量", "关注话题", "只想看", "不想看",
+    "过滤掉", "去掉", "排除", "加上", "添加", "天气改", "天气换",
+    "换成", "改为", "修改配置", "更新配置", "hours_back", "max_items",
+    "enabled_sources", "focus_topics", "user_note", "weather_location",
+]
+
+
+def classify_message_intent(text: str, today_question: str) -> str:
+    """
+    判断用户消息的意图，返回三种之一：
+      "config"  - 修改推送配置（weather、topics、max_items 等）
+      "answer"  - 回答今日思考题
+      "note"    - 独立想法，与今日思考题无直接关联
+
+    策略：
+    1. 关键词快速匹配 config → 无需调用 API
+    2. 若今日无思考题 → 统一归为 note
+    3. 剩余情况调用 DeepSeek 判断 answer vs note
+    """
+    text_lower = text.lower()
+
+    # 规则层：config 关键词
+    if any(kw in text_lower for kw in _CONFIG_KEYWORDS):
+        return "config"
+
+    # 无今日思考题，无法判断 answer，直接归 note
+    if not today_question:
+        return "note"
+
+    # LLM 判断 answer vs note
+    try:
+        client = get_client()
+        resp = client.chat.completions.create(
+            model=DEEPSEEK_MODEL,
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "判断用户消息与给定问题的关联性。"
+                        "若用户在回应或讨论该问题，回答 answer；"
+                        "若用户在分享与该问题无直接关联的独立想法，回答 note。"
+                        "只回答 answer 或 note，不要有其他内容。"
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": f"今日问题：{today_question}\n\n用户消息：{text[:400]}",
+                },
+            ],
+            temperature=0,
+            max_tokens=5,
+        )
+        result = resp.choices[0].message.content.strip().lower()
+        return "answer" if result.startswith("answer") else "note"
+    except Exception as e:
+        print(f"[Intent] 意图分类 API 失败，默认 note: {e}")
+        return "note"
+
+
+def generate_question_from_thought(text: str) -> str:
+    """
+    针对独立想法（note 类型），由 AI 根据内容反推一个问题，
+    填入 Notion 的[问题]字段，实现与每日思考题的解耦。
+
+    例：用户说「开源模型生态比闭源更可持续，社区驱动的创新更难被垄断」
+    → 返回「开源与闭源模型的生态发展路径，哪种长期更具可持续性？」
+    """
+    try:
+        client = get_client()
+        resp = client.chat.completions.create(
+            model=DEEPSEEK_MODEL,
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "根据用户的想法，提炼出一个简洁的问题（15-40字），"
+                        "概括该想法在讨论什么核心议题。"
+                        "问题要有探讨价值，不要过于宽泛。"
+                        "只输出问题本身，不要有其他文字。"
+                    ),
+                },
+                {"role": "user", "content": f"用户的想法：{text[:500]}"},
+            ],
+            temperature=0.5,
+            max_tokens=60,
+        )
+        return resp.choices[0].message.content.strip()
+    except Exception as e:
+        print(f"[Intent] 问题生成失败，使用默认: {e}")
+        return "独立思考记录"

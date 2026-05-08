@@ -133,127 +133,154 @@ def mark_thought_answered():
             json.dump(ctx, f, ensure_ascii=False, indent=2)
 
 
-def try_handle_thought_reply(text: str) -> str | None:
+def _save_to_notion(
+    question: str,
+    text: str,
+    related_articles: list,
+    all_articles: list,
+    date_str: str,
+) -> tuple[str, list, list, str]:
     """
-    检测消息是否是对今日思考题的回复。
-    如果是，调用 DeepSeek 整理观点并写入 Notion，返回回复文本。
-    如果不是，返回 None（交由后续逻辑处理）。
+    公共的 Notion 写入逻辑。
+    返回 (notion_url, keywords, final_sources, refined_answer)
+    """
+    from thought_generator import should_refine, refine_user_reply, extract_keywords_and_sources
 
-    判断规则：今日思考题存在且未回答，且消息长度 > 20 字（排除短命令）
+    needs_refine = should_refine(text)
+    print(f"[Thought] 需要润色: {needs_refine}")
+
+    refined_answer = None
+    if needs_refine:
+        refined = refine_user_reply(question, text, related_articles)
+        refined_answer = refined.get("refined_answer", "")
+        keywords = refined.get("keywords", [])
+        sources_mentioned = refined.get("sources_mentioned", [])
+    else:
+        extracted = extract_keywords_and_sources(question, text, related_articles)
+        keywords = extracted.get("keywords", [])
+        sources_mentioned = extracted.get("sources_mentioned", [])
+
+    # 解析信息来源
+    final_sources, final_links = [], []
+    for a in related_articles:
+        src, link = a.get("source", ""), a.get("link", "")
+        if src and src not in final_sources:
+            final_sources.append(src)
+        if link and link not in final_links:
+            final_links.append(link)
+    for mention in sources_mentioned:
+        mention_lower = mention.lower()
+        for a in all_articles:
+            if (mention_lower in a.get("title", "").lower()
+                    or mention_lower in a.get("source", "").lower()
+                    or a.get("source", "").lower() in mention_lower):
+                src, link = a.get("source", ""), a.get("link", "")
+                if src and src not in final_sources:
+                    final_sources.append(src)
+                if link and link not in final_links:
+                    final_links.append(link)
+
+    notion_url = ""
+    notion_enabled = bool(os.environ.get("NOTION_TOKEN")) and bool(os.environ.get("NOTION_DATABASE_ID"))
+    if notion_enabled:
+        from notion_client import create_thought_record
+        result = create_thought_record(
+            question=question,
+            answer=text,
+            sources=final_sources,
+            keywords=keywords,
+            source_links=final_links,
+            date_str=date_str or None,
+            refined_answer=refined_answer,
+        )
+        notion_url = result.get("url", "")
+        print(f"[Notion] 写入成功: {notion_url}")
+    else:
+        print("[Notion] 未配置，跳过写入")
+
+    return notion_url, keywords, final_sources, refined_answer
+
+
+def _build_notion_reply(
+    notion_url: str,
+    keywords: list,
+    final_sources: list,
+    refined_answer: str | None,
+    notion_enabled: bool,
+) -> str:
+    lines = ["✅ **记录已存入 Notion！**\n"]
+    if refined_answer:
+        lines.append(f"**整理后观点：**\n{refined_answer}\n")
+    lines += [
+        f"**关键词：** {' · '.join(keywords) if keywords else '—'}",
+        f"**信息来源：** {' | '.join(final_sources) if final_sources else '未指定'}",
+    ]
+    if notion_url:
+        lines.append(f"\n📝 [在 Notion 中查看]({notion_url})")
+    if not notion_enabled:
+        lines.append("\n⚠️ _Notion 未配置，记录未存储。_")
+    return "\n".join(lines)
+
+
+def handle_capture(text: str) -> str | None:
     """
-    ctx = load_thought_context()
-    if not ctx:
-        return None
-    if ctx.get("answered"):
-        return None
+    对长度 > 20 字的非命令消息做意图分类，路由到：
+      - "config"  → 返回 None（交由 process_user_command 处理）
+      - "answer"  → 今日思考题的回复，以今日问题存入 Notion
+      - "note"    → 独立想法，由 AI 生成问题后存入 Notion
+
+    不再使用 answered 标志锁死：每条消息通过消息 ID 去重，均可独立存档。
+    """
     if len(text) < 20:
         return None
-    # 排除明显的配置调整指令
-    config_keywords = ["每次推送", "关注", "过滤", "去掉", "只想看", "改为", "修改", "天气改", "max_items"]
-    if any(kw in text for kw in config_keywords):
-        return None
 
-    question = ctx.get("question", "")
-    related_articles = ctx.get("related_articles", [])
-    all_articles = ctx.get("all_articles", [])
-    date_str = ctx.get("date", "")
+    ctx = load_thought_context()
+    today_question = ctx.get("question", "") if ctx else ""
+    related_articles = ctx.get("related_articles", []) if ctx else []
+    all_articles = ctx.get("all_articles", []) if ctx else []
+    date_str = ctx.get("date", "") if ctx else ""
+
+    from thought_generator import classify_message_intent, generate_question_from_thought
+
+    intent = classify_message_intent(text, today_question)
+    print(f"[Intent] 消息意图: {intent}")
+
+    if intent == "config":
+        return None  # 交由 process_user_command
 
     try:
-        from thought_generator import (
-            should_refine, refine_user_reply, extract_keywords_and_sources
-        )
-
-        # 判断是否需要 AI 整理润色
-        needs_refine = should_refine(text)
-        print(f"[Thought] 检测到思考题回复，需要润色: {needs_refine}")
-
-        refined_answer = None
-        if needs_refine:
-            print("[Thought] 调用 DeepSeek 整理观点...")
-            refined = refine_user_reply(question, text, related_articles)
-            refined_answer = refined.get("refined_answer", "")
-            keywords = refined.get("keywords", [])
-            sources_mentioned = refined.get("sources_mentioned", [])
-        else:
-            print("[Thought] 仅提取关键词，保存原文...")
-            extracted = extract_keywords_and_sources(question, text, related_articles)
-            keywords = extracted.get("keywords", [])
-            sources_mentioned = extracted.get("sources_mentioned", [])
-
-        # 解析用户提到的信息源
-        final_sources = []
-        final_links = []
-
-        for a in related_articles:
-            src = a.get("source", "")
-            if src and src not in final_sources:
-                final_sources.append(src)
-            link = a.get("link", "")
-            if link and link not in final_links:
-                final_links.append(link)
-
-        for mention in sources_mentioned:
-            mention_lower = mention.lower()
-            for a in all_articles:
-                title_lower = a.get("title", "").lower()
-                source_lower = a.get("source", "").lower()
-                if (mention_lower in title_lower or mention_lower in source_lower
-                        or source_lower in mention_lower):
-                    src = a.get("source", "")
-                    link = a.get("link", "")
-                    if src and src not in final_sources:
-                        final_sources.append(src)
-                    if link and link not in final_links:
-                        final_links.append(link)
-
-        # 写入 Notion
-        # 回答 = 原文，整理后观点 = AI润色结果（可为空）
         notion_enabled = bool(os.environ.get("NOTION_TOKEN")) and bool(os.environ.get("NOTION_DATABASE_ID"))
-        notion_url = ""
 
-        if notion_enabled:
-            from notion_client import create_thought_record
-            result = create_thought_record(
-                question=question,
-                answer=text,                   # 原文始终保存到"回答"
-                sources=final_sources,
-                keywords=keywords,
-                source_links=final_links,
-                date_str=date_str if date_str else None,
-                refined_answer=refined_answer, # 润色结果（None 则留空）
+        if intent == "answer":
+            # 回答今日思考题：question = 今日思考题
+            print(f"[Thought] 识别为思考题回答")
+            notion_url, keywords, sources, refined = _save_to_notion(
+                question=today_question,
+                text=text,
+                related_articles=related_articles,
+                all_articles=all_articles,
+                date_str=date_str,
             )
-            notion_url = result.get("url", "")
-            print(f"[Notion] 记录写入成功: {notion_url}")
         else:
-            print("[Notion] 未配置 NOTION_TOKEN，跳过写入")
+            # note：独立想法，AI 生成问题
+            print(f"[Thought] 识别为独立想法，生成问题...")
+            generated_q = generate_question_from_thought(text)
+            print(f"[Thought] 生成问题: {generated_q}")
+            notion_url, keywords, sources, refined = _save_to_notion(
+                question=generated_q,
+                text=text,
+                related_articles=[],   # 独立想法不关联今日文章
+                all_articles=all_articles,
+                date_str=date_str,
+            )
 
-        mark_thought_answered()
-
-        # 构建回复
-        reply_lines = ["✅ **回复已存入 Notion！**\n"]
-
-        if needs_refine and refined_answer:
-            reply_lines += [
-                f"**整理后观点：**\n{refined_answer}\n",
-            ]
-
-        reply_lines += [
-            f"**关键词：** {' · '.join(keywords) if keywords else '—'}",
-            f"**信息来源：** {' | '.join(final_sources) if final_sources else '未指定'}",
-        ]
-
-        if notion_url:
-            reply_lines.append(f"\n📝 [在 Notion 中查看]({notion_url})")
-        if not notion_enabled:
-            reply_lines.append("\n⚠️ _Notion 未配置，记录未存储。_")
-
-        return "\n".join(reply_lines)
+        return _build_notion_reply(notion_url, keywords, sources, refined, notion_enabled)
 
     except Exception as e:
         import traceback
         traceback.print_exc()
-        print(f"[Thought] 处理回复失败: {e}")
-        return f"❌ 处理回复时出错：{e}\n你的原始回复已收到，请稍后重试。"
+        print(f"[Thought] 处理失败: {e}")
+        return f"❌ 处理时出错：{e}\n你的原始回复已收到，请稍后重试。"
 
 
 def handle_command(text: str, config: dict) -> tuple[str, dict | None]:
@@ -284,12 +311,9 @@ def handle_command(text: str, config: dict) -> tuple[str, dict | None]:
             return f"❌ 推送失败：{e}", None
 
     if text == "!thought":
-        # 重新发送今日思考题
         if THOUGHT_CONTEXT_PATH.exists():
             with open(THOUGHT_CONTEXT_PATH, "r", encoding="utf-8") as f:
                 ctx = json.load(f)
-            if ctx.get("answered"):
-                return "✅ 今日思考题你已回答过，记录已存入 Notion。", None
             from thought_generator import format_thought_question_message
             return format_thought_question_message(ctx), None
         return "📭 今日暂无思考题，等待日报推送后自动生成。", None
@@ -298,12 +322,12 @@ def handle_command(text: str, config: dict) -> tuple[str, dict | None]:
     if text.startswith("🤖") or text.startswith("📭") or text.startswith("📋") or text.startswith("_由 AI") or text.startswith("---"):
         return "", None
 
-    # 检测是否是对今日思考题的回复
-    thought_reply = try_handle_thought_reply(text)
-    if thought_reply is not None:
-        return thought_reply, None
+    # 统一意图路由：capture（answer/note） 或 config
+    capture_reply = handle_capture(text)
+    if capture_reply is not None:
+        return capture_reply, None
 
-    # 自然语言处理配置调整
+    # 意图为 config：调用 DeepSeek 修改 user_config
     try:
         result = process_user_command(text, config)
         reply = result.get("reply", "已处理您的请求。")
