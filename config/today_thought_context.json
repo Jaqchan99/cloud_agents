@@ -1,68 +1,73 @@
 {
-  "date": "2026-05-08",
-  "question": "在 AI Agent 从云端走向本地化（如 Perplexity 的 Mac 版和 DeepSeek 的本地推理引擎）的背景下，这对企业的数据安全和隐私策略会带来哪些根本性的变革？",
-  "context": "随着 AI Agent 和本地推理引擎的普及，企业面临一个关键抉择：是继续依赖云端 AI 服务以换取强大算力，还是转向本地化部署以保障数据主权？这一问题直接关系到未来企业 IT 架构和数据治理模式的设计。",
+  "date": "2026-05-09",
+  "question": "在AI Agent落地企业级场景时，安全性和可解释性（如Claude的‘为什么’推理与AgentTrust的运行时拦截）是否是比性能更优先的考量？你愿意在多大程度上牺牲效率来换取这些保障？",
+  "context": "随着AI Agent从实验室走向实际部署（如OpenAI的Codex和Agent Island基准测试），安全与透明度成为关键瓶颈，但这也可能带来延迟和成本增加，值得从业者权衡。",
   "related_articles": [
     {
-      "title": "Perplexity’s Personal Computer is now available to everyone on Mac",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/08/perplexity-personal-computer-mac"
+      "title": "Teaching Claude Why",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=123456"
     },
     {
-      "title": "DeepSeek 4 Flash local inference engine for Metal",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=2026-05-08-deepseek-4-flash"
+      "title": "Running Codex safely at OpenAI",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/blog/running-codex-safely-at-openai"
+    },
+    {
+      "title": "AgentTrust: Runtime Safety Evaluation and Interception for AI Agent Tool Use",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/1234.56789"
     }
   ],
   "all_articles": [
     {
-      "title": "OpenAI launches new voice intelligence features in its API",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/07/openai-launches-new-voice-intelligence-features-in-its-api/",
-      "ai_summary": "OpenAI 在 API 中推出了新的语音智能功能，能够支持更自然的实时语音交互、翻译和转录。该功能不仅适用于客服系统，还可应用于教育和创作者平台，标志着多模态 AI 能力的进一步扩展。"
-    },
-    {
-      "title": "Perplexity’s Personal Computer is now available to everyone on Mac",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/07/perplexitys-personal-computer-is-now-available-everyone-on-mac/",
-      "ai_summary": "Perplexity 的“个人电脑”AI Agent 功能现已向所有 Mac 用户开放，能够将 AI 代理直接集成到桌面操作中。这代表了 AI Agent 从云端走向本地化、个人化的重要一步，提升了用户日常任务的自动化水平。"
-    },
-    {
-      "title": "China’s Moonshot AI raises $2B at $20B valuation as demand for open source AI skyrockets",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/07/chinas-moonshot-ai-raises-2b-at-20b-valuation-as-demand-for-open-source-ai-skyrockets/",
-      "ai_summary": "中国 AI 公司 Moonshot AI 以 200 亿美元估值融资 20 亿美元，其年化经常性收入已突破 2 亿美元。这一融资事件凸显了开源 AI 需求的爆发式增长，以及中国在全球 AI 开源生态中的崛起。"
-    },
-    {
-      "title": "Natural Language Autoencoders: Turning Claude's Thoughts into Text",
+      "title": "Teaching Claude Why",
       "source": "Hacker News",
-      "link": "https://www.anthropic.com/research/natural-language-autoencoders",
-      "ai_summary": "Anthropic 发布了自然语言自编码器研究，能够将 Claude 的内部思考过程转化为可读文本。这项技术为理解大语言模型的推理机制提供了新工具，有助于提升模型的可解释性和安全性。"
+      "link": "https://www.anthropic.com/research/teaching-claude-why",
+      "ai_summary": "Anthropic 发布研究，探讨如何让 Claude 理解并解释其推理过程（即“为什么”），而不仅仅是给出答案。这标志着大语言模型在可解释性和推理透明度上的重要进展，对提升 AI 安全性和用户信任具有深远意义。"
     },
     {
-      "title": "AlphaEvolve: Gemini-powered coding agent scaling impact across fields",
-      "source": "Hacker News",
-      "link": "https://deepmind.google/blog/alphaevolve-impact/",
-      "ai_summary": "Google DeepMind 推出 AlphaEvolve，一个基于 Gemini 的编码 Agent，能够在多个领域实现规模化影响。该 Agent 展示了 AI 在自动编程和科学计算中的潜力，推动了 Agent 技术的实际应用。"
-    },
-    {
-      "title": "Scaling Trusted Access for Cyber with GPT-5.5 and GPT-5.5-Cyber",
+      "title": "Running Codex safely at OpenAI",
       "source": "OpenAI Blog",
-      "link": "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber",
-      "ai_summary": "OpenAI 扩展了网络安全领域的可信访问计划，推出 GPT-5.5 和 GPT-5.5-Cyber 模型，帮助经过验证的防御者加速漏洞研究和关键基础设施保护。这标志着大语言模型在专业安全领域的深度应用。"
-    },
-    {
-      "title": "DeepSeek 4 Flash local inference engine for Metal",
-      "source": "Hacker News",
-      "link": "https://github.com/antirez/ds4",
-      "ai_summary": "DeepSeek 4 Flash 是一个针对 Apple Metal 的本地推理引擎，能够在 Mac 设备上高效运行大语言模型。这一开源项目降低了本地部署门槛，推动了边缘 AI 和隐私保护场景的发展。"
+      "link": "https://openai.com/index/running-codex-safely",
+      "ai_summary": "OpenAI 详细介绍了如何通过沙箱、审批机制、网络策略和智能体原生遥测技术，安全运行 Codex 编码智能体。这为 AI Agent 在企业级部署中的安全合规提供了实践范本，是 Agent 落地的重要参考。"
     },
     {
       "title": "LCM: Lossless Context Management",
       "source": "Arxiv AI",
       "link": "https://arxiv.org/abs/2605.04050",
-      "ai_summary": "论文提出无损上下文管理（LCM）架构，一种用于 LLM 记忆的确定性方法，在长上下文任务上优于 Claude Code。该研究解决了大语言模型在处理超长文本时的记忆瓶颈问题，对提升模型实用性具有重要意义。"
+      "ai_summary": "提出无损上下文管理（LCM）架构，一种确定性 LLM 记忆方法，在长上下文任务上超越 Claude Code。该论文直击大模型长上下文处理的瓶颈，对提升模型在复杂任务中的实用能力有重要价值。"
+    },
+    {
+      "title": "Agent Island: A Saturation- and Contamination-Resistant Benchmark from Multiagent Games",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.04312",
+      "ai_summary": "介绍 Agent Island，一个基于多智能体游戏的基准测试，旨在抵抗传统静态基准的饱和与污染问题。它为评估 AI Agent 的真实能力提供了更可靠的动态测试环境，对 Agent 研究社区意义重大。"
+    },
+    {
+      "title": "AgentTrust: Runtime Safety Evaluation and Interception for AI Agent Tool Use",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.04785",
+      "ai_summary": "提出 AgentTrust，一种运行时安全评估与拦截框架，用于监控 AI Agent 的工具调用（如文件操作、Shell 命令）。该工作直接应对 Agent 部署中的安全风险，是保障 Agent 可靠性的关键进展。"
+    },
+    {
+      "title": "CyberSecQwen-4B: Why Defensive Cyber Needs Small, Specialized, Locally-Runnable Models",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/cybersecqwen-4b",
+      "ai_summary": "发布 CyberSecQwen-4B，一个专注于网络安全防御的小型、专用、可本地运行的开源模型。它强调了在特定领域（如网络安全）中，小型模型相比通用大模型的优势，推动了开源模型在垂直场景的实用化。"
+    },
+    {
+      "title": "MACS: Modality-Aware Capacity Scaling for Efficient Multimodal MoE Inference",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2605.05225",
+      "ai_summary": "提出 MACS，一种模态感知容量缩放方法，用于提升多模态 MoE（混合专家）模型的推理效率。该工作针对多模态大模型在专家并行推理中的瓶颈，为多模态 AI 的实用化部署提供了优化方案。"
+    },
+    {
+      "title": "Microsoft was worried OpenAI would run off to Amazon and ‘shit-talk’ Azure",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/report/926771/microsoft-openai-amazon-worries-shit-talk-azure",
+      "ai_summary": "法庭文件披露，微软曾担心 OpenAI 转向亚马逊并贬低 Azure 云服务，揭示了微软与 OpenAI 合作背后的紧张关系。这一事件反映了 AI 巨头间复杂的竞争与合作格局，对理解行业生态有重要参考价值。"
     }
   ],
-  "answered": true
+  "answered": false
 }
