@@ -1,14 +1,14 @@
 {
   "push_channel": "discord",
   "focus_topics": [
-    "大语言模型",
-    "AI Agent",
+    "大语言模型与AI Agent",
     "开源模型",
-    "多模态"
+    "多模态",
+    "AI安全"
   ],
   "include_keywords": [],
   "exclude_keywords": [],
-  "max_items": 8,
+  "max_items": 10,
   "hours_back": 72,
   "push_time": "01:00",
   "include_hacker_news": true,
