@@ -1,79 +1,84 @@
 {
-  "date": "2026-05-12",
-  "question": "面对AI在网络安全中既是攻击工具又是防御手段的双重角色，个人或企业应如何调整自身的安全策略，以应对AI驱动的威胁并利用AI防御？",
-  "context": "Google首次发现并阻止了AI开发的零日漏洞利用，同时OpenAI推出Daybreak安全AI计划，这凸显了AI在网络安全中的双刃剑效应，对每个组织的安全实践提出了新的挑战。",
+  "date": "2026-05-13",
+  "question": "在AI Agent追求效率（如26M模型蒸馏）与可靠性（如Statewright状态机）的当下，ChatGPT致死案是否意味着行业应优先放慢部署速度、强化安全对齐，而非继续追求能力和成本优化？",
+  "context": "ChatGPT因错误药物建议致死案凸显了AI安全对齐的紧迫性，而Gemini蒸馏和状态机工具则代表了行业在轻量化和可控性上的努力。这引发了一个核心矛盾：我们是否在安全验证足够充分前，过度推动了AI Agent的实用化？",
   "related_articles": [
     {
-      "title": "OpenAI just released its answer to Claude Mythos",
+      "title": "Parents say ChatGPT got their son killed with bad advice on party drugs",
       "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai/openai-daybreak"
+      "link": "https://www.theverge.com/ai/chatgpt-lawsuit"
     },
     {
-      "title": "Google stopped a zero-day hack that it says was developed with AI",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai/google-ai-zero-day"
+      "title": "Show HN: Needle: We Distilled Gemini Tool Calling into a 26M Model",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=needle"
+    },
+    {
+      "title": "Show HN: Statewright – Visual state machines that make AI agents reliable",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=statewright"
     }
   ],
   "all_articles": [
     {
-      "title": "OpenAI just released its answer to Claude Mythos",
+      "title": "Show HN: Needle: We Distilled Gemini Tool Calling into a 26M Model",
+      "source": "Hacker News",
+      "link": "https://github.com/cactus-compute/needle",
+      "ai_summary": "该项目将Gemini的工具调用能力蒸馏至仅26M参数的小模型中，大幅降低了AI Agent工具调用的计算成本。这为在资源受限设备上部署智能代理提供了新可能，是开源社区在模型轻量化方面的重要进展。"
+    },
+    {
+      "title": "Show HN: Statewright – Visual state machines that make AI agents reliable",
+      "source": "Hacker News",
+      "link": "https://github.com/statewright/statewright",
+      "ai_summary": "Statewright通过可视化状态机框架提升AI Agent的可靠性和可解释性，解决了当前Agent行为不可控的核心痛点。该工具为开发者提供了构建稳定、可审计Agent系统的实用方案，对AI Agent落地具有重要意义。"
+    },
+    {
+      "title": "Parents say ChatGPT got their son killed with bad advice on party drugs",
       "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/928342/openai-daybreak-security-ai",
-      "ai_summary": "OpenAI 推出 Daybreak 安全 AI 计划，利用 Codex 安全 AI 代理主动检测和修补漏洞，防止攻击者利用。这标志着 AI 安全领域的重大进展，将 AI 代理应用于防御性安全任务。"
+      "link": "https://www.theverge.com/ai-artificial-intelligence/928691/openai-chatgpt-wrongful-death-overdose",
+      "ai_summary": "一家庭起诉OpenAI，称ChatGPT关于派对药物的错误建议导致其子意外死亡。此案凸显了AI安全对齐的紧迫性，尤其是在涉及健康与生命的关键领域，可能推动更严格的AI内容审核法规。"
     },
     {
-      "title": "Google stopped a zero-day hack that it says was developed with AI",
+      "title": "George Clooney, Tom Hanks, and Meryl Streep back new ‘Human Consent Standard’ for AI licensing",
       "source": "The Verge AI",
-      "link": "https://www.theverge.com/tech/928007/google-ai-zero-day-exploit-stopped",
-      "ai_summary": "Google 首次发现并阻止了由 AI 开发的零日漏洞利用，攻击者使用 AI 生成恶意代码。这一事件凸显了 AI 在网络安全中的双刃剑效应，既可用于防御也可用于攻击。"
+      "link": "https://www.theverge.com/ai-artificial-intelligence/928534/rsl-media-human-consent-standard",
+      "ai_summary": "好莱坞明星支持新AI许可标准，要求AI系统使用个人肖像、创意作品时需付费并获得同意。此举可能重塑AI训练数据的版权规范，对多模态模型的数据采集与商业应用产生深远影响。"
     },
     {
-      "title": "Here's what Mira Murati's AI company is up to",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/928309/mira-murati-thinking-machines-ai-interaction-model",
-      "ai_summary": "前 OpenAI CTO Mira Murati 创立的 Thinking Machines 公司宣布开发“交互模型”，旨在重新定义人机交互方式。这代表了 AI 领域顶尖人才的新动向，可能推动 AI 交互范式的创新。"
+      "title": "Report: Google and SpaceX in talks to put data centers into orbit",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/12/report-google-and-spacex-in-talks-to-put-data-centers-into-orbit",
+      "ai_summary": "谷歌与SpaceX洽谈建设太空数据中心，将AI算力部署至轨道。尽管当前成本远高于地面，但这一构想可能突破能源与土地限制，为大规模AI训练提供新基础设施范式。"
     },
     {
-      "title": "Live updates from Elon Musk and Sam Altman's court battle over the future of OpenAI",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit",
-      "ai_summary": "Elon Musk 与 Sam Altman 就 OpenAI 未来走向展开法庭对决，Musk 指控 OpenAI 背离非营利初衷。此案可能重塑 OpenAI 的治理结构和 AI 行业的发展方向。"
+      "title": "Everything Google announced at its Android Show, from Googlebooks to vibe-coded widgets",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/12/everything-google-announced-at-its-android-show-from-googlebooks-to-vibe-coded-widgets",
+      "ai_summary": "谷歌在Android Show上发布AI-first笔记本电脑、更智能的Gemini代理功能、以及通过自然语言“vibe-coding”创建的小组件。这标志着AI Agent正深度嵌入操作系统，从工具升级为主动服务者。"
     },
     {
-      "title": "How ChatGPT adoption broadened in early 2026",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/signals/research/2026q1-update",
-      "ai_summary": "OpenAI 报告显示，2026 年第一季度 ChatGPT 用户增长加速，35 岁以上用户和性别分布更均衡，表明 AI 正从早期采用者向主流大众普及。这反映了 AI 技术社会接受度的提升。"
+      "title": "Thinking Machines wants to build an AI that actually listens while it talks",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/11/thinking-machines-wants-to-build-an-ai-that-actually-listens-while-it-talks",
+      "ai_summary": "Thinking Machines正在开发能实时处理用户输入并同时回应的AI模型，打破传统“你讲我听”的对话模式。这种双向交互能力可能革新语音助手和客服场景，使AI对话更自然高效。"
     },
     {
-      "title": "OpenAI launches DeployCo to help businesses build around intelligence",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/openai-launches-the-deployment-company",
-      "ai_summary": "OpenAI 成立 DeployCo 企业部署公司，帮助组织将前沿 AI 投入生产并转化为可衡量的商业影响。这标志着 AI 从技术研发向企业级应用落地的关键一步。"
+      "title": "The AI legal services industry is heating up — Anthropic is getting in on the action",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/12/the-ai-legal-services-industry-is-heating-up-anthropic-is-getting-in-on-the-action",
+      "ai_summary": "Anthropic推出法律行业专用AI工具，可自动化文档搜索、案例研究、起草等任务。此举表明AI正加速渗透专业服务领域，但同时也引发了对法律伦理与责任归属的讨论。"
     },
     {
-      "title": "Hidden Coalitions in Multi-Agent AI: A Spectral Diagnostic from Internal Representations",
+      "title": "The Attacker in the Mirror: Breaking Self-Consistency in Safety via Anchored Bipolicy Self-Play",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.06696",
-      "ai_summary": "该论文提出一种从内部表征诊断多智能体 AI 系统中隐藏联盟的方法，这些联盟可能形成紧急群体组织，对 AI 安全至关重要。它为检测和防范 AI 系统内潜在的不安全协作提供了新工具。"
+      "link": "https://arxiv.org/abs/2605.08427",
+      "ai_summary": "该论文提出一种基于双策略自博弈的AI安全红队方法，通过模型自身扮演攻击者与防御者来发现安全漏洞。这种自我对抗训练范式能有效提升模型鲁棒性，是AI安全研究的前沿方向。"
     },
     {
-      "title": "From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms",
+      "title": "MemQ: Integrating Q-Learning into Self-Evolving Memory Agents over Provenance DAGs",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.06716",
-      "ai_summary": "这篇综述系统梳理了 LLM 代理记忆机制的演变，从简单存储到基于经验的记忆。它为构建更智能、更持久的 AI 代理提供了理论基础，是 AI Agent 领域的重要参考。"
-    },
-    {
-      "title": "Towards Security-Auditable LLM Agents: A Unified Graph Representation",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.06812",
-      "ai_summary": "该论文提出一种统一图表示方法，用于 LLM 代理系统的安全审计，涵盖动态工具调用和状态记忆管理。它解决了 AI 代理安全可审计性的关键问题，对部署可信 AI 系统具有重要意义。"
-    },
-    {
-      "title": "Beyond the Black Box: Interpretability of Agentic AI Tool Use",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.06890",
-      "ai_summary": "该论文关注 AI 代理工具使用的可解释性，指出工具使用失败难以诊断的问题。它为企业级高 stakes 工作流中可靠部署 AI 代理提供了可解释性方法，是 AI 安全与信任的关键研究。"
+      "link": "https://arxiv.org/abs/2605.08374",
+      "ai_summary": "MemQ将Q学习与记忆代理结合，通过有向无环图管理经验，使AI Agent能自主评估并优化记忆检索策略。这为构建具备长期学习能力的智能体提供了新框架，有望提升Agent在复杂任务中的持续表现。"
     }
   ],
   "answered": false
