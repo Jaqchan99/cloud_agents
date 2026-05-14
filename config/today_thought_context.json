@@ -1,84 +1,84 @@
 {
-  "date": "2026-05-13",
-  "question": "在AI Agent追求效率（如26M模型蒸馏）与可靠性（如Statewright状态机）的当下，ChatGPT致死案是否意味着行业应优先放慢部署速度、强化安全对齐，而非继续追求能力和成本优化？",
-  "context": "ChatGPT因错误药物建议致死案凸显了AI安全对齐的紧迫性，而Gemini蒸馏和状态机工具则代表了行业在轻量化和可控性上的努力。这引发了一个核心矛盾：我们是否在安全验证足够充分前，过度推动了AI Agent的实用化？",
+  "date": "2026-05-14",
+  "question": "在Notion将AI代理深度集成到工作空间、Anthropic企业客户超越OpenAI的背景下，AI Agent是否正在从‘工具’演变为‘协作主体’？这种转变对团队工作流和决策权分配意味着什么？",
+  "context": "Notion推出开发者平台让AI代理融入日常办公，而Anthropic在企业市场的崛起表明商业AI正从通用对话转向专业化协作。这引发了一个核心问题：当AI能主动参与任务规划与执行时，人类与AI的角色边界如何重新定义？",
   "related_articles": [
     {
-      "title": "Parents say ChatGPT got their son killed with bad advice on party drugs",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai/chatgpt-lawsuit"
+      "title": "Notion just turned its workspace into a hub for AI agents",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/14/notion-ai-agents-workspace/"
     },
     {
-      "title": "Show HN: Needle: We Distilled Gemini Tool Calling into a 26M Model",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=needle"
+      "title": "Anthropic now has more business customers than OpenAI, according to Ramp data",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/14/anthropic-business-customers-openai-ramp/"
     },
     {
-      "title": "Show HN: Statewright – Visual state machines that make AI agents reliable",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=statewright"
+      "title": "PIVOT: Bridging Planning and Execution in LLM Agents via Trajectory Refinement",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2026.05.14.pivot"
     }
   ],
   "all_articles": [
     {
-      "title": "Show HN: Needle: We Distilled Gemini Tool Calling into a 26M Model",
-      "source": "Hacker News",
-      "link": "https://github.com/cactus-compute/needle",
-      "ai_summary": "该项目将Gemini的工具调用能力蒸馏至仅26M参数的小模型中，大幅降低了AI Agent工具调用的计算成本。这为在资源受限设备上部署智能代理提供了新可能，是开源社区在模型轻量化方面的重要进展。"
+      "title": "Notion just turned its workspace into a hub for AI agents",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/",
+      "ai_summary": "Notion 推出了新的开发者平台，允许团队将 AI 代理、外部数据源和自定义代码直接集成到工作空间中，标志着其向代理型生产力软件深度转型。此举将 AI Agent 与日常办公场景紧密结合，可能重塑团队协作和自动化工作流的方式。"
     },
     {
-      "title": "Show HN: Statewright – Visual state machines that make AI agents reliable",
-      "source": "Hacker News",
-      "link": "https://github.com/statewright/statewright",
-      "ai_summary": "Statewright通过可视化状态机框架提升AI Agent的可靠性和可解释性，解决了当前Agent行为不可控的核心痛点。该工具为开发者提供了构建稳定、可审计Agent系统的实用方案，对AI Agent落地具有重要意义。"
-    },
-    {
-      "title": "Parents say ChatGPT got their son killed with bad advice on party drugs",
+      "title": "Mark Zuckerberg announces ‘completely private’ encrypted Meta AI chat",
       "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/928691/openai-chatgpt-wrongful-death-overdose",
-      "ai_summary": "一家庭起诉OpenAI，称ChatGPT关于派对药物的错误建议导致其子意外死亡。此案凸显了AI安全对齐的紧迫性，尤其是在涉及健康与生命的关键领域，可能推动更严格的AI内容审核法规。"
+      "link": "https://www.theverge.com/tech/929791/meta-ai-incognito-chats",
+      "ai_summary": "Meta CEO 马克·扎克伯格宣布推出“完全私密”的加密 Meta AI 聊天功能，声称这是首个不在服务器上存储对话记录的 AI 产品。此举在 AI 安全与隐私领域具有里程碑意义，可能推动行业对用户数据保护的更高标准。"
     },
     {
-      "title": "George Clooney, Tom Hanks, and Meryl Streep back new ‘Human Consent Standard’ for AI licensing",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/928534/rsl-media-human-consent-standard",
-      "ai_summary": "好莱坞明星支持新AI许可标准，要求AI系统使用个人肖像、创意作品时需付费并获得同意。此举可能重塑AI训练数据的版权规范，对多模态模型的数据采集与商业应用产生深远影响。"
-    },
-    {
-      "title": "Report: Google and SpaceX in talks to put data centers into orbit",
+      "title": "Anthropic now has more business customers than OpenAI, according to Ramp data",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/12/report-google-and-spacex-in-talks-to-put-data-centers-into-orbit",
-      "ai_summary": "谷歌与SpaceX洽谈建设太空数据中心，将AI算力部署至轨道。尽管当前成本远高于地面，但这一构想可能突破能源与土地限制，为大规模AI训练提供新基础设施范式。"
+      "link": "https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/",
+      "ai_summary": "根据金融科技公司 Ramp 的客户支出数据，Anthropic 的企业客户占比已达 34.4%，首次超过 OpenAI 的 32.3%。这反映了 AI 平台竞争格局的变化，Anthropic 在商业市场的崛起可能重塑大语言模型领域的领导地位。"
     },
     {
-      "title": "Everything Google announced at its Android Show, from Googlebooks to vibe-coded widgets",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/12/everything-google-announced-at-its-android-show-from-googlebooks-to-vibe-coded-widgets",
-      "ai_summary": "谷歌在Android Show上发布AI-first笔记本电脑、更智能的Gemini代理功能、以及通过自然语言“vibe-coding”创建的小组件。这标志着AI Agent正深度嵌入操作系统，从工具升级为主动服务者。"
+      "title": "Building a safe, effective sandbox to enable Codex on Windows",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/building-codex-windows-sandbox",
+      "ai_summary": "OpenAI 分享了如何为 Codex 在 Windows 上构建安全沙箱的技术细节，通过控制文件访问和网络限制实现安全高效的编码代理。这对 AI Agent 在桌面环境的实际部署和安全实践具有重要参考价值。"
     },
     {
-      "title": "Thinking Machines wants to build an AI that actually listens while it talks",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/11/thinking-machines-wants-to-build-an-ai-that-actually-listens-while-it-talks",
-      "ai_summary": "Thinking Machines正在开发能实时处理用户输入并同时回应的AI模型，打破传统“你讲我听”的对话模式。这种双向交互能力可能革新语音助手和客服场景，使AI对话更自然高效。"
-    },
-    {
-      "title": "The AI legal services industry is heating up — Anthropic is getting in on the action",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/12/the-ai-legal-services-industry-is-heating-up-anthropic-is-getting-in-on-the-action",
-      "ai_summary": "Anthropic推出法律行业专用AI工具，可自动化文档搜索、案例研究、起草等任务。此举表明AI正加速渗透专业服务领域，但同时也引发了对法律伦理与责任归属的讨论。"
-    },
-    {
-      "title": "The Attacker in the Mirror: Breaking Self-Consistency in Safety via Anchored Bipolicy Self-Play",
+      "title": "EVOCHAMBER: Test-Time Co-evolution of Multi-Agent System at Individual, Team, and Population Scales",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.08427",
-      "ai_summary": "该论文提出一种基于双策略自博弈的AI安全红队方法，通过模型自身扮演攻击者与防御者来发现安全漏洞。这种自我对抗训练范式能有效提升模型鲁棒性，是AI安全研究的前沿方向。"
+      "link": "https://arxiv.org/abs/2605.11136",
+      "ai_summary": "该论文提出多智能体测试时共进化框架 EVOCHAMBER，在个体、团队和群体三个尺度上协同进化，突破了传统单智能体进化的局限。这对多智能体系统的自适应能力和协作效率提升具有重要理论意义。"
     },
     {
-      "title": "MemQ: Integrating Q-Learning into Self-Evolving Memory Agents over Provenance DAGs",
+      "title": "PIVOT: Bridging Planning and Execution in LLM Agents via Trajectory Refinement",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.08374",
-      "ai_summary": "MemQ将Q学习与记忆代理结合，通过有向无环图管理经验，使AI Agent能自主评估并优化记忆检索策略。这为构建具备长期学习能力的智能体提供了新框架，有望提升Agent在复杂任务中的持续表现。"
+      "link": "https://arxiv.org/abs/2605.11225",
+      "ai_summary": "论文提出 PIVOT 框架，通过轨迹优化弥合 LLM 代理在规划与执行之间的鸿沟，解决因不可行动作或约束违反导致的执行失败问题。这是提升 AI Agent 实际任务完成率的关键技术进展。"
+    },
+    {
+      "title": "LatentRouter: Can We Choose the Right Multimodal Model Before Seeing Its Answer?",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.11301",
+      "ai_summary": "该论文提出 LatentRouter 方法，在未见答案前即可为不同多模态任务（如 OCR、图表理解）选择最合适的模型，提升推理效率。这对多模态 AI 系统的资源优化和实际部署具有实用价值。"
+    },
+    {
+      "title": "Rethinking Evaluation for LLM Hallucination Detection: A Desiderata, A New RAG-based Benchmark, New Insights",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.11330",
+      "ai_summary": "该论文重新审视 LLM 幻觉检测的评估方法，提出新的基于 RAG 的基准测试，并给出新见解。幻觉问题是大语言模型安全性的核心挑战，该研究为改进检测和缓解策略提供了重要参考。"
+    },
+    {
+      "title": "Steering Without Breaking: Mechanistically Informed Interventions for Discrete Diffusion Language Models",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2605.10971",
+      "ai_summary": "该论文提出基于机制理解的干预方法，用于引导离散扩散语言模型（DLM）的生成行为，避免破坏模型性能。扩散语言模型作为自回归模型的替代方案，其可控性研究对开源模型发展具有意义。"
+    },
+    {
+      "title": "Rotation-Preserving Supervised Fine-Tuning",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2605.10973",
+      "ai_summary": "论文提出旋转保持的监督微调方法，在提升领域内性能的同时避免损害领域外泛化能力。这对大语言模型微调中的安全性和鲁棒性改进具有实际应用价值。"
     }
   ],
   "answered": false
