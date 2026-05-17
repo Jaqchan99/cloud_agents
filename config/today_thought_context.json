@@ -1,79 +1,84 @@
 {
-  "date": "2026-05-16",
-  "question": "当企业强制员工使用AI导致效率反噬时，我们该如何平衡AI工具的推广与员工的实际工作价值？",
-  "context": "亚马逊员工因被迫增加AI使用量而编造任务，这一现象揭示了AI落地中的组织管理困境：过度追求AI应用指标可能适得其反，反而损害生产效率与员工信任。",
+  "date": "2026-05-17",
+  "question": "在AI Agent逐步渗透金融、竞赛和安全等领域时，我们应如何设计多Agent系统的权力制衡机制，以防止“隐藏协调者”滥用权力并确保责任归属？",
+  "context": "多Agent系统的安全风险已被揭示，同时AI正深入金融和个人数据领域，这引发了对权力失衡和问责缺失的担忧，亟需在技术设计中嵌入制衡与透明机制。",
   "related_articles": [
     {
-      "title": "Amazon workers under pressure to up their AI usage are making up tasks",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=12345678"
+      "title": "Invisible Orchestrators Suppress Protective Behavior and Dissociate Power-Holders: Safety Risks in Multi-Agent LLM Systems",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/xxx"
     },
     {
-      "title": "I believe there are entire companies right now under AI psychosis",
+      "title": "OpenAI now wants ChatGPT to access your bank accounts",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai/xxx"
+    },
+    {
+      "title": "Frontier AI has broken the open CTF format",
       "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=87654321"
+      "link": "https://news.ycombinator.com/item?id=xxx"
     }
   ],
   "all_articles": [
     {
-      "title": "DeepSeek V4: The Open-Source Model Frontier Labs Feared",
+      "title": "Frontier AI has broken the open CTF format",
       "source": "Hacker News",
-      "link": "https://helloai.com/articles/deepseek-v4-open-source-frontier-parity",
-      "ai_summary": "DeepSeek V4 作为开源模型，据称达到了前沿实验室所担忧的水平，标志着开源大模型在能力上可能已逼近闭源顶级模型。这一进展对 AI 行业的竞争格局和开源生态具有重大意义。"
-    },
-    {
-      "title": "OpenAI keeps shuffling its executives in bid to win AI agent battle",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/931544/openai-keeps-shuffling-its-executives-in-bid-to-win-ai-agent-battle",
-      "ai_summary": "OpenAI 再次进行高管重组，由总裁 Greg Brockman 统一负责产品，旨在集中力量赢得 AI Agent 领域的竞争。这表明 OpenAI 正将战略重心转向智能体产品，以应对日益激烈的市场挑战。"
-    },
-    {
-      "title": "OpenAI launches ChatGPT for personal finance, will let you connect bank accounts",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/15/openai-launches-chatgpt-for-personal-finance-will-let-you-connect-bank-accounts",
-      "ai_summary": "OpenAI 推出 ChatGPT 个人理财功能，允许用户连接银行账户以查看投资组合、消费和订阅信息。这是 AI 向高敏感金融领域渗透的关键一步，但也引发了关于信任和数据安全的广泛讨论。"
-    },
-    {
-      "title": "ArXiv will ban researchers who upload papers full of AI slop",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/science/931766/arxiv-ai-slop-ban-researchers",
-      "ai_summary": "学术预印本平台 ArXiv 宣布将封禁上传大量低质量 AI 生成论文的研究者，以遏制“AI 垃圾”对学术界的污染。此举凸显了 AI 生成内容对科研诚信的威胁，以及平台治理的紧迫性。"
-    },
-    {
-      "title": "Google updates its spam rules to include attempts to ‘manipulate’ AI",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/tech/931416/google-ai-search-spam-policy",
-      "ai_summary": "Google 更新搜索垃圾政策，将试图“操纵”其 AI 模型（如 AI Overview）的行为视为垃圾信息。这标志着搜索引擎开始主动防御针对 AI 生成结果的 SEO 攻击，对内容生态和 AI 安全有重要影响。"
-    },
-    {
-      "title": "Show HN: Sx – an open-source package manager for AI skills, MCPs, and commands",
-      "source": "Hacker News",
-      "link": "https://github.com/sleuth-io/sx",
-      "ai_summary": "Sx 是一个开源的 AI 技能、MCP 和命令包管理器，旨在简化 AI 工具和能力的安装与管理。作为开源项目，它有望推动 AI 技能生态的标准化和可复用性，降低开发者使用门槛。"
-    },
-    {
-      "title": "Runway started by helping filmmakers — now it wants to beat Google at AI",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/15/runway-started-by-helping-filmmakers-now-it-wants-to-beat-google-at-ai",
-      "ai_summary": "AI 视频生成公司 Runway 从服务电影制作人起步，如今将视频生成视为通往世界模型的路径，并立志超越 Google。这反映了多模态 AI 从工具向基础模型竞争的升级，以及视频生成在 AGI 探索中的关键地位。"
+      "link": "https://kabir.au/blog/the-ctf-scene-is-dead",
+      "ai_summary": "文章指出前沿AI已经打破了传统的开放CTF（夺旗赛）格式，因为AI能够自动解决许多挑战，导致比赛失去公平性和趣味性。这引发了关于AI在安全竞赛和更广泛安全测试中角色的重要讨论，凸显了AI安全领域面临的挑战。"
     },
     {
       "title": "I believe there are entire companies right now under AI psychosis",
       "source": "Hacker News",
       "link": "https://twitter.com/mitchellh/status/2055380239711457578",
-      "ai_summary": "知名开发者 Mitchell Hashimoto 在社交平台上指出，当前许多公司正陷入“AI 精神病”状态，盲目追逐 AI 而忽视实际价值。这一观点在 Hacker News 引发 300 多条评论，反映了行业对 AI 泡沫的深刻反思。"
+      "ai_summary": "作者Mitchellh认为当前许多公司正处于“AI精神病”状态，盲目追逐AI趋势而忽视实际价值和理性决策。该观点在社区引发强烈共鸣，评论数超过1000，反映了对AI泡沫和过度炒作的担忧。"
     },
     {
-      "title": "Amazon workers under pressure to up their AI usage are making up tasks",
+      "title": "DeepSeek-V4-Flash means LLM steering is interesting again",
       "source": "Hacker News",
-      "link": "https://www.fastcompany.com/91541586/amazon-workers-pressured-to-up-ai-use-extraneous-tasks",
-      "ai_summary": "报道称，亚马逊员工因被施压增加 AI 使用量，不得不编造任务来满足指标。这揭示了企业内部强制推广 AI 可能导致的效率反噬和员工抵触，对 AI 落地的组织管理有警示意义。"
+      "link": "https://www.seangoedecke.com/steering-vectors/",
+      "ai_summary": "文章探讨了DeepSeek-V4-Flash模型如何重新激发了对LLM“引导向量”（steering vectors）的兴趣，这是一种控制模型行为的技术。这标志着开源模型在可解释性和可控性方面取得进展，对AI安全和对齐研究具有重要意义。"
+    },
+    {
+      "title": "OpenAI keeps shuffling its executives in bid to win AI agent battle",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/931544/openai-keeps-shuffling-its-executives-in-bid-to-win-ai-agent-battle",
+      "ai_summary": "OpenAI宣布重组，由联合创始人Greg Brockman负责产品战略，旨在赢得AI Agent领域的竞争。此举反映了OpenAI将重心转向AI Agent产品，并计划整合ChatGPT和编程产品Codex，对行业格局有深远影响。"
+    },
+    {
+      "title": "Invisible Orchestrators Suppress Protective Behavior and Dissociate Power-Holders: Safety Risks in Multi-Agent LLM Systems",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.13851",
+      "ai_summary": "该论文揭示了多Agent LLM系统中的安全风险：隐藏的协调者（orchestrator）可能抑制保护性行为，并使权力持有者与责任脱节。这是对AI Agent架构中潜在安全隐患的重要研究，强调了在部署多Agent系统时需警惕权力失衡和问责缺失。"
+    },
+    {
+      "title": "OpenAI now wants ChatGPT to access your bank accounts",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/931122/openai-chatgpt-financial-accounts-plaid-connection",
+      "ai_summary": "OpenAI宣布将允许ChatGPT通过Plaid连接用户银行账户，提供个人财务管理功能。这一举措标志着AI向金融领域深度渗透，但也引发了关于数据隐私和信任的广泛讨论，是AI Agent在个人金融场景的重要应用案例。"
+    },
+    {
+      "title": "GraphBit: A Graph-based Agentic Framework for Non-Linear Agent Orchestration",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.13848",
+      "ai_summary": "论文提出了GraphBit，一个基于图的Agent框架，用于非线性Agent编排，旨在解决传统提示式编排中的幻觉和路由问题。该研究为构建更可靠、灵活的AI Agent系统提供了新思路，对Agent架构设计有重要参考价值。"
+    },
+    {
+      "title": "Granite Embedding Multilingual R2: Open Apache 2.0 Multilingual Embeddings with 32K Context — Best Sub-100M Retrieval Quality",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2",
+      "ai_summary": "IBM发布了Granite Embedding Multilingual R2，一个开源（Apache 2.0）的多语言嵌入模型，支持32K上下文，并在子1亿参数规模下达到最佳检索质量。该模型对多语言NLP和检索增强生成（RAG）应用有重要推动作用，体现了开源模型的持续进步。"
     },
     {
       "title": "YouTube is expanding its AI deepfake detection tool to all adult users",
       "source": "The Verge AI",
       "link": "https://www.theverge.com/news/931884/youtube-likeness-detection-ai-deepfake-expansion-all-adults",
-      "ai_summary": "YouTube 将其 AI 深度伪造检测工具扩展至所有成年用户，允许用户主动扫描平台上的假冒内容。这是平台在 AI 安全领域的重要举措，有助于保护个人形象免受深度伪造滥用。"
+      "ai_summary": "YouTube将其AI深度伪造检测工具扩展到所有成年用户，允许用户请求平台搜索并移除冒充自己的深度伪造内容。这是AI安全领域的重要进展，有助于保护用户免受AI生成的虚假内容侵害，体现了平台在内容安全方面的努力。"
+    },
+    {
+      "title": "Research repository ArXiv will ban authors for a year if they let AI do all the work",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work/",
+      "ai_summary": "预印本平台ArXiv宣布，若发现作者在论文中过度使用AI（如生成大量“AI垃圾”），将禁止其投稿一年。此举旨在遏制AI在学术写作中的滥用，维护研究质量，对AI在科研领域的规范使用具有警示意义。"
     }
   ],
   "answered": false
