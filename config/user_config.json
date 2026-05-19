@@ -20,7 +20,7 @@
   "hours_back": 72,
   "push_time": "01:00",
   "include_hacker_news": true,
-  "user_note": "",
+  "user_note": "用户提到未将回复添加到Notion，请留意处理。",
   "weather_location": "广州",
   "enabled_sources": [
     "TechCrunch AI",
