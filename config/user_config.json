@@ -4,9 +4,17 @@
     "大语言模型与AI Agent",
     "开源模型",
     "多模态",
-    "AI安全"
+    "AI安全",
+    "AI Agent"
   ],
-  "include_keywords": [],
+  "include_keywords": [
+    "Agent",
+    "leaderboard",
+    "SWE-Bench",
+    "BrowseComp",
+    "AppWorld",
+    "tau2-Bench"
+  ],
   "exclude_keywords": [],
   "max_items": 10,
   "hours_back": 72,
