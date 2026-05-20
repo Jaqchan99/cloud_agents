@@ -294,15 +294,14 @@ def format_thought_question_message(question_data: dict) -> str:
 
 # ── 快速规则：config 调整类关键词 ──────────────────────────────────
 _CONFIG_KEYWORDS = [
-    # 推送数量/频率
+    # 推送数量/频率 — 词组足够具体，不会在日常讨论中出现
     "每次推送", "推送改为", "推送数量", "推送条数",
-    # 话题/来源
-    "关注话题", "只想看", "不想看", "我想看", "想看",
-    "过滤掉", "去掉", "排除", "加上", "添加",
-    "关注方向", "新闻方向", "领域",
-    # 天气
+    # 话题/来源 — 只保留组合词；"领域"、"想看"、"过滤掉"、"去掉"、"排除"、"加上"、"添加" 等
+    # 在日常 AI 讨论中极高频，误触发严重，已移除
+    "关注话题", "关注方向", "新闻方向",
+    # 天气 — 已经足够具体
     "天气改", "天气换", "城市改", "城市换", "城市设置",
-    "把城市", "改成", "换成",
+    "把城市",
     # 通用配置
     "修改配置", "更新配置", "配置修改",
     # 字段名直接提及
@@ -321,7 +320,7 @@ def classify_message_intent(text: str, today_question: str) -> str:
     策略：
     1. 关键词快速匹配 config → 无需调用 API
     2. 若今日无思考题 → 统一归为 note
-    3. 剩余情况调用 DeepSeek 判断 answer vs note
+    3. 剩余情况调用 DeepSeek 三分类（answer / note / config）
     """
     text_lower = text.lower()
 
@@ -333,7 +332,7 @@ def classify_message_intent(text: str, today_question: str) -> str:
     if not today_question:
         return "note"
 
-    # LLM 判断 answer vs note
+    # LLM 三分类（answer / note / config）
     try:
         client = get_client()
         resp = client.chat.completions.create(
@@ -342,10 +341,11 @@ def classify_message_intent(text: str, today_question: str) -> str:
                 {
                     "role": "system",
                     "content": (
-                        "判断用户消息与给定问题的关联性。"
-                        "若用户在回应或讨论该问题，回答 answer；"
-                        "若用户在分享与该问题无直接关联的独立想法，回答 note。"
-                        "只回答 answer 或 note，不要有其他内容。"
+                        "判断用户消息的意图，只回答一个词：answer / note / config。"
+                        "若用户在回应或讨论给定的问题 → answer；"
+                        "若用户在分享独立想法、观点、分析，与给定问题无直接关联 → note；"
+                        "若用户明确要求修改推送配置（如调整话题、数量、来源、天气城市等）→ config。"
+                        "只输出 answer、note 或 config，不要有其他内容。"
                     ),
                 },
                 {
@@ -357,6 +357,8 @@ def classify_message_intent(text: str, today_question: str) -> str:
             max_tokens=5,
         )
         result = resp.choices[0].message.content.strip().lower()
+        if result.startswith("config"):
+            return "config"
         return "answer" if result.startswith("answer") else "note"
     except Exception as e:
         print(f"[Intent] 意图分类 API 失败，默认 note: {e}")

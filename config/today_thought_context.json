@@ -1,79 +1,79 @@
 {
-  "date": "2026-05-20",
-  "question": "在 Agent 能力快速提升的背景下，你认为企业应优先投资于通用 Agent 的规模化部署，还是通过 Guardrails 等轻量级控制手段优化小模型在特定任务上的可靠性？",
-  "context": "今日资讯显示，通用 Agent 配置已能超越领域特定方案（如 HuggingFace 排行榜），同时 Forge 项目展示 Guardrails 可将小模型准确率从 53% 提升至 99%，这引发了关于资源分配和风险控制的权衡思考。",
+  "date": "2026-05-19",
+  "question": "当量化压缩导致LLM的安全对齐失效时，我们是否应该重新审视模型压缩与安全性的优先级，还是接受这种“安全税”作为必要的代价？",
+  "context": "研究表明量化压缩会重新引入偏见，而另一项工作则试图通过自蒸馏减少安全对齐带来的性能损失，这引发了关于模型部署中安全性与效率平衡的根本性讨论。",
   "related_articles": [
     {
-      "title": "HuggingFace Blog: The Open Agent Leaderboard",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/open-agent-leaderboard"
+      "title": "Quantization Undoes Alignment: Bias Emergence in Compressed LLMs Across Models and Precision Levels",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/quantization-undoes-alignment"
     },
     {
-      "title": "Show HN: Forge – Guardrails take an 8B model from 53% to 99% on agentic tasks",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=12345678"
+      "title": "Reducing the Safety Tax in LLM Safety Alignment with On-Policy Self-Distillation",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/reducing-safety-tax"
     }
   ],
   "all_articles": [
     {
+      "title": "Elon Musk has lost his lawsuit against Sam Altman and OpenAI",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/",
+      "ai_summary": "陪审团一致裁定马斯克对OpenAI的诉讼因超过诉讼时效而败诉，标志着这场备受关注的AI行业法律战结束。该判决对OpenAI的未来治理结构和AI行业权力格局产生重要影响。"
+    },
+    {
+      "title": "Anthropic acquires Stainless",
+      "source": "Hacker News",
+      "link": "https://www.anthropic.com/news/anthropic-acquires-stainless",
+      "ai_summary": "Anthropic收购了为OpenAI、Google等提供SDK自动化工具的初创公司Stainless，旨在强化其开发者工具生态。此举显示Anthropic正加速构建AI基础设施，与OpenAI展开更全面的竞争。"
+    },
+    {
+      "title": "Agora-1: The Multi-Agent World Model",
+      "source": "Hacker News",
+      "link": "https://odyssey.ml/introducing-agora-1",
+      "ai_summary": "Agora-1提出了一种多智能体世界模型，让多个AI代理在共享环境中协同推理和行动。这一方向对推动AI Agent从单任务执行向复杂环境协作演进具有重要价值。"
+    },
+    {
       "title": "The Open Agent Leaderboard",
       "source": "HuggingFace Blog",
       "link": "https://huggingface.co/blog/ibm-research/open-agent-leaderboard",
-      "ai_summary": "HuggingFace 联合 IBM 推出 AI Agent 能力排行榜，涵盖 SWE-Bench Verified、BrowseComp+、AppWorld 等多项指标，使用统一框架评估 Agent 表现。实验表明通用 Agent 配置已能持平甚至超越领域特定方案，为 Agent 选型和优化提供了重要参考。"
-    },
-    {
-      "title": "With Gemini 3.5 Flash, Google bets its next AI wave on agents, not chatbots",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/",
-      "ai_summary": "Google 发布 Gemini 3.5 Flash，这是其目前最强大的编码和 Agent 模型，能够自主执行复杂任务并构建软件。此举标志着 Google 将 AI 战略重心从聊天机器人转向 Agent，预示着 AI 应用范式的重大转变。"
-    },
-    {
-      "title": "Google introduces Gemini Spark, a 24/7 agentic assistant with Gmail integration, at IO 2026",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/19/google-introduces-gemini-spark-a-24-7-agentic-assistant-with-gmail-integration/",
-      "ai_summary": "Google 在 I/O 大会上推出 Gemini Spark，一款基于 Gemini 模型和 Antigravity Agent 框架的 24/7 个人助理，深度集成 Gmail。这代表了 AI 助手从被动响应到主动服务的进化，是 Agent 在日常场景中的重要落地。"
-    },
-    {
-      "title": "Show HN: Forge – Guardrails take an 8B model from 53% to 99% on agentic tasks",
-      "source": "Hacker News",
-      "link": "https://github.com/antoinezambelli/forge",
-      "ai_summary": "Forge 项目展示了通过 Guardrails（护栏）机制，将 8B 参数小模型在 Agent 任务上的准确率从 53% 提升至 99%。这一成果在 Hacker News 上获得高关注，证明了轻量级安全控制对 Agent 可靠性的巨大价值。"
-    },
-    {
-      "title": "Google Search as you know it is over",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/19/google-search-as-you-know-it-is-over/",
-      "ai_summary": "Google 将传统搜索从链接列表彻底转变为 AI 驱动的体验，包含对话式回答、自主 Agent 和交互界面。这一变革可能进一步减少网站流量，标志着搜索引擎形态的根本性重塑。"
-    },
-    {
-      "title": "Agentic app coding gets an upgrade with Google’s release of Android CLI",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/19/agentic-app-coding-gets-an-upgrade-with-googles-release-of-android-cli/",
-      "ai_summary": "Google 发布 Android CLI，专为 Claude Code 和 OpenAI Codex 等 AI 编码 Agent 设计，使开发者或 AI 助手能直接构建 Android 应用。此举将 Agent 能力扩展到移动开发领域，降低了应用开发门槛。"
+      "ai_summary": "IBM Research在HuggingFace上发布了开放智能体排行榜，系统评估不同AI Agent在各类任务中的表现。该排行榜为社区提供了标准化基准，有助于推动Agent技术的透明比较和进步。"
     },
     {
       "title": "OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/dell-codex-enterprise-partnership",
-      "ai_summary": "OpenAI 与 Dell 合作，将 Codex AI 编码 Agent 引入混合云和本地企业环境，帮助企业安全地部署 AI 编码助手。这标志着 AI Agent 从云端向企业级私有化部署的重要拓展。"
+      "ai_summary": "OpenAI与戴尔合作，将Codex AI编程助手引入混合云和本地企业环境，满足企业对数据安全和合规的需求。这标志着AI编程工具向企业级私有化部署迈出重要一步。"
     },
     {
-      "title": "How to use Google’s new AI agents to go beyond your standard searches",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/19/how-to-use-googles-new-ai-agents-to-go-beyond-your-standard-searches/",
-      "ai_summary": "Google 推出 AI 驱动的“信息 Agent”，能在后台监控主题并主动向用户推送更新。这改变了传统搜索的被动模式，使 Agent 成为信息获取的主动助手。"
+      "title": "Quantization Undoes Alignment: Bias Emergence in Compressed LLMs Across Models and Precision Levels",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2605.15208",
+      "ai_summary": "研究发现，对LLM进行量化压缩后，原本被对齐消除的偏见会重新出现，且在不同模型和精度水平下普遍存在。这对AI安全部署提出了严峻挑战，提示压缩过程需要重新考虑对齐策略。"
+    },
+    {
+      "title": "Reducing the Safety Tax in LLM Safety Alignment with On-Policy Self-Distillation",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2605.15239",
+      "ai_summary": "论文提出通过在线策略自蒸馏方法减少LLM安全对齐带来的推理能力下降（安全税）。该方法在保持安全性的同时显著降低了性能损失，为更高效的安全对齐提供了新思路。"
+    },
+    {
+      "title": "Training on Documents About Monitoring Leads to CoT Obfuscation",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2605.15257",
+      "ai_summary": "研究发现，当模型在包含监控相关文档的数据上训练后，其思维链（CoT）会主动隐藏不当意图，导致监控失效。这对依赖CoT进行AI安全监控的方法敲响了警钟。"
+    },
+    {
+      "title": "Voice AI Systems Are Vulnerable to Hidden Audio Attacks",
+      "source": "Hacker News",
+      "link": "https://spectrum.ieee.org/voice-ai-audio-attacks",
+      "ai_summary": "IEEE Spectrum报道指出，语音AI系统容易受到人耳无法察觉的隐藏音频攻击，可能被用于操控智能助手。这一发现凸显了多模态AI安全防护的紧迫性。"
     },
     {
       "title": "SDOF: Taming the Alignment Tax in Multi-Agent Orchestration with State-Constrained Dispatch",
       "source": "Arxiv AI",
       "link": "https://arxiv.org/abs/2605.15204",
-      "ai_summary": "论文提出 SDOF 方法，通过状态约束调度解决多 Agent 编排中的“对齐税”问题，即 LangChain 等框架中因阶段约束缺失导致的性能下降。该研究为提升多 Agent 系统的可靠性和效率提供了新思路。"
-    },
-    {
-      "title": "PropGuard: Safeguarding LLM-MAS via Propagation-Aware Exploration and Remediation",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/2605.16346",
-      "ai_summary": "论文提出 PropGuard 框架，通过传播感知的探索与修复机制，保障基于 LLM 的多 Agent 系统安全。该研究针对多 Agent 协作中的安全风险，为 Agent 系统的安全部署提供了重要防护手段。"
+      "ai_summary": "论文提出SDOF方法，通过状态约束调度来减少多智能体编排中的对齐开销，提升LangChain等框架的任务执行效率。这对构建更高效、更可靠的多Agent系统具有实践指导意义。"
     }
   ],
   "answered": false

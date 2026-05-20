@@ -28,7 +28,7 @@ def get_weather(location: str = "Shanghai") -> dict:
         humidity = int(curr["humidity"])
         desc = curr["weatherDesc"][0]["value"]
         wind_speed = int(curr["windspeedKmph"])
-        uv_index = int(curr.get("uvIndex", 0))
+        uv_index = int(today.get("uvIndex", curr.get("uvIndex", 0)))
 
         # 今日最高/最低
         max_temp = int(today["maxtempC"])
