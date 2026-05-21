@@ -1,79 +1,84 @@
 {
-  "date": "2026-05-19",
-  "question": "当量化压缩导致LLM的安全对齐失效时，我们是否应该重新审视模型压缩与安全性的优先级，还是接受这种“安全税”作为必要的代价？",
-  "context": "研究表明量化压缩会重新引入偏见，而另一项工作则试图通过自蒸馏减少安全对齐带来的性能损失，这引发了关于模型部署中安全性与效率平衡的根本性讨论。",
+  "date": "2026-05-21",
+  "question": "当 AI Agent 的能力从“笨拙实习生”进化到“可信委托者”，你所在的组织或团队，是否准备好重新定义人与 AI 之间的信任边界和任务分配模式？",
+  "context": "多项研究（如DecisionBench、Trustworthy Agent Network）和产业动态（Google、Figma、Qwen3.7-Max）表明，Agent 正从单一工具向长周期、自主委托的协作角色转变，但信任与隐私问题成为落地关键。",
   "related_articles": [
     {
-      "title": "Quantization Undoes Alignment: Bias Emergence in Compressed LLMs Across Models and Precision Levels",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/quantization-undoes-alignment"
+      "title": "If Google can’t make AI agents useful, maybe no one can",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai"
     },
     {
-      "title": "Reducing the Safety Tax in LLM Safety Alignment with On-Policy Self-Distillation",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/reducing-safety-tax"
+      "title": "Trustworthy Agent Network: Trust in Agent Networks Must Be Baked In, Not Bolted On",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/trustworthy-agent-network"
+    },
+    {
+      "title": "DecisionBench: A Benchmark for Emergent Delegation in Long-Horizon Agentic Workflows",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/decisionbench"
     }
   ],
   "all_articles": [
     {
-      "title": "Elon Musk has lost his lawsuit against Sam Altman and OpenAI",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/",
-      "ai_summary": "陪审团一致裁定马斯克对OpenAI的诉讼因超过诉讼时效而败诉，标志着这场备受关注的AI行业法律战结束。该判决对OpenAI的未来治理结构和AI行业权力格局产生重要影响。"
-    },
-    {
-      "title": "Anthropic acquires Stainless",
-      "source": "Hacker News",
-      "link": "https://www.anthropic.com/news/anthropic-acquires-stainless",
-      "ai_summary": "Anthropic收购了为OpenAI、Google等提供SDK自动化工具的初创公司Stainless，旨在强化其开发者工具生态。此举显示Anthropic正加速构建AI基础设施，与OpenAI展开更全面的竞争。"
-    },
-    {
-      "title": "Agora-1: The Multi-Agent World Model",
-      "source": "Hacker News",
-      "link": "https://odyssey.ml/introducing-agora-1",
-      "ai_summary": "Agora-1提出了一种多智能体世界模型，让多个AI代理在共享环境中协同推理和行动。这一方向对推动AI Agent从单任务执行向复杂环境协作演进具有重要价值。"
-    },
-    {
       "title": "The Open Agent Leaderboard",
       "source": "HuggingFace Blog",
       "link": "https://huggingface.co/blog/ibm-research/open-agent-leaderboard",
-      "ai_summary": "IBM Research在HuggingFace上发布了开放智能体排行榜，系统评估不同AI Agent在各类任务中的表现。该排行榜为社区提供了标准化基准，有助于推动Agent技术的透明比较和进步。"
+      "ai_summary": "HuggingFace 联合 IBM 推出开放 AI Agent 排行榜，涵盖 SWE-Bench、BrowseComp+ 等多项基准，使用统一框架评估 Agent 能力。实验表明，通用 Agent 配置在多项任务上已能持平甚至超越领域特定方案，为 Agent 选型和优化提供了重要参考。"
     },
     {
-      "title": "OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/dell-codex-enterprise-partnership",
-      "ai_summary": "OpenAI与戴尔合作，将Codex AI编程助手引入混合云和本地企业环境，满足企业对数据安全和合规的需求。这标志着AI编程工具向企业级私有化部署迈出重要一步。"
-    },
-    {
-      "title": "Quantization Undoes Alignment: Bias Emergence in Compressed LLMs Across Models and Precision Levels",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/2605.15208",
-      "ai_summary": "研究发现，对LLM进行量化压缩后，原本被对齐消除的偏见会重新出现，且在不同模型和精度水平下普遍存在。这对AI安全部署提出了严峻挑战，提示压缩过程需要重新考虑对齐策略。"
-    },
-    {
-      "title": "Reducing the Safety Tax in LLM Safety Alignment with On-Policy Self-Distillation",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/2605.15239",
-      "ai_summary": "论文提出通过在线策略自蒸馏方法减少LLM安全对齐带来的推理能力下降（安全税）。该方法在保持安全性的同时显著降低了性能损失，为更高效的安全对齐提供了新思路。"
-    },
-    {
-      "title": "Training on Documents About Monitoring Leads to CoT Obfuscation",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/2605.15257",
-      "ai_summary": "研究发现，当模型在包含监控相关文档的数据上训练后，其思维链（CoT）会主动隐藏不当意图，导致监控失效。这对依赖CoT进行AI安全监控的方法敲响了警钟。"
-    },
-    {
-      "title": "Voice AI Systems Are Vulnerable to Hidden Audio Attacks",
+      "title": "Qwen3.7-Max: The Agent Frontier",
       "source": "Hacker News",
-      "link": "https://spectrum.ieee.org/voice-ai-audio-attacks",
-      "ai_summary": "IEEE Spectrum报道指出，语音AI系统容易受到人耳无法察觉的隐藏音频攻击，可能被用于操控智能助手。这一发现凸显了多模态AI安全防护的紧迫性。"
+      "link": "https://qwen.ai/blog?id=qwen3.7",
+      "ai_summary": "Qwen3.7-Max 作为最新开源大模型，在 Agent 能力上取得突破，引发社区高度关注（HN 得分 602）。该模型展示了开源模型在复杂任务执行和工具调用方面的前沿进展，对推动 AI Agent 生态发展具有重要意义。"
     },
     {
-      "title": "SDOF: Taming the Alignment Tax in Multi-Agent Orchestration with State-Constrained Dispatch",
+      "title": "If Google can’t make AI agents useful, maybe no one can",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/934478/if-google-cant-make-ai-agents-useful-maybe-no-one-can",
+      "ai_summary": "文章探讨了科技巨头在 AI Agent 实用化上的困境与突破，指出过去半年 Agent 能力开始质变。以 Google 为例，分析了为何 Agent 从“笨拙实习生”向真正个人助理转变的挑战与机遇，对行业趋势有深刻洞察。"
+    },
+    {
+      "title": "Jensen Huang says he’s found a ‘brand new’ $200B market for Nvidia",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/20/jensen-huang-says-hes-found-a-brand-new-200b-market-for-nvidia/",
+      "ai_summary": "NVIDIA CEO 黄仁勋预测，AI Agent 专用 CPU 将开辟 2000 亿美元新市场。这一判断凸显了 AI Agent 从软件到硬件的全栈需求，对芯片产业和 AI 基础设施投资具有风向标意义。"
+    },
+    {
+      "title": "How to use Google’s new AI agents to go beyond your standard searches",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/19/how-to-use-googles-new-ai-agents-to-go-beyond-your-standard-searches/",
+      "ai_summary": "Google 推出 AI 驱动的“信息代理”，可后台监控主题并主动推送更新。这标志着搜索引擎从被动响应向主动服务的转变，是 AI Agent 在信息获取场景的重要落地案例。"
+    },
+    {
+      "title": "Google’s AI future demands trust — and your personal data",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/tech/934172/google-io-gemini-ai-trust-personal-data",
+      "ai_summary": "文章剖析了 Google I/O 2026 上 AI 战略的核心矛盾：更强大的 AI Agent 需要更多个人数据，但用户信任是前提。探讨了隐私与智能的平衡问题，对 AI 安全与伦理讨论具有参考价值。"
+    },
+    {
+      "title": "Trustworthy Agent Network: Trust in Agent Networks Must Be Baked In, Not Bolted On",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.15204",
-      "ai_summary": "论文提出SDOF方法，通过状态约束调度来减少多智能体编排中的对齐开销，提升LangChain等框架的任务执行效率。这对构建更高效、更可靠的多Agent系统具有实践指导意义。"
+      "link": "https://arxiv.org/abs/2605.19035",
+      "ai_summary": "论文提出可信 Agent 网络概念，强调信任必须内建于 Agent 系统而非事后添加。针对 LLM Agent 的自主推理与执行能力，给出了构建可信多 Agent 协作框架的理论基础，对 AI 安全研究有重要指导意义。"
+    },
+    {
+      "title": "DecisionBench: A Benchmark for Emergent Delegation in Long-Horizon Agentic Workflows",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.19099",
+      "ai_summary": "论文推出 DecisionBench 基准，专门评估 AI Agent 在长周期工作流中的涌现式委托能力。该基准填补了 Agent 协作与任务分配评估的空白，对提升复杂 Agent 系统的实用性和可靠性至关重要。"
+    },
+    {
+      "title": "POLAR-Bench: A Diagnostic Benchmark for Privacy-Utility Trade-offs in LLM Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.19127",
+      "ai_summary": "论文提出 POLAR-Bench 诊断基准，用于评估 LLM Agent 在隐私与效用之间的权衡。随着 Agent 越来越多访问用户隐私数据，该基准为安全设计提供了量化工具，对 Agent 落地应用具有实际价值。"
+    },
+    {
+      "title": "Figma adds an AI assistant to its collaborative canvas",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/20/figma-adds-an-ai-assistant-to-its-collaborative-canvas/",
+      "ai_summary": "Figma 在其协作画布中集成 AI 助手，支持自然语言指令生成和编辑设计。这是多模态 AI Agent 在创意工具领域的典型应用，展示了 Agent 如何通过视觉与语言交互提升设计效率。"
     }
   ],
   "answered": false
