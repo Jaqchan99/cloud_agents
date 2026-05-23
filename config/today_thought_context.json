@@ -1,84 +1,84 @@
 {
-  "date": "2026-05-22",
-  "question": "在AI Agent从技术概念走向大众市场的过程中，你认为最大的障碍是用户认知不足，还是现有基础设施（如硬件、信任机制）的缺失？",
-  "context": "Google在I/O大会上推广AI Agent生态系统遭遇用户困惑，而英伟达则看到了2000亿美元的硬件市场机会，同时多篇论文强调信任机制必须内建。这提示我们，AI Agent的普及不仅是技术问题，更是生态和用户心理的挑战。",
+  "date": "2026-05-23",
+  "question": "在Agent开发工具（如Superset）和评估基准（如AgentAtlas）快速发展的同时，安全威胁（如域伪装注入攻击）也在升级：你会如何平衡Agent的能力开放性与安全防护，来确保你的Agent应用不会成为攻击面？",
+  "context": "随着Agent从单一任务走向多Agent协作和开放世界场景，其交互复杂度激增，安全漏洞可能被放大。这不仅是技术问题，也直接影响企业采纳Agent的意愿和实际部署策略。",
   "related_articles": [
     {
-      "title": "Google is pitching an AI agent ecosystem to consumers who may not buy it",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/22/google-ai-agent-ecosystem/"
-    },
-    {
-      "title": "Jensen Huang says he’s found a ‘brand new’ $200B market for Nvidia",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/22/jensen-huang-200b-market/"
-    },
-    {
-      "title": "Trustworthy Agent Network: Trust in Agent Networks Must Be Baked In, Not Bolted On",
+      "title": "Domain-Camouflaged Injection Attacks Evade Detection in Multi-Agent LLM Systems",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.XXXX"
+      "link": "https://arxiv.org/abs/example"
+    },
+    {
+      "title": "AgentAtlas: Beyond Outcome Leaderboards for LLM Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/example"
+    },
+    {
+      "title": "Governance by Construction for Generalist Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/example"
     }
   ],
   "all_articles": [
     {
-      "title": "Launch HN: Runtime (YC P26) – Sandboxed coding agents for everyone on a team",
-      "source": "Hacker News",
-      "link": "https://www.runtm.com/",
-      "ai_summary": "Runtime 是一个面向团队成员的沙盒化编码智能体平台，旨在让团队中的每个人都能安全地使用 AI 编码助手。该项目获得了 YC 的孵化支持，反映了 AI Agent 在软件开发协作中的落地趋势。"
+      "title": "AgentAtlas: Beyond Outcome Leaderboards for LLM Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.20530",
+      "ai_summary": "该论文提出AgentAtlas，旨在超越传统结果排行榜，对LLM Agent在代码库、浏览器、操作系统等多场景下的能力进行更全面的评估。其意义在于推动Agent评估从单一结果导向转向过程与能力分析，为Agent能力评估提供新范式。"
     },
     {
-      "title": "Google is pitching an AI agent ecosystem to consumers who may not buy it",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/21/google-is-pitching-an-ai-agent-ecosystem-to-consumers-who-may-not-buy-it/",
-      "ai_summary": "Google 在 I/O 大会上向消费者推广 AI Agent 生态系统，但文章指出这一概念对普通用户而言可能过于复杂和令人困惑。这反映了 AI Agent 从技术概念向大众市场推广时面临的认知与接受度挑战。"
+      "title": "Launch HN: Superset (YC P26) – IDE for the agents era",
+      "source": "Hacker News",
+      "link": "https://github.com/superset-sh/superset",
+      "ai_summary": "Superset是一个面向AI Agent时代的IDE，允许开发者在统一环境中构建、调试和部署Agent。该项目在HN上获得高关注度，反映了开发者对Agent开发工具的需求日益增长。"
+    },
+    {
+      "title": "OpenAI named a Leader in enterprise coding agents by Gartner",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/gartner-2026-agentic-coding-leader",
+      "ai_summary": "OpenAI被Gartner评为2026年企业AI编码Agent魔力象限领导者，其Codex在创新和企业级部署方面获得认可。这标志着AI Agent在软件开发领域的应用已进入主流企业市场。"
     },
     {
       "title": "Jensen Huang says he’s found a ‘brand new’ $200B market for Nvidia",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/05/20/jensen-huang-says-hes-found-a-brand-new-200b-market-for-nvidia/",
-      "ai_summary": "英伟达 CEO 黄仁勋预测，专为 AI Agent 设计的 CPU 将开辟一个价值 2000 亿美元的全新市场。这一论断凸显了 AI Agent 对底层硬件架构的巨大需求，将深刻影响芯片产业格局。"
+      "ai_summary": "英伟达CEO黄仁勋预测，AI Agent专用CPU将创造2000亿美元的新市场。这一预测凸显了AI Agent对底层硬件需求的巨大潜力，可能重塑芯片行业格局。"
     },
     {
-      "title": "DecisionBench: A Benchmark for Emergent Delegation in Long-Horizon Agentic Workflows",
+      "title": "AgentCo-op: Retrieval-Based Synthesis of Interoperable Multi-Agent Workflows",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.19099",
-      "ai_summary": "该论文提出了 DecisionBench，一个用于评估长周期智能体工作流中涌现式委托（delegation）能力的基准测试。它填补了多智能体协作场景下任务分配与自主决策评估的空白，对构建复杂 Agent 系统具有重要参考价值。"
+      "link": "https://arxiv.org/abs/2605.20425",
+      "ai_summary": "AgentCo-op提出基于检索的多Agent工作流合成方法，解决开放科学场景下缺乏训练数据和评估指标的问题。该方法使多个Agent能够协同完成复杂任务，对推动多Agent系统实用化具有重要意义。"
     },
     {
-      "title": "AgentNLQ: A General-Purpose Agent for Natural Language to SQL",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.19010",
-      "ai_summary": "本文提出了一种通用型自然语言转 SQL（NL2SQL）智能体 AgentNLQ，旨在解决企业级关系数据查询的痛点。该研究将大语言模型与数据库交互深度结合，有望大幅降低非技术人员的数据分析门槛。"
+      "title": "Domain-Camouflaged Injection Attacks Evade Detection in Multi-Agent LLM Systems",
+      "source": "Hacker News",
+      "link": "https://arxiv.org/abs/2605.22001",
+      "ai_summary": "该研究揭示了多Agent LLM系统中一种新型域伪装注入攻击，可绕过现有检测机制。这为AI Agent系统的安全性敲响警钟，强调了在Agent交互中加强安全防护的必要性。"
     },
     {
-      "title": "Trustworthy Agent Network: Trust in Agent Networks Must Be Baked In, Not Bolted On",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.19035",
-      "ai_summary": "论文强调，在多智能体网络中，信任机制必须从设计之初就内建（baked in），而非事后附加（bolted on）。它为构建安全、可信的自主 Agent 系统提供了关键设计原则，对 AI 安全领域具有指导意义。"
+      "title": "Google is pitching an AI agent ecosystem to consumers who may not buy it",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/21/google-is-pitching-an-ai-agent-ecosystem-to-consumers-who-may-not-buy-it/",
+      "ai_summary": "Google在I/O大会上向消费者推广AI Agent生态系统，但TechCrunch分析认为消费者可能难以接受。这反映了AI Agent从技术概念到大众普及面临的认知与市场挑战。"
     },
     {
-      "title": "POLAR-Bench: A Diagnostic Benchmark for Privacy-Utility Trade-offs in LLM Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.19127",
-      "ai_summary": "POLAR-Bench 是一个诊断性基准，用于评估 LLM Agent 在隐私与效用之间的权衡。随着 Agent 越来越多地接触用户隐私数据，该基准为衡量和优化 Agent 的隐私保护能力提供了标准化工具。"
-    },
-    {
-      "title": "Hallucination as Exploit: Evidence-Carrying Multimodal Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.19192",
-      "ai_summary": "该论文揭示了多模态 Agent 中幻觉（hallucination）可被利用为安全漏洞，例如虚假视觉信息可触发恶意操作。研究提出了携带证据（evidence-carrying）的机制来缓解风险，对多模态 Agent 的安全部署具有警示意义。"
+      "title": "Open source Kanban desktop app that runs parallel agents on every card",
+      "source": "Hacker News",
+      "link": "https://www.kanbots.dev/",
+      "ai_summary": "Kanbots是一款开源看板桌面应用，每张卡片上可运行并行AI Agent。它将Agent能力融入项目管理工具，展示了Agent在提升工作效率方面的实际应用场景。"
     },
     {
       "title": "GROW: Aligning GRPO with State-Action Modeling for Open-World VLM Agents",
       "source": "Arxiv ML",
       "link": "https://arxiv.org/abs/2605.20246",
-      "ai_summary": "本文提出 GROW 方法，通过将 GRPO（一种强化学习算法）与状态-动作建模对齐，来训练开放世界中的视觉语言模型（VLM）Agent。该工作提升了 VLM Agent 在复杂开放任务中的决策能力，是多模态 Agent 研究的重要进展。"
+      "ai_summary": "GROW提出将GRPO与状态-动作建模对齐，用于开放世界视觉语言模型Agent。该方法提升了VLM Agent在复杂环境中的任务完成能力，对多模态Agent的实用化有重要推动作用。"
     },
     {
-      "title": "How Far Are We From True Auto-Research?",
+      "title": "Governance by Construction for Generalist Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.19156",
-      "ai_summary": "论文系统评估了当前自动科研（auto-research）系统的真实水平，指出虽然能生成完整论文，但质量与真正的科研能力仍有巨大差距。它为 AI Agent 在科研领域的应用设定了清醒的预期，并指明了改进方向。"
+      "link": "https://arxiv.org/abs/2605.20874",
+      "ai_summary": "该论文提出“通过构造实现治理”的方法，确保通用Agent在企业环境中安全自主运行。它解决了Agent部署中的关键治理问题，为AI Agent在企业级应用中的落地提供了安全保障框架。"
     }
   ],
   "answered": false
