@@ -1,84 +1,79 @@
 {
-  "date": "2026-05-23",
-  "question": "在Agent开发工具（如Superset）和评估基准（如AgentAtlas）快速发展的同时，安全威胁（如域伪装注入攻击）也在升级：你会如何平衡Agent的能力开放性与安全防护，来确保你的Agent应用不会成为攻击面？",
-  "context": "随着Agent从单一任务走向多Agent协作和开放世界场景，其交互复杂度激增，安全漏洞可能被放大。这不仅是技术问题，也直接影响企业采纳Agent的意愿和实际部署策略。",
+  "date": "2026-05-24",
+  "question": "当AI编码代理（如OpenAI Codex）被Gartner评为领导者，而消费者却对AI Agent生态系统持怀疑态度时，你认为企业级Agent的成熟是否意味着消费级Agent的必然跟进？还是两者将面临截然不同的采纳障碍？",
+  "context": "这个问题源于OpenAI在编码代理领域的成功与Google在消费端推广的困难之间的鲜明对比，它促使我们思考AI Agent在不同场景下的价值定位和用户接受度的差异。",
   "related_articles": [
     {
-      "title": "Domain-Camouflaged Injection Attacks Evade Detection in Multi-Agent LLM Systems",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/example"
+      "title": "OpenAI named a Leader in enterprise coding agents by Gartner",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/blog"
     },
     {
-      "title": "AgentAtlas: Beyond Outcome Leaderboards for LLM Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/example"
-    },
-    {
-      "title": "Governance by Construction for Generalist Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/example"
+      "title": "Google is pitching an AI agent ecosystem to consumers who may not buy it",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com"
     }
   ],
   "all_articles": [
     {
-      "title": "AgentAtlas: Beyond Outcome Leaderboards for LLM Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.20530",
-      "ai_summary": "该论文提出AgentAtlas，旨在超越传统结果排行榜，对LLM Agent在代码库、浏览器、操作系统等多场景下的能力进行更全面的评估。其意义在于推动Agent评估从单一结果导向转向过程与能力分析，为Agent能力评估提供新范式。"
+      "title": "OpenAI named a Leader in enterprise coding agents by Gartner",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/gartner-2026-agentic-coding-leader",
+      "ai_summary": "OpenAI 被 Gartner 评为 2026 年企业 AI 编码代理魔力象限领导者，其 Codex 产品在创新和企业级部署方面获得认可。这标志着 AI Agent 在软件开发领域的商业化应用进入新阶段，对行业竞争格局有重要影响。"
     },
     {
       "title": "Launch HN: Superset (YC P26) – IDE for the agents era",
       "source": "Hacker News",
       "link": "https://github.com/superset-sh/superset",
-      "ai_summary": "Superset是一个面向AI Agent时代的IDE，允许开发者在统一环境中构建、调试和部署Agent。该项目在HN上获得高关注度，反映了开发者对Agent开发工具的需求日益增长。"
+      "ai_summary": "Superset 是一款面向 AI Agent 时代的集成开发环境（IDE），旨在简化 Agent 的构建和部署流程。该项目在 Hacker News 上获得 128 条评论和 101 分，反映出开发者社区对 Agent 开发工具的高度关注。"
     },
     {
-      "title": "OpenAI named a Leader in enterprise coding agents by Gartner",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/gartner-2026-agentic-coding-leader",
-      "ai_summary": "OpenAI被Gartner评为2026年企业AI编码Agent魔力象限领导者，其Codex在创新和企业级部署方面获得认可。这标志着AI Agent在软件开发领域的应用已进入主流企业市场。"
-    },
-    {
-      "title": "Jensen Huang says he’s found a ‘brand new’ $200B market for Nvidia",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/20/jensen-huang-says-hes-found-a-brand-new-200b-market-for-nvidia/",
-      "ai_summary": "英伟达CEO黄仁勋预测，AI Agent专用CPU将创造2000亿美元的新市场。这一预测凸显了AI Agent对底层硬件需求的巨大潜力，可能重塑芯片行业格局。"
-    },
-    {
-      "title": "AgentCo-op: Retrieval-Based Synthesis of Interoperable Multi-Agent Workflows",
+      "title": "Planning in the LLM Era: Building for Reliability and Efficiency",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.20425",
-      "ai_summary": "AgentCo-op提出基于检索的多Agent工作流合成方法，解决开放科学场景下缺乏训练数据和评估指标的问题。该方法使多个Agent能够协同完成复杂任务，对推动多Agent系统实用化具有重要意义。"
+      "link": "https://arxiv.org/abs/2605.21902",
+      "ai_summary": "该论文系统探讨了 LLM 时代智能 Agent 的规划能力，分析了早期利用大语言模型进行规划时面临的可靠性问题，并提出了提升效率与鲁棒性的方法。这是 Agent 能力评估与优化的基础性研究，对构建可靠 Agent 系统具有指导意义。"
     },
     {
-      "title": "Domain-Camouflaged Injection Attacks Evade Detection in Multi-Agent LLM Systems",
-      "source": "Hacker News",
-      "link": "https://arxiv.org/abs/2605.22001",
-      "ai_summary": "该研究揭示了多Agent LLM系统中一种新型域伪装注入攻击，可绕过现有检测机制。这为AI Agent系统的安全性敲响警钟，强调了在Agent交互中加强安全防护的必要性。"
+      "title": "Harnesses for Inference-Time Alignment over Execution Trajectories",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2605.21516",
+      "ai_summary": "论文提出了“Harness 工程”这一推理时对齐技术，用于优化 LLM Agent 在执行轨迹上的长期表现。该工作与 HuggingFace 的 Agent 能力排行榜框架相呼应，强调了统一框架下 Agent 性能调优的重要性。"
+    },
+    {
+      "title": "SMDD-Bench: Can LLMs Solve Real-World Small Molecule Drug Design Tasks?",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.21740",
+      "ai_summary": "该研究提出了 SMDD-Bench 基准，专门评估 LLM Agent 在真实小分子药物设计任务上的表现。这是 AI Agent 在科学发现领域能力评估的重要尝试，填补了药物设计场景下 Agent 性能评测的空白。"
+    },
+    {
+      "title": "Toward AI VIS Co-Scientists: A General and End-to-End Agent Harness for Solving Complex Data Visualization Tasks",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.21825",
+      "ai_summary": "论文提出了一种通用端到端 Agent 框架，用于解决复杂数据可视化任务，旨在成为 AI 可视化协同科学家。该工作展示了 Agent 在科学数据分析中的潜力，与多模态和 Agent 工具使用能力密切相关。"
     },
     {
       "title": "Google is pitching an AI agent ecosystem to consumers who may not buy it",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/21/google-is-pitching-an-ai-agent-ecosystem-to-consumers-who-may-not-buy-it/",
-      "ai_summary": "Google在I/O大会上向消费者推广AI Agent生态系统，但TechCrunch分析认为消费者可能难以接受。这反映了AI Agent从技术概念到大众普及面临的认知与市场挑战。"
+      "link": "https://techcrunch.com/2026/05/21/google-is-pitching-an-ai-agent-ecosystem-to-consumers-who-may-not-buy-it",
+      "ai_summary": "Google 在 I/O 大会上向消费者推广 AI Agent 生态系统，但 TechCrunch 分析认为消费者可能难以接受这一概念。该文章反映了 AI Agent 从企业向消费端扩展时面临的认知与市场挑战。"
     },
     {
-      "title": "Open source Kanban desktop app that runs parallel agents on every card",
-      "source": "Hacker News",
-      "link": "https://www.kanbots.dev/",
-      "ai_summary": "Kanbots是一款开源看板桌面应用，每张卡片上可运行并行AI Agent。它将Agent能力融入项目管理工具，展示了Agent在提升工作效率方面的实际应用场景。"
-    },
-    {
-      "title": "GROW: Aligning GRPO with State-Action Modeling for Open-World VLM Agents",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/2605.20246",
-      "ai_summary": "GROW提出将GRPO与状态-动作建模对齐，用于开放世界视觉语言模型Agent。该方法提升了VLM Agent在复杂环境中的任务完成能力，对多模态Agent的实用化有重要推动作用。"
-    },
-    {
-      "title": "Governance by Construction for Generalist Agents",
+      "title": "TO-Agents: A Multi-Agent AI Pipeline for Preference-Guided Topology Optimization",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.20874",
-      "ai_summary": "该论文提出“通过构造实现治理”的方法，确保通用Agent在企业环境中安全自主运行。它解决了Agent部署中的关键治理问题，为AI Agent在企业级应用中的落地提供了安全保障框架。"
+      "link": "https://arxiv.org/abs/2605.21622",
+      "ai_summary": "论文提出了 TO-Agents 多 Agent 流水线，用于偏好引导的拓扑优化，将设计师的定性意图转化为高效结构。该工作展示了多 Agent 系统在工程优化领域的应用，体现了 Agent 协作解决复杂任务的能力。"
+    },
+    {
+      "title": "Trace2Skill: Verifier-Guided Skill Evolution for Long-Context EDA Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.21810",
+      "ai_summary": "该研究提出 Trace2Skill 方法，通过验证器引导的技能演化来提升长上下文 EDA（电子设计自动化）Agent 的性能。这是 Agent 在硬件设计领域能力提升的重要进展，与 AI Agent 能力评估和优化直接相关。"
+    },
+    {
+      "title": "AutoMCU: Feasibility-First MCU Neural Network Customization via LLM-based Multi-Agent Systems",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2605.21560",
+      "ai_summary": "论文提出了 AutoMCU 系统，利用基于 LLM 的多 Agent 系统为微控制器单元（MCU）定制神经网络，优先考虑可行性。该工作展示了 Agent 在边缘计算和资源受限设备上的应用潜力，是开源模型与 Agent 结合的实际案例。"
     }
   ],
   "answered": false
