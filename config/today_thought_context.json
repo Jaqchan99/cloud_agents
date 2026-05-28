@@ -1,84 +1,84 @@
 {
-  "date": "2026-05-27",
-  "question": "当AI Agent在编码、搜索和工作流程中逐步取代人类时，我们应如何平衡效率提升与就业结构冲击，同时避免用户因强制推广而抵触？",
-  "context": "从ClickUp裁员并引入AI Agent到DuckDuckGo因用户反抗Google AI搜索而安装量飙升，这些事件揭示了AI Agent部署中的核心矛盾：技术效率与人性化接纳的冲突，这直接关系到行业落地策略和社会影响。",
+  "date": "2026-05-28",
+  "question": "在AI Agent性能评估仍不完善（如ITBench-AA得分低、评估基准存在漂移问题）的背景下，Robinhood允许AI Agent直接进行股票交易，这是否过于冒险？我们应如何平衡AI Agent的能力进步与实际部署中的风险控制？",
+  "context": "AI Agent在专业领域（如税务、开发）展现出潜力，但基准测试显示其能力有限，同时安全漏洞和性能退化问题频发。金融交易的高风险特性使这一矛盾尤为突出，亟需探讨AI Agent落地的合理边界。",
   "related_articles": [
     {
-      "title": "What ClickUp’s mass layoff tells us about the future of work",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/27/clickup-layoff-ai-agent-future-of-work/"
+      "title": "Robinhood will let your AI agent trade stocks and make (or lose) lots of money",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai/robinhood-ai-agent-trading"
     },
     {
-      "title": "DuckDuckGo installs are up 30% as users reject being ‘force-fed’ Google’s AI Search",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/27/duckduckgo-installs-up-30-percent-google-ai-search-backlash/"
+      "title": "ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/itbench-aa"
     },
     {
       "title": "Millions of AI agents imperiled by critical vulnerability in open source package",
       "source": "Ars Technica",
-      "link": "https://arstechnica.com/2026/05/ai-agent-badhost-vulnerability-starlette/"
+      "link": "https://arstechnica.com/ai/starlette-vulnerability-ai-agents"
     }
   ],
   "all_articles": [
     {
-      "title": "Harness, Scaffold, and the AI Agent Terms Worth Getting Right",
+      "title": "ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM",
       "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/agent-glossary",
-      "ai_summary": "HuggingFace推出AI Agent能力排行榜，涵盖SWE-Bench Verified、BrowseComp+、AppWorld等多项指标，使用统一框架评估Agent表现。实验表明不同模型和框架组合在价格和性能上差异显著，通用Agent配置已能超越领域特定方案，为Agent能力评估提供了标准化参考。"
+      "link": "https://huggingface.co/blog/ibm-research/itbench-aa",
+      "ai_summary": "IBM与Artificial Analysis联合推出首个面向企业IT任务的AI Agent基准ITBench-AA，前沿模型得分均低于50%，揭示了当前AI Agent在复杂企业场景中的能力短板。该基准为评估和提升AI Agent在企业IT领域的实用性提供了关键参考。"
     },
     {
-      "title": "DeepSWE: A contamination-free benchmark for long-horizon coding agents",
+      "title": "Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs",
       "source": "Hacker News",
-      "link": "https://deepswe.datacurve.ai/blog",
-      "ai_summary": "DeepSWE是一个无污染的长周期编码Agent基准测试，旨在评估AI Agent在复杂编程任务中的表现。该基准通过避免数据泄露，为长期任务下的Agent能力提供了更可靠的评估标准。"
+      "link": "https://arps18.github.io/posts/claude-code-mastery/",
+      "ai_summary": "一篇深度实践指南，详细介绍了如何将Claude Code作为日常开发工具，涵盖Claude.md、技能、子代理、插件和MCPs等高级功能。该文章在HN上获得362分和225条评论，反映了开发者对AI Agent实际应用的高度关注。"
+    },
+    {
+      "title": "Building self-improving tax agents with Codex",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/building-self-improving-tax-agents-with-codex",
+      "ai_summary": "OpenAI联合Thrive和Crete展示了如何利用Codex构建自我改进的税务AI Agent，实现自动化申报、提高准确率并加速工作流。这标志着AI Agent在专业领域（如税务）的落地迈出了重要一步。"
     },
     {
       "title": "Millions of AI agents imperiled by critical vulnerability in open source package",
       "source": "Ars Technica",
       "link": "https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/",
-      "ai_summary": "开源包Starlette中发现名为“BadHost”的严重漏洞，影响数百万AI Agent的安全。该漏洞凸显了AI Agent依赖开源组件时的安全风险，需引起行业警惕。"
+      "ai_summary": "开源包Starlette中发现名为“BadHost”的严重漏洞，每周下载量达3.25亿次，威胁数百万AI Agent的安全。该事件凸显了AI Agent生态中开源组件的安全风险，亟需行业重视。"
     },
     {
-      "title": "What ClickUp’s mass layoff tells us about the future of work",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/25/what-clickups-mass-layoff-tells-us-about-the-future-of-work/",
-      "ai_summary": "ClickUp裁员数百人并引入数千AI Agent，反映了AI Agent在职场中的替代趋势。这一事件揭示了AI Agent在提升效率的同时，对就业结构带来的深远影响。"
+      "title": "The MiniMax-M2 Series: Mini Activations Unleashing Max Real-World Intelligence",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.26494",
+      "ai_summary": "MiniMax发布M2系列混合专家模型，基于“小激活释放大智能”原则，在保持高效推理的同时提升真实世界任务性能。该开源模型系列为社区提供了新的高效大语言模型选择。"
+    },
+    {
+      "title": "Robinhood will let your AI agent trade stocks and make (or lose) lots of money",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/938095/robinhood-ai-agent-stock-trading",
+      "ai_summary": "Robinhood宣布开放交易平台给AI Agent，允许用户为AI代理创建独立账户并预存资金进行股票交易。此举将AI Agent的应用拓展至金融交易领域，但也引发了关于风险控制的讨论。"
     },
     {
       "title": "DuckDuckGo installs are up 30% as users reject being ‘force-fed’ Google’s AI Search",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/05/26/duckduckgo-installs-are-up-30-as-users-reject-being-force-fed-googles-ai-search/",
-      "ai_summary": "Google在I/O 2026上全面改造搜索，用AI Agent取代蓝色链接，引发用户反弹，DuckDuckGo安装量飙升30%。这表明用户对AI搜索的强制推广存在抵触情绪，隐私和选择权成为关键议题。"
+      "ai_summary": "Google在I/O 2026上全面用AI Agent取代蓝色链接，引发用户反弹，DuckDuckGo安装量飙升30%。这反映了用户对AI过度侵入搜索体验的抵触情绪，对AI产品设计具有警示意义。"
     },
     {
-      "title": "Toward Reliable Design of LLM-Enabled Agentic Workflows: Optimizing Latency-Reliability-Cost Tradeoffs",
+      "title": "Your Agents Are Aging Too: Agent Lifespan Engineering for Deployed Systems",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.23929",
-      "ai_summary": "论文探讨了LLM驱动的Agent工作流在延迟、可靠性和成本之间的权衡优化。为设计高效、可靠的AI Agent系统提供了理论指导，对实际部署具有重要意义。"
+      "link": "https://arxiv.org/abs/2605.26302",
+      "ai_summary": "论文提出“Agent寿命工程”概念，指出长期部署的AI Agent会随时间性能退化，但现有评估仍基于初始状态。该研究为构建可持续运行的AI Agent系统提供了新视角。"
     },
     {
-      "title": "Mixture of Complementary Agents for Robust LLM Ensemble",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/2605.24048",
-      "ai_summary": "提出混合互补Agent的集成方法，通过多AI协作提升LLM的鲁棒性。该研究为构建更稳定、准确的AI Agent系统提供了新思路。"
-    },
-    {
-      "title": "Context: Proactive Goal-Directed Intelligence via Composable Sandboxed Programs, Declarative Wiring, and Structured Interaction",
+      "title": "Anchor: Mitigating Artifact Drift in Agent Benchmark Generation",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.23928",
-      "ai_summary": "提出Context架构，通过可组合沙盒程序和声明式布线实现主动目标导向的智能。该研究旨在取代被动问答聊天机器人，推动AI Agent向更主动、结构化的交互发展。"
+      "link": "https://arxiv.org/abs/2605.26321",
+      "ai_summary": "论文提出Anchor方法，用于缓解AI Agent基准生成中的“工件漂移”问题，确保评估环境长期稳定。这对提升AI Agent基准的可靠性和可比性具有重要意义。"
     },
     {
-      "title": "DRIVE: Modeling Skills at the Reasoning and Interaction Levels for Web Agents under Continual Learning",
+      "title": "Is Agent Memory a Database? Rethinking Data Foundations for Long-Term AI Agent Memory",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.23939",
-      "ai_summary": "DRIVE框架为Web Agent建模推理和交互技能，支持持续学习。该研究提升了Agent在动态网页环境中的适应性和任务执行能力。"
-    },
-    {
-      "title": "Agent Memory: An Anatomy",
-      "source": "Hacker News",
-      "link": "https://brgsk.xyz/agent-memory-anatomy/",
-      "ai_summary": "文章深入剖析了AI Agent的记忆机制，探讨其结构和工作原理。对理解Agent如何存储和利用信息以提升性能具有参考价值。"
+      "link": "https://arxiv.org/abs/2605.26252",
+      "ai_summary": "论文重新思考AI Agent长期记忆的数据基础，探讨是否应将Agent记忆视为数据库。该研究为设计更高效的持久化记忆系统提供了理论指导。"
     }
   ],
   "answered": false
