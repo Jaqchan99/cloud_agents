@@ -1,84 +1,79 @@
 {
-  "date": "2026-05-28",
-  "question": "在AI Agent性能评估仍不完善（如ITBench-AA得分低、评估基准存在漂移问题）的背景下，Robinhood允许AI Agent直接进行股票交易，这是否过于冒险？我们应如何平衡AI Agent的能力进步与实际部署中的风险控制？",
-  "context": "AI Agent在专业领域（如税务、开发）展现出潜力，但基准测试显示其能力有限，同时安全漏洞和性能退化问题频发。金融交易的高风险特性使这一矛盾尤为突出，亟需探讨AI Agent落地的合理边界。",
+  "date": "2026-05-29",
+  "question": "当AI Agent能够自主交易股票或执行税务申报时，人类应该保留多大程度的最终控制权？这种控制权的边界是否应该因任务的风险等级而动态调整？",
+  "context": "Robinhood允许AI Agent独立交易股票，OpenAI构建自我改进的税务Agent，这些进展让AI Agent从辅助工具变为自主行动者。这引发了关于责任归属、风险控制和人类监督的紧迫问题，尤其是在金融、法律等高风险领域。",
   "related_articles": [
     {
       "title": "Robinhood will let your AI agent trade stocks and make (or lose) lots of money",
       "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai/robinhood-ai-agent-trading"
-    },
-    {
-      "title": "ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/itbench-aa"
-    },
-    {
-      "title": "Millions of AI agents imperiled by critical vulnerability in open source package",
-      "source": "Ars Technica",
-      "link": "https://arstechnica.com/ai/starlette-vulnerability-ai-agents"
-    }
-  ],
-  "all_articles": [
-    {
-      "title": "ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/ibm-research/itbench-aa",
-      "ai_summary": "IBM与Artificial Analysis联合推出首个面向企业IT任务的AI Agent基准ITBench-AA，前沿模型得分均低于50%，揭示了当前AI Agent在复杂企业场景中的能力短板。该基准为评估和提升AI Agent在企业IT领域的实用性提供了关键参考。"
-    },
-    {
-      "title": "Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs",
-      "source": "Hacker News",
-      "link": "https://arps18.github.io/posts/claude-code-mastery/",
-      "ai_summary": "一篇深度实践指南，详细介绍了如何将Claude Code作为日常开发工具，涵盖Claude.md、技能、子代理、插件和MCPs等高级功能。该文章在HN上获得362分和225条评论，反映了开发者对AI Agent实际应用的高度关注。"
+      "link": "https://www.theverge.com/ai"
     },
     {
       "title": "Building self-improving tax agents with Codex",
       "source": "OpenAI Blog",
-      "link": "https://openai.com/index/building-self-improving-tax-agents-with-codex",
-      "ai_summary": "OpenAI联合Thrive和Crete展示了如何利用Codex构建自我改进的税务AI Agent，实现自动化申报、提高准确率并加速工作流。这标志着AI Agent在专业领域（如税务）的落地迈出了重要一步。"
+      "link": "https://openai.com/blog"
+    }
+  ],
+  "all_articles": [
+    {
+      "title": "Anthropic releases Opus 4.8 with new ‘dynamic workflow’ tool",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/",
+      "ai_summary": "Anthropic发布了Opus 4.8模型，并引入名为Dynamic Workflows的新工具，用于协调子代理集群。这标志着前沿模型在Agent编排能力上的重要进展，可能推动复杂多Agent系统的实际应用。"
+    },
+    {
+      "title": "The internet is being rebuilt for machines",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/28/the-internet-is-being-rebuilt-for-machines/",
+      "ai_summary": "随着AI Agent从实验转向生产，AWS、Cloudflare等公司正在重新设计云基础设施，以适应机器生成流量主导的未来。这反映了AI Agent规模化部署对底层架构的深远影响，是行业趋势的重要信号。"
     },
     {
       "title": "Millions of AI agents imperiled by critical vulnerability in open source package",
       "source": "Ars Technica",
       "link": "https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/",
-      "ai_summary": "开源包Starlette中发现名为“BadHost”的严重漏洞，每周下载量达3.25亿次，威胁数百万AI Agent的安全。该事件凸显了AI Agent生态中开源组件的安全风险，亟需行业重视。"
-    },
-    {
-      "title": "The MiniMax-M2 Series: Mini Activations Unleashing Max Real-World Intelligence",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.26494",
-      "ai_summary": "MiniMax发布M2系列混合专家模型，基于“小激活释放大智能”原则，在保持高效推理的同时提升真实世界任务性能。该开源模型系列为社区提供了新的高效大语言模型选择。"
+      "ai_summary": "开源包Starlette中发现名为BadHost的严重漏洞，影响数百万AI Agent。这凸显了AI Agent供应链安全的脆弱性，提醒开发者需加强依赖管理。"
     },
     {
       "title": "Robinhood will let your AI agent trade stocks and make (or lose) lots of money",
       "source": "The Verge AI",
       "link": "https://www.theverge.com/ai-artificial-intelligence/938095/robinhood-ai-agent-stock-trading",
-      "ai_summary": "Robinhood宣布开放交易平台给AI Agent，允许用户为AI代理创建独立账户并预存资金进行股票交易。此举将AI Agent的应用拓展至金融交易领域，但也引发了关于风险控制的讨论。"
+      "ai_summary": "Robinhood宣布允许AI Agent独立交易股票，用户可为Agent创建独立账户并注入资金。这是金融领域Agent应用的重要里程碑，但也引发了对风险控制和监管的讨论。"
     },
     {
-      "title": "DuckDuckGo installs are up 30% as users reject being ‘force-fed’ Google’s AI Search",
+      "title": "Laguna M.1/XS.2 Technical Report",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2605.27605",
+      "ai_summary": "报告介绍了Laguna M.1和XS.2两个MoE基础模型，专为长周期Agent编码任务设计，M.1总参数量达2258亿。这代表了开源模型在Agentic编码领域的最新突破，可能推动代码生成Agent的性能提升。"
+    },
+    {
+      "title": "ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/ibm-research/itbench-aa",
+      "ai_summary": "IBM和Artificial Analysis发布了首个企业IT任务Agent基准ITBench-AA，前沿模型得分低于50%。这揭示了当前AI Agent在复杂企业场景中的能力差距，为Agent评估提供了新标准。"
+    },
+    {
+      "title": "Building self-improving tax agents with Codex",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/building-self-improving-tax-agents-with-codex",
+      "ai_summary": "OpenAI与Thrive、Crete合作，利用Codex构建了自我改进的税务Agent，实现自动化申报、提高准确性并加速工作流。这展示了Agent在专业领域的落地潜力，强调了自我优化能力的重要性。"
+    },
+    {
+      "title": "Asana acquires no-code agent-builder StackAI",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/26/duckduckgo-installs-are-up-30-as-users-reject-being-force-fed-googles-ai-search/",
-      "ai_summary": "Google在I/O 2026上全面用AI Agent取代蓝色链接，引发用户反弹，DuckDuckGo安装量飙升30%。这反映了用户对AI过度侵入搜索体验的抵触情绪，对AI产品设计具有警示意义。"
+      "link": "https://techcrunch.com/2026/05/28/asana-acquires-no-code-agent-builder-stack-ai/",
+      "ai_summary": "Asana收购了无代码Agent构建平台StackAI，计划将其整合到AI工作流工具中。这反映了企业级Agent平台的市场整合趋势，无代码化降低了Agent开发门槛。"
     },
     {
-      "title": "Your Agents Are Aging Too: Agent Lifespan Engineering for Deployed Systems",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.26302",
-      "ai_summary": "论文提出“Agent寿命工程”概念，指出长期部署的AI Agent会随时间性能退化，但现有评估仍基于初始状态。该研究为构建可持续运行的AI Agent系统提供了新视角。"
+      "title": "Fed up with vibe coders, dev sneaks data-nuking prompt injection into their code",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/security/2026/05/fed-up-with-vibe-coders-dev-sneaks-data-nuking-prompt-injection-into-their-code/",
+      "ai_summary": "一名开发者因不满AI编码Agent的滥用，在jqwik库中植入提示注入，导致Agent删除应用输出。这暴露了AI Agent供应链中的恶意攻击风险，引发对Agent行为安全的关注。"
     },
     {
-      "title": "Anchor: Mitigating Artifact Drift in Agent Benchmark Generation",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.26321",
-      "ai_summary": "论文提出Anchor方法，用于缓解AI Agent基准生成中的“工件漂移”问题，确保评估环境长期稳定。这对提升AI Agent基准的可靠性和可比性具有重要意义。"
-    },
-    {
-      "title": "Is Agent Memory a Database? Rethinking Data Foundations for Long-Term AI Agent Memory",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.26252",
-      "ai_summary": "论文重新思考AI Agent长期记忆的数据基础，探讨是否应将Agent记忆视为数据库。该研究为设计更高效的持久化记忆系统提供了理论指导。"
+      "title": "Sesame, the conversational AI startup from Oculus founders, launches its iOS app",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/05/28/sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app/",
+      "ai_summary": "Oculus创始人创立的Sesame公司发布iOS应用，提供更自然的对话式AI Agent交互体验。这标志着多模态对话AI从实验室走向大众，可能改变人机交互方式。"
     }
   ],
   "answered": false
