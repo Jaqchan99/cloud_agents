@@ -1,79 +1,84 @@
 {
-  "date": "2026-05-29",
-  "question": "当AI Agent能够自主交易股票或执行税务申报时，人类应该保留多大程度的最终控制权？这种控制权的边界是否应该因任务的风险等级而动态调整？",
-  "context": "Robinhood允许AI Agent独立交易股票，OpenAI构建自我改进的税务Agent，这些进展让AI Agent从辅助工具变为自主行动者。这引发了关于责任归属、风险控制和人类监督的紧迫问题，尤其是在金融、法律等高风险领域。",
+  "date": "2026-06-12",
+  "question": "在AI Agent能力快速提升的背景下，如何平衡其自主决策的潜力与面向公众的安全要求？当前部署的Agentic框架在安全方面存在哪些关键缺口，又该如何弥补？",
+  "context": "多篇研究指出AI Agent在工具使用、推理决策和科学探索上取得进展，但《The Containment Gap》等文章揭示了已部署框架在安全防护上的严重不足，这直接关系到Agent能否安全地融入企业工作流和公共领域。",
   "related_articles": [
     {
-      "title": "Robinhood will let your AI agent trade stocks and make (or lose) lots of money",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai"
+      "title": "The Containment Gap: How Deployed Agentic AI Frameworks Fail Public-Facing Safety Requirements",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/xxxx.xxxxx"
     },
     {
-      "title": "Building self-improving tax agents with Codex",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/blog"
+      "title": "Strategic Decision Support for AI Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/xxxx.xxxxx"
+    },
+    {
+      "title": "Show HN: Claw Patrol, a security firewall for agents",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=xxxxx"
     }
   ],
   "all_articles": [
     {
-      "title": "Anthropic releases Opus 4.8 with new ‘dynamic workflow’ tool",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/",
-      "ai_summary": "Anthropic发布了Opus 4.8模型，并引入名为Dynamic Workflows的新工具，用于协调子代理集群。这标志着前沿模型在Agent编排能力上的重要进展，可能推动复杂多Agent系统的实际应用。"
-    },
-    {
-      "title": "The internet is being rebuilt for machines",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/28/the-internet-is-being-rebuilt-for-machines/",
-      "ai_summary": "随着AI Agent从实验转向生产，AWS、Cloudflare等公司正在重新设计云基础设施，以适应机器生成流量主导的未来。这反映了AI Agent规模化部署对底层架构的深远影响，是行业趋势的重要信号。"
-    },
-    {
-      "title": "Millions of AI agents imperiled by critical vulnerability in open source package",
-      "source": "Ars Technica",
-      "link": "https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/",
-      "ai_summary": "开源包Starlette中发现名为BadHost的严重漏洞，影响数百万AI Agent。这凸显了AI Agent供应链安全的脆弱性，提醒开发者需加强依赖管理。"
-    },
-    {
-      "title": "Robinhood will let your AI agent trade stocks and make (or lose) lots of money",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/938095/robinhood-ai-agent-stock-trading",
-      "ai_summary": "Robinhood宣布允许AI Agent独立交易股票，用户可为Agent创建独立账户并注入资金。这是金融领域Agent应用的重要里程碑，但也引发了对风险控制和监管的讨论。"
-    },
-    {
-      "title": "Laguna M.1/XS.2 Technical Report",
+      "title": "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2605.27605",
-      "ai_summary": "报告介绍了Laguna M.1和XS.2两个MoE基础模型，专为长周期Agent编码任务设计，M.1总参数量达2258亿。这代表了开源模型在Agentic编码领域的最新突破，可能推动代码生成Agent的性能提升。"
+      "link": "https://arxiv.org/abs/2606.12451",
+      "ai_summary": "本文提出ToolSense框架，用于审计大语言模型中的参数化工具知识，解决工具检索瓶颈问题。该框架对评估AI Agent的工具使用能力具有重要意义，有助于提升Agent在大型工具目录中的检索效率。"
     },
     {
-      "title": "ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/ibm-research/itbench-aa",
-      "ai_summary": "IBM和Artificial Analysis发布了首个企业IT任务Agent基准ITBench-AA，前沿模型得分低于50%。这揭示了当前AI Agent在复杂企业场景中的能力差距，为Agent评估提供了新标准。"
+      "title": "Arbor: Tree Search as a Cognition Layer for Autonomous Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.12563",
+      "ai_summary": "Arbor是一个多智能体框架，将结构化树搜索作为自主Agent的认知层，适用于大规模有状态动作空间。该工作为提升Agent的决策推理能力提供了新思路，是AI Agent领域的重要进展。"
     },
     {
-      "title": "Building self-improving tax agents with Codex",
+      "title": "Strategic Decision Support for AI Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.12587",
+      "ai_summary": "本文探讨了AI Agent的战略决策支持问题，将传统决策支持研究扩展到现代Agent系统。该研究对于理解人机协作和Agent自主决策的边界具有重要价值。"
+    },
+    {
+      "title": "Evoflux: Inference-Time Evolution of Executable Tool Workflows for Compact Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.12674",
+      "ai_summary": "Evoflux提出在推理时演化可执行工具工作流的方法，使紧凑型语言模型能更高效地使用工具。该工作降低了Agent部署的成本和延迟，对推动轻量级Agent应用有实际意义。"
+    },
+    {
+      "title": "Benchmarking AI Agents for Addressing Scientific Challenges Across Scales",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.12736",
+      "ai_summary": "本文对AI Agent在跨尺度科学挑战中的实际能力进行了基准测试，揭示了其在真实研究环境中的表现。该评估为AI Agent在科研领域的应用提供了重要参考。"
+    },
+    {
+      "title": "The Containment Gap: How Deployed Agentic AI Frameworks Fail Public-Facing Safety Requirements",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.12797",
+      "ai_summary": "本文分析了已部署的Agentic AI框架在满足面向公众的安全要求方面的不足，指出了关键的安全漏洞。该研究对AI安全领域具有警示意义，强调了Agent系统安全设计的紧迫性。"
+    },
+    {
+      "title": "OpenAI to acquire Ona",
       "source": "OpenAI Blog",
-      "link": "https://openai.com/index/building-self-improving-tax-agents-with-codex",
-      "ai_summary": "OpenAI与Thrive、Crete合作，利用Codex构建了自我改进的税务Agent，实现自动化申报、提高准确性并加速工作流。这展示了Agent在专业领域的落地潜力，强调了自我优化能力的重要性。"
+      "link": "https://openai.com/index/openai-to-acquire-ona",
+      "ai_summary": "OpenAI计划收购Ona，以扩展Codex平台，提供安全、持久的云环境，支持企业工作流中的长期运行AI Agent。此举将强化OpenAI在企业级Agent应用中的竞争力。"
     },
     {
-      "title": "Asana acquires no-code agent-builder StackAI",
+      "title": "Datadog veterans launch AI coding startup Niteshift on a bet against Big AI lock-in",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/28/asana-acquires-no-code-agent-builder-stack-ai/",
-      "ai_summary": "Asana收购了无代码Agent构建平台StackAI，计划将其整合到AI工作流工具中。这反映了企业级Agent平台的市场整合趋势，无代码化降低了Agent开发门槛。"
+      "link": "https://techcrunch.com/2026/06/10/datadog-veterans-launch-ai-coding-startup-niteshift-on-a-bet-against-big-ai-lock-in/",
+      "ai_summary": "AI编码Agent初创公司Niteshift获得700万美元种子轮融资，旨在打破大模型厂商的锁定效应。该公司强调企业应拥有对模型选择的控制权，反映了AI Agent领域去中心化的趋势。"
     },
     {
-      "title": "Fed up with vibe coders, dev sneaks data-nuking prompt injection into their code",
-      "source": "Ars Technica",
-      "link": "https://arstechnica.com/security/2026/05/fed-up-with-vibe-coders-dev-sneaks-data-nuking-prompt-injection-into-their-code/",
-      "ai_summary": "一名开发者因不满AI编码Agent的滥用，在jqwik库中植入提示注入，导致Agent删除应用输出。这暴露了AI Agent供应链中的恶意攻击风险，引发对Agent行为安全的关注。"
-    },
-    {
-      "title": "Sesame, the conversational AI startup from Oculus founders, launches its iOS app",
+      "title": "Jedify raises $24M to help companies arm AI agents with context on their business",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/05/28/sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app/",
-      "ai_summary": "Oculus创始人创立的Sesame公司发布iOS应用，提供更自然的对话式AI Agent交互体验。这标志着多模态对话AI从实验室走向大众，可能改变人机交互方式。"
+      "link": "https://techcrunch.com/2026/06/10/jedify-raises-24m-to-help-companies-arm-ai-agents-with-context-on-their-business/",
+      "ai_summary": "Jedify完成2400万美元融资，致力于为企业AI Agent提供业务上下文支持。该投资表明市场对增强Agent情境感知能力的需求旺盛，是AI Agent落地企业的关键方向。"
+    },
+    {
+      "title": "Show HN: Claw Patrol, a security firewall for agents",
+      "source": "Hacker News",
+      "link": "https://github.com/denoland/clawpatrol",
+      "ai_summary": "Claw Patrol是一个为AI Agent设计的安全防火墙工具，在Hacker News上获得广泛关注。该工具针对Agent系统的安全防护需求，体现了社区对Agent安全问题的重视。"
     }
   ],
   "answered": false
