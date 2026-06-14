@@ -1,0 +1,106 @@
+name: 健康检查
+
+on:
+  schedule:
+    # 每天 UTC 08:07（错开整点）
+    - cron: "7 8 * * *"
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: 检测工作流失败并告警
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - name: 检查失败次数并发送 Discord 告警
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
+          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+        run: |
+          set -euo pipefail
+
+          REPO="${{ github.repository }}"
+          THRESHOLD=5
+
+          echo ">> 检查仓库 ${REPO} 的工作流状态..."
+
+          # 获取最近 40 条 run（覆盖约 10 小时的 discord_handler）
+          RUNS=$(curl -sS -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            "https://api.github.com/repos/${REPO}/actions/runs?per_page=40")
+
+          # 用 jq 统计每个 workflow 的连续失败次数
+          FAILURE_DATA=$(echo "$RUNS" | jq -r --argjson threshold "$THRESHOLD" '
+            .workflow_runs
+            | sort_by(.created_at) | reverse          # 最新在前
+            | group_by(.workflow_id)
+            | map({
+                name: .[0].name,
+                consecutive_failures: (
+                  reduce .[].conclusion as $c (
+                    {count: 0, counting: true};
+                    if .counting and $c == "failure" then
+                      {count: (.count + 1), counting: true}
+                    else
+                      {count: .count, counting: false}
+                    end
+                  ) | .count
+                )
+              })
+            | map(select(.consecutive_failures >= threshold))
+            | .[] | "\(.name)|\(.consecutive_failures)"
+          ')
+
+          if [ -z "$FAILURE_DATA" ]; then
+            echo ">> 所有工作流正常，无需告警。"
+            exit 0
+          fi
+
+          echo ">> 发现异常工作流:"
+          echo "$FAILURE_DATA"
+
+          # 构建告警消息
+          ALERT_MSG="🔴 **GitHub Actions 异常告警**"
+          ALERT_MSG="${ALERT_MSG}"$'\n'$'\n'
+          while IFS='|' read -r wf_name count; do
+            ALERT_MSG="${ALERT_MSG}• **${wf_name}**: 已连续失败 **${count}** 次"$'\n'
+          done <<< "$FAILURE_DATA"
+          ALERT_MSG="${ALERT_MSG}"$'\n'"请检查 Secrets 配置（GH_PAT 等是否过期）:"
+          ALERT_MSG="${ALERT_MSG}"$'\n'"https://github.com/${REPO}/settings/secrets/actions"
+
+          # 通过 Discord API 发私信（DM）
+          send_dm() {
+            local msg="$1"
+            # 创建 DM 频道
+            local dm_channel
+            dm_channel=$(curl -sS -H "Authorization: Bot ${DISCORD_BOT_TOKEN}" \
+              -H "Content-Type: application/json" \
+              -d "{\"recipient_id\": \"${DISCORD_USER_ID}\"}" \
+              "https://discord.com/api/v10/users/@me/channels" | jq -r '.id // empty')
+
+            if [ -z "$dm_channel" ]; then
+              echo ">> DM 频道创建失败，回退到频道消息"
+              return 1
+            fi
+
+            local resp
+            resp=$(curl -sS -H "Authorization: Bot ${DISCORD_BOT_TOKEN}" \
+              -H "Content-Type: application/json" \
+              -d "$(jq -n --arg content "$msg" '{content: $content}')" \
+              "https://discord.com/api/v10/channels/${dm_channel}/messages")
+
+            echo ">> 告警已发送到 DM (channel: ${dm_channel})"
+          }
+
+          send_dm "$ALERT_MSG" || {
+            # 回退：发到频道消息（@用户）
+            CHANNEL_MSG="<@${DISCORD_USER_ID}>"$'\n'$'\n'"${ALERT_MSG}"
+            curl -sS -H "Authorization: Bot ${DISCORD_BOT_TOKEN}" \
+              -H "Content-Type: application/json" \
+              -d "$(jq -n --arg content "$CHANNEL_MSG" '{content: $content}')" \
+              "https://discord.com/api/v10/channels/${DISCORD_CHANNEL_ID}/messages"
+            echo ">> 告警已发送到频道"
+          }
