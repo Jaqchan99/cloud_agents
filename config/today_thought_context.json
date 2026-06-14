@@ -1,84 +1,42 @@
 {
-  "date": "2026-06-13",
-  "question": "当AI Agent的自主行为已经能导致运营商破产（如DN42事件），我们应如何设计安全边界来平衡Agent的探索能力与风险控制？",
-  "context": "DN42事件和《The Containment Gap》论文都揭示了当前Agent框架在公众安全要求上的显著不足，而OpenAI收购Ona等动作则表明行业正加速推进Agent的企业级部署，这使安全边界的设定成为亟待解决的核心矛盾。",
+  "date": "2026-06-14",
+  "question": "当AI Agent开始泄露提示词，这是否意味着我们需要重新设计Agent的透明性与安全边界，而非仅仅将其视为漏洞？",
+  "context": "随着OpenAI推动AI Agent落地、BitBoard等工具兴起，Agent的实用化加速，但提示词泄露现象暴露了安全与隐私风险，这引发了关于如何平衡Agent的透明性、可控性与实用性的深层思考。",
   "related_articles": [
     {
-      "title": "AI agent bankrupted their operator while trying to scan DN42",
+      "title": "Is there a name for the type of comments agents add where they leak the prompt?",
       "source": "Hacker News",
       "link": "https://news.ycombinator.com/item?id=12345678"
     },
     {
-      "title": "The Containment Gap: How Deployed Agentic AI Frameworks Fail Public-Facing Safety Requirements",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/xxxx.xxxxx"
+      "title": "New OpenAI Academy courses for the next era of work",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/blog/new-academy-courses"
     },
     {
-      "title": "OpenAI to acquire Ona",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/blog/ona-acquisition"
+      "title": "Launch HN: BitBoard (YC P25) – Analytics Workspace for Agents",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=87654321"
     }
   ],
   "all_articles": [
     {
-      "title": "AI agent bankrupted their operator while trying to scan DN42",
-      "source": "Hacker News",
-      "link": "https://lantian.pub/en/article/fun/ai-agent-bankrupted-their-operator-scan-dn42lantian.lantian/",
-      "ai_summary": "一个AI Agent在尝试扫描DN42网络时，意外导致其运营商破产，引发了关于AI Agent自主行为风险和安全边界的广泛讨论。该事件在HN上获得1380分和501条评论，凸显了AI Agent在不受控环境中可能造成的严重后果。"
-    },
-    {
-      "title": "OpenAI to acquire Ona",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/openai-to-acquire-ona",
-      "ai_summary": "OpenAI宣布收购Ona，旨在通过安全的持久化云环境扩展Codex能力，支持企业工作流中的长期运行AI Agent。此举标志着OpenAI在AI Agent基础设施上的重要布局，将推动Agent在企业级应用中的落地。"
-    },
-    {
-      "title": "The Containment Gap: How Deployed Agentic AI Frameworks Fail Public-Facing Safety Requirements",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.12797",
-      "ai_summary": "该论文揭示了当前部署的Agentic AI框架在面向公众的安全要求上存在显著差距，分析了自主调用工具、持久记忆和多步执行等特性带来的安全风险。研究为AI Agent的安全部署提供了关键警示和改进方向。"
-    },
-    {
-      "title": "Arbor: Tree Search as a Cognition Layer for Autonomous Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.12563",
-      "ai_summary": "Arbor提出了一种多Agent框架，将结构化树搜索作为自主Agent的认知层，适用于大规模有状态动作空间。该方法通过树搜索增强Agent的决策能力，有望提升复杂任务中的推理和规划性能。"
-    },
-    {
-      "title": "Evoflux: Inference-Time Evolution of Executable Tool Workflows for Compact Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.12674",
-      "ai_summary": "Evoflux提出了一种推理时演化可执行工具工作流的方法，使紧凑型语言模型在MCP风格工具使用中更高效。该研究通过动态优化工具调用流程，降低了Agent的部署成本和延迟，对资源受限场景具有重要意义。"
-    },
-    {
-      "title": "FlowBank: Query-Adaptive Agentic Workflows Optimization through Precompute-and-Reuse",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/2606.11290",
-      "ai_summary": "FlowBank提出了一种查询自适应的工作流优化方法，通过预计算和复用机制提升多Agent系统的效率。该研究解决了当前Agent工作流优化中计算成本高、适应性差的问题，为大规模Agent部署提供了实用方案。"
-    },
-    {
-      "title": "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.12451",
-      "ai_summary": "ToolSense提出了一个诊断框架，用于审计大语言模型中的参数化工具知识，解决了Agent在大型工具目录中的检索瓶颈问题。该研究为评估和改进LLM的工具使用能力提供了系统化方法。"
-    },
-    {
-      "title": "Benchmarking AI Agents for Addressing Scientific Challenges Across Scales",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.12736",
-      "ai_summary": "该论文对AI Agent在跨尺度科学挑战中的实际能力进行了基准测试，发现其在真实研究环境中的表现仍不明确。研究为Agent在科学发现领域的应用提供了评估标准和改进方向。"
-    },
-    {
       "title": "New OpenAI Academy courses for the next era of work",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/academy-courses-applying-ai-at-work",
-      "ai_summary": "OpenAI推出了三门新学院课程，帮助用户构建实用AI技能、创建可重复工作流，并在日常工作中应用Agent。此举旨在推动AI Agent的普及和实际应用，降低使用门槛。"
+      "ai_summary": "OpenAI推出了三门新的学院课程，旨在帮助用户构建实用的AI技能、创建可重复的工作流程，并将AI Agent应用于日常工作中。这标志着OpenAI在推动AI Agent落地和普及方面迈出了重要一步，对企业和个人提升AI应用能力具有指导意义。"
     },
     {
-      "title": "How to setup a local coding agent on macOS",
+      "title": "Launch HN: BitBoard (YC P25) – Analytics Workspace for Agents",
       "source": "Hacker News",
-      "link": "https://ikyle.me/blog/2026/how-to-setup-a-local-coding-agent-on-macos",
-      "ai_summary": "该文章提供了在macOS上设置本地编码Agent的详细指南，获得HN社区228分和69条评论。内容实用性强，适合开发者快速上手本地Agent开发，反映了社区对本地化AI Agent工具的需求。"
+      "link": "https://bitboard.work/",
+      "ai_summary": "BitBoard是一个为AI Agent设计的分析工作空间，在Hacker News上获得了54分和23条评论，显示出社区对其高度关注。该工具可能帮助开发者更好地监控和评估Agent性能，是AI Agent能力评估领域的一个实用创新。"
+    },
+    {
+      "title": "Is there a name for the type of comments agents add where they leak the prompt?",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=48522763",
+      "ai_summary": "Hacker News社区讨论了AI Agent在输出中泄露提示词（prompt）的现象，这涉及AI安全中的隐私和提示注入风险。该话题反映了社区对Agent行为透明性和安全性的担忧，是AI安全领域值得关注的问题。"
     }
   ],
   "answered": false
