@@ -4,7 +4,6 @@
     "大语言模型与AI Agent",
     "开源模型",
     "多模态",
-    "AI安全",
     "AI Agent",
     "AI Agent能力评估"
   ],
@@ -15,7 +14,8 @@
     "BrowseComp",
     "AppWorld",
     "tau2-Bench",
-    "HuggingFace"
+    "HuggingFace",
+    "多模态模型"
   ],
   "exclude_keywords": [],
   "max_items": 10,
