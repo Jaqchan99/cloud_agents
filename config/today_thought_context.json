@@ -1,42 +1,37 @@
 {
-  "date": "2026-06-14",
-  "question": "当AI Agent开始泄露提示词，这是否意味着我们需要重新设计Agent的透明性与安全边界，而非仅仅将其视为漏洞？",
-  "context": "随着OpenAI推动AI Agent落地、BitBoard等工具兴起，Agent的实用化加速，但提示词泄露现象暴露了安全与隐私风险，这引发了关于如何平衡Agent的透明性、可控性与实用性的深层思考。",
+  "date": "2026-06-15",
+  "question": "在追求AI Agent效率时，我们是否应该优先模仿“最懒资深开发者”的思维模式，而非追求更高的算力或更复杂的推理？这种反直觉的优化策略会如何影响Agent在企业中的实际部署和成本控制？",
+  "context": "当前AI Agent面临高计算成本和效率瓶颈，而“最懒资深开发者”策略通过减少不必要的推理步骤来优化性能，这挑战了传统上追求更强大模型的思路，对实际工作流中的Agent应用有直接指导意义。",
   "related_articles": [
     {
-      "title": "Is there a name for the type of comments agents add where they leak the prompt?",
+      "title": "Ponytail – make your AI agent think like the laziest senior dev in the room",
       "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=12345678"
+      "link": "https://news.ycombinator.com/item?id=ponytail"
     },
     {
       "title": "New OpenAI Academy courses for the next era of work",
       "source": "OpenAI Blog",
-      "link": "https://openai.com/blog/new-academy-courses"
-    },
-    {
-      "title": "Launch HN: BitBoard (YC P25) – Analytics Workspace for Agents",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=87654321"
+      "link": "https://openai.com/blog/new-openai-academy-courses"
     }
   ],
   "all_articles": [
     {
+      "title": "Ponytail – make your AI agent think like the laziest senior dev in the room",
+      "source": "Hacker News",
+      "link": "https://github.com/DietrichGebert/ponytail",
+      "ai_summary": "该项目提出一种让AI Agent模仿“最懒资深开发者”思维模式的策略，旨在通过减少不必要的计算和推理步骤来提升Agent效率。其核心意义在于探索Agent行为优化路径，可能对降低AI Agent运行成本有启发价值。"
+    },
+    {
       "title": "New OpenAI Academy courses for the next era of work",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/academy-courses-applying-ai-at-work",
-      "ai_summary": "OpenAI推出了三门新的学院课程，旨在帮助用户构建实用的AI技能、创建可重复的工作流程，并将AI Agent应用于日常工作中。这标志着OpenAI在推动AI Agent落地和普及方面迈出了重要一步，对企业和个人提升AI应用能力具有指导意义。"
+      "ai_summary": "OpenAI推出三门新课程，帮助用户构建实用AI技能、创建可重复工作流，并在日常工作中应用Agent。这标志着OpenAI正从模型提供者向AI应用教育者转型，对推动Agent落地企业场景有重要意义。"
     },
     {
-      "title": "Launch HN: BitBoard (YC P25) – Analytics Workspace for Agents",
+      "title": "Inverse Rubric Optimization: A testbed for agent science",
       "source": "Hacker News",
-      "link": "https://bitboard.work/",
-      "ai_summary": "BitBoard是一个为AI Agent设计的分析工作空间，在Hacker News上获得了54分和23条评论，显示出社区对其高度关注。该工具可能帮助开发者更好地监控和评估Agent性能，是AI Agent能力评估领域的一个实用创新。"
-    },
-    {
-      "title": "Is there a name for the type of comments agents add where they leak the prompt?",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=48522763",
-      "ai_summary": "Hacker News社区讨论了AI Agent在输出中泄露提示词（prompt）的现象，这涉及AI安全中的隐私和提示注入风险。该话题反映了社区对Agent行为透明性和安全性的担忧，是AI安全领域值得关注的问题。"
+      "link": "https://fulcrum.inc/2026/06/09/inverse-rubric-optimization.html",
+      "ai_summary": "该文章介绍了一种名为“逆评分优化”的Agent科学测试平台，通过逆向设计评估标准来优化Agent行为。其意义在于为Agent能力评估提供新方法论，可能推动更科学的Agent性能基准开发。"
     }
   ],
   "answered": false
