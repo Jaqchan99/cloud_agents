@@ -1,37 +1,84 @@
 {
-  "date": "2026-06-15",
-  "question": "在追求AI Agent效率时，我们是否应该优先模仿“最懒资深开发者”的思维模式，而非追求更高的算力或更复杂的推理？这种反直觉的优化策略会如何影响Agent在企业中的实际部署和成本控制？",
-  "context": "当前AI Agent面临高计算成本和效率瓶颈，而“最懒资深开发者”策略通过减少不必要的推理步骤来优化性能，这挑战了传统上追求更强大模型的思路，对实际工作流中的Agent应用有直接指导意义。",
+  "date": "2026-06-16",
+  "question": "当AI代理逐渐成为企业核心劳动力，我们应当如何平衡其能力最大化与安全最小权限原则？",
+  "context": "Salesforce收购Fin加速AI代理部署，NewCore聚焦代理身份管理，而多篇论文强调能力最小化与隐私保护——这提示企业级AI代理正从‘能做什么’转向‘应做什么’，安全与效率的张力成为关键决策点。",
   "related_articles": [
     {
-      "title": "Ponytail – make your AI agent think like the laziest senior dev in the room",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=ponytail"
+      "title": "Salesforce acquires AI customer service platform Fin for $3.6B",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/16/salesforce-acquires-ai-customer-service-platform-fin-for-3-6b/"
     },
     {
-      "title": "New OpenAI Academy courses for the next era of work",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/blog/new-openai-academy-courses"
+      "title": "As AI agents become employees, NewCore emerges with $66M to give them identities",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/16/as-ai-agents-become-employees-newcore-emerges-with-66m-to-give-them-identities/"
+    },
+    {
+      "title": "Capability Minimization as a Safety Primitive: Risk-Aware Causal Gating for Least-Privilege LLM Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2026.06.16.capability-minimization"
     }
   ],
   "all_articles": [
     {
-      "title": "Ponytail – make your AI agent think like the laziest senior dev in the room",
-      "source": "Hacker News",
-      "link": "https://github.com/DietrichGebert/ponytail",
-      "ai_summary": "该项目提出一种让AI Agent模仿“最懒资深开发者”思维模式的策略，旨在通过减少不必要的计算和推理步骤来提升Agent效率。其核心意义在于探索Agent行为优化路径，可能对降低AI Agent运行成本有启发价值。"
+      "title": "Salesforce acquires AI customer service platform Fin for $3.6B",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/15/salesforce-acquires-ai-customer-service-platform-fin-for-3-6b/",
+      "ai_summary": "Salesforce以36亿美元收购AI客服平台Fin，旨在利用其团队和技术增强Agentforce平台，帮助企业构建自定义AI代理以自动化任务。这笔收购凸显了AI Agent在企业服务中的战略价值，预计将加速企业级AI代理的部署和竞争。"
     },
     {
-      "title": "New OpenAI Academy courses for the next era of work",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/academy-courses-applying-ai-at-work",
-      "ai_summary": "OpenAI推出三门新课程，帮助用户构建实用AI技能、创建可重复工作流，并在日常工作中应用Agent。这标志着OpenAI正从模型提供者向AI应用教育者转型，对推动Agent落地企业场景有重要意义。"
+      "title": "As AI agents become employees, NewCore emerges with $66M to give them identities",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/15/ai-agents-are-becoming-employees-newcore-emerges-with-66m-to-give-them-identities/",
+      "ai_summary": "NewCore获得6600万美元融资，专注于为AI代理提供身份管理，认为企业安全的下一个挑战是管理AI代理而非人类。这反映了AI Agent在企业中角色日益重要，身份和权限管理成为关键基础设施需求。"
     },
     {
-      "title": "Inverse Rubric Optimization: A testbed for agent science",
-      "source": "Hacker News",
-      "link": "https://fulcrum.inc/2026/06/09/inverse-rubric-optimization.html",
-      "ai_summary": "该文章介绍了一种名为“逆评分优化”的Agent科学测试平台，通过逆向设计评估标准来优化Agent行为。其意义在于为Agent能力评估提供新方法论，可能推动更科学的Agent性能基准开发。"
+      "title": "Orchestra-o1: Omnimodal Agent Orchestration",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.13707",
+      "ai_summary": "该论文提出Orchestra-o1框架，实现多模态代理编排，从单代理工作流转向多代理系统。这推动了AI Agent协作能力的发展，为复杂任务中的多代理协同提供了新范式。"
+    },
+    {
+      "title": "WorkBench Revisited: Workplace Agents Two Years On",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.13715",
+      "ai_summary": "论文回顾了WorkBench基准测试两年来的进展，指出2024年3月最佳代理GPT-4仅完成43%任务且存在有害行为。这强调了AI Agent能力评估的重要性，并揭示了当前代理在可靠性和安全性上的不足。"
+    },
+    {
+      "title": "Hybrid Open-Ended Tri-Evolution Makes Better Deep Researcher",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.13710",
+      "ai_summary": "该论文提出混合开放式三进化方法，用于改进深度研究型AI代理，旨在推动通用人工智能在真实世界中的应用。这为AI Agent在复杂研究任务中的自主进化提供了新思路。"
+    },
+    {
+      "title": "Capability Minimization as a Safety Primitive: Risk-Aware Causal Gating for Least-Privilege LLM Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.13884",
+      "ai_summary": "论文提出能力最小化作为安全原语，通过风险感知因果门控实现最小权限LLM代理，减少错误输出带来的成本。这为AI Agent的安全性设计提供了理论基础，尤其适用于高风险决策场景。"
+    },
+    {
+      "title": "Minim: Privacy-Aware Minimal View for Agents via Trusted Local Sanitization",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.13949",
+      "ai_summary": "论文提出Minim框架，通过可信本地清理为AI代理提供隐私感知的最小视图，保护用户界面状态中的敏感信息。这解决了AI Agent在复杂环境中隐私保护的关键挑战。"
+    },
+    {
+      "title": "YeasierAgent: Agentic Social Sandbox as a Canvas for Intent-Driven Creation of Platform-Agnostic Symbiotic Agent-Native Applications",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.13722",
+      "ai_summary": "该论文介绍YeasierAgent，一种基于共生代理和叙事世界的应用构建范式，支持意图驱动的平台无关应用创建。这拓展了AI Agent在社交和交互场景中的应用边界。"
+    },
+    {
+      "title": "TwinBI: An Agentic Digital Twin for Efficient Augmented Interactions with Business Intelligence Dashboards",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.13731",
+      "ai_summary": "论文提出TwinBI，一种代理数字孪生系统，用于增强与商业智能仪表盘的交互，解决LLM辅助与仪表盘模式不同步的问题。这提升了AI Agent在数据分析领域的实用性和效率。"
+    },
+    {
+      "title": "A Multi-Agent AI System for Automated High School Transcript Processing: Collaborative Document Analysis at Scale",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.13916",
+      "ai_summary": "论文提出多代理AI系统，用于自动化处理高中成绩单，解决大学招生中大规模文档分析的挑战。这展示了AI Agent在文档处理领域的规模化应用潜力。"
     }
   ],
   "answered": false
