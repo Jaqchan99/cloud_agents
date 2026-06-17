@@ -1,22 +1,22 @@
 {
-  "date": "2026-06-16",
-  "question": "当AI代理逐渐成为企业核心劳动力，我们应当如何平衡其能力最大化与安全最小权限原则？",
-  "context": "Salesforce收购Fin加速AI代理部署，NewCore聚焦代理身份管理，而多篇论文强调能力最小化与隐私保护——这提示企业级AI代理正从‘能做什么’转向‘应做什么’，安全与效率的张力成为关键决策点。",
+  "date": "2026-06-17",
+  "question": "在AI Agent快速融入企业核心流程的背景下，我们是否正在低估“认知债务”的风险——即人类过度依赖AI推理而积累的未验证假设，可能如何影响Agent系统的长期可靠性与安全治理？",
+  "context": "随着Salesforce以36亿美元收购AI客服平台、NewCore为AI Agent提供数字身份等事件，企业正加速部署AI Agent；然而“认知债务”理论警示，这种智力杠杆可能带来系统性脆弱性，尤其当Agent间的信任管理（如多Agent系统）和安全基准（如OSGuard）尚未成熟时。",
   "related_articles": [
     {
-      "title": "Salesforce acquires AI customer service platform Fin for $3.6B",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/16/salesforce-acquires-ai-customer-service-platform-fin-for-3-6b/"
-    },
-    {
-      "title": "As AI agents become employees, NewCore emerges with $66M to give them identities",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/16/as-ai-agents-become-employees-newcore-emerges-with-66m-to-give-them-identities/"
-    },
-    {
-      "title": "Capability Minimization as a Safety Primitive: Risk-Aware Causal Gating for Least-Privilege LLM Agents",
+      "title": "Cognitive Debt: AI as Intellectual Leverage and the Dynamics of Systemic Fragility",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2026.06.16.capability-minimization"
+      "link": "https://arxiv.org/abs/2406.xxxxx"
+    },
+    {
+      "title": "Trust Between AI Agents: Measuring Formation, Breakage, and Recovery, with Implications for Governing Multi-Agent Systems",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2406.xxxxx"
+    },
+    {
+      "title": "OSGuard: A Benchmark for Safety in Computer-Use Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2406.xxxxx"
     }
   ],
   "all_articles": [
@@ -24,61 +24,61 @@
       "title": "Salesforce acquires AI customer service platform Fin for $3.6B",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/06/15/salesforce-acquires-ai-customer-service-platform-fin-for-3-6b/",
-      "ai_summary": "Salesforce以36亿美元收购AI客服平台Fin，旨在利用其团队和技术增强Agentforce平台，帮助企业构建自定义AI代理以自动化任务。这笔收购凸显了AI Agent在企业服务中的战略价值，预计将加速企业级AI代理的部署和竞争。"
+      "ai_summary": "Salesforce以36亿美元收购AI客服平台Fin，旨在利用其团队和技术增强现有Agentforce平台，用于构建自定义AI代理以自动化任务。这笔巨额收购凸显了企业级AI Agent在客户服务领域的战略价值，可能加速AI客服市场的整合。"
     },
     {
       "title": "As AI agents become employees, NewCore emerges with $66M to give them identities",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/06/15/ai-agents-are-becoming-employees-newcore-emerges-with-66m-to-give-them-identities/",
-      "ai_summary": "NewCore获得6600万美元融资，专注于为AI代理提供身份管理，认为企业安全的下一个挑战是管理AI代理而非人类。这反映了AI Agent在企业中角色日益重要，身份和权限管理成为关键基础设施需求。"
+      "ai_summary": "NewCore获得6600万美元融资，专注于为AI Agent提供数字身份管理，认为企业安全的下一个挑战是管理AI代理而非人类。这反映了AI Agent在企业中角色日益重要，身份与安全基础设施成为新赛道。"
     },
     {
-      "title": "Orchestra-o1: Omnimodal Agent Orchestration",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.13707",
-      "ai_summary": "该论文提出Orchestra-o1框架，实现多模态代理编排，从单代理工作流转向多代理系统。这推动了AI Agent协作能力的发展，为复杂任务中的多代理协同提供了新范式。"
+      "title": "Malaysia’s AI agent-powered messaging app Respond.io raises $62.5M, eyes acquisitions",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/15/malaysias-respond-io-raises-62-5m-eyes-acquisitions-in-north-america-and-europe/",
+      "ai_summary": "马来西亚AI Agent驱动的消息应用Respond.io融资6250万美元，计划收购北美和欧洲公司。其按对话收费而非按座位的模式，展示了AI Agent在客户服务领域的商业化创新。"
     },
     {
-      "title": "WorkBench Revisited: Workplace Agents Two Years On",
+      "title": "OSGuard: A Benchmark for Safety in Computer-Use Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.13715",
-      "ai_summary": "论文回顾了WorkBench基准测试两年来的进展，指出2024年3月最佳代理GPT-4仅完成43%任务且存在有害行为。这强调了AI Agent能力评估的重要性，并揭示了当前代理在可靠性和安全性上的不足。"
+      "link": "https://arxiv.org/abs/2606.15034",
+      "ai_summary": "OSGuard提出了针对计算机使用Agent的安全基准测试，强调仅评估任务完成度可能遗漏安全失败。该基准对于AI Agent在桌面和网页任务中的安全部署至关重要，推动了Agent安全评估的标准化。"
     },
     {
-      "title": "Hybrid Open-Ended Tri-Evolution Makes Better Deep Researcher",
+      "title": "Trust Between AI Agents: Measuring Formation, Breakage, and Recovery, with Implications for Governing Multi-Agent Systems",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.13710",
-      "ai_summary": "该论文提出混合开放式三进化方法，用于改进深度研究型AI代理，旨在推动通用人工智能在真实世界中的应用。这为AI Agent在复杂研究任务中的自主进化提供了新思路。"
+      "link": "https://arxiv.org/abs/2606.14923",
+      "ai_summary": "该论文研究了多Agent系统中信任的形成、破裂与恢复机制，提出标准化测量方法。随着AI Agent团队协作日益普遍，信任管理成为治理多Agent系统的关键，对Agent协作框架设计有重要指导意义。"
     },
     {
-      "title": "Capability Minimization as a Safety Primitive: Risk-Aware Causal Gating for Least-Privilege LLM Agents",
+      "title": "Visual-Seeker: Towards Visual-Native Multimodal Agentic Search via Active Visual Reasoning",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.13884",
-      "ai_summary": "论文提出能力最小化作为安全原语，通过风险感知因果门控实现最小权限LLM代理，减少错误输出带来的成本。这为AI Agent的安全性设计提供了理论基础，尤其适用于高风险决策场景。"
+      "link": "https://arxiv.org/abs/2606.15231",
+      "ai_summary": "Visual-Seeker提出了一种视觉原生的多模态Agent搜索方法，通过主动视觉推理增强事实基础。它解决了多模态大模型在视觉任务中事实性不足的问题，推动了多模态Agent在搜索领域的应用。"
     },
     {
-      "title": "Minim: Privacy-Aware Minimal View for Agents via Trusted Local Sanitization",
+      "title": "PrologMCP: A Standardized Prolog Tool Interface for LLM Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.13949",
-      "ai_summary": "论文提出Minim框架，通过可信本地清理为AI代理提供隐私感知的最小视图，保护用户界面状态中的敏感信息。这解决了AI Agent在复杂环境中隐私保护的关键挑战。"
+      "link": "https://arxiv.org/abs/2606.14935",
+      "ai_summary": "PrologMCP为LLM Agent提供了标准化的Prolog工具接口，用于处理深度演绎任务。它通过外部推理工具弥补了推理模型在复杂逻辑任务上的不足，提升了Agent的推理能力与效率。"
     },
     {
-      "title": "YeasierAgent: Agentic Social Sandbox as a Canvas for Intent-Driven Creation of Platform-Agnostic Symbiotic Agent-Native Applications",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.13722",
-      "ai_summary": "该论文介绍YeasierAgent，一种基于共生代理和叙事世界的应用构建范式，支持意图驱动的平台无关应用创建。这拓展了AI Agent在社交和交互场景中的应用边界。"
+      "title": "Remember, Don't Re-read: Stateful ReAct Agents for Token-Efficient Autonomous Experimentation",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2606.14945",
+      "ai_summary": "该论文提出状态化ReAct Agent，通过记忆机制减少重复读取，实现令牌高效的自主实验。它优化了LLM在自动化科研中的token消耗，对降低AI Agent运行成本有实际意义。"
     },
     {
-      "title": "TwinBI: An Agentic Digital Twin for Efficient Augmented Interactions with Business Intelligence Dashboards",
+      "title": "Cognitive Debt: AI as Intellectual Leverage and the Dynamics of Systemic Fragility",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.13731",
-      "ai_summary": "论文提出TwinBI，一种代理数字孪生系统，用于增强与商业智能仪表盘的交互，解决LLM辅助与仪表盘模式不同步的问题。这提升了AI Agent在数据分析领域的实用性和效率。"
+      "link": "https://arxiv.org/abs/2606.15078",
+      "ai_summary": "论文提出“认知债务”理论，指人类使用AI替代推理时积累的未验证推理义务。它警示了AI作为智力杠杆可能带来的系统性脆弱性，对AI Agent的可靠性和人类监督提出了深刻反思。"
     },
     {
-      "title": "A Multi-Agent AI System for Automated High School Transcript Processing: Collaborative Document Analysis at Scale",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.13916",
-      "ai_summary": "论文提出多代理AI系统，用于自动化处理高中成绩单，解决大学招生中大规模文档分析的挑战。这展示了AI Agent在文档处理领域的规模化应用潜力。"
+      "title": "The octopus architecture for AI agents",
+      "source": "Hacker News",
+      "link": "https://blog.goodman.dev/blog/octopus-agent-architecture/",
+      "ai_summary": "文章介绍了AI Agent的“章鱼架构”，一种多臂协作设计模式。该架构在社区引发讨论，可能为Agent的模块化与并行执行提供新思路，但尚未有大规模验证。"
     }
   ],
   "answered": false
