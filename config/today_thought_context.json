@@ -1,84 +1,79 @@
 {
-  "date": "2026-06-17",
-  "question": "在AI Agent快速融入企业核心流程的背景下，我们是否正在低估“认知债务”的风险——即人类过度依赖AI推理而积累的未验证假设，可能如何影响Agent系统的长期可靠性与安全治理？",
-  "context": "随着Salesforce以36亿美元收购AI客服平台、NewCore为AI Agent提供数字身份等事件，企业正加速部署AI Agent；然而“认知债务”理论警示，这种智力杠杆可能带来系统性脆弱性，尤其当Agent间的信任管理（如多Agent系统）和安全基准（如OSGuard）尚未成熟时。",
+  "date": "2026-06-18",
+  "question": "当AI Agent从辅助工具演变为自主协作伙伴时，我们应如何重新设计开发者工具（如IDE）来支持其原生能力，而非仅添加聊天框？",
+  "context": "今日资讯指出，Agentic编码需要超越VS Code中的聊天框，这引发了对开发者工具根本性变革的讨论——如何让Agent自主理解代码库并执行多步操作，从而改变人机协作的范式。",
   "related_articles": [
     {
-      "title": "Cognitive Debt: AI as Intellectual Leverage and the Dynamics of Systemic Fragility",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2406.xxxxx"
+      "title": "Agentic coding deserves more than a chat box bolted onto VS Code",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=123456"
     },
     {
-      "title": "Trust Between AI Agents: Measuring Formation, Breakage, and Recovery, with Implications for Governing Multi-Agent Systems",
+      "title": "Dissecting model behavior through agent trajectories",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2406.xxxxx"
-    },
-    {
-      "title": "OSGuard: A Benchmark for Safety in Computer-Use Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2406.xxxxx"
+      "link": "https://arxiv.org/abs/1234.5678"
     }
   ],
   "all_articles": [
     {
-      "title": "Salesforce acquires AI customer service platform Fin for $3.6B",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/15/salesforce-acquires-ai-customer-service-platform-fin-for-3-6b/",
-      "ai_summary": "Salesforce以36亿美元收购AI客服平台Fin，旨在利用其团队和技术增强现有Agentforce平台，用于构建自定义AI代理以自动化任务。这笔巨额收购凸显了企业级AI Agent在客户服务领域的战略价值，可能加速AI客服市场的整合。"
-    },
-    {
-      "title": "As AI agents become employees, NewCore emerges with $66M to give them identities",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/15/ai-agents-are-becoming-employees-newcore-emerges-with-66m-to-give-them-identities/",
-      "ai_summary": "NewCore获得6600万美元融资，专注于为AI Agent提供数字身份管理，认为企业安全的下一个挑战是管理AI代理而非人类。这反映了AI Agent在企业中角色日益重要，身份与安全基础设施成为新赛道。"
-    },
-    {
-      "title": "Malaysia’s AI agent-powered messaging app Respond.io raises $62.5M, eyes acquisitions",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/15/malaysias-respond-io-raises-62-5m-eyes-acquisitions-in-north-america-and-europe/",
-      "ai_summary": "马来西亚AI Agent驱动的消息应用Respond.io融资6250万美元，计划收购北美和欧洲公司。其按对话收费而非按座位的模式，展示了AI Agent在客户服务领域的商业化创新。"
-    },
-    {
-      "title": "OSGuard: A Benchmark for Safety in Computer-Use Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.15034",
-      "ai_summary": "OSGuard提出了针对计算机使用Agent的安全基准测试，强调仅评估任务完成度可能遗漏安全失败。该基准对于AI Agent在桌面和网页任务中的安全部署至关重要，推动了Agent安全评估的标准化。"
-    },
-    {
-      "title": "Trust Between AI Agents: Measuring Formation, Breakage, and Recovery, with Implications for Governing Multi-Agent Systems",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.14923",
-      "ai_summary": "该论文研究了多Agent系统中信任的形成、破裂与恢复机制，提出标准化测量方法。随着AI Agent团队协作日益普遍，信任管理成为治理多Agent系统的关键，对Agent协作框架设计有重要指导意义。"
-    },
-    {
-      "title": "Visual-Seeker: Towards Visual-Native Multimodal Agentic Search via Active Visual Reasoning",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.15231",
-      "ai_summary": "Visual-Seeker提出了一种视觉原生的多模态Agent搜索方法，通过主动视觉推理增强事实基础。它解决了多模态大模型在视觉任务中事实性不足的问题，推动了多模态Agent在搜索领域的应用。"
-    },
-    {
-      "title": "PrologMCP: A Standardized Prolog Tool Interface for LLM Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.14935",
-      "ai_summary": "PrologMCP为LLM Agent提供了标准化的Prolog工具接口，用于处理深度演绎任务。它通过外部推理工具弥补了推理模型在复杂逻辑任务上的不足，提升了Agent的推理能力与效率。"
-    },
-    {
-      "title": "Remember, Don't Re-read: Stateful ReAct Agents for Token-Efficient Autonomous Experimentation",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/2606.14945",
-      "ai_summary": "该论文提出状态化ReAct Agent，通过记忆机制减少重复读取，实现令牌高效的自主实验。它优化了LLM在自动化科研中的token消耗，对降低AI Agent运行成本有实际意义。"
-    },
-    {
-      "title": "Cognitive Debt: AI as Intellectual Leverage and the Dynamics of Systemic Fragility",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.15078",
-      "ai_summary": "论文提出“认知债务”理论，指人类使用AI替代推理时积累的未验证推理义务。它警示了AI作为智力杠杆可能带来的系统性脆弱性，对AI Agent的可靠性和人类监督提出了深刻反思。"
-    },
-    {
-      "title": "The octopus architecture for AI agents",
+      "title": "Agentic coding deserves more than a chat box bolted onto VS Code",
       "source": "Hacker News",
-      "link": "https://blog.goodman.dev/blog/octopus-agent-architecture/",
-      "ai_summary": "文章介绍了AI Agent的“章鱼架构”，一种多臂协作设计模式。该架构在社区引发讨论，可能为Agent的模块化与并行执行提供新思路，但尚未有大规模验证。"
+      "link": "https://github.com/evanklem/polypore",
+      "ai_summary": "本文讨论了当前AI编程助手（如Copilot）仅作为聊天框嵌入VS Code的局限性，提出需要更原生的Agentic编码体验。它强调Agent应能自主理解代码库、执行多步操作，而非仅提供补全建议。该观点反映了AI Agent在软件开发领域从辅助工具向自主协作伙伴演进的趋势。"
+    },
+    {
+      "title": "Dissecting model behavior through agent trajectories",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.17454",
+      "ai_summary": "该论文提出通过分析Agent轨迹来剖析模型行为，认为AI Agent性能不仅是模型问题，更是系统问题。它揭示了模型能力通过Agent框架实现时的复杂交互，为评估和优化Agent系统提供了新视角。这对理解Agent在不同任务中的表现差异具有重要意义。"
+    },
+    {
+      "title": "SEAGym: An Evaluation Environment for Self-Evolving LLM Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.17546",
+      "ai_summary": "SEAGym是一个专为自进化LLM Agent设计的评估环境，关注Agent通过改变提示、工具和记忆等结构化执行层来提升性能的过程。它填补了现有基准仅评估静态模型能力的空白，为研究Agent的持续学习和适应能力提供了标准化平台。"
+    },
+    {
+      "title": "From the Hugging Face Hub to robot hardware with Strands Agents and LeRobot",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/amazon/strands-lerobot-hub-to-hardware",
+      "ai_summary": "HuggingFace与亚马逊合作，通过Strands Agents和LeRobot将AI模型从Hub部署到真实机器人硬件。该工作展示了多模态AI Agent在机器人领域的应用，实现了从虚拟模型到物理世界的闭环。这标志着开源AI生态向具身智能迈出了重要一步。"
+    },
+    {
+      "title": "Beyond Parallel Sampling: Diverse Query Initialization for Agentic Search",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.17209",
+      "ai_summary": "该论文提出在Agent搜索中通过多样化查询初始化来扩展测试时计算，超越了传统的增加深度或广度方法。它探索了如何更高效地利用Agent的搜索能力，对提升Agent在复杂信息检索任务中的表现有直接指导意义。"
+    },
+    {
+      "title": "Can LLMs Be CEOs? Benchmarking Strategic Resource Reallocation with Multi-Role Agent Simulation",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.17459",
+      "ai_summary": "该基准测试评估LLM在战略资源重新分配中的决策能力，通过多角色Agent模拟CEO等高层管理场景。它揭示了当前模型在复杂战略规划中的局限性，为开发更强大的决策型Agent提供了评估框架。"
+    },
+    {
+      "title": "Agentic Resource Discovery: Let agents search",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/agentic-resource-discovery-launch",
+      "ai_summary": "HuggingFace推出Agentic Resource Discovery功能，让Agent能够自主搜索和发现资源。这增强了Agent在动态环境中获取信息的能力，是构建自主Agent系统的重要基础设施。"
+    },
+    {
+      "title": "Verified Detection and Prevention of Concurrency Anomalies in Multi-Agent Large Language Model Systems",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2606.17182",
+      "ai_summary": "该论文研究了多Agent LLM系统中的并发异常问题，如共享状态竞争和工具冲突，并提出了验证检测与预防方法。随着多Agent系统日益复杂，这项工作对确保系统可靠性和一致性至关重要。"
+    },
+    {
+      "title": "MemTrace: Probing What Final Accuracy Misses in Long-Term Memory",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.17328",
+      "ai_summary": "MemTrace通过追踪Agent长期记忆中的事实存储与检索过程，揭示了最终准确率指标无法捕捉的细节问题。它指出传统聚合评估可能掩盖记忆系统的深层缺陷，为改进Agent的持久记忆能力提供了新方法。"
+    },
+    {
+      "title": "ProCUA-SFT Technical Report",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2606.17321",
+      "ai_summary": "该技术报告介绍了ProCUA-SFT，一种训练计算机使用Agent（CUA）的方法，使模型能通过截图和键盘/鼠标操作与图形桌面交互。它解决了多模态Agent在真实GUI环境中操作的关键挑战，对自动化办公和测试等领域有重要应用价值。"
     }
   ],
   "answered": false
