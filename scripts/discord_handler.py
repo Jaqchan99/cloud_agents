@@ -2,6 +2,8 @@
 Discord 命令处理脚本 - 由 GitHub Actions 每 15 分钟触发
 轮询频道消息，处理用户命令，配置变更自动 commit 持久化
 同时作为每日推送守卫：检测当天是否已推送，若漏推则全天任意时刻补发
+
+支持双频道：主频道（生产）和测试频道（隔离配置）
 """
 import sys
 import json
@@ -10,20 +12,45 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
-sys.path.insert(0, str(Path(__file__).parent))  # 确保 daily_push 可被导入
+sys.path.insert(0, str(Path(__file__).parent))
 
 from ai_processor import process_user_command
 from discord_client import get_messages, send_message, get_channel_id, get_user_id
+from prompts import get
 
+# ── 生产频道路径 ──
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "user_config.json"
 LAST_MSG_ID_PATH = Path(__file__).parent.parent / "config" / "last_discord_msg_id.txt"
 LAST_PUSH_DATE_PATH = Path(__file__).parent.parent / "config" / "last_push_date.txt"
 THOUGHT_CONTEXT_PATH = Path(__file__).parent.parent / "config" / "today_thought_context.json"
 
-# 守卫检测窗口：北京时间 08:00-23:00（UTC 00:00-15:00）
-# 扩大窗口，使任意一次 discord_handler 触发都能补发
-PUSH_GUARD_START_BJ = 8   # 北京时间 08:00
-PUSH_GUARD_END_BJ = 23    # 北京时间 23:00
+# ── 测试频道路径 ──
+TEST_CONFIG_PATH = Path(__file__).parent.parent / "config" / "test_config.json"
+TEST_LAST_MSG_ID_PATH = Path(__file__).parent.parent / "config" / "last_discord_msg_id_test.txt"
+TEST_LAST_PUSH_DATE_PATH = Path(__file__).parent.parent / "config" / "last_push_date_test.txt"
+
+PUSH_GUARD_START_BJ = 8
+PUSH_GUARD_END_BJ = 23
+
+
+def _resolve_channel(channel: str) -> dict:
+    if channel == "test":
+        return {
+            "config_path": TEST_CONFIG_PATH,
+            "last_msg_id_path": TEST_LAST_MSG_ID_PATH,
+            "last_push_date_path": TEST_LAST_PUSH_DATE_PATH,
+            "thought_context_path": None,
+            "channel_id_env": "DISCORD_TEST_CHANNEL_ID",
+            "skip_guard": True,
+        }
+    return {
+        "config_path": CONFIG_PATH,
+        "last_msg_id_path": LAST_MSG_ID_PATH,
+        "last_push_date_path": LAST_PUSH_DATE_PATH,
+        "thought_context_path": THOUGHT_CONTEXT_PATH,
+        "channel_id_env": "DISCORD_CHANNEL_ID",
+        "skip_guard": False,
+    }
 
 
 def get_beijing_date_str() -> str:
@@ -37,12 +64,8 @@ def get_beijing_hour() -> int:
 
 
 def check_and_trigger_daily_push():
-    """
-    守卫检测：北京时间 08:00-23:00 内若今天还没推送，直接补发
-    主推送由外部 cron-job.org 触发，此处作为最后一道保险
-    """
+    """守卫检测：北京时间 08:00-23:00 内若今天还没推送，直接补发"""
     bj_hour = get_beijing_hour()
-
     if not (PUSH_GUARD_START_BJ <= bj_hour < PUSH_GUARD_END_BJ):
         print(f"[Guard] 当前北京时间 {bj_hour}:xx，不在守卫窗口（08-23），跳过")
         return
@@ -60,7 +83,7 @@ def check_and_trigger_daily_push():
     print(f"[Guard] ⚠️  今天（{today}）尚未推送！北京时间 {bj_hour}:xx，开始补发...")
     try:
         from daily_push import run_daily_push
-        run_daily_push(force=False)
+        run_daily_push(force=False, channel="main")
         print("[Guard] ✅ 补发成功")
     except Exception as e:
         import traceback
@@ -71,66 +94,65 @@ def check_and_trigger_daily_push():
         except Exception:
             pass
 
-HELP_TEXT = """🤖 **AI News Bot 使用指南**
 
-**内置命令：**
-`!help` - 查看帮助
-`!config` - 查看当前配置
-`!status` - 检查运行状态和最后推送时间
-`!push` - 立即推送今日 AI 早报
-
-**自然语言调整（直接发消息即可）：**
-• 我只想看大模型相关的新闻
-• 去掉论文类内容，只要行业新闻
-• 每次推送改为 10 条
-• 帮我关注 AI 安全和 AI Agent 方向
-• 过滤掉关于图像生成的内容
-• 天气改成北京
-
-> ⚠️ 使用 GitHub Actions 简化版，命令响应可能有延迟（`!push` 除外，实时执行）。"""
-
-
-def load_config() -> dict:
-    if CONFIG_PATH.exists():
-        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+def load_config(config_path: Path) -> dict:
+    if config_path.exists():
+        with open(config_path, "r", encoding="utf-8") as f:
             return json.load(f)
-    return {}
+    return get_default_config()
 
 
-def save_config(config: dict):
-    CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(CONFIG_PATH, "w", encoding="utf-8") as f:
+def get_default_config() -> dict:
+    return {
+        "push_channel": "discord",
+        "language": "zh",
+        "focus_topics": ["大语言模型", "AI Agent", "开源模型", "多模态"],
+        "include_keywords": [],
+        "exclude_keywords": [],
+        "max_items": 8,
+        "hours_back": 72,
+        "push_time": "01:00",
+        "include_hacker_news": True,
+        "user_note": "",
+        "weather_location": "Shanghai",
+        "enabled_sources": [
+            "TechCrunch AI",
+            "VentureBeat AI",
+            "The Verge AI",
+            "Ars Technica",
+            "HuggingFace Blog",
+            "OpenAI Blog",
+            "Google AI Blog",
+            "Arxiv AI",
+            "Arxiv ML",
+        ],
+    }
+
+
+def save_config(config: dict, config_path: Path):
+    config_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(config_path, "w", encoding="utf-8") as f:
         json.dump(config, f, ensure_ascii=False, indent=2)
-    print(f"[Config] 配置已保存")
+    print(f"[Config] 配置已保存: {config_path}")
 
 
-def load_last_msg_id() -> str | None:
-    if LAST_MSG_ID_PATH.exists():
-        val = LAST_MSG_ID_PATH.read_text().strip()
+def load_last_msg_id(msg_id_path: Path) -> str | None:
+    if msg_id_path.exists():
+        val = msg_id_path.read_text().strip()
         return val if val else None
     return None
 
 
-def save_last_msg_id(msg_id: str):
-    LAST_MSG_ID_PATH.parent.mkdir(parents=True, exist_ok=True)
-    LAST_MSG_ID_PATH.write_text(msg_id)
+def save_last_msg_id(msg_id: str, msg_id_path: Path):
+    msg_id_path.parent.mkdir(parents=True, exist_ok=True)
+    msg_id_path.write_text(msg_id)
 
 
 def load_thought_context() -> dict | None:
-    """加载今日思考题上下文"""
     if THOUGHT_CONTEXT_PATH.exists():
         with open(THOUGHT_CONTEXT_PATH, "r", encoding="utf-8") as f:
             return json.load(f)
     return None
-
-
-def mark_thought_answered():
-    """标记今日思考题已回答"""
-    ctx = load_thought_context()
-    if ctx:
-        ctx["answered"] = True
-        with open(THOUGHT_CONTEXT_PATH, "w", encoding="utf-8") as f:
-            json.dump(ctx, f, ensure_ascii=False, indent=2)
 
 
 def _save_to_notion(
@@ -139,28 +161,24 @@ def _save_to_notion(
     related_articles: list,
     all_articles: list,
     date_str: str,
+    lang: str = "zh",
 ) -> tuple[str, list, list, str]:
-    """
-    公共的 Notion 写入逻辑。
-    返回 (notion_url, keywords, final_sources, refined_answer)
-    """
     from thought_generator import should_refine, refine_user_reply, extract_keywords_and_sources
 
-    needs_refine = should_refine(text)
+    needs_refine = should_refine(text, lang=lang)
     print(f"[Thought] 需要润色: {needs_refine}")
 
     refined_answer = None
     if needs_refine:
-        refined = refine_user_reply(question, text, related_articles)
+        refined = refine_user_reply(question, text, related_articles, lang=lang)
         refined_answer = refined.get("refined_answer", "")
         keywords = refined.get("keywords", [])
         sources_mentioned = refined.get("sources_mentioned", [])
     else:
-        extracted = extract_keywords_and_sources(question, text, related_articles)
+        extracted = extract_keywords_and_sources(question, text, related_articles, lang=lang)
         keywords = extracted.get("keywords", [])
         sources_mentioned = extracted.get("sources_mentioned", [])
 
-    # 解析信息来源
     final_sources, final_links = [], []
     for a in related_articles:
         src, link = a.get("source", ""), a.get("link", "")
@@ -207,38 +225,44 @@ def _build_notion_reply(
     final_sources: list,
     refined_answer: str | None,
     notion_enabled: bool,
+    lang: str = "zh",
 ) -> str:
-    lines = ["✅ **记录已存入 Notion！**\n"]
-    if refined_answer:
-        lines.append(f"**整理后观点：**\n{refined_answer}\n")
-    lines += [
-        f"**关键词：** {' · '.join(keywords) if keywords else '—'}",
-        f"**信息来源：** {' | '.join(final_sources) if final_sources else '未指定'}",
-    ]
-    if notion_url:
-        lines.append(f"\n📝 [在 Notion 中查看]({notion_url})")
-    if not notion_enabled:
-        lines.append("\n⚠️ _Notion 未配置，记录未存储。_")
+    if lang == "en":
+        lines = ["✅ **Saved to Notion!**\n"]
+        if refined_answer:
+            lines.append(f"**Organized view:**\n{refined_answer}\n")
+        lines += [
+            f"**Keywords:** {' · '.join(keywords) if keywords else '—'}",
+            f"**Sources:** {' | '.join(final_sources) if final_sources else 'unspecified'}",
+        ]
+        if notion_url:
+            lines.append(f"\n📝 [View in Notion]({notion_url})")
+        if not notion_enabled:
+            lines.append("\n⚠️ _Notion not configured, record not stored._")
+    else:
+        lines = ["✅ **记录已存入 Notion！**\n"]
+        if refined_answer:
+            lines.append(f"**整理后观点：**\n{refined_answer}\n")
+        lines += [
+            f"**关键词：** {' · '.join(keywords) if keywords else '—'}",
+            f"**信息来源：** {' | '.join(final_sources) if final_sources else '未指定'}",
+        ]
+        if notion_url:
+            lines.append(f"\n📝 [在 Notion 中查看]({notion_url})")
+        if not notion_enabled:
+            lines.append("\n⚠️ _Notion 未配置，记录未存储。_")
     return "\n".join(lines)
 
 
-def handle_capture(text: str) -> str | None:
-    """
-    对长度 > 20 字的非命令消息做意图分类，路由到：
-      - "config"  → 返回 None（交由 process_user_command 处理）
-      - "answer"  → 今日思考题的回复，以今日问题存入 Notion
-      - "note"    → 独立想法，由 AI 生成问题后存入 Notion
+def handle_capture(text: str, lang: str = "zh") -> str | None:
+    """对长度 > 20 字的非命令消息做意图分类，路由到 answer/note"""
+    from thought_generator import classify_message_intent, generate_question_from_thought
+    from prompts import CONFIG_KEYWORDS
 
-    不再使用 answered 标志锁死：每条消息通过消息 ID 去重，均可独立存档。
-    """
-    from thought_generator import classify_message_intent, generate_question_from_thought, _CONFIG_KEYWORDS
+    # config 关键词检查优先
+    if any(kw in text.lower() for kw in CONFIG_KEYWORDS):
+        return None
 
-    # config 关键词检查优先于长度过滤：
-    # 短命令如"把城市设置为北京"应直接落到 process_user_command，而非被跳过
-    if any(kw in text for kw in _CONFIG_KEYWORDS):
-        return None  # 交由 process_user_command 处理
-
-    # 对长度 < 20 字的非 config 消息不做 capture（排除短感叹、单字等噪音）
     if len(text) < 20:
         return None
 
@@ -248,17 +272,16 @@ def handle_capture(text: str) -> str | None:
     all_articles = ctx.get("all_articles", []) if ctx else []
     date_str = ctx.get("date", "") if ctx else ""
 
-    intent = classify_message_intent(text, today_question)
+    intent = classify_message_intent(text, today_question, lang=lang)
     print(f"[Intent] 消息意图: {intent}")
 
     if intent == "config":
-        return None  # 交由 process_user_command
+        return None
 
     try:
         notion_enabled = bool(os.environ.get("NOTION_TOKEN")) and bool(os.environ.get("NOTION_DATABASE_ID"))
 
         if intent == "answer":
-            # 回答今日思考题：question = 今日思考题
             print(f"[Thought] 识别为思考题回答")
             notion_url, keywords, sources, refined = _save_to_notion(
                 question=today_question,
@@ -266,102 +289,129 @@ def handle_capture(text: str) -> str | None:
                 related_articles=related_articles,
                 all_articles=all_articles,
                 date_str=date_str,
+                lang=lang,
             )
         else:
-            # note：独立想法，AI 生成问题
             print(f"[Thought] 识别为独立想法，生成问题...")
-            generated_q = generate_question_from_thought(text)
+            generated_q = generate_question_from_thought(text, lang=lang)
             print(f"[Thought] 生成问题: {generated_q}")
             notion_url, keywords, sources, refined = _save_to_notion(
                 question=generated_q,
                 text=text,
-                related_articles=[],   # 独立想法不关联今日文章
+                related_articles=[],
                 all_articles=all_articles,
                 date_str=date_str,
+                lang=lang,
             )
 
-        return _build_notion_reply(notion_url, keywords, sources, refined, notion_enabled)
+        return _build_notion_reply(notion_url, keywords, sources, refined, notion_enabled, lang=lang)
 
     except Exception as e:
         import traceback
         traceback.print_exc()
         print(f"[Thought] 处理失败: {e}")
-        return f"❌ 处理时出错：{e}\n你的原始回复已收到，请稍后重试。"
+        return f"❌ Error: {e}\nYour reply has been received, please retry later." if lang == "en" \
+               else f"❌ 处理时出错：{e}\n你的原始回复已收到，请稍后重试。"
 
 
-def handle_command(text: str, config: dict) -> tuple[str, dict | None]:
+def handle_command(text: str, config: dict, channel: str = "main",
+                   channel_id: str = "", last_push_date_path: Path = LAST_PUSH_DATE_PATH) -> tuple[str, dict | None]:
     """处理命令，返回 (回复文本, 更新后的配置或None)"""
     text = text.strip()
+    lang = config.get("language", "zh")
 
     if text in ("!start", "!help"):
-        return HELP_TEXT, None
+        return get("help_text", lang), None
 
     if text == "!config":
         config_str = json.dumps(config, ensure_ascii=False, indent=2)
-        return f"⚙️ **当前配置：**\n```json\n{config_str}\n```", None
+        prefix = "⚙️ **Current Config:**" if lang == "en" else "⚙️ **当前配置：**"
+        return f"{prefix}\n```json\n{config_str}\n```", None
 
     if text == "!status":
-        last_push = "未知"
-        if LAST_PUSH_DATE_PATH.exists():
-            last_push = LAST_PUSH_DATE_PATH.read_text().strip()
-        return f"✅ AI News Bot 运行正常！\n📅 最后推送日期：{last_push}\n⏰ 每天北京时间 09:00 自动推送。", None
+        last_push = "Unknown" if lang == "en" else "未知"
+        if last_push_date_path.exists():
+            last_push = last_push_date_path.read_text().strip()
+        return get("status_template", lang).format(last_push=last_push), None
 
     if text == "!push":
         try:
             from daily_push import run_daily_push
-            run_daily_push(force=True)
-            return "✅ 已立即推送今日 AI 早报！", None
+            run_daily_push(force=True, channel=channel)
+            ok = "✅ Test push completed! Check the test channel." if lang == "en" else \
+                 "✅ 已立即推送今日 AI 早报！"
+            return ok, None
         except Exception as e:
             import traceback
             traceback.print_exc()
-            return f"❌ 推送失败：{e}", None
+            err = f"❌ Push failed: {e}" if lang == "en" else f"❌ 推送失败：{e}"
+            return err, None
 
     if text == "!thought":
         if THOUGHT_CONTEXT_PATH.exists():
             with open(THOUGHT_CONTEXT_PATH, "r", encoding="utf-8") as f:
                 ctx = json.load(f)
             from thought_generator import format_thought_question_message
-            return format_thought_question_message(ctx), None
-        return "📭 今日暂无思考题，等待日报推送后自动生成。", None
+            return format_thought_question_message(ctx, lang=lang), None
+        empty = "📭 No thought question yet. Wait for the daily digest." if lang == "en" else \
+               "📭 今日暂无思考题，等待日报推送后自动生成。"
+        return empty, None
 
     # 忽略 Bot 自身发的消息
-    if text.startswith("🤖") or text.startswith("📭") or text.startswith("📋") or text.startswith("_由 AI") or text.startswith("---"):
+    if text.startswith("🤖") or text.startswith("📭") or text.startswith("📋") or text.startswith("_由 AI") \
+            or text.startswith("---") or text.startswith("_Auto-pushed"):
         return "", None
 
     # 统一意图路由：capture（answer/note） 或 config
-    capture_reply = handle_capture(text)
+    capture_reply = handle_capture(text, lang=lang)
     if capture_reply is not None:
         return capture_reply, None
 
-    # 意图为 config：调用 DeepSeek 修改 user_config
+    # 意图为 config：调用 DeepSeek 修改配置
     try:
         result = process_user_command(text, config)
-        reply = result.get("reply", "已处理您的请求。")
+        reply = result.get("reply", "Done." if lang == "en" else "已处理您的请求。")
         updated_config = result.get("updated_config")
         return reply, updated_config
     except Exception as e:
         print(f"[Handler] AI 处理失败: {e}")
-        return f"❌ 处理失败：{e}\n请重试或检查 API 配置。", None
+        err = f"❌ Error: {e}\nPlease retry." if lang == "en" else f"❌ 处理失败：{e}\n请重试或检查 API 配置。"
+        return err, None
 
 
-def run_handler():
+def run_handler(channel: str = "main"):
     """轮询并处理新消息，同时执行每日推送守卫检测"""
-    print("[Handler] 开始处理 Discord 消息...")
+    ch = _resolve_channel(channel)
+    config_path = ch["config_path"]
+    last_msg_id_path = ch["last_msg_id_path"]
+    last_push_date_path = ch["last_push_date_path"]
+    channel_id_env = ch["channel_id_env"]
+    skip_guard = ch["skip_guard"]
 
-    # 每日推送守卫：优先检测是否需要补发
-    check_and_trigger_daily_push()
+    print(f"[Handler] 开始处理 Discord 消息 (channel={channel})...")
+
+    # 每日推送守卫（仅生产频道）
+    if not skip_guard:
+        check_and_trigger_daily_push()
 
     my_user_id = get_user_id()
-    last_msg_id = load_last_msg_id()
-    config = load_config()
+    last_msg_id = load_last_msg_id(last_msg_id_path)
+    config = load_config(config_path)
+    lang = config.get("language", "zh")
 
-    messages = get_messages(after_id=last_msg_id, limit=20)
-
-    if not messages:
-        print("[Handler] 无新消息")
+    # 获取目标频道 ID
+    target_channel_id = os.environ.get(channel_id_env, "")
+    if not target_channel_id:
+        print(f"[Handler] ⚠️ {channel_id_env} 未设置，跳过 {channel} 频道")
         return
 
-    print(f"[Handler] 收到 {len(messages)} 条新消息")
+    messages = get_messages(channel_id=target_channel_id, after_id=last_msg_id, limit=20)
+
+    if not messages:
+        print(f"[Handler] {channel} 频道无新消息")
+        return
+
+    print(f"[Handler] {channel} 频道收到 {len(messages)} 条新消息")
     config_changed = False
     latest_msg_id = last_msg_id
 
@@ -372,15 +422,12 @@ def run_handler():
         is_bot = author.get("bot", False)
         content = msg.get("content", "").strip()
 
-        # 更新最新消息 ID
         if msg_id:
             latest_msg_id = msg_id
 
-        # 忽略 Bot 自身的消息
         if is_bot:
             continue
 
-        # 安全过滤：只响应指定用户
         if my_user_id and author_id != str(my_user_id):
             print(f"[Handler] 忽略来自未知用户的消息: user_id={author_id}")
             continue
@@ -390,7 +437,25 @@ def run_handler():
 
         print(f"[Handler] 处理消息: {content[:80]}")
 
-        reply, updated_config = handle_command(content, config)
+        # ── 测试频道特殊命令：reset ──
+        if channel == "test" and content.strip().lower() in ("测试", "test"):
+            config = get_default_config()
+            save_config(config, config_path)
+            lang = config.get("language", "zh")
+            reply = get("test_reset_message", lang)
+            try:
+                from discord_client import send_long_message
+                send_long_message(reply, channel_id=target_channel_id)
+            except Exception as e:
+                print(f"[Handler] 发送重置消息失败: {e}")
+            config_changed = True
+            continue
+
+        reply, updated_config = handle_command(
+            content, config, channel=channel,
+            channel_id=target_channel_id,
+            last_push_date_path=last_push_date_path,
+        )
 
         if not reply:
             continue
@@ -400,24 +465,28 @@ def run_handler():
             config_changed = True
 
         try:
-            # 长回复自动分割
             if len(reply) > 1900:
                 from discord_client import send_long_message
-                send_long_message(reply)
+                send_long_message(reply, channel_id=target_channel_id)
             else:
-                send_message(reply)
+                send_message(reply, channel_id=target_channel_id)
         except Exception as e:
             print(f"[Handler] 发送回复失败: {e}")
 
     if latest_msg_id and latest_msg_id != last_msg_id:
-        save_last_msg_id(latest_msg_id)
+        save_last_msg_id(latest_msg_id, last_msg_id_path)
 
     if config_changed:
-        save_config(config)
+        save_config(config, config_path)
         print("[Handler] 配置已更新并保存")
 
-    print("[Handler] 处理完成")
+    print(f"[Handler] {channel} 处理完成")
 
 
 if __name__ == "__main__":
-    run_handler()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--channel", choices=["main", "test"], default="main",
+                        help="目标频道（main=生产, test=测试）")
+    args = parser.parse_args()
+    run_handler(channel=args.channel)

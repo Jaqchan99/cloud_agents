@@ -1,0 +1,29 @@
+{
+  "push_channel": "discord",
+  "language": "zh",
+  "focus_topics": [
+    "大语言模型",
+    "AI Agent",
+    "开源模型",
+    "多模态"
+  ],
+  "include_keywords": [],
+  "exclude_keywords": [],
+  "max_items": 8,
+  "hours_back": 72,
+  "push_time": "01:00",
+  "include_hacker_news": true,
+  "user_note": "",
+  "weather_location": "Shanghai",
+  "enabled_sources": [
+    "TechCrunch AI",
+    "VentureBeat AI",
+    "The Verge AI",
+    "Ars Technica",
+    "HuggingFace Blog",
+    "OpenAI Blog",
+    "Google AI Blog",
+    "Arxiv AI",
+    "Arxiv ML"
+  ]
+}

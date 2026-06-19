@@ -5,27 +5,22 @@ import os
 import json
 import re
 from openai import OpenAI
+from prompts import get, get_refine_keywords, get_config_keywords
+
+DEEPSEEK_BASE_URL = "https://api.deepseek.com"
+DEEPSEEK_MODEL = "deepseek-chat"
 
 
-# 明确要求 AI 整理/润色的关键词（快速规则匹配，避免不必要的 API 调用）
-_REFINE_KEYWORDS = [
-    "整理", "润色", "帮我整理", "帮我润色", "优化一下", "优化下",
-    "polish", "refine", "rewrite", "帮我写", "整理成", "帮我表达",
-    "文字不好", "写得不好", "表达一下", "更好地表达",
-]
-
-
-def should_refine(text: str) -> bool:
+def should_refine(text: str, lang: str = "zh") -> bool:
     """
     判断用户是否希望 AI 整理/润色回复。
     先用关键词快速匹配，再用 DeepSeek 做兜底判断。
-
-    返回 True 表示需要整理，False 表示仅保存原文。
     """
     text_lower = text.lower()
+    keywords = get_refine_keywords(lang)
 
     # 快速关键词匹配
-    if any(kw in text_lower for kw in _REFINE_KEYWORDS):
+    if any(kw.lower() in text_lower for kw in keywords):
         return True
 
     # 关键词未命中时，调用 DeepSeek 判断意图（短文本不必调用）
@@ -37,15 +32,8 @@ def should_refine(text: str) -> bool:
         resp = client.chat.completions.create(
             model=DEEPSEEK_MODEL,
             messages=[
-                {
-                    "role": "system",
-                    "content": "你判断用户的消息是否明确希望 AI 帮助整理、润色或优化他的文字表达。"
-                               "只回答 yes 或 no，不要有任何其他内容。",
-                },
-                {
-                    "role": "user",
-                    "content": f'用户消息："{text[:300]}"',
-                },
+                {"role": "system", "content": get("refine_classify_system", lang)},
+                {"role": "user", "content": f'User message: "{text[:300]}"'},
             ],
             temperature=0,
             max_tokens=5,
@@ -55,9 +43,6 @@ def should_refine(text: str) -> bool:
     except Exception:
         return False
 
-DEEPSEEK_BASE_URL = "https://api.deepseek.com"
-DEEPSEEK_MODEL = "deepseek-chat"
-
 
 def get_client() -> OpenAI:
     api_key = os.environ.get("DEEPSEEK_API_KEY", "")
@@ -66,7 +51,7 @@ def get_client() -> OpenAI:
     return OpenAI(api_key=api_key, base_url=DEEPSEEK_BASE_URL)
 
 
-def generate_thought_question(articles: list[dict], date_str: str) -> dict:
+def generate_thought_question(articles: list[dict], date_str: str, lang: str = "zh") -> dict:
     """
     根据今日精选文章，生成一个有深度的思考题
 
@@ -81,33 +66,14 @@ def generate_thought_question(articles: list[dict], date_str: str) -> dict:
     for i, a in enumerate(articles[:10], 1):
         articles_text += f"{i}. [{a.get('source','')}] {a.get('title','')}\n   {a.get('ai_summary','')[:150]}\n\n"
 
-    prompt = f"""今天是 {date_str}，以下是今日 AI 精选资讯：
-
-{articles_text}
-
-请基于以上内容，生成一个高质量的每日思考题，要求：
-1. 聚焦最有讨论价值的核心议题，而非事实性问题
-2. 问题有助于读者形成自己的观点，可以联系到实际工作或行业趋势
-3. 问题不要太宽泛（"你怎么看AI的未来"），要有具体的切入点
-
-严格按以下 JSON 格式返回，不要有其他文字：
-{{
-  "question": "<思考题，1-2句话>",
-  "context": "<提这个问题的背景，1-2句，说明为什么这个问题重要>",
-  "related_articles": [
-    {{"title": "<文章标题>", "source": "<来源>", "link": "<链接>"}},
-    ...
-  ]
-}}
-
-related_articles 选最相关的 1-3 篇，从上面文章列表中选取。"""
-
     client = get_client()
     response = client.chat.completions.create(
         model=DEEPSEEK_MODEL,
         messages=[
-            {"role": "system", "content": "你是一个帮助用户深度思考 AI 趋势的助手，善于提出有洞察力的问题。"},
-            {"role": "user", "content": prompt},
+            {"role": "system", "content": get("thought_question_system", lang)},
+            {"role": "user", "content": get("thought_question_user", lang).format(
+                date_str=date_str, articles_text=articles_text
+            )},
         ],
         temperature=0.7,
         max_tokens=600,
@@ -123,34 +89,11 @@ related_articles 选最相关的 1-3 篇，从上面文章列表中选取。"""
     return json.loads(raw)
 
 
-_REFINE_SYSTEM_PROMPT = """你是一位科技媒体评论编辑，专注于 AI 和企业技术领域。
-
-你的任务是对用户的科技评论进行**结构性重写**，而非仅优化用词。
-
-## 核心目标（按优先级）
-
-1. **理清论点层次** —— 识别用户真正想表达的核心观点，剔除赘述
-2. **重组信息框架** —— 将分散表达归并为清晰的逻辑段落（如：现状 → 驱动因素 → 问题/Trade-off → 结论）
-3. **提升信息密度** —— 保留有价值的细节，去掉填充句
-4. **统一论述口吻** —— 保持观察者视角，客观但有立场
-
-## 输出要求
-
-- 优先整合跨话题的重复内容，合并为单一论点
-- 每段只服务一个核心意思
-- 段落顺序遵循"结论前置 → 论据支撑"逻辑
-- 保留用户原有的判断和洞察，不引入新观点
-- 输出后附一行说明：**改动了哪些结构**（而非改了哪些词）
-
-## 输入
-
-用户将提供一段非正式的中文科技评论，可能语序混乱、话题交叉或逻辑跳跃。"""
-
-
 def refine_user_reply(
     question: str,
     raw_reply: str,
     related_articles: list[dict],
+    lang: str = "zh",
 ) -> dict:
     """
     将用户的粗糙回复进行结构性重写，并提取关键词
@@ -164,35 +107,18 @@ def refine_user_reply(
     """
     articles_context = "\n".join(
         f"- [{a.get('source','')}] {a.get('title','')}" for a in related_articles
-    )
-
-    user_prompt = f"""请对以下科技评论进行结构性重写。
-
-**背景问题：** {question}
-
-**相关文章：**
-{articles_context if articles_context else "（无特定关联文章）"}
-
-**用户的原始评论：**
-{raw_reply}
-
-完成重写后，额外提取：
-1. 3-6 个核心关键词（概念名词，如"工具调用"、"Agent框架"、"长上下文"）
-2. 用户明确提到的信息来源（如"第2条"、"TechCrunch那篇"）
-
-严格按以下 JSON 格式返回，不要有其他文字：
-{{
-  "refined_answer": "<结构性重写后的完整内容，含末尾的改动说明>",
-  "keywords": ["关键词1", ...],
-  "sources_mentioned": ["来源描述1", ...]
-}}"""
+    ) if related_articles else "(no related articles)" if lang == "en" else "（无特定关联文章）"
 
     client = get_client()
     response = client.chat.completions.create(
         model=DEEPSEEK_MODEL,
         messages=[
-            {"role": "system", "content": _REFINE_SYSTEM_PROMPT},
-            {"role": "user", "content": user_prompt},
+            {"role": "system", "content": get("refine_system", lang)},
+            {"role": "user", "content": get("refine_user", lang).format(
+                question=question,
+                articles_context=articles_context,
+                raw_reply=raw_reply,
+            )},
         ],
         temperature=0.4,
         max_tokens=1200,
@@ -212,39 +138,26 @@ def extract_keywords_and_sources(
     question: str,
     raw_reply: str,
     related_articles: list[dict],
+    lang: str = "zh",
 ) -> dict:
     """
     仅提取关键词和信息来源，不整理正文。
-    用于用户不要求润色时的轻量处理。
-
-    返回：
-    {
-        "keywords": [...],
-        "sources_mentioned": [...]
-    }
     """
     articles_context = "\n".join(
         f"- [{a.get('source','')}] {a.get('title','')}" for a in related_articles
     )
 
-    prompt = f"""问题：{question}
-相关文章：
-{articles_context}
-
-用户回复：{raw_reply[:500]}
-
-请完成：
-1. 提取 3-6 个核心关键词（名词或概念）
-2. 识别用户提到的信息来源（编号或名称）
-
-严格按 JSON 格式返回：
-{{"keywords": ["关键词1", ...], "sources_mentioned": ["来源1", ...]}}"""
-
     try:
         client = get_client()
         resp = client.chat.completions.create(
             model=DEEPSEEK_MODEL,
-            messages=[{"role": "user", "content": prompt}],
+            messages=[
+                {"role": "user", "content": get("extract_keywords_user", lang).format(
+                    question=question,
+                    articles_context=articles_context,
+                    raw_reply=raw_reply,
+                )},
+            ],
             temperature=0.2,
             max_tokens=200,
         )
@@ -259,7 +172,7 @@ def extract_keywords_and_sources(
         return {"keywords": [], "sources_mentioned": []}
 
 
-def format_thought_question_message(question_data: dict) -> str:
+def format_thought_question_message(question_data: dict, lang: str = "zh") -> str:
     """格式化为 Discord 消息"""
     question = question_data.get("question", "")
     context = question_data.get("context", "")
@@ -267,7 +180,7 @@ def format_thought_question_message(question_data: dict) -> str:
 
     lines = [
         "---",
-        "💭 **今日思考题**",
+        get("format_thought_section_title", lang),
         "",
         f"**{question}**",
     ]
@@ -275,7 +188,7 @@ def format_thought_question_message(question_data: dict) -> str:
         lines.append(f"_{context}_")
     if articles:
         lines.append("")
-        lines.append("相关资讯：")
+        lines.append(get("format_thought_related_label", lang))
         for a in articles:
             title = a.get("title", "")
             link = a.get("link", "")
@@ -286,72 +199,43 @@ def format_thought_question_message(question_data: dict) -> str:
                 lines.append(f"• {title} — {source}")
     lines += [
         "",
-        "_💡 直接回复你的想法，我会帮你整理成结构化观点并存入 Notion_",
-        "_回复时可指出参考了哪几条资讯（如「参考第2、3条」）_",
+        get("format_thought_footer", lang),
     ]
     return "\n".join(lines)
 
 
 # ── 快速规则：config 调整类关键词 ──────────────────────────────────
-_CONFIG_KEYWORDS = [
-    # 推送数量/频率 — 词组足够具体，不会在日常讨论中出现
-    "每次推送", "推送改为", "推送数量", "推送条数",
-    # 话题/来源 — 只保留组合词；"领域"、"想看"、"过滤掉"、"去掉"、"排除"、"加上"、"添加" 等
-    # 在日常 AI 讨论中极高频，误触发严重，已移除
-    "关注话题", "关注方向", "新闻方向",
-    # 天气 — 已经足够具体
-    "天气改", "天气换", "城市改", "城市换", "城市设置",
-    "把城市",
-    # 通用配置
-    "修改配置", "更新配置", "配置修改",
-    # 字段名直接提及
-    "hours_back", "max_items", "enabled_sources",
-    "focus_topics", "user_note", "weather_location",
-]
-
-
-def classify_message_intent(text: str, today_question: str) -> str:
+def classify_message_intent(text: str, today_question: str, lang: str = "zh") -> str:
     """
     判断用户消息的意图，返回三种之一：
-      "config"  - 修改推送配置（weather、topics、max_items 等）
+      "config"  - 修改推送配置
       "answer"  - 回答今日思考题
-      "note"    - 独立想法，与今日思考题无直接关联
+      "note"    - 独立想法
 
     策略：
     1. 关键词快速匹配 config → 无需调用 API
     2. 若今日无思考题 → 统一归为 note
-    3. 剩余情况调用 DeepSeek 三分类（answer / note / config）
+    3. 剩余情况调用 DeepSeek 三分类
     """
     text_lower = text.lower()
+    config_keywords = get_config_keywords()
 
     # 规则层：config 关键词
-    if any(kw in text_lower for kw in _CONFIG_KEYWORDS):
+    if any(kw.lower() in text_lower for kw in config_keywords):
         return "config"
 
     # 无今日思考题，无法判断 answer，直接归 note
     if not today_question:
         return "note"
 
-    # LLM 三分类（answer / note / config）
+    # LLM 三分类
     try:
         client = get_client()
         resp = client.chat.completions.create(
             model=DEEPSEEK_MODEL,
             messages=[
-                {
-                    "role": "system",
-                    "content": (
-                        "判断用户消息的意图，只回答一个词：answer / note / config。"
-                        "若用户在回应或讨论给定的问题 → answer；"
-                        "若用户在分享独立想法、观点、分析，与给定问题无直接关联 → note；"
-                        "若用户明确要求修改推送配置（如调整话题、数量、来源、天气城市等）→ config。"
-                        "只输出 answer、note 或 config，不要有其他内容。"
-                    ),
-                },
-                {
-                    "role": "user",
-                    "content": f"今日问题：{today_question}\n\n用户消息：{text[:400]}",
-                },
+                {"role": "system", "content": get("intent_classify_system", lang)},
+                {"role": "user", "content": f"Today's question: {today_question}\n\nUser message: {text[:400]}"},
             ],
             temperature=0,
             max_tokens=5,
@@ -365,29 +249,17 @@ def classify_message_intent(text: str, today_question: str) -> str:
         return "note"
 
 
-def generate_question_from_thought(text: str) -> str:
+def generate_question_from_thought(text: str, lang: str = "zh") -> str:
     """
-    针对独立想法（note 类型），由 AI 根据内容反推一个问题，
-    填入 Notion 的[问题]字段，实现与每日思考题的解耦。
-
-    例：用户说「开源模型生态比闭源更可持续，社区驱动的创新更难被垄断」
-    → 返回「开源与闭源模型的生态发展路径，哪种长期更具可持续性？」
+    针对独立想法（note 类型），由 AI 根据内容反推一个问题
     """
     try:
         client = get_client()
         resp = client.chat.completions.create(
             model=DEEPSEEK_MODEL,
             messages=[
-                {
-                    "role": "system",
-                    "content": (
-                        "根据用户的想法，提炼出一个简洁的问题（15-40字），"
-                        "概括该想法在讨论什么核心议题。"
-                        "问题要有探讨价值，不要过于宽泛。"
-                        "只输出问题本身，不要有其他文字。"
-                    ),
-                },
-                {"role": "user", "content": f"用户的想法：{text[:500]}"},
+                {"role": "system", "content": get("generate_question_system", lang)},
+                {"role": "user", "content": f"User's thought: {text[:500]}"},
             ],
             temperature=0.5,
             max_tokens=60,
@@ -395,4 +267,4 @@ def generate_question_from_thought(text: str) -> str:
         return resp.choices[0].message.content.strip()
     except Exception as e:
         print(f"[Intent] 问题生成失败，使用默认: {e}")
-        return "独立思考记录"
+        return get("generate_question_fallback", lang)

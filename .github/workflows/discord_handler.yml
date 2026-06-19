@@ -13,12 +13,17 @@ on:
 
 jobs:
   handle-commands:
-    name: 处理用户 Discord 消息
+    name: 处理 Discord 消息 (${{ matrix.channel }})
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
+    strategy:
+      fail-fast: false
+      matrix:
+        channel: [main, test]
+
     concurrency:
-      group: discord-handler
+      group: discord-handler-${{ matrix.channel }}
       cancel-in-progress: false
 
     steps:
@@ -42,16 +47,20 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+          DISCORD_TEST_CHANNEL_ID: ${{ secrets.DISCORD_TEST_CHANNEL_ID }}
           DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-        run: python scripts/discord_handler.py
+        run: python scripts/discord_handler.py --channel ${{ matrix.channel }}
 
       - name: 提交配置变更（如有更新）
         run: |
           git config user.name "AI News Bot"
           git config user.email "bot@github-actions"
-          git add config/user_config.json config/last_discord_msg_id.txt config/last_push_date.txt config/today_thought_context.json 2>/dev/null || true
+          git add config/user_config.json config/test_config.json \
+                  config/last_discord_msg_id.txt config/last_discord_msg_id_test.txt \
+                  config/last_push_date.txt config/last_push_date_test.txt \
+                  config/today_thought_context.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "无配置变更，跳过提交"
           else

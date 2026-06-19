@@ -123,51 +123,49 @@ def get_messages(channel_id: Optional[str] = None, after_id: Optional[str] = Non
     return list(reversed(messages))
 
 
-def format_digest_embeds(articles: list[dict], date_str: str) -> tuple[str, list[dict]]:
+def format_digest_embeds(articles: list[dict], date_str: str, lang: str = "zh") -> tuple[str, list[dict]]:
     """
     将文章列表格式化为 Discord Embed 格式
     返回 (header_text, embeds_list)，分批发送
     """
+    from prompts import get, CATEGORY_ICONS
+    category_labels = get("category_labels", lang)
+
     if not articles:
-        return f"📭 **{date_str} AI 日报**\n\n今日暂无符合条件的 AI 资讯。", []
+        return get("digest_empty", lang).format(date_str=date_str), []
 
-    header = f"📋 **{date_str} AI 日报** — 精选 {len(articles)} 条资讯"
-
-    category_icons = {
-        "论文": "📄",
-        "技术博客": "📝",
-        "行业动态": "🏢",
-        "行业新闻": "📰",
-        "社区讨论": "💬",
-    }
+    header = get("digest_header", lang).format(date_str=date_str, count=len(articles))
 
     embeds = []
     for article in articles:
-        icon = category_icons.get(article.get("category", ""), "🔗")
-        title = article.get("title", "无标题")[:256]
+        category = article.get("category", "")
+        icon = CATEGORY_ICONS.get(category, "🔗")
+        label = category_labels.get(category, category)
+        title = article.get("title", "无标题" if lang == "zh" else "Untitled")[:256]
         link = article.get("link", "")
         summary = article.get("ai_summary", article.get("summary", ""))[:1024]
         source = article.get("source", "")
-        category = article.get("category", "")
 
         embed = {
             "title": f"{icon} {title}",
             "url": link,
             "description": summary,
             "color": 0x5865F2,
-            "footer": {"text": f"{source} · {category}"},
+            "footer": {"text": f"{source} · {label}"},
         }
         embeds.append(embed)
 
     return header, embeds
 
 
-def send_digest(articles: list[dict], date_str: str, channel_id: Optional[str] = None):
+def send_digest(articles: list[dict], date_str: str, channel_id: Optional[str] = None, lang: str = "zh"):
     """发送每日日报，使用 Embed 卡片格式"""
+    from prompts import get
+
     target = channel_id or get_channel_id()
     url = f"{DISCORD_API}/channels/{target}/messages"
 
-    header, embeds = format_digest_embeds(articles, date_str)
+    header, embeds = format_digest_embeds(articles, date_str, lang=lang)
 
     # 先发标题
     send_message(header, channel_id=target)
@@ -182,7 +180,4 @@ def send_digest(articles: list[dict], date_str: str, channel_id: Optional[str] =
             print(f"[Discord] Embed 批次 {i} 发送失败: {resp.status_code} {resp.text}")
 
     # 发送页脚
-    send_message(
-        "_由 AI News Bot 自动推送 · 发送 `!help` 查看可用指令_",
-        channel_id=target,
-    )
+    send_message(get("digest_footer", lang), channel_id=target)

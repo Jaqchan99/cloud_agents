@@ -8,6 +8,10 @@ on:
         description: "强制推送（忽略今日已推送检测）"
         required: false
         default: "false"
+      channel:
+        description: "推送目标频道（main=生产, test=测试）"
+        required: false
+        default: "main"
 
 jobs:
   daily-push:
@@ -36,23 +40,26 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+          DISCORD_TEST_CHANNEL_ID: ${{ secrets.DISCORD_TEST_CHANNEL_ID }}
           DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           PUSH_CHANNEL: "discord"
           FORCE_PUSH: ${{ github.event.inputs.force_push }}
+          PUSH_TARGET: ${{ github.event.inputs.channel }}
         run: |
           if [ "$FORCE_PUSH" = "true" ]; then
-            python scripts/daily_push.py --force
+            python scripts/daily_push.py --channel "$PUSH_TARGET" --force
           else
-            python scripts/daily_push.py
+            python scripts/daily_push.py --channel "$PUSH_TARGET"
           fi
 
       - name: 保存推送状态
         run: |
           git config user.name "AI News Bot"
           git config user.email "bot@github-actions"
-          git add config/last_push_date.txt config/today_thought_context.json 2>/dev/null || true
+          git add config/last_push_date.txt config/last_push_date_test.txt \
+                  config/today_thought_context.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "无状态变更"
           else

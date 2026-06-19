@@ -83,35 +83,33 @@ def _fallback(location: str) -> dict:
     }
 
 
-def weather_to_text(w: dict) -> str:
+def weather_to_text(w: dict, lang: str = "zh") -> str:
     """将天气数据转为给 AI 使用的描述文本"""
+    from prompts import get
+
     if not w.get("success"):
-        return "天气数据暂时无法获取。"
+        return get("weather_fallback", lang)
 
-    desc_map = {
-        "Sunny": "晴天", "Clear": "晴朗", "Partly cloudy": "多云",
-        "Cloudy": "阴天", "Overcast": "阴转多云", "Mist": "有雾",
-        "Fog": "有雾", "Freezing fog": "冻雾",
-        "Light rain": "小雨", "Moderate rain": "中雨", "Heavy rain": "大雨",
-        "Light drizzle": "小毛毛雨", "Freezing drizzle": "冻雨",
-        "Light snow": "小雪", "Moderate snow": "中雪", "Heavy snow": "大雪",
-        "Thundery outbreaks possible": "雷阵雨", "Patchy thunder possible": "局部雷阵雨",
-        "Blizzard": "暴雪", "Patchy rain possible": "局部有雨",
-        "Blowing snow": "暴风雪", "Ice pellets": "冰雹",
-        "Light sleet": "小雨夹雪", "Moderate or heavy sleet": "雨夹雪",
-        "Patchy light rain": "局部小雨", "Patchy light snow": "局部小雪",
-    }
-    desc_cn = desc_map.get(w["description"], w["description"])
-    tomorrow_cn = desc_map.get(w.get("tomorrow_desc", ""), w.get("tomorrow_desc", ""))
+    desc_map = get("weather_desc_map", lang)
+    desc = desc_map.get(w["description"], w["description"])
+    tomorrow_desc = desc_map.get(w.get("tomorrow_desc", ""), w.get("tomorrow_desc", ""))
 
-    text = (
-        f"当前天气：{desc_cn}，气温 {w['temp_c']}°C（体感 {w['feels_like']}°C），"
-        f"今日 {w['today_min']}~{w['today_max']}°C，湿度 {w['humidity']}%，"
-        f"风速 {w['wind_speed_kmph']} km/h，紫外线指数 {w['uv_index']}，"
-        f"降雨概率 {w['precip_chance']}%。"
+    text = get("weather_text_template", lang).format(
+        desc=desc,
+        temp=w["temp_c"],
+        feels_like=w["feels_like"],
+        high=w["today_max"],
+        low=w["today_min"],
+        humidity=w["humidity"],
     )
-    if tomorrow_cn and w.get("tomorrow_max"):
-        text += f"明日预报：{tomorrow_cn}，最高 {w['tomorrow_max']}°C。"
+    # 追加风速/紫外线/降雨概率（这些数据语言无关）
+    text += f" Wind {w['wind_speed_kmph']} km/h, UV {w['uv_index']}, precip {w['precip_chance']}%."
+
+    if tomorrow_desc and w.get("tomorrow_max"):
+        tomorrow_text = get("weather_text_tomorrow", lang).format(
+            desc=tomorrow_desc, high=w["tomorrow_max"], low="?"
+        )
+        text += f" {tomorrow_text}"
     return text
 
 
