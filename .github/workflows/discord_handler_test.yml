@@ -1,0 +1,62 @@
+name: 处理 Discord 命令 (Test)
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_check:
+        description: "手动检查消息"
+        required: false
+        default: "true"
+
+jobs:
+  handle-commands:
+    name: 处理 Discord 消息 (test)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    concurrency:
+      group: discord-handler-test
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout 代码（含最新配置）
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 1
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 处理 Discord 消息
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+          DISCORD_TEST_CHANNEL_ID: ${{ secrets.DISCORD_TEST_CHANNEL_ID }}
+          DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: python scripts/discord_handler.py --channel test
+
+      - name: 提交配置变更（如有更新）
+        run: |
+          git config user.name "AI News Bot"
+          git config user.email "bot@github-actions"
+          git add config/test_config.json \
+                  config/last_discord_msg_id_test.txt \
+                  config/last_push_date_test.txt \
+                  config/today_thought_context.json 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "无配置变更，跳过提交"
+          else
+            git commit -m "chore: 自动更新测试频道配置 [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin ${{ github.ref_name }}
+          fi
