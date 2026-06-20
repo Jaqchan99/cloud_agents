@@ -1,22 +1,22 @@
 {
-  "date": "2026-06-19",
-  "question": "在AI Agent能力快速提升的背景下，你认为企业部署Agent时，应优先优化其长期任务执行能力，还是信息保密与安全性？",
-  "context": "今日资讯显示，Agent在长期多步骤任务（如CEO-Bench）和安全隐私（如MosaicLeaks测试）两方面均有突破与风险，但实际应用中两者往往难以兼得，这引发了部署策略的权衡思考。",
+  "date": "2026-06-20",
+  "question": "在AI Agent能力快速提升的背景下，你认为当前最被忽视的风险是什么——是Agent在复杂任务中的锚定偏差，还是其保密性缺陷（如泄露敏感信息）？",
+  "context": "多篇论文揭示了Agent在推理中易受早期信息锚定影响，同时有研究指出Agent可能在任务中意外泄露敏感信息。这些风险对Agent的可信部署构成挑战，但业界往往更关注性能提升而非安全性。",
   "related_articles": [
     {
-      "title": "CEO-Bench: Can Agents Play the Long Game?",
+      "title": "Hidden Anchors in Multi-Agent LLM Deliberation",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/CEO-Bench"
+      "link": "https://arxiv.org/abs/..."
     },
     {
       "title": "MosaicLeaks: Can your research agent keep a secret?",
       "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/MosaicLeaks"
+      "link": "https://huggingface.co/blog/..."
     },
     {
-      "title": "WorldLines: Benchmarking and Modeling Long-Horizon Stateful Embodied Agents",
+      "title": "Deontic Policies for Runtime Governance of Agentic AI Systems",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/WorldLines"
+      "link": "https://arxiv.org/abs/..."
     }
   ],
   "all_articles": [
@@ -27,58 +27,58 @@
       "ai_summary": "HuggingFace推出AI Agent能力排行榜，包含SWE-Bench Verified、BrowseComp+、AppWorld、tau2-Bench等多个指标，每个Agent使用统一框架（任务、上下文、动作集），可自由组合模型和框架。实验表明不同组合在价格和表现上差异大，通用Agent配置已能持平甚至超越领域特定方案，为开发者选择Agent方案提供了重要参考。"
     },
     {
-      "title": "CEO-Bench: Can Agents Play the Long Game?",
+      "title": "Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.18543",
-      "ai_summary": "论文提出CEO-Bench基准，专门评估AI Agent在长期、多步骤任务中的表现，弥补了现有基准仅关注短期任务的不足。该研究对推动Agent在真实复杂场景（如企业管理）中的应用具有重要价值。"
+      "link": "https://arxiv.org/abs/2606.19704",
+      "ai_summary": "论文指出当前Agent基准测试增长迅速，但单一基准无法覆盖部署所需的多个维度。该研究提出预测有效性方法，用于评估LLM Agent在真实场景中的表现，推动评估从静态排行榜向更实用的方向演进。"
     },
     {
-      "title": "WorldLines: Benchmarking and Modeling Long-Horizon Stateful Embodied Agents",
+      "title": "Deontic Policies for Runtime Governance of Agentic AI Systems",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.18847",
-      "ai_summary": "论文提出WorldLines基准，用于评估具身Agent在长期家庭任务中的状态记忆和交互能力。该研究填补了具身Agent在长时间跨度、状态感知方面的评估空白，对家庭服务机器人等应用场景意义重大。"
+      "link": "https://arxiv.org/abs/2606.19464",
+      "ai_summary": "论文提出基于道义策略的运行时治理框架，用于管理由LLM驱动的自主Agent系统面临的安全、隐私和合规挑战。该研究为Agent系统的安全部署提供了理论支撑，对构建可信AI Agent至关重要。"
     },
     {
-      "title": "Decoupling Search from Reasoning: A Vendor-Agnostic Grounding Architecture for LLM Agents",
+      "title": "Hidden Anchors in Multi-Agent LLM Deliberation",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.18947",
-      "ai_summary": "论文提出一种将搜索与推理解耦的通用架构，使LLM Agent能灵活接入不同搜索提供商，提升实时信息获取的可靠性和可扩展性。该工作解决了生产环境中Agent依赖单一搜索服务的瓶颈问题。"
-    },
-    {
-      "title": "RODS: Reward-Driven Online Data Synthesis for Multi-Turn Tool-Use Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.19047",
-      "ai_summary": "论文提出RODS方法，通过奖励驱动的在线数据合成，解决多轮工具使用Agent在强化学习中训练数据不足的问题。该方法显著提升了Agent在复杂工具调用场景下的学习效率。"
+      "link": "https://arxiv.org/abs/2606.19494",
+      "ai_summary": "论文揭示多Agent LLM协商过程中存在的隐藏锚定效应，即Agent在交换和修订答案时可能受到早期信息过度影响。该发现对提升多Agent系统的推理准确性和鲁棒性具有重要指导意义。"
     },
     {
       "title": "MosaicLeaks: Can your research agent keep a secret?",
       "source": "HuggingFace Blog",
       "link": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
-      "ai_summary": "该博客探讨了研究型AI Agent在信息保密方面的能力，通过MosaicLeaks测试揭示Agent可能无意中泄露敏感信息的风险。这对企业部署Agent时的安全性和隐私保护提出了警示。"
+      "ai_summary": "该博客探讨了研究型AI Agent在保密性方面的挑战，通过MosaicLeaks测试评估Agent是否会在任务中泄露敏感信息。研究强调了Agent安全性的重要性，对开发可信赖的Agent应用具有警示作用。"
     },
     {
-      "title": "We built a persistent agent memory layer on Elasticsearch with 0.89 recall",
-      "source": "Hacker News",
-      "link": "https://www.elastic.co/search-labs/blog/agent-memory-elasticsearch",
-      "ai_summary": "该文章介绍了一种基于Elasticsearch构建的持久化Agent记忆层，实现了0.89的召回率，为Agent提供长期记忆能力。这项工作对提升Agent在复杂任务中的上下文保持能力具有实际应用价值。"
-    },
-    {
-      "title": "Skill-Guided Continuation Distillation for GUI Agents",
+      "title": "Configurable Clinical Information Extraction with Agentic RAG: What Works, What Breaks, and Why",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.18890",
-      "ai_summary": "论文提出技能引导的延续蒸馏方法，用于提升GUI Agent在专家轨迹偏离时的学习效率。该方法有助于减少Agent在图形界面操作中的错误累积，对自动化测试和数字助手领域有重要意义。"
+      "link": "https://arxiv.org/abs/2606.19602",
+      "ai_summary": "论文提出基于Agentic RAG的可配置临床信息提取系统，分析其在处理异构医疗文档时的成功与失败案例。该研究为AI Agent在医疗领域的实际应用提供了实用见解，推动了领域特定Agent的发展。"
     },
     {
-      "title": "RTSGameBench: An RTS Benchmark for Strategic Reasoning by Vision-Language Models",
+      "title": "Uncertainty Decomposition for Clarification Seeking in LLM Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.18950",
-      "ai_summary": "论文提出RTSGameBench基准，用于评估视觉语言模型在实时策略游戏中的战略推理能力。该基准填补了多模态模型在复杂决策场景下的评估空白，对推动VLM在游戏和军事模拟中的应用有参考价值。"
+      "link": "https://arxiv.org/abs/2606.19559",
+      "ai_summary": "论文提出针对LLM Agent的不确定性分解方法，用于在交互中主动寻求澄清。该研究改进了传统不确定性框架，使Agent能更智能地处理模糊任务，提升人机协作效率。"
     },
     {
-      "title": "Agentic Resource Discovery Specification",
+      "title": "DeXposure-Claw: An Agentic System for DeFi Risk Supervision",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.19501",
+      "ai_summary": "论文提出DeXposure-Claw，一个专为去中心化金融风险监管设计的Agent系统，解决通用LLM Agent在快速变化的网络信用风险中的不足。该研究展示了AI Agent在金融监管领域的应用潜力。"
+    },
+    {
+      "title": "Temporary Cloudflare Accounts for AI Agents",
       "source": "Hacker News",
-      "link": "https://agenticresourcediscovery.org/introduction/",
-      "ai_summary": "该规范定义了Agent如何自主发现和调用外部资源的标准协议，旨在提升Agent在开放环境中的互操作性。这一标准化工作对构建可扩展的Agent生态系统具有基础性意义。"
+      "link": "https://blog.cloudflare.com/temporary-accounts/",
+      "ai_summary": "Cloudflare推出临时账户功能，专为AI Agent设计，允许Agent在受控环境中安全访问资源。该举措解决了Agent安全性和资源管理问题，对Agent的规模化部署具有实际意义。"
+    },
+    {
+      "title": "Exit-and-Join Dynamics for Decentralized Coalition Formation",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.19683",
+      "ai_summary": "论文研究去中心化联盟形成中的退出与加入动态，Agent通过局部移动评估形成稳定联盟。该研究为多Agent系统的协作与组织提供了理论基础，适用于分布式AI场景。"
     }
   ],
   "answered": false
