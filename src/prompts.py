@@ -385,6 +385,21 @@ _INTENT_CLASSIFY_SYSTEM = {
     ),
 }
 
+_INTENT_CLASSIFY_NO_QUESTION_SYSTEM = {
+    "zh": (
+        "判断用户消息的意图，只回答一个词：note / config。"
+        "若用户明确要求修改推送配置（调整话题、数量、来源、语言、天气城市等）→ config；"
+        "其他情况（分享想法、观点、分析等）→ note。"
+        "只输出 config 或 note，不要有其他内容。"
+    ),
+    "en": (
+        "Classify the user's message intent, answer with ONE word: note / config. "
+        "If the user is explicitly requesting config changes (topics, count, sources, language, weather city, etc.) → config; "
+        "Otherwise (sharing thoughts, opinions, analysis, etc.) → note. "
+        "Output only config or note, nothing else."
+    ),
+}
+
 _EXTRACT_KEYWORDS_USER = {
     "zh": (
         "问题：{question}\n"
@@ -717,6 +732,7 @@ _PROMPTS = {
     "refine_system": _REFINE_SYSTEM,
     "refine_user": _REFINE_USER,
     "intent_classify_system": _INTENT_CLASSIFY_SYSTEM,
+    "intent_classify_no_question_system": _INTENT_CLASSIFY_NO_QUESTION_SYSTEM,
     "extract_keywords_user": _EXTRACT_KEYWORDS_USER,
     "generate_question_system": _GENERATE_QUESTION_SYSTEM,
     "generate_question_fallback": _GENERATE_QUESTION_FALLBACK,

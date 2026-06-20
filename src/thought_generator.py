@@ -224,9 +224,23 @@ def classify_message_intent(text: str, today_question: str, lang: str = "zh") ->
     if any(kw.lower() in text_lower for kw in config_keywords):
         return "config"
 
-    # 无今日思考题，无法判断 answer，直接归 note
+    # 无今日思考题，仍需要 LLM 区分 config 和 note（不能直接给 answer）
     if not today_question:
-        return "note"
+        try:
+            client = get_client()
+            resp = client.chat.completions.create(
+                model=DEEPSEEK_MODEL,
+                messages=[
+                    {"role": "system", "content": get("intent_classify_no_question_system", lang)},
+                    {"role": "user", "content": f"User message: {text[:400]}"},
+                ],
+                temperature=0,
+                max_tokens=5,
+            )
+            result = resp.choices[0].message.content.strip().lower()
+            return "config" if result.startswith("config") else "note"
+        except Exception:
+            return "note"
 
     # LLM 三分类
     try:
