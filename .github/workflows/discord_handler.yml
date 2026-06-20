@@ -65,5 +65,6 @@ jobs:
             echo "无配置变更，跳过提交"
           else
             git commit -m "chore: 自动更新用户配置 [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
             git push origin ${{ github.ref_name }}
           fi

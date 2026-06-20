@@ -64,5 +64,6 @@ jobs:
             echo "无状态变更"
           else
             git commit -m "chore: 记录今日推送完成 [skip ci]"
+            git pull --rebase origin main
             git push origin main
           fi
