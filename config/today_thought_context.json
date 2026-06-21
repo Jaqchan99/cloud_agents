@@ -1,84 +1,31 @@
 {
-  "date": "2026-06-20",
-  "question": "在AI Agent能力快速提升的背景下，你认为当前最被忽视的风险是什么——是Agent在复杂任务中的锚定偏差，还是其保密性缺陷（如泄露敏感信息）？",
-  "context": "多篇论文揭示了Agent在推理中易受早期信息锚定影响，同时有研究指出Agent可能在任务中意外泄露敏感信息。这些风险对Agent的可信部署构成挑战，但业界往往更关注性能提升而非安全性。",
+  "date": "2026-06-21",
+  "question": "当AI Agent开始使用临时账户执行任务时，我们应如何平衡其自动化效率与保密性需求，特别是在处理敏感数据的研究场景中？",
+  "context": "Cloudflare的临时账户功能解决了Agent的凭证安全问题，但MosaicLeaks基准测试揭示了Agent在保密任务中的脆弱性——这提示我们，基础设施的安全设计（如临时账户）与Agent自身的行为安全（如信息泄露）之间存在关键张力，可能影响Agent在金融、医疗等行业的实际部署。",
   "related_articles": [
     {
-      "title": "Hidden Anchors in Multi-Agent LLM Deliberation",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/..."
+      "title": "Temporary Cloudflare accounts for AI agents",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=123456"
     },
     {
       "title": "MosaicLeaks: Can your research agent keep a secret?",
       "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/..."
-    },
-    {
-      "title": "Deontic Policies for Runtime Governance of Agentic AI Systems",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/..."
+      "link": "https://huggingface.co/blog/mosaicleaks"
     }
   ],
   "all_articles": [
     {
-      "title": "Is it agentic enough? Benchmarking open models on your own tooling",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/is-it-agentic-enough",
-      "ai_summary": "HuggingFace推出AI Agent能力排行榜，包含SWE-Bench Verified、BrowseComp+、AppWorld、tau2-Bench等多个指标，每个Agent使用统一框架（任务、上下文、动作集），可自由组合模型和框架。实验表明不同组合在价格和表现上差异大，通用Agent配置已能持平甚至超越领域特定方案，为开发者选择Agent方案提供了重要参考。"
-    },
-    {
-      "title": "Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.19704",
-      "ai_summary": "论文指出当前Agent基准测试增长迅速，但单一基准无法覆盖部署所需的多个维度。该研究提出预测有效性方法，用于评估LLM Agent在真实场景中的表现，推动评估从静态排行榜向更实用的方向演进。"
-    },
-    {
-      "title": "Deontic Policies for Runtime Governance of Agentic AI Systems",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.19464",
-      "ai_summary": "论文提出基于道义策略的运行时治理框架，用于管理由LLM驱动的自主Agent系统面临的安全、隐私和合规挑战。该研究为Agent系统的安全部署提供了理论支撑，对构建可信AI Agent至关重要。"
-    },
-    {
-      "title": "Hidden Anchors in Multi-Agent LLM Deliberation",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.19494",
-      "ai_summary": "论文揭示多Agent LLM协商过程中存在的隐藏锚定效应，即Agent在交换和修订答案时可能受到早期信息过度影响。该发现对提升多Agent系统的推理准确性和鲁棒性具有重要指导意义。"
+      "title": "Temporary Cloudflare accounts for AI agents",
+      "source": "Hacker News",
+      "link": "https://blog.cloudflare.com/temporary-accounts/",
+      "ai_summary": "Cloudflare 推出临时账户功能，专为 AI Agent 设计，允许代理在安全隔离的环境中执行任务，避免长期凭证泄露风险。这一举措解决了 AI Agent 在自动化操作中面临的账户安全和权限管理痛点，为 Agent 的广泛部署提供了基础设施支持。"
     },
     {
       "title": "MosaicLeaks: Can your research agent keep a secret?",
       "source": "HuggingFace Blog",
       "link": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
-      "ai_summary": "该博客探讨了研究型AI Agent在保密性方面的挑战，通过MosaicLeaks测试评估Agent是否会在任务中泄露敏感信息。研究强调了Agent安全性的重要性，对开发可信赖的Agent应用具有警示作用。"
-    },
-    {
-      "title": "Configurable Clinical Information Extraction with Agentic RAG: What Works, What Breaks, and Why",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.19602",
-      "ai_summary": "论文提出基于Agentic RAG的可配置临床信息提取系统，分析其在处理异构医疗文档时的成功与失败案例。该研究为AI Agent在医疗领域的实际应用提供了实用见解，推动了领域特定Agent的发展。"
-    },
-    {
-      "title": "Uncertainty Decomposition for Clarification Seeking in LLM Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.19559",
-      "ai_summary": "论文提出针对LLM Agent的不确定性分解方法，用于在交互中主动寻求澄清。该研究改进了传统不确定性框架，使Agent能更智能地处理模糊任务，提升人机协作效率。"
-    },
-    {
-      "title": "DeXposure-Claw: An Agentic System for DeFi Risk Supervision",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.19501",
-      "ai_summary": "论文提出DeXposure-Claw，一个专为去中心化金融风险监管设计的Agent系统，解决通用LLM Agent在快速变化的网络信用风险中的不足。该研究展示了AI Agent在金融监管领域的应用潜力。"
-    },
-    {
-      "title": "Temporary Cloudflare Accounts for AI Agents",
-      "source": "Hacker News",
-      "link": "https://blog.cloudflare.com/temporary-accounts/",
-      "ai_summary": "Cloudflare推出临时账户功能，专为AI Agent设计，允许Agent在受控环境中安全访问资源。该举措解决了Agent安全性和资源管理问题，对Agent的规模化部署具有实际意义。"
-    },
-    {
-      "title": "Exit-and-Join Dynamics for Decentralized Coalition Formation",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.19683",
-      "ai_summary": "论文研究去中心化联盟形成中的退出与加入动态，Agent通过局部移动评估形成稳定联盟。该研究为多Agent系统的协作与组织提供了理论基础，适用于分布式AI场景。"
+      "ai_summary": "该博客提出 MosaicLeaks 基准测试，专门评估 AI 研究代理在保密任务中的表现，测试其能否在复杂信息环境中保护敏感数据。随着 Agent 被用于处理机密信息，这一评估工具对确保 AI 安全性和可信度至关重要。"
     }
   ],
   "answered": false
