@@ -24,6 +24,7 @@ THOUGHT_CONTEXT_PATH = Path(__file__).parent.parent / "config" / "today_thought_
 # Test channel paths
 TEST_CONFIG_PATH = Path(__file__).parent.parent / "config" / "test_config.json"
 TEST_LAST_PUSH_DATE_PATH = Path(__file__).parent.parent / "config" / "last_push_date_test.txt"
+TEST_THOUGHT_CONTEXT_PATH = Path(__file__).parent.parent / "config" / "today_thought_context_test.json"
 
 
 def _resolve_channel(channel: str) -> dict:
@@ -32,7 +33,7 @@ def _resolve_channel(channel: str) -> dict:
         return {
             "config_path": TEST_CONFIG_PATH,
             "last_push_date_path": TEST_LAST_PUSH_DATE_PATH,
-            "thought_context_path": None,  # No thought context for test
+            "thought_context_path": TEST_THOUGHT_CONTEXT_PATH,
             "channel_id_env": "DISCORD_TEST_CHANNEL_ID",
         }
     return {
@@ -108,7 +109,8 @@ def get_default_config() -> dict:
     }
 
 
-def save_thought_context(question_data: dict, selected: list[dict], date_str: str):
+def save_thought_context(question_data: dict, selected: list[dict], date_str: str,
+                        thought_path: Path = THOUGHT_CONTEXT_PATH):
     """保存思考题上下文到本地"""
     from datetime import timedelta
     iso_date = str((datetime.now(timezone.utc) + timedelta(hours=8)).date())
@@ -124,8 +126,8 @@ def save_thought_context(question_data: dict, selected: list[dict], date_str: st
         ],
         "answered": False,
     }
-    THOUGHT_CONTEXT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(THOUGHT_CONTEXT_PATH, "w", encoding="utf-8") as f:
+    thought_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(thought_path, "w", encoding="utf-8") as f:
         json.dump(context, f, ensure_ascii=False, indent=2)
     print(f"[Thought] 思考题上下文已保存")
 
@@ -224,7 +226,7 @@ def run_daily_push(force: bool = False, channel: str = "main"):
     else:
         send_via_discord(greeting, selected, date_str, channel_id=target_channel_id, lang=lang)
 
-    # 6. 生成并发送思考题（test 频道跳过）
+    # 6. 生成并发送思考题
     if thought_path is not None:
         print("[Step 6] 生成每日思考题...")
         try:
@@ -239,12 +241,12 @@ def run_daily_push(force: bool = False, channel: str = "main"):
                 from discord_client import send_message
                 send_message(thought_msg, channel_id=target_channel_id)
 
-            save_thought_context(question_data, selected, date_str)
+            save_thought_context(question_data, selected, date_str, thought_path=thought_path)
             print(f"[Step 6] 思考题已发送: {question_data.get('question','')[:60]}...")
         except Exception as e:
             print(f"[Step 6] 思考题生成失败（不影响日报推送）: {e}")
     else:
-        print("[Step 6] 测试频道，跳过思考题生成")
+        print("[Step 6] 未配置思考题路径，跳过")
 
     # 记录今日已推送
     mark_pushed_today(push_date_path)

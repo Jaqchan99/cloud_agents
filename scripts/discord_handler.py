@@ -28,6 +28,7 @@ THOUGHT_CONTEXT_PATH = Path(__file__).parent.parent / "config" / "today_thought_
 TEST_CONFIG_PATH = Path(__file__).parent.parent / "config" / "test_config.json"
 TEST_LAST_MSG_ID_PATH = Path(__file__).parent.parent / "config" / "last_discord_msg_id_test.txt"
 TEST_LAST_PUSH_DATE_PATH = Path(__file__).parent.parent / "config" / "last_push_date_test.txt"
+TEST_THOUGHT_CONTEXT_PATH = Path(__file__).parent.parent / "config" / "today_thought_context_test.json"
 
 PUSH_GUARD_START_BJ = 8
 PUSH_GUARD_END_BJ = 23
@@ -39,7 +40,7 @@ def _resolve_channel(channel: str) -> dict:
             "config_path": TEST_CONFIG_PATH,
             "last_msg_id_path": TEST_LAST_MSG_ID_PATH,
             "last_push_date_path": TEST_LAST_PUSH_DATE_PATH,
-            "thought_context_path": None,
+            "thought_context_path": TEST_THOUGHT_CONTEXT_PATH,
             "channel_id_env": "DISCORD_TEST_CHANNEL_ID",
             "skip_guard": True,
         }
