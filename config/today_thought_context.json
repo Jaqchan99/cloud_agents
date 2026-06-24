@@ -1,17 +1,22 @@
 {
-  "date": "2026-06-23",
-  "question": "当AI Agent被设计成在后台持续、无休止地自主协作时，传统的版本控制工具（如Git）是否还能满足其需求？Oak这样的专用替代品是否预示着Agent工作流将彻底改变软件开发协作模式？",
-  "context": "AI Agent的'loopy'模式强调持续自主协作，而Oak作为Git的替代品专为Agent设计，两者结合可能重新定义代码协作的边界。这引发了对现有工具链适配性的深思，尤其是对于依赖Agent自动化的团队。",
+  "date": "2026-06-24",
+  "question": "当AI代理从单次交互转向持续、自主的‘Loop’模式，企业如何确保这些长期运行的代理在动态环境中保持安全、合规且不偏离初始目标？",
+  "context": "多个资讯显示AI代理正向持续性、自主化演进（如‘Loop’趋势和移动代理的自我进化），但DEMM-Bench和SkillHarness等研究也揭示了治理、安全和证据充分性的挑战。这个问题直击从实验到落地的核心矛盾：自主性与可控性的平衡。",
   "related_articles": [
     {
       "title": "The AI world is getting ‘loopy’",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/ai-world-loopy"
+      "link": "https://techcrunch.com/2026/06/24/the-ai-world-is-getting-loopy/"
     },
     {
-      "title": "Show HN: Oak – Git alternative designed for agents",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=oak-git-alternative"
+      "title": "DEMM-Bench: A Cross-Regime Benchmark for Agent-Runtime Governance-Evidence Sufficiency",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2026.06.24"
+    },
+    {
+      "title": "SkillHarness: Harnessing Safe Skills for Computer-Use Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2026.06.24"
     }
   ],
   "all_articles": [
@@ -19,13 +24,61 @@
       "title": "The AI world is getting ‘loopy’",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/06/22/the-ai-world-is-getting-loopy/",
-      "ai_summary": "本文探讨了AI Agent领域的新趋势——'loopy'模式，即授权一群Agent在后台持续、无休止地工作，将Agentic AI推向更高阶的自主协作。这一概念可能重塑AI应用的自动化边界，对AI Agent的部署和评估提出新挑战。"
+      "ai_summary": "本文介绍了AI领域的新趋势“Loop”，即授权一组AI代理在后台持续、无限地工作，将代理AI推向新阶段。这标志着AI从单次交互向持续性、自主化工作流的转变，对自动化任务和长期运行的服务有深远影响。"
     },
     {
-      "title": "Show HN: Oak – Git alternative designed for agents",
-      "source": "Hacker News",
-      "link": "https://oak.space/oak/oak",
-      "ai_summary": "Oak是一个专为AI Agent设计的Git替代版本控制系统，旨在优化Agent间的代码协作与版本管理。该项目在Hacker News上获得141条评论和148分，反映了开发者社区对Agent专用工具的高度关注。"
+      "title": "India’s MoEngage bets that the future of marketing is millions of AI agents",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/23/indias-moengage-bets-marketings-future-on-millions-of-ai-agents/",
+      "ai_summary": "印度营销科技公司MoEngage通过全现金交易获取技术，为每位客户分配专属AI代理，推动营销个性化。这体现了AI Agent在垂直行业（如营销）中的大规模应用潜力，可能重塑客户关系管理方式。"
+    },
+    {
+      "title": "Fika Jobs raises $4M to build a video-first hiring platform where AI agents interview candidates",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/23/fika-jobs-raises-4m-to-build-a-video-first-hiring-platform-where-ai-agents-interview-candidates/",
+      "ai_summary": "瑞典初创公司Fika Jobs获400万美元融资，打造视频优先招聘平台，结合AI面试代理和短视频简介。这展示了AI Agent在人力资源领域的创新应用，有望提高招聘效率和候选人体验。"
+    },
+    {
+      "title": "Build real agentic apps using CUGA: two dozen working examples on a lightweight harness",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/ibm-research/cuga-apps",
+      "ai_summary": "IBM Research在HuggingFace博客上发布CUGA框架，提供24个可运行的代理应用示例，强调轻量级工具链。这为开发者构建实际AI Agent应用提供了实用参考，降低了入门门槛。"
+    },
+    {
+      "title": "PEAR: Permutation-Equivariant Adaptive Routing Multi-Agent Debate",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.20621",
+      "ai_summary": "该论文提出PEAR方法，通过置换等变自适应路由改进多智能体辩论，解决固定拓扑结构带来的偏差。这提升了多Agent协作的可靠性和灵活性，对提升LLM推理能力有重要意义。"
+    },
+    {
+      "title": "Darwin Mobile Agent: A Roadmap for Self-Evolution",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.20622",
+      "ai_summary": "论文提出Darwin移动代理，探索在开放环境中实现自我进化的AI代理，受“苦涩教训”启发。这为开发通用、自适应行为的移动端Agent提供了路线图，推动AI代理的持续学习能力。"
+    },
+    {
+      "title": "Harnessing Agent Skills: Architectural Patterns and a Reference Architecture for Skill-Mediated LLM Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.20631",
+      "ai_summary": "该论文提出技能中介的LLM代理架构模式，将代理技能作为可复用的持久化构件。这为构建模块化、可扩展的AI Agent系统提供了设计指南，有助于提升代理的灵活性和复用性。"
+    },
+    {
+      "title": "SkillHarness: Harnessing Safe Skills for Computer-Use Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.20636",
+      "ai_summary": "论文介绍SkillHarness，用于计算机使用代理的安全技能学习，应对动态交互环境中的持续学习需求。这增强了AI Agent在真实场景中的安全性和适应性，对自动化操作有实际价值。"
+    },
+    {
+      "title": "DEMM-Bench: A Cross-Regime Benchmark for Agent-Runtime Governance-Evidence Sufficiency",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.20634",
+      "ai_summary": "该论文提出DEMM-Bench基准，用于评估代理运行时治理的证据充分性，涵盖追踪、日志等指标。这为AI Agent的可信度和合规性评估提供了标准化工具，对监管和审计至关重要。"
+    },
+    {
+      "title": "Specifying AI-SDLC Processes: A Protocol Language for Human-Agent Boundaries",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.20615",
+      "ai_summary": "论文提出一种协议语言，用于规范AI代理在软件开发生命周期中作为团队成员的角色边界。这填补了人机协作规范化的空白，对AI辅助软件开发的安全性和效率有指导意义。"
     }
   ],
   "answered": false
