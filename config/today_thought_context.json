@@ -1,84 +1,84 @@
 {
-  "date": "2026-06-24",
-  "question": "当AI代理从单次交互转向持续、自主的‘Loop’模式，企业如何确保这些长期运行的代理在动态环境中保持安全、合规且不偏离初始目标？",
-  "context": "多个资讯显示AI代理正向持续性、自主化演进（如‘Loop’趋势和移动代理的自我进化），但DEMM-Bench和SkillHarness等研究也揭示了治理、安全和证据充分性的挑战。这个问题直击从实验到落地的核心矛盾：自主性与可控性的平衡。",
+  "date": "2026-06-25",
+  "question": "当AI Agent从单次任务转向持续后台运行（如‘loop’范式），这对现有软件架构和团队协作模式会带来哪些根本性挑战？",
+  "context": "今日多条资讯指向AI Agent的持续化、自动化趋势，例如‘loop’范式和MoEngage的百万Agent营销，这要求我们重新思考系统设计、监控和信任机制，而不仅是技术性能提升。",
   "related_articles": [
     {
       "title": "The AI world is getting ‘loopy’",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/24/the-ai-world-is-getting-loopy/"
-    },
-    {
-      "title": "DEMM-Bench: A Cross-Regime Benchmark for Agent-Runtime Governance-Evidence Sufficiency",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2026.06.24"
-    },
-    {
-      "title": "SkillHarness: Harnessing Safe Skills for Computer-Use Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2026.06.24"
-    }
-  ],
-  "all_articles": [
-    {
-      "title": "The AI world is getting ‘loopy’",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/22/the-ai-world-is-getting-loopy/",
-      "ai_summary": "本文介绍了AI领域的新趋势“Loop”，即授权一组AI代理在后台持续、无限地工作，将代理AI推向新阶段。这标志着AI从单次交互向持续性、自主化工作流的转变，对自动化任务和长期运行的服务有深远影响。"
+      "link": "https://techcrunch.com"
     },
     {
       "title": "India’s MoEngage bets that the future of marketing is millions of AI agents",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/23/indias-moengage-bets-marketings-future-on-millions-of-ai-agents/",
-      "ai_summary": "印度营销科技公司MoEngage通过全现金交易获取技术，为每位客户分配专属AI代理，推动营销个性化。这体现了AI Agent在垂直行业（如营销）中的大规模应用潜力，可能重塑客户关系管理方式。"
+      "link": "https://techcrunch.com"
     },
     {
-      "title": "Fika Jobs raises $4M to build a video-first hiring platform where AI agents interview candidates",
+      "title": "RIFT-Bench: Dynamic Red-teaming For Agentic AI Systems",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org"
+    }
+  ],
+  "all_articles": [
+    {
+      "title": "GLM-5.2 is a step change for open agents",
+      "source": "Hacker News",
+      "link": "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+      "ai_summary": "GLM-5.2 被评价为开源 AI Agent 领域的一次重大进步，可能显著提升开源模型在复杂任务上的表现。该模型在社区中引发热议，表明开源 Agent 正快速追赶闭源方案。"
+    },
+    {
+      "title": "Qwen-AgentWorld: Language World Models for General Agents",
+      "source": "Hacker News",
+      "link": "https://arxiv.org/abs/2606.24597",
+      "ai_summary": "Qwen-AgentWorld 提出语言世界模型，旨在让通用 Agent 更好地理解和模拟环境。该研究在 Hacker News 上获得高关注，可能为 Agent 决策和规划提供新范式。"
+    },
+    {
+      "title": "Haystack: Open-Source AI Framework for Production Ready Agents, RAG",
+      "source": "Hacker News",
+      "link": "https://haystack.deepset.ai/",
+      "ai_summary": "Haystack 是一个面向生产环境的开源 AI 框架，专注于构建 Agent 和检索增强生成（RAG）应用。其高社区评分表明该框架在实用性和易用性上受到认可。"
+    },
+    {
+      "title": "RIFT-Bench: Dynamic Red-teaming For Agentic AI Systems",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.23927",
+      "ai_summary": "RIFT-Bench 提出动态红队测试方法，用于评估 Agentic AI 系统的安全性和鲁棒性。该工作针对 LLM 驱动的自主决策系统的新攻击面，对 Agent 安全评估具有重要参考价值。"
+    },
+    {
+      "title": "The AI world is getting ‘loopy’",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/23/fika-jobs-raises-4m-to-build-a-video-first-hiring-platform-where-ai-agents-interview-candidates/",
-      "ai_summary": "瑞典初创公司Fika Jobs获400万美元融资，打造视频优先招聘平台，结合AI面试代理和短视频简介。这展示了AI Agent在人力资源领域的创新应用，有望提高招聘效率和候选人体验。"
+      "link": "https://techcrunch.com/2026/06/22/the-ai-world-is-getting-loopy/",
+      "ai_summary": "文章介绍了一种名为“loop”的 Agentic AI 新范式，允许 Agent 群在后台持续工作，实现无限循环的自动化。这代表了 AI Agent 从单次任务向持续性服务的演进趋势。"
+    },
+    {
+      "title": "Introducing the FFASR Leaderboard: Benchmarking ASR in the Real World",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/ffasr-leaderboard",
+      "ai_summary": "HuggingFace 推出 FFASR 排行榜，用于在真实场景中评估自动语音识别（ASR）系统。该基准测试填补了 ASR 领域实用评估的空白，有助于推动更鲁棒的语音 AI 发展。"
     },
     {
       "title": "Build real agentic apps using CUGA: two dozen working examples on a lightweight harness",
       "source": "HuggingFace Blog",
       "link": "https://huggingface.co/blog/ibm-research/cuga-apps",
-      "ai_summary": "IBM Research在HuggingFace博客上发布CUGA框架，提供24个可运行的代理应用示例，强调轻量级工具链。这为开发者构建实际AI Agent应用提供了实用参考，降低了入门门槛。"
+      "ai_summary": "IBM Research 发布 CUGA 框架，提供 20 多个可运行的 Agent 应用示例，强调轻量级和实用性。该博客为开发者构建真实 Agent 应用提供了直接参考。"
     },
     {
-      "title": "PEAR: Permutation-Equivariant Adaptive Routing Multi-Agent Debate",
+      "title": "ReMMD: Realistic Multilingual Multi-Image Agentic Verification for Multimodal Misinformation Detection",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.20621",
-      "ai_summary": "该论文提出PEAR方法，通过置换等变自适应路由改进多智能体辩论，解决固定拓扑结构带来的偏差。这提升了多Agent协作的可靠性和灵活性，对提升LLM推理能力有重要意义。"
+      "link": "https://arxiv.org/abs/2606.24112",
+      "ai_summary": "ReMMD 提出多语言多图像 Agent 验证方法，用于检测多模态虚假信息。该研究针对长文本、多图像和混合来源的复杂场景，提升了多模态 Agent 在事实核查中的能力。"
     },
     {
-      "title": "Darwin Mobile Agent: A Roadmap for Self-Evolution",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.20622",
-      "ai_summary": "论文提出Darwin移动代理，探索在开放环境中实现自我进化的AI代理，受“苦涩教训”启发。这为开发通用、自适应行为的移动端Agent提供了路线图，推动AI代理的持续学习能力。"
+      "title": "India’s MoEngage bets that the future of marketing is millions of AI agents",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/23/indias-moengage-bets-marketings-future-on-millions-of-ai-agents/",
+      "ai_summary": "MoEngage 通过全现金收购获得为每个客户分配 AI Agent 的技术，押注营销未来由数百万 AI Agent 驱动。这反映了 AI Agent 在个性化营销领域的商业化落地趋势。"
     },
     {
-      "title": "Harnessing Agent Skills: Architectural Patterns and a Reference Architecture for Skill-Mediated LLM Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.20631",
-      "ai_summary": "该论文提出技能中介的LLM代理架构模式，将代理技能作为可复用的持久化构件。这为构建模块化、可扩展的AI Agent系统提供了设计指南，有助于提升代理的灵活性和复用性。"
-    },
-    {
-      "title": "SkillHarness: Harnessing Safe Skills for Computer-Use Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.20636",
-      "ai_summary": "论文介绍SkillHarness，用于计算机使用代理的安全技能学习，应对动态交互环境中的持续学习需求。这增强了AI Agent在真实场景中的安全性和适应性，对自动化操作有实际价值。"
-    },
-    {
-      "title": "DEMM-Bench: A Cross-Regime Benchmark for Agent-Runtime Governance-Evidence Sufficiency",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.20634",
-      "ai_summary": "该论文提出DEMM-Bench基准，用于评估代理运行时治理的证据充分性，涵盖追踪、日志等指标。这为AI Agent的可信度和合规性评估提供了标准化工具，对监管和审计至关重要。"
-    },
-    {
-      "title": "Specifying AI-SDLC Processes: A Protocol Language for Human-Agent Boundaries",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.20615",
-      "ai_summary": "论文提出一种协议语言，用于规范AI代理在软件开发生命周期中作为团队成员的角色边界。这填补了人机协作规范化的空白，对AI辅助软件开发的安全性和效率有指导意义。"
+      "title": "Fika Jobs raises $4M to build a video-first hiring platform where AI agents interview candidates",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/23/fika-jobs-raises-4m-to-build-a-video-first-hiring-platform-where-ai-agents-interview-candidates/",
+      "ai_summary": "Fika Jobs 获 400 万美元融资，打造视频优先招聘平台，由 AI Agent 执行面试。该模式结合短视频简历，可能改变传统招聘流程，体现 AI Agent 在 HR 领域的应用潜力。"
     }
   ],
   "answered": false
