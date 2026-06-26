@@ -149,9 +149,9 @@ def save_last_msg_id(msg_id: str, msg_id_path: Path):
     msg_id_path.write_text(msg_id)
 
 
-def load_thought_context() -> dict | None:
-    if THOUGHT_CONTEXT_PATH.exists():
-        with open(THOUGHT_CONTEXT_PATH, "r", encoding="utf-8") as f:
+def load_thought_context(thought_path: Path = THOUGHT_CONTEXT_PATH) -> dict | None:
+    if thought_path.exists():
+        with open(thought_path, "r", encoding="utf-8") as f:
             return json.load(f)
     return None
 
@@ -255,7 +255,8 @@ def _build_notion_reply(
     return "\n".join(lines)
 
 
-def handle_capture(text: str, lang: str = "zh") -> str | None:
+def handle_capture(text: str, lang: str = "zh",
+                    thought_context_path: Path = THOUGHT_CONTEXT_PATH) -> str | None:
     """对长度 > 20 字的非命令消息做意图分类，路由到 answer/note"""
     from thought_generator import classify_message_intent, generate_question_from_thought
     from prompts import CONFIG_KEYWORDS
@@ -267,7 +268,7 @@ def handle_capture(text: str, lang: str = "zh") -> str | None:
     if len(text) < 20:
         return None
 
-    ctx = load_thought_context()
+    ctx = load_thought_context(thought_context_path)
     today_question = ctx.get("question", "") if ctx else ""
     related_articles = ctx.get("related_articles", []) if ctx else []
     all_articles = ctx.get("all_articles", []) if ctx else []
@@ -316,7 +317,8 @@ def handle_capture(text: str, lang: str = "zh") -> str | None:
 
 
 def handle_command(text: str, config: dict, channel: str = "main",
-                   channel_id: str = "", last_push_date_path: Path = LAST_PUSH_DATE_PATH) -> tuple[str, dict | None]:
+                   channel_id: str = "", last_push_date_path: Path = LAST_PUSH_DATE_PATH,
+                   thought_context_path: Path = THOUGHT_CONTEXT_PATH) -> tuple[str, dict | None]:
     """处理命令，返回 (回复文本, 更新后的配置或None)"""
     text = text.strip()
     lang = config.get("language", "zh")
@@ -349,8 +351,8 @@ def handle_command(text: str, config: dict, channel: str = "main",
             return err, None
 
     if text == "!thought":
-        if THOUGHT_CONTEXT_PATH.exists():
-            with open(THOUGHT_CONTEXT_PATH, "r", encoding="utf-8") as f:
+        if thought_context_path.exists():
+            with open(thought_context_path, "r", encoding="utf-8") as f:
                 ctx = json.load(f)
             from thought_generator import format_thought_question_message
             return format_thought_question_message(ctx, lang=lang), None
@@ -363,10 +365,11 @@ def handle_command(text: str, config: dict, channel: str = "main",
             or text.startswith("---") or text.startswith("_Auto-pushed"):
         return "", None
 
-    # 统一意图路由：capture（answer/note） 或 config
-    capture_reply = handle_capture(text, lang=lang)
-    if capture_reply is not None:
-        return capture_reply, None
+    # 统一意图路由：capture（answer/note），测试频道暂不处理用户回复
+    if channel != "test":
+        capture_reply = handle_capture(text, lang=lang, thought_context_path=thought_context_path)
+        if capture_reply is not None:
+            return capture_reply, None
 
     # 意图为 config：调用 DeepSeek 修改配置
     try:
@@ -399,6 +402,7 @@ def run_handler(channel: str = "main"):
     last_msg_id = load_last_msg_id(last_msg_id_path)
     config = load_config(config_path)
     lang = config.get("language", "zh")
+    thought_context_path = ch["thought_context_path"]
 
     # 获取目标频道 ID
     target_channel_id = os.environ.get(channel_id_env, "")
@@ -456,6 +460,7 @@ def run_handler(channel: str = "main"):
             content, config, channel=channel,
             channel_id=target_channel_id,
             last_push_date_path=last_push_date_path,
+            thought_context_path=thought_context_path,
         )
 
         if not reply:

@@ -52,7 +52,7 @@ jobs:
           git add config/test_config.json \
                   config/last_discord_msg_id_test.txt \
                   config/last_push_date_test.txt \
-                  config/today_thought_context.json 2>/dev/null || true
+                  config/today_thought_context_test.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "无配置变更，跳过提交"
           else
