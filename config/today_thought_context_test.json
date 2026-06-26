@@ -1,0 +1,43 @@
+{
+  "date": "2026-06-26",
+  "question": "As AI companies like Anthropic accuse competitors of model extraction, how should the industry balance protecting IP with the need for openness and collaboration in AI development?",
+  "context": "With the launch of custom chips like OpenAI's 'Jalapeño' and the rise of AI agents transforming work, the tension between proprietary advancements and shared progress is intensifying, making this a critical debate for practitioners and policymakers.",
+  "related_articles": [
+    {
+      "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=12345"
+    },
+    {
+      "title": "OpenAI unveils its first custom chip, built by Broadcom",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=12346"
+    },
+    {
+      "title": "How agents are transforming work",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/blog/agents-transforming-work"
+    }
+  ],
+  "all_articles": [
+    {
+      "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "source": "Hacker News",
+      "link": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
+      "ai_summary": "Anthropic accuses Alibaba of illicitly extracting capabilities from its Claude AI model, highlighting escalating tensions in AI intellectual property theft. This incident underscores the growing importance of model security and the competitive landscape between US and Chinese AI firms."
+    },
+    {
+      "title": "OpenAI unveils its first custom chip, built by Broadcom",
+      "source": "Hacker News",
+      "link": "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/",
+      "ai_summary": "OpenAI reveals 'Jalapeño,' its first custom AI inference chip developed with Broadcom, designed to optimize performance and efficiency for large language models. This move signals OpenAI's strategic push to reduce reliance on external hardware and scale its AI infrastructure."
+    },
+    {
+      "title": "How agents are transforming work",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/how-agents-are-transforming-work",
+      "ai_summary": "OpenAI's new research paper details how AI agents are reshaping work by enabling longer, more complex tasks and boosting productivity across various roles. This highlights the rapid advancement of agentic AI and its potential to redefine workplace automation."
+    }
+  ],
+  "answered": false
+}
