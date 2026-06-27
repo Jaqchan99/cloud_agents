@@ -1,84 +1,84 @@
 {
-  "date": "2026-06-26",
-  "question": "当AI Agent开始取代像Notion邮件应用这样的传统工具，并且像Patronus AI这样的公司正在投资数百万美元来测试其可靠性，我们是否正在接近一个‘Agent优先’的工作范式？对于个人开发者或企业来说，应该优先关注构建Agent的能力，还是确保其安全性和可控性？",
-  "context": "多条资讯显示AI Agent正从辅助工具转向核心工作引擎，同时对其可靠性的评估和测试需求激增，这提出了一个关键权衡：在追求Agent能力提升的同时，如何平衡其安全性和实用性的优先级。",
+  "date": "2026-06-27",
+  "question": "在Agent系统普遍采用模块化设计的今天，‘指令泄露’问题（一个模块的指令静默影响其他模块）是否意味着我们高估了当前Agent的可组合性和可靠性？这对你所在团队构建Agent应用有何警示？",
+  "context": "随着Agent从单一任务向多模块协作演进，模块化设计成为主流，但‘指令泄露’研究揭示了其隐藏的脆弱性。这直接挑战了Agent在复杂场景下的安全性和可预测性，对实际部署具有关键影响。",
   "related_articles": [
+    {
+      "title": "Instruction Bleed: Cross-Module Interference in Prompt-Composed Agentic Systems",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/.../InstructionBleed"
+    },
     {
       "title": "Patronus AI lands $50M to build ‘digital worlds’ that stress-test AI agents",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com"
+      "link": "https://techcrunch.com/.../patronus-ai-50m"
     },
     {
-      "title": "Notion killing Skiff-influenced email app since most users use AI agents instead",
-      "source": "Ars Technica",
-      "link": "https://arstechnica.com"
-    },
-    {
-      "title": "How agents are transforming work",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/blog"
+      "title": "The Verification Horizon: No Silver Bullet for Coding Agent Rewards",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/.../VerificationHorizon"
     }
   ],
   "all_articles": [
     {
-      "title": "GLM-5.2 is a step change for open agents",
-      "source": "Hacker News",
-      "link": "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
-      "ai_summary": "文章指出GLM-5.2作为开源模型在AI Agent能力上实现了显著飞跃，可能改变开源Agent的竞争格局。HN社区对此高度关注，评论数和得分均很高，表明其重要性。"
-    },
-    {
       "title": "Patronus AI lands $50M to build ‘digital worlds’ that stress-test AI agents",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/",
-      "ai_summary": "Patronus AI获得5000万美元融资，用于构建测试AI Agent的虚拟环境，反映市场对Agent可靠性评估的迫切需求。该公司由前Meta AI研究员创立，投资者称需求近乎无限。"
+      "ai_summary": "AI Agent测试初创公司Patronus AI获得5000万美元融资，用于构建模拟数字世界以压力测试AI Agent的可靠性和安全性。这反映了市场对Agent评估工具的巨大需求，与HuggingFace推出Agent排行榜的趋势一致。"
     },
     {
       "title": "How agents are transforming work",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/how-agents-are-transforming-work",
-      "ai_summary": "OpenAI发布新研究论文，展示AI Agent如何通过执行更长、更复杂的任务来改变工作方式，提升跨角色生产力。这标志着Agent从辅助工具向核心工作引擎的转变。"
-    },
-    {
-      "title": "The Hitchhiker's Guide to Agentic AI: From Foundations to Systems",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.24937",
-      "ai_summary": "这是一本全面的AI Agent构建实践指南，覆盖从基础到系统的全栈知识，为开发者提供系统化参考。其综合性使其成为Agent开发者的重要资源。"
+      "ai_summary": "OpenAI发布新研究论文，展示AI Agent如何通过执行更长、更复杂的任务来改变工作方式，并扩展各角色的生产力。这标志着大模型厂商正式将Agent作为核心应用方向，具有行业风向标意义。"
     },
     {
       "title": "General Intuition’s $2.3B bet that video games can train AI agents for the real world",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/",
-      "ai_summary": "General Intuition融资3.2亿美元，利用数百万小时游戏数据训练AI Agent，旨在让Agent获得类似人类的直觉。这代表了一种通过虚拟环境训练Agent的新范式。"
-    },
-    {
-      "title": "Diagnosing and Mitigating Compounding Failures in Agentic Persuasion via Taxonomic Strategy Retrieval",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.24976",
-      "ai_summary": "论文研究了多步开放环境中Agent的复合错误问题，并提出通过分类策略检索来缓解。这对提升Agent在复杂任务中的鲁棒性具有重要实践意义。"
-    },
-    {
-      "title": "TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.25161",
-      "ai_summary": "提出TRUSTMEM框架，帮助LLM Agent学习可信的长时记忆整合，以支持更长的交互和个性化服务。这是解决Agent记忆可靠性问题的关键进展。"
-    },
-    {
-      "title": "Heuresis: Search Strategies for Autonomous AI Research Agents Across Quality, Diversity and Novelty",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.25198",
-      "ai_summary": "论文探索了自主AI研究Agent的搜索策略，平衡质量、多样性和新颖性，旨在加速科学发现。这对推动AI在科研领域的自主应用有重要价值。"
-    },
-    {
-      "title": "Build real agentic apps using CUGA: two dozen working examples on a lightweight harness",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/ibm-research/cuga-apps",
-      "ai_summary": "IBM Research发布CUGA框架，提供24个实际Agent应用示例，帮助开发者快速构建轻量级Agent应用。这降低了Agent开发门槛，促进开源生态发展。"
+      "ai_summary": "General Intuition融资3.2亿美元，估值23亿美元，利用数百万小时游戏数据训练AI Agent，旨在培养类似人类直觉的通用能力。这代表了通过虚拟环境训练Agent的新范式，对多模态和具身智能有重要启示。"
     },
     {
       "title": "Notion killing Skiff-influenced email app since most users use AI agents instead",
       "source": "Ars Technica",
       "link": "https://arstechnica.com/gadgets/2026/06/notion-killing-skiff-influenced-email-app-since-most-users-use-ai-agents-instead/",
-      "ai_summary": "Notion因用户转向AI Agent管理收件箱而关闭其邮件应用，表明Agent正在取代传统邮件工具。这反映了AI Agent在个人生产力领域的渗透趋势。"
+      "ai_summary": "Notion宣布关闭其邮件应用，原因是大多数用户已转向使用AI Agent管理收件箱。这直接印证了AI Agent正在替代传统应用功能，是Agent改变用户行为的具体案例。"
+    },
+    {
+      "title": "The Verification Horizon: No Silver Bullet for Coding Agent Rewards",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.26300",
+      "ai_summary": "论文指出，对于当前编码Agent，验证解决方案比生成更困难，推翻了传统直觉。这对Agent能力评估和奖励设计提出了根本性挑战，与HuggingFace排行榜中不同组合表现差异大的现象相呼应。"
+    },
+    {
+      "title": "Instruction Bleed: Cross-Module Interference in Prompt-Composed Agentic Systems",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.26356",
+      "ai_summary": "研究发现，在基于提示组合的Agent系统中，编辑一个模块的指令会静默影响其他模块的行为，称为“指令泄露”。这揭示了当前Agent系统在模块化设计中的关键缺陷，对构建可靠Agent有重要指导意义。"
+    },
+    {
+      "title": "Life After Benchmark Saturation: A Case Study of CORE-Bench",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.26158",
+      "ai_summary": "论文探讨了基准测试饱和后的处理策略，指出仅关注准确率提升的局限性。这对AI Agent评估体系的设计有直接参考价值，与HuggingFace推出多维度Agent排行榜的趋势一致。"
+    },
+    {
+      "title": "The Red Queen G\"odel Machine: Co-Evolving Agents and Their Evaluators",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2606.26294",
+      "ai_summary": "提出自我改进Agent与评估器共同进化的框架，解决了搜索空间膨胀问题。这为Agent能力持续提升提供了理论框架，与当前Agent自我改进的热点方向紧密相关。"
+    },
+    {
+      "title": "Knowledge-augmented Agentic AI for Mental Health Medication Information Seeking",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.26205",
+      "ai_summary": "展示了知识增强型Agent在心理健康药物信息查询中的应用，整合监管记录和临床数据。这是Agent在医疗垂直领域的具体落地案例，体现了领域特定Agent的价值。"
+    },
+    {
+      "title": "How Do Tool-Augmented LLM Agents Perform on Real-World Energy Analytics Tasks?",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2606.26346",
+      "ai_summary": "评估了工具增强型LLM Agent在真实能源分析任务上的表现，填补了能源领域Agent基准的空白。这扩展了Agent评估的领域覆盖，与HuggingFace排行榜的多元化趋势相呼应。"
     }
   ],
   "answered": false
