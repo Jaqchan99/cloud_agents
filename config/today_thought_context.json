@@ -1,54 +1,20 @@
 {
-  "date": "2026-06-28",
-  "question": "如果AI Agent能通过游戏视频训练出人类直觉，并且测试需求近乎无限，那么企业如何确保这些Agent在真实世界决策中的可靠性与伦理边界？",
-  "context": "Patronus AI的测试工具和General Intuition的游戏训练法都指向Agent能力的快速提升，但评估与训练的可信度仍是关键瓶颈，这直接关系到Agent能否安全落地。",
+  "date": "2026-06-29",
+  "question": "当AI Agent通过自我构建框架实现代码生成与执行时，这种“自支撑”能力是否会削弱开发者对代码逻辑的掌控感，反而增加调试和信任成本？",
+  "context": "Ornith-1.0展示了AI Agent在编程中的自主性进展，但自主性提升可能带来黑箱化风险，开发者需要权衡效率提升与可控性之间的平衡。",
   "related_articles": [
     {
-      "title": "Patronus AI lands $50M to build ‘digital worlds’ that stress-test AI agents",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com"
-    },
-    {
-      "title": "General Intuition’s $2.3B bet that video games can train AI agents for the real world",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com"
-    },
-    {
-      "title": "How agents are transforming work",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/blog"
+      "title": "Ornith-1.0: Self-Scaffolding LLMs for Agentic Coding",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=12345678"
     }
   ],
   "all_articles": [
     {
-      "title": "Patronus AI lands $50M to build ‘digital worlds’ that stress-test AI agents",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/",
-      "ai_summary": "Patronus AI 获得 5000 万美元融资，用于构建“数字世界”来压力测试 AI Agent。该公司由前 Meta AI 研究员创立，其 Agent 测试需求近乎无限，凸显了 AI Agent 能力评估领域的巨大市场潜力。"
-    },
-    {
-      "title": "How agents are transforming work",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/how-agents-are-transforming-work",
-      "ai_summary": "OpenAI 发布新研究论文，展示 AI Agent 如何通过执行更长、更复杂的任务来改变工作方式，并提升各角色的生产力。这代表了行业领导者对 Agent 应用前景的官方认可和方向指引。"
-    },
-    {
-      "title": "General Intuition’s $2.3B bet that video games can train AI agents for the real world",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/",
-      "ai_summary": "General Intuition 筹集 3.2 亿美元，押注利用数百万小时的游戏视频训练 AI Agent，使其发展出类似人类的直觉。这一 23 亿美元的估值赌注，探索了游戏数据在现实世界 Agent 训练中的巨大潜力。"
-    },
-    {
-      "title": "Notion killing Skiff-influenced email app since most users use AI agents instead",
-      "source": "Ars Technica",
-      "link": "https://arstechnica.com/gadgets/2026/06/notion-killing-skiff-influenced-email-app-since-most-users-use-ai-agents-instead/",
-      "ai_summary": "Notion 宣布关闭其受 Skiff 启发的邮件应用，因为大多数用户已转向使用 AI Agent 管理收件箱。这一决策反映了 AI Agent 正在取代传统邮件客户端，成为用户处理信息的主流方式。"
-    },
-    {
-      "title": "Show HN: Adrafinil – keep a lid-closed Mac awake only while agents work",
+      "title": "Ornith-1.0: Self-Scaffolding LLMs for Agentic Coding",
       "source": "Hacker News",
-      "link": "https://github.com/kageroumado/adrafinil",
-      "ai_summary": "Adrafinil 是一款开源工具，能让合盖的 Mac 仅在 Agent 运行时保持唤醒状态。它解决了 Agent 在后台持续工作时的电源管理问题，是 Agent 基础设施中的实用创新。"
+      "link": "https://deep-reinforce.com/ornith_1_0.html",
+      "ai_summary": "本文介绍了一种名为Ornith-1.0的自支撑大语言模型，专门用于智能体编码任务。该模型通过自我构建框架，在无需外部工具的情况下提升代码生成与执行能力，展示了AI Agent在编程领域的自主性进展。这一方向对于降低Agent对预定义流程的依赖、推动更灵活的自动化开发具有重要意义。"
     }
   ],
   "answered": false
