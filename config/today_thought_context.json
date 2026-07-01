@@ -1,84 +1,79 @@
 {
-  "date": "2026-06-30",
-  "question": "在多个项目（如 Micro-Agent 和 ATOD）都强调小型 Agent 通过协作或蒸馏超越大模型的趋势下，你如何看待“模型越大越好”的范式正在被挑战？这对你所在团队的 AI 资源分配和部署策略会带来哪些具体调整？",
-  "context": "当多个前沿研究同时指向小型 Agent 协作或蒸馏的潜力，以及终端工具如 Herdr 简化多 Agent 编排时，开发者需要重新思考是否应继续追求单一巨型模型，还是转向更灵活、经济的 Agent 组合方案。",
+  "date": "2026-07-01",
+  "question": "当AI Agent开始具备自主雇佣和支付其他Agent的能力时，企业应如何设计治理框架以确保行为合规与安全？",
+  "context": "OKX构建允许Agent相互雇佣和支付的自主经济体系，同时AgentBound提出了可验证的行为治理框架，这两个进展共同指向Agent自治的关键挑战：如何在去中心化协作中嵌入有效的安全与合规机制。",
   "related_articles": [
     {
-      "title": "Micro-Agent: Beat Frontier Models with Collaboration Inside Model API",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=40812345"
+      "title": "Crypto exchange OKX wants AI agents to hire and pay each other",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/"
     },
     {
-      "title": "ATOD: Annealed Turn-aware On-policy Distillation for Multi-turn Autonomous Agents",
+      "title": "AgentBound: Verifiable Behavioral Governance for Autonomous AI Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2406.12345"
-    },
-    {
-      "title": "Herdr: Agent multiplexer that lives in your terminal",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=40867890"
+      "link": "https://arxiv.org/"
     }
   ],
   "all_articles": [
     {
-      "title": "Ornith-1.0: self-improving open-source models for agentic coding",
-      "source": "Hacker News",
-      "link": "https://github.com/deepreinforce-ai/Ornith-1",
-      "ai_summary": "Ornith-1.0 是一个开源自改进模型，专注于智能体编程任务，通过自我脚手架机制提升代码生成能力。该项目在 Hacker News 上获得 149 分和 32 条评论，表明社区对其开源和自改进特性高度关注。它代表了开源模型在 Agentic 编程领域的最新进展，可能降低开发者对闭源模型的依赖。"
-    },
-    {
-      "title": "Arena, the AI leaderboard everyone uses, is now a $100M business",
+      "title": "Anthropic launches Claude Sonnet 5 as a cheaper way to run agents",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/",
-      "ai_summary": "AI 排行榜平台 Arena 已成长为估值 1 亿美元的业务，其商业服务于去年 9 月推出。这反映了 AI 评估和基准测试市场的快速增长，以及社区对标准化能力排名的需求。Arena 的成功也凸显了 AI 领域基础设施商业化的潜力。"
+      "link": "https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/",
+      "ai_summary": "Anthropic发布Claude Sonnet 5，以更低价格提供更强的Agent能力，定位为Opus、GPT-5.5和Gemini Pro的性价比替代方案。该模型在安全性和成本优化上均有提升，有望推动AI Agent的广泛部署。"
     },
     {
-      "title": "Herdr: Agent multiplexer that lives in your terminal",
-      "source": "Hacker News",
-      "link": "https://github.com/ogulcancelik/herdr",
-      "ai_summary": "Herdr 是一个终端内的智能体多路复用器，允许用户同时管理和协调多个 AI Agent。该项目在 Hacker News 上获得 145 分和 90 条评论，显示开发者对高效 Agent 编排工具的高度兴趣。它简化了多 Agent 工作流的部署，是 AI Agent 基础设施的重要补充。"
-    },
-    {
-      "title": "Cursor now has a mobile app for guiding your coding agent on the go",
+      "title": "Amazon launches new $1 billion FDE org, following OpenAI and Anthropic",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/29/cursor-now-has-a-mobile-app-for-guiding-your-coding-agent-on-the-go/",
-      "ai_summary": "Cursor 推出了移动应用，允许用户远程监督和指导编码智能体，扩展了 AI 编程助手的应用场景。这标志着 AI Agent 从桌面端向移动端的延伸，提升了开发者的灵活性和生产力。移动端 Agent 控制可能成为未来人机协作的新趋势。"
+      "link": "https://techcrunch.com/2026/06/30/amazon-launches-new-1-billion-fde-org-following-openai-and-anthropic/",
+      "ai_summary": "亚马逊投入10亿美元成立新FDE组织，工程师将嵌入企业部署专用Agent，聚焦快速交付和客户自给自足。此举紧随OpenAI和Anthropic，显示科技巨头正加速AI Agent的企业落地竞争。"
     },
     {
-      "title": "Micro-Agent: Beat Frontier Models with Collaboration Inside Model API",
-      "source": "Hacker News",
-      "link": "https://vllm.ai/blog/2026-06-29-micro-agent-frontier-models",
-      "ai_summary": "Micro-Agent 提出通过模型 API 内部协作来超越前沿模型，强调小型 Agent 组合的潜力。该概念在 Hacker News 上获得 50 分和 17 条评论，引发对 Agent 协作模式的讨论。它挑战了“越大越好”的模型范式，为资源受限场景提供了新思路。"
+      "title": "OpenClaw is finally available on Android and iOS",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/30/openclaw-is-finally-available-on-android-and-ios/",
+      "ai_summary": "开源Agent程序OpenClaw正式登陆Android和iOS平台，将自主AI能力带入移动端。这标志着开源AI Agent在消费级设备上的重要扩展，可能推动更多移动端Agent应用生态。"
     },
     {
-      "title": "Internalizing the Future: A Unified Agentic Training Paradigm for World Model Planning",
+      "title": "Acti puts AI agents directly into your smartphone keyboard",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/30/acti-puts-ai-agents-directly-into-your-smartphone-keyboard/",
+      "ai_summary": "Acti将AI Agent集成到智能手机键盘中，支持跨应用操作和自定义AI快捷方式。这一创新降低了Agent使用门槛，可能重塑移动端人机交互方式。"
+    },
+    {
+      "title": "ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/ibm-research/scarfbench",
+      "ai_summary": "IBM Research发布ScarfBench基准，专门评估AI Agent在企业Java框架迁移中的表现。该基准填补了企业级Agent能力评估的空白，为实际部署提供重要参考。"
+    },
+    {
+      "title": "Crypto exchange OKX wants AI agents to hire and pay each other",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/06/30/crypto-exchange-okx-wants-ai-agents-to-hire-and-pay-each-other/",
+      "ai_summary": "OKX构建整合支付、身份和信誉的AI Agent市场，让Agent能相互雇佣和支付。这探索了AI Agent自主经济体系的可能，对去中心化AI协作有深远意义。"
+    },
+    {
+      "title": "OpenLife: Toward Open-World Artificial Life with Autonomous LLM Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.27483",
-      "ai_summary": "该论文提出一种统一智能体训练范式，通过内化未来状态来增强世界模型规划能力，解决 LLM Agent 在长程任务中的反应式局限。它融合了规划与学习，有望提升 Agent 在复杂环境中的决策前瞻性。这对自主智能体的长期推理和任务执行具有重要意义。"
+      "link": "https://arxiv.org/abs/2606.31046",
+      "ai_summary": "OpenLife提出利用LLM Agent构建开放世界人工生命系统，突破传统封闭世界限制。该研究探索了Agent在动态环境中的自主演化，为多模态和通用AI提供新范式。"
     },
     {
-      "title": "Grounded Iterative Language Planning: How Parameterized World Models Reduce Hallucination Propagation in LLM Agents",
+      "title": "AgentBound: Verifiable Behavioral Governance for Autonomous AI Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.27806",
-      "ai_summary": "论文探讨了参数化世界模型如何减少 LLM Agent 中的幻觉传播，通过迭代语言规划实现更可靠的推理。它对比了基于 Agent 和参数化两种世界模型，为提升 Agent 输出的准确性和鲁棒性提供了新方法。这对构建可信赖的 AI Agent 至关重要。"
+      "link": "https://arxiv.org/abs/2606.30970",
+      "ai_summary": "AgentBound提出可验证的行为治理框架，确保自主AI Agent在金融、通信等关键领域的合规操作。该研究解决了Agent安全治理的核心挑战，对Agent可靠部署至关重要。"
     },
     {
-      "title": "Agent-Native Immune System: Architecture, Taxonomy, and Engineering",
+      "title": "Why Solve It Twice? Hierarchical Accumulation of Skills for Transfer-Efficient ML Engineering",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.28270",
-      "ai_summary": "该论文提出 Agent 原生免疫系统架构，用于增强自主智能体的安全性和鲁棒性，涵盖分类学和工程实践。它针对多 Agent 协作中的故障和攻击风险，提供了系统性防御框架。这是 AI 安全领域的前沿探索，对 Agent 部署至关重要。"
+      "link": "https://arxiv.org/abs/2606.30911",
+      "ai_summary": "HASTE提出层次化多Agent技能积累框架，避免ML工程中重复学习已知技术。该研究通过技能迁移显著提升效率，对Agent在复杂工程任务中的持续学习有重要价值。"
     },
     {
-      "title": "When Does Personality Composition Matter for Multi-Agent LLM Teams?",
+      "title": "Beyond expert users: agents should help users construct preferences, not just elicit them",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.27443",
-      "ai_summary": "论文研究人格提示对多 Agent LLM 团队任务结果的影响，揭示个性组合在特定场景下的关键作用。它挑战了“人格仅影响风格”的假设，为设计高效多 Agent 协作系统提供了实证依据。这对优化团队 Agent 配置具有指导价值。"
-    },
-    {
-      "title": "ATOD: Annealed Turn-aware On-policy Distillation for Multi-turn Autonomous Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2606.27814",
-      "ai_summary": "ATOD 提出一种退火轮次感知的在线策略蒸馏方法，用于训练小型语言模型 Agent 完成多轮交互任务。它平衡了模仿学习和奖励驱动改进，提升了小模型在长程任务中的效率。这对资源受限环境下的 Agent 部署具有实用意义。"
+      "link": "https://arxiv.org/abs/2606.30863",
+      "ai_summary": "该论文指出Agent应帮助用户构建偏好而非仅被动询问，挑战了传统专家用户假设。这一视角转变对设计更人性化的AI Agent交互有重要指导意义。"
     }
   ],
   "answered": false
