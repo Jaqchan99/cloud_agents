@@ -1,84 +1,84 @@
 {
-  "date": "2026-07-03",
-  "question": "当Zuckerberg坦言AI Agent进展未达预期，而多个新基准测试（如Senior SWE-Bench、ScarfBench）却不断推出时，我们是否在用越来越复杂的测试标准，掩盖了Agent在真实工程环境中根本性的可靠性不足？",
-  "context": "Meta CEO的坦诚与大量新基准的涌现形成鲜明对比，这提示我们：Agent技术可能卡在了从‘实验室演示’到‘生产级工具’的鸿沟上，而基准测试的繁荣反而可能误导行业对实际进展的判断。",
+  "date": "2026-07-04",
+  "question": "面对AI Agent发展速度未达预期（如扎克伯格所述），以及版权博弈和基础设施成本等现实挑战，你认为当前最应优先解决的是技术瓶颈、数据获取，还是商业化落地问题？",
+  "context": "扎克伯格承认Agent进展缓慢，而Google却加速推出消费级产品，Cloudflare的版权新政和论文揭示的RL训练成本问题，共同指向Agent从实验室到实际部署的多重障碍。",
   "related_articles": [
-    {
-      "title": "Senior SWE-Bench: open-source benchmark that assesses agents as senior engineers",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com"
-    },
     {
       "title": "Mark Zuckerberg tells staff that AI agents haven’t progressed as quickly as he’d hoped",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com"
     },
     {
-      "title": "ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog"
+      "title": "Cloudflare’s new policy pushes AI companies to pay for publishers’ content",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com"
+    },
+    {
+      "title": "The Rollout Infrastructure Tax in Coding-Agent Reinforcement Learning",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org"
     }
   ],
   "all_articles": [
     {
-      "title": "Senior SWE-Bench: open-source benchmark that assesses agents as senior engineers",
-      "source": "Hacker News",
-      "link": "https://senior-swe-bench.snorkel.ai/",
-      "ai_summary": "这是一个开源基准测试，专门评估AI Agent在高级软件工程任务中的表现，与HuggingFace的Agent排行榜形成互补。该基准测试关注更复杂的工程场景，对于衡量Agent的实际应用能力具有重要意义。"
-    },
-    {
       "title": "Mark Zuckerberg tells staff that AI agents haven’t progressed as quickly as he’d hoped",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/",
-      "ai_summary": "Meta CEO扎克伯格在内部会议上表示，AI Agent的开发进展未达预期，反映出行业对Agent能力提升的普遍焦虑。这一表态与近期多个Agent基准测试的推出形成对比，凸显了实际应用与理想之间的差距。"
+      "ai_summary": "Meta CEO马克·扎克伯格在内部会议上承认，AI Agent的发展速度未达预期，反映出行业对Agent落地进展的普遍担忧。这一表态与HuggingFace推出Agent能力排行榜形成对比，凸显了当前Agent在通用性和实际部署中的挑战。"
     },
     {
       "title": "Cloudflare’s new policy pushes AI companies to pay for publishers’ content",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/",
-      "ai_summary": "Cloudflare要求AI公司在9月15日前区分用于搜索和AI训练/Agent的爬虫，否则可能被大量出版商网站默认屏蔽。这一政策将影响AI Agent的数据获取方式，推动内容付费模式的发展。"
+      "ai_summary": "Cloudflare发布新政策，要求AI公司在9月15日前区分用于搜索和AI训练/Agent的爬虫，否则可能被大量出版商网站默认屏蔽。此举将加剧AI公司与内容出版商之间的版权博弈，影响多模态和Agent训练的数据获取。"
     },
     {
       "title": "Gemini Spark, Google’s agentic assistant, is now available on Mac",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/07/01/gemini-spark-googles-agentic-assistant-is-now-available-on-mac/",
-      "ai_summary": "Google的24/7 Agent助手Gemini Spark正式登陆Mac平台，支持实时追踪和更多应用集成。这标志着大型科技公司在Agent助手领域的竞争进一步加剧，Agent正从概念走向日常使用。"
+      "ai_summary": "Google的24/7 Agent助手Gemini Spark正式登陆Mac平台，新增实时追踪和更多应用支持。这标志着科技巨头在AI Agent消费级产品上的加速布局，与Meta的谨慎态度形成对比。"
     },
     {
-      "title": "ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/ibm-research/scarfbench",
-      "ai_summary": "IBM Research推出的ScarfBench基准测试，专门评估AI Agent在Java框架迁移等企业级任务中的表现。这填补了Agent在传统企业软件领域评估的空白，对于推动Agent在工业界的应用具有参考价值。"
-    },
-    {
-      "title": "PHREEQC-MCQ-200: A Diagnostic Benchmark for Tool-Augmented Scientific Simulator Agents",
+      "title": "Beyond Next-Token Prediction: An RLVR Proof of Concept for Tool-Use Agents on Atlassian Workflows",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.00436",
-      "ai_summary": "该论文提出了一个诊断性基准测试，用于评估工具增强型科学模拟Agent的能力。它关注Agent在科学计算中的可靠性，对于推动AI在科研领域的应用具有重要意义。"
+      "link": "https://arxiv.org/abs/2607.01465",
+      "ai_summary": "该论文提出RLVR（强化学习与验证推理）方法，训练LLM在Atlassian企业工作流中执行工具调用，超越传统下一词预测。它展示了如何通过强化学习让Agent适应特定API环境，对提升企业级Agent的实用性有重要意义。"
     },
     {
-      "title": "Making Failure Safe: A Constrained, Verifiable Agent Framework for Open-Web Data Collection",
+      "title": "The Rollout Infrastructure Tax in Coding-Agent Reinforcement Learning",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2607.01415",
+      "ai_summary": "论文揭示了编码Agent强化学习中执行基础设施的隐性成本，指出大量交互式rollout对资源消耗巨大。这为优化Agent训练效率提供了关键视角，尤其对需要大规模部署的Agent系统有参考价值。"
+    },
+    {
+      "title": "Agent4cs: A Multi-agent System for Code Summarization in Large Hierarchical Codebases",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.00035",
-      "ai_summary": "论文提出了一种约束可验证的Agent框架，用于安全地进行开放网络数据收集。它解决了LLM生成网络爬虫时的不稳定性问题，为Agent在数据采集任务中的可靠应用提供了新思路。"
+      "link": "https://arxiv.org/abs/2607.01425",
+      "ai_summary": "提出多Agent系统Agent4cs，用于大型分层代码库的代码摘要生成，解决复杂代码理解难题。该工作展示了多Agent协作在软件工程中的应用潜力，与AI Agent能力评估趋势相呼应。"
     },
     {
-      "title": "Mnemosyne: Agentic Transaction Processing for Validating and Repairing AI-generated Workflows",
+      "title": "Janus: a Playground for User-Involved Agentic Permission Management",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.00269",
-      "ai_summary": "该论文介绍了Mnemosyne系统，通过Agent事务处理来验证和修复AI生成的工作流。它解决了Agent生成动作可能过时或不一致的问题，提升了Agent在复杂工作流中的可靠性。"
+      "link": "https://arxiv.org/abs/2607.01510",
+      "ai_summary": "Janus框架探索了用户参与AI Agent权限管理的方式，允许用户自主控制Agent的工具调用。随着Agent自主性增强，权限管理成为关键安全议题，该研究为构建可信Agent提供了设计思路。"
     },
     {
-      "title": "AGI Maze as a Benchmark Framework for World-Modeling Agents",
+      "title": "EO-Agents: A Three-Agent LLM Pipeline for Earth Observation Hypothesis Generation",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.00627",
-      "ai_summary": "论文提出了AGI Maze基准框架，用于评估Agent的世界建模能力。它挑战了LLM仅作为模式补全系统的局限，推动Agent向更深层次的推理和规划发展。"
+      "link": "https://arxiv.org/abs/2607.01584",
+      "ai_summary": "提出三Agent LLM流水线EO-Agents，用于地球观测领域的科学假设生成，结合结构化数据与文献。这展示了多Agent系统在专业科学领域的应用，拓展了Agent的实用边界。"
     },
     {
-      "title": "OpenClaw is finally available on Android and iOS",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/06/30/openclaw-is-finally-available-on-android-and-ios/",
-      "ai_summary": "开源Agent程序OpenClaw正式登陆Android和iOS平台，使Agent能力触达移动端用户。这标志着开源Agent生态向移动端扩展，降低了Agent技术的使用门槛。"
+      "title": "Show HN: CLI that helps AI agents avoid vulnerable dependencies",
+      "source": "Hacker News",
+      "link": "https://github.com/clidey/deptrust",
+      "ai_summary": "开源CLI工具Deptrust帮助AI Agent避免使用有漏洞的依赖项，提升Agent代码安全性。社区反响积极，反映了开发者对Agent安全性的关注，与Agent权限管理研究形成互补。"
+    },
+    {
+      "title": "Auto-FL-Research: Agentic Search for Federated Learning Algorithms",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.01366",
+      "ai_summary": "论文提出Auto-FL-Research，利用Agent自动搜索联邦学习算法，优化优化器变体、聚合规则等关键选择。这展示了Agent在自动化机器学习研究中的潜力，对提升联邦学习效率有直接帮助。"
     }
   ],
   "answered": false
