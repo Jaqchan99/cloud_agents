@@ -1,84 +1,48 @@
 {
-  "date": "2026-07-04",
-  "question": "面对AI Agent发展速度未达预期（如扎克伯格所述），以及版权博弈和基础设施成本等现实挑战，你认为当前最应优先解决的是技术瓶颈、数据获取，还是商业化落地问题？",
-  "context": "扎克伯格承认Agent进展缓慢，而Google却加速推出消费级产品，Cloudflare的版权新政和论文揭示的RL训练成本问题，共同指向Agent从实验室到实际部署的多重障碍。",
+  "date": "2026-07-05",
+  "question": "在扎克伯格承认AI Agent进展不及预期，而Lovable团队又揭示了高昂Token成本的背景下，你认为当前Agent在编码任务中的核心瓶颈是技术能力不足、成本过高，还是应用场景与预期不匹配？",
+  "context": "这个问题促使我们反思AI Agent从实验室到规模化落地的真实差距，尤其是结合成本与效率的权衡，帮助从业者更务实地评估Agent的实际价值与未来方向。",
   "related_articles": [
+    {
+      "title": "$85,000 in tokens later: What I learned from scaling agentic coding at Lovable",
+      "source": "Hacker News",
+      "link": ""
+    },
     {
       "title": "Mark Zuckerberg tells staff that AI agents haven’t progressed as quickly as he’d hoped",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com"
+      "link": ""
     },
     {
-      "title": "Cloudflare’s new policy pushes AI companies to pay for publishers’ content",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com"
-    },
-    {
-      "title": "The Rollout Infrastructure Tax in Coding-Agent Reinforcement Learning",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org"
+      "title": "Agentic coding notes from Galapagos Island",
+      "source": "Hacker News",
+      "link": ""
     }
   ],
   "all_articles": [
     {
+      "title": "Agentic coding notes from Galapagos Island",
+      "source": "Hacker News",
+      "link": "https://danluu.com/ai-coding/#appendix-agentic-loops-and-writing-this-post",
+      "ai_summary": "本文深入探讨了AI Agent在编码任务中的实际表现与局限性，作者通过亲身实践揭示了当前Agent在复杂编程场景下的效率与问题。文章提供了关于Agent循环和写作过程的附录，对理解AI Agent能力边界具有重要参考价值。"
+    },
+    {
+      "title": "$85,000 in tokens later: What I learned from scaling agentic coding at Lovable",
+      "source": "Hacker News",
+      "link": "https://lovable.dev/blog/85000-in-tokens-later-scaling-agentic-coding-at-lovable",
+      "ai_summary": "Lovable团队分享了在规模化部署Agentic编码过程中消耗8.5万美元Token后的经验教训，揭示了成本、性能与模型选择之间的权衡。文章为实际应用AI Agent进行代码生成提供了宝贵的实践洞察。"
+    },
+    {
       "title": "Mark Zuckerberg tells staff that AI agents haven’t progressed as quickly as he’d hoped",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/",
-      "ai_summary": "Meta CEO马克·扎克伯格在内部会议上承认，AI Agent的发展速度未达预期，反映出行业对Agent落地进展的普遍担忧。这一表态与HuggingFace推出Agent能力排行榜形成对比，凸显了当前Agent在通用性和实际部署中的挑战。"
+      "ai_summary": "Meta CEO马克·扎克伯格在内部会议上承认，AI Agent的发展速度未达预期，反映出行业领先者对当前Agent能力的普遍担忧。这一表态凸显了AI Agent在实用化进程中面临的挑战，与HuggingFace等机构推动的评估标准形成对比。"
     },
     {
-      "title": "Cloudflare’s new policy pushes AI companies to pay for publishers’ content",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/",
-      "ai_summary": "Cloudflare发布新政策，要求AI公司在9月15日前区分用于搜索和AI训练/Agent的爬虫，否则可能被大量出版商网站默认屏蔽。此举将加剧AI公司与内容出版商之间的版权博弈，影响多模态和Agent训练的数据获取。"
-    },
-    {
-      "title": "Gemini Spark, Google’s agentic assistant, is now available on Mac",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/01/gemini-spark-googles-agentic-assistant-is-now-available-on-mac/",
-      "ai_summary": "Google的24/7 Agent助手Gemini Spark正式登陆Mac平台，新增实时追踪和更多应用支持。这标志着科技巨头在AI Agent消费级产品上的加速布局，与Meta的谨慎态度形成对比。"
-    },
-    {
-      "title": "Beyond Next-Token Prediction: An RLVR Proof of Concept for Tool-Use Agents on Atlassian Workflows",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.01465",
-      "ai_summary": "该论文提出RLVR（强化学习与验证推理）方法，训练LLM在Atlassian企业工作流中执行工具调用，超越传统下一词预测。它展示了如何通过强化学习让Agent适应特定API环境，对提升企业级Agent的实用性有重要意义。"
-    },
-    {
-      "title": "The Rollout Infrastructure Tax in Coding-Agent Reinforcement Learning",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/2607.01415",
-      "ai_summary": "论文揭示了编码Agent强化学习中执行基础设施的隐性成本，指出大量交互式rollout对资源消耗巨大。这为优化Agent训练效率提供了关键视角，尤其对需要大规模部署的Agent系统有参考价值。"
-    },
-    {
-      "title": "Agent4cs: A Multi-agent System for Code Summarization in Large Hierarchical Codebases",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.01425",
-      "ai_summary": "提出多Agent系统Agent4cs，用于大型分层代码库的代码摘要生成，解决复杂代码理解难题。该工作展示了多Agent协作在软件工程中的应用潜力，与AI Agent能力评估趋势相呼应。"
-    },
-    {
-      "title": "Janus: a Playground for User-Involved Agentic Permission Management",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.01510",
-      "ai_summary": "Janus框架探索了用户参与AI Agent权限管理的方式，允许用户自主控制Agent的工具调用。随着Agent自主性增强，权限管理成为关键安全议题，该研究为构建可信Agent提供了设计思路。"
-    },
-    {
-      "title": "EO-Agents: A Three-Agent LLM Pipeline for Earth Observation Hypothesis Generation",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.01584",
-      "ai_summary": "提出三Agent LLM流水线EO-Agents，用于地球观测领域的科学假设生成，结合结构化数据与文献。这展示了多Agent系统在专业科学领域的应用，拓展了Agent的实用边界。"
-    },
-    {
-      "title": "Show HN: CLI that helps AI agents avoid vulnerable dependencies",
+      "title": "Damo Academy unveils an AI agent able to discover superconductors",
       "source": "Hacker News",
-      "link": "https://github.com/clidey/deptrust",
-      "ai_summary": "开源CLI工具Deptrust帮助AI Agent避免使用有漏洞的依赖项，提升Agent代码安全性。社区反响积极，反映了开发者对Agent安全性的关注，与Agent权限管理研究形成互补。"
-    },
-    {
-      "title": "Auto-FL-Research: Agentic Search for Federated Learning Algorithms",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.01366",
-      "ai_summary": "论文提出Auto-FL-Research，利用Agent自动搜索联邦学习算法，优化优化器变体、聚合规则等关键选择。这展示了Agent在自动化机器学习研究中的潜力，对提升联邦学习效率有直接帮助。"
+      "link": "https://www.scmp.com/tech/big-tech/article/3359335/alibabas-elements-claw-ai-agent-unearths-four-new-superconductors",
+      "ai_summary": "阿里巴巴达摩院推出名为'Elements Claw'的AI Agent，成功发现四种新型超导体，展示了AI在科学发现领域的巨大潜力。该成果标志着AI Agent从代码生成扩展到材料科学等专业研究领域，具有跨学科意义。"
     }
   ],
   "answered": false
