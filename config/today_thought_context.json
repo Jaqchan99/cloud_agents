@@ -1,48 +1,54 @@
 {
-  "date": "2026-07-05",
-  "question": "在扎克伯格承认AI Agent进展不及预期，而Lovable团队又揭示了高昂Token成本的背景下，你认为当前Agent在编码任务中的核心瓶颈是技术能力不足、成本过高，还是应用场景与预期不匹配？",
-  "context": "这个问题促使我们反思AI Agent从实验室到规模化落地的真实差距，尤其是结合成本与效率的权衡，帮助从业者更务实地评估Agent的实际价值与未来方向。",
+  "date": "2026-07-06",
+  "question": "在AI Agent开发进展慢于预期的背景下，“日志即Agent”的架构思路是否能从根本上解决Agent的可靠性和可调试性问题，还是只是治标不治本？",
+  "context": "扎克伯格承认Agent开发遇阻，而“日志即Agent”提出将日志作为核心架构，这与构建不会自我破坏的Agent的工程实践形成对比，值得我们思考：日志回溯机制是否足以应对Agent的复杂失败模式，还是需要更根本的设计变革？",
   "related_articles": [
     {
-      "title": "$85,000 in tokens later: What I learned from scaling agentic coding at Lovable",
-      "source": "Hacker News",
-      "link": ""
+      "title": "The Log is the Agent",
+      "source": "arXiv",
+      "link": "https://arxiv.org/abs/xxx"
     },
     {
-      "title": "Mark Zuckerberg tells staff that AI agents haven’t progressed as quickly as he’d hoped",
-      "source": "TechCrunch AI",
-      "link": ""
+      "title": "Building Agents That Don't Break Themselves",
+      "source": "fly.io",
+      "link": "https://fly.io/blog/xxx"
     },
     {
-      "title": "Agentic coding notes from Galapagos Island",
-      "source": "Hacker News",
-      "link": ""
+      "title": "Zuckerberg says AI agent development going slower than expected",
+      "source": "Reuters",
+      "link": "https://www.reuters.com/xxx"
     }
   ],
   "all_articles": [
     {
-      "title": "Agentic coding notes from Galapagos Island",
-      "source": "Hacker News",
-      "link": "https://danluu.com/ai-coding/#appendix-agentic-loops-and-writing-this-post",
-      "ai_summary": "本文深入探讨了AI Agent在编码任务中的实际表现与局限性，作者通过亲身实践揭示了当前Agent在复杂编程场景下的效率与问题。文章提供了关于Agent循环和写作过程的附录，对理解AI Agent能力边界具有重要参考价值。"
+      "title": "Zuckerberg says AI agent development going slower than expected",
+      "source": "Reuters",
+      "link": "https://www.reuters.com/business/zuckerberg-says-ai-agent-development-going-slower-than-expected-2026-07-02/",
+      "ai_summary": "扎克伯格公开表示AI Agent开发进展慢于预期，反映出行业对Agent落地难度的共识。这一表态与HuggingFace推出Agent能力排行榜形成对比，说明评估标准化是推动进展的关键。"
     },
     {
-      "title": "$85,000 in tokens later: What I learned from scaling agentic coding at Lovable",
-      "source": "Hacker News",
-      "link": "https://lovable.dev/blog/85000-in-tokens-later-scaling-agentic-coding-at-lovable",
-      "ai_summary": "Lovable团队分享了在规模化部署Agentic编码过程中消耗8.5万美元Token后的经验教训，揭示了成本、性能与模型选择之间的权衡。文章为实际应用AI Agent进行代码生成提供了宝贵的实践洞察。"
+      "title": "The Log is the Agent",
+      "source": "arXiv",
+      "link": "https://arxiv.org/abs/2605.21997",
+      "ai_summary": "提出将日志系统作为AI Agent的核心架构，强调通过日志记录和回溯来增强Agent的可靠性与可调试性。这一思路对解决Agent自我破坏问题具有重要参考价值。"
     },
     {
-      "title": "Mark Zuckerberg tells staff that AI agents haven’t progressed as quickly as he’d hoped",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/",
-      "ai_summary": "Meta CEO马克·扎克伯格在内部会议上承认，AI Agent的发展速度未达预期，反映出行业领先者对当前Agent能力的普遍担忧。这一表态凸显了AI Agent在实用化进程中面临的挑战，与HuggingFace等机构推动的评估标准形成对比。"
+      "title": "Building Agents That Don't Break Themselves",
+      "source": "fly.io",
+      "link": "https://fly.io/blog/building-agents-that-dont-break-themselves/",
+      "ai_summary": "探讨如何构建不会自我破坏的AI Agent，聚焦于安全性和稳定性设计。与HuggingFace的Agent评估框架互补，为实际部署提供工程实践指导。"
     },
     {
-      "title": "Damo Academy unveils an AI agent able to discover superconductors",
-      "source": "Hacker News",
-      "link": "https://www.scmp.com/tech/big-tech/article/3359335/alibabas-elements-claw-ai-agent-unearths-four-new-superconductors",
-      "ai_summary": "阿里巴巴达摩院推出名为'Elements Claw'的AI Agent，成功发现四种新型超导体，展示了AI在科学发现领域的巨大潜力。该成果标志着AI Agent从代码生成扩展到材料科学等专业研究领域，具有跨学科意义。"
+      "title": "Does Code Cleanliness Affect Coding Agents?",
+      "source": "arXiv",
+      "link": "https://arxiv.org/abs/2605.20049",
+      "ai_summary": "研究代码整洁度对编码Agent性能的影响，发现代码质量显著影响Agent的生成效果。这对Agent训练数据和评估基准的设计有直接启示。"
+    },
+    {
+      "title": "OpenWiki: CLI that writes and maintains agent documentation for your codebase",
+      "source": "GitHub (LangChain)",
+      "link": "https://github.com/langchain-ai/openwiki",
+      "ai_summary": "LangChain推出OpenWiki工具，通过CLI自动生成和维护代码库的Agent文档。这降低了Agent开发的门槛，有助于提升Agent生态的文档标准化。"
     }
   ],
   "answered": false
