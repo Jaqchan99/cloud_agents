@@ -1,54 +1,84 @@
 {
-  "date": "2026-07-06",
-  "question": "在AI Agent开发进展慢于预期的背景下，“日志即Agent”的架构思路是否能从根本上解决Agent的可靠性和可调试性问题，还是只是治标不治本？",
-  "context": "扎克伯格承认Agent开发遇阻，而“日志即Agent”提出将日志作为核心架构，这与构建不会自我破坏的Agent的工程实践形成对比，值得我们思考：日志回溯机制是否足以应对Agent的复杂失败模式，还是需要更根本的设计变革？",
+  "date": "2026-07-07",
+  "question": "在AI Agent自主性仍有限的今天（如AI勒索攻击仍需人类介入），我们应优先追求Agent的完全自主化，还是通过架构优化（如模型与Agent分离、组织记忆）来提升其在特定场景下的可靠性和效率？",
+  "context": "当前AI Agent在自主性与实用性之间存在明显张力：一方面，完全自主的Agent在安全性和可靠性上仍有缺陷；另一方面，通过解耦模型与Agent、引入组织记忆等架构优化，已在办公自动化、编码协作等场景中展现出价值。这引发了一个关键选择——是继续追求更强的自主性，还是优先通过工程手段提升可控性和效率。",
   "related_articles": [
     {
-      "title": "The Log is the Agent",
-      "source": "arXiv",
-      "link": "https://arxiv.org/abs/xxx"
+      "title": "Vercel CEO Guillermo Rauch on the fight to split off models from agents",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/07/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents"
     },
     {
-      "title": "Building Agents That Don't Break Themselves",
-      "source": "fly.io",
-      "link": "https://fly.io/blog/xxx"
+      "title": "The ‘first’ AI-run ransomware attack still needed a human",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/07/the-first-ai-run-ransomware-attack-still-needed-a-human"
     },
     {
-      "title": "Zuckerberg says AI agent development going slower than expected",
-      "source": "Reuters",
-      "link": "https://www.reuters.com/xxx"
+      "title": "Organizational Memory for Agentic Business Process Execution",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.07001"
     }
   ],
   "all_articles": [
     {
-      "title": "Zuckerberg says AI agent development going slower than expected",
-      "source": "Reuters",
-      "link": "https://www.reuters.com/business/zuckerberg-says-ai-agent-development-going-slower-than-expected-2026-07-02/",
-      "ai_summary": "扎克伯格公开表示AI Agent开发进展慢于预期，反映出行业对Agent落地难度的共识。这一表态与HuggingFace推出Agent能力排行榜形成对比，说明评估标准化是推动进展的关键。"
+      "title": "OfficeCLI: Office suite for AI agents to read and edit Microsoft Office files",
+      "source": "Hacker News",
+      "link": "https://github.com/iOfficeAI/OfficeCLI",
+      "ai_summary": "OfficeCLI 是一个专为 AI Agent 设计的办公套件，使其能够直接读写和编辑 Microsoft Office 文件。该工具填补了 Agent 在办公文档处理方面的空白，有望大幅提升 Agent 在自动化办公场景中的实用性。"
     },
     {
-      "title": "The Log is the Agent",
-      "source": "arXiv",
-      "link": "https://arxiv.org/abs/2605.21997",
-      "ai_summary": "提出将日志系统作为AI Agent的核心架构，强调通过日志记录和回溯来增强Agent的可靠性与可调试性。这一思路对解决Agent自我破坏问题具有重要参考价值。"
-    },
-    {
-      "title": "Building Agents That Don't Break Themselves",
-      "source": "fly.io",
-      "link": "https://fly.io/blog/building-agents-that-dont-break-themselves/",
-      "ai_summary": "探讨如何构建不会自我破坏的AI Agent，聚焦于安全性和稳定性设计。与HuggingFace的Agent评估框架互补，为实际部署提供工程实践指导。"
-    },
-    {
-      "title": "Does Code Cleanliness Affect Coding Agents?",
-      "source": "arXiv",
+      "title": "Does code cleanliness affect coding agents? A controlled minimal-pair study",
+      "source": "Hacker News",
       "link": "https://arxiv.org/abs/2605.20049",
-      "ai_summary": "研究代码整洁度对编码Agent性能的影响，发现代码质量显著影响Agent的生成效果。这对Agent训练数据和评估基准的设计有直接启示。"
+      "ai_summary": "该研究通过控制变量实验，探讨代码整洁度对编码 Agent 性能的影响。结果表明，代码质量显著影响 Agent 的生成效果，为优化 Agent 训练数据和开发环境提供了重要参考。"
     },
     {
-      "title": "OpenWiki: CLI that writes and maintains agent documentation for your codebase",
-      "source": "GitHub (LangChain)",
-      "link": "https://github.com/langchain-ai/openwiki",
-      "ai_summary": "LangChain推出OpenWiki工具，通过CLI自动生成和维护代码库的Agent文档。这降低了Agent开发的门槛，有助于提升Agent生态的文档标准化。"
+      "title": "Vercel CEO Guillermo Rauch on the fight to split off models from agents",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents",
+      "ai_summary": "Vercel CEO 讨论了将模型与 Agent 分离的趋势，强调在生产环境中需要关注价格/性能比。这一观点反映了行业对 Agent 架构优化的深入思考，即通过解耦模型和 Agent 来提升灵活性和成本效益。"
+    },
+    {
+      "title": "The ‘first’ AI-run ransomware attack still needed a human",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human",
+      "ai_summary": "报道揭示了首次由 AI Agent 执行的勒索软件攻击细节，尽管技术执行由 AI 完成，但人类仍负责选择目标、设置基础设施和提供提示。这凸显了当前 AI Agent 在自主性上的局限性，以及安全监管的紧迫性。"
+    },
+    {
+      "title": "APeB: Benchmarking Personalization Ability of Large Language Model Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.03162",
+      "ai_summary": "APeB 基准测试专门评估 LLM Agent 的个性化能力，即处理用户模糊查询时推断潜在意图、提取偏好并生成定制响应的能力。该工作填补了 Agent 个性化评估的空白，对提升用户体验至关重要。"
+    },
+    {
+      "title": "SwarmResearch: Orchestrating Coding Agents for Open-Ended Discovery",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.02807",
+      "ai_summary": "SwarmResearch 提出了一种编排多个编码 Agent 的框架，用于在开放式问题中持续发现优化方案。它解决了单个 Agent 容易收敛到局部最优的问题，展示了多 Agent 协作在科研探索中的潜力。"
+    },
+    {
+      "title": "Object-Centric Environment Modeling for Agentic Tasks",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.02846",
+      "ai_summary": "该论文提出以对象为中心的环境建模方法，帮助 LLM Agent 更有效地积累和利用经验。相比自由文本记忆，该方法更易维护和验证，有望提升 Agent 在复杂任务中的长期表现。"
+    },
+    {
+      "title": "Evaluating Generative Agents with Actions Grounded in Socially Distributed Task Environments using Incognita",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.02975",
+      "ai_summary": "Incognita 框架用于评估生成式 Agent 在社交分布式任务环境中的行为，关注 Agent 何时寻求知识、何时行动以及行动是否合理。该工作为评估 Agent 在复杂社交场景中的自主性提供了新方法。"
+    },
+    {
+      "title": "Organizational Memory for Agentic Business Process Execution",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.03228",
+      "ai_summary": "该论文提出为 LLM Agent 构建组织记忆，以支持业务流程自动化执行。通过存储和检索历史经验，Agent 能超越规则系统的限制，提升在商业场景中的适应性和效率。"
+    },
+    {
+      "title": "MedCalc-Pro: Solving Complex Medical Calculations with LLM Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.02879",
+      "ai_summary": "MedCalc-Pro 是一个针对复杂医疗计算的 LLM Agent 基准，解决了现有评估过于简化的问题。它要求 Agent 处理多变量临床数据，对推动 AI 在医疗领域的精准应用具有重要价值。"
     }
   ],
   "answered": false
