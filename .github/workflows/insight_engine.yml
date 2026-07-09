@@ -90,13 +90,26 @@ jobs:
 
       - name: 保存输出（InsightPackage + 渲染结果）
         run: |
+          set -e
           git config user.name "AI News Bot"
           git config user.email "bot@github-actions"
           git add config/insight_cache/ output/insight/
           if git diff --staged --quiet; then
             echo "无新的 insight 输出"
-          else
-            git commit -m "chore: 自动更新 insight 输出 [skip ci]"
-            git pull --rebase origin main
-            git push origin main
+            exit 0
           fi
+          git commit -m "chore: 自动更新 insight 输出 [skip ci]"
+
+          # 推送到 main 带重试：处理 daily_push 同步提交的竞态
+          for i in 1 2 3; do
+            git fetch origin main
+            if git rebase origin/main && git push origin main; then
+              echo "git push 成功"
+              exit 0
+            fi
+            echo "git push 第 ${i} 次失败，3 秒后重试..."
+            git rebase --abort 2>/dev/null || true
+            sleep 3
+          done
+          echo "git push 失败：3 次尝试均被拒绝"
+          exit 1
