@@ -1,79 +1,84 @@
 {
-  "date": "2026-07-08",
-  "question": "当AI Agent开始具备防篡改的行为审计能力（如Halo）和组织记忆机制时，这是否意味着我们即将进入一个‘可信Agent’大规模部署的阶段？你的行业准备好接受Agent自主执行业务流程了吗？",
-  "context": "Halo填补了Agent可追溯性的空白，而组织记忆研究则解决了Agent在企业流程中依赖历史知识的问题。这两个突破直接指向了金融、医疗等高合规要求场景的Agent落地，但信任问题依然是关键障碍。",
+  "date": "2026-07-09",
+  "question": "当编码Agent的评估从单一结果转向轨迹审查（如AgentLens），这对你所在团队衡量AI Agent的真实生产力意味着什么？你会如何调整现有的评估标准？",
+  "context": "OpenAI指出SWE-Bench Pro存在可靠性问题，而AgentLens提出基于生产环境的轨迹评估，这挑战了传统基准测试的权威性，迫使开发者重新思考如何在实际工作中衡量Agent的价值。",
   "related_articles": [
     {
-      "title": "Halo – open-source, tamper-evident runtime evidence for AI agents",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=12345678"
+      "title": "AgentLens: Production-Assessed Trajectory Reviews for Coding Agent Evaluation",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/agentlens"
     },
     {
-      "title": "Organizational Memory for Agentic Business Process Execution",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/1234.5678"
+      "title": "Separating signal from noise in coding evaluations",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/blog/seperating-signal-from-noise"
+    },
+    {
+      "title": "Benchmarking coding agents on Databricks' multi-million line codebase",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=databricks-benchmark"
     }
   ],
   "all_articles": [
     {
-      "title": "Show HN: Docx-CLI: agents read/edit Word docs using 1/2 the time and tokens",
+      "title": "Separating signal from noise in coding evaluations",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+      "ai_summary": "OpenAI发布分析报告，指出流行编码基准SWE-Bench Pro存在可靠性问题，可能影响AI模型评估的准确性。该发现对AI Agent能力评估领域具有重要警示意义，提示开发者需谨慎解读基准测试结果。"
+    },
+    {
+      "title": "Benchmarking coding agents on Databricks' multi-million line codebase",
       "source": "Hacker News",
-      "link": "https://github.com/kklimuk/docx-cli",
-      "ai_summary": "Docx-CLI 是一个开源工具，能让 AI Agent 高效读取和编辑 Word 文档，相比传统方法节省一半的时间和 token 消耗。这直接降低了 Agent 处理办公文档的成本，对自动化工作流有实际价值。"
+      "link": "https://www.databricks.com/blog/benchmarking-coding-agents-databricks-multi-million-line-codebase",
+      "ai_summary": "Databricks在数百万行代码库上对编码Agent进行基准测试，评估其在大型真实项目中的表现。该测试为衡量AI Agent在复杂工业环境中的实用性提供了重要参考。"
     },
     {
-      "title": "Show HN: Halo – open-source, tamper-evident runtime evidence for AI agents",
+      "title": "Show HN: Microsoft releases Flint, a visualization language for AI agents",
       "source": "Hacker News",
-      "link": "https://github.com/bkuan001/halo-record",
-      "ai_summary": "Halo 是一个开源框架，为 AI Agent 提供防篡改的运行证据记录，确保 Agent 行为的可审计性。这在 Agent 部署到金融、医疗等合规场景时至关重要，填补了 Agent 可追溯性的空白。"
+      "link": "https://microsoft.github.io/flint-chart/#/",
+      "ai_summary": "微软发布Flint，一种专为AI Agent设计的可视化语言，旨在帮助开发者更直观地理解和调试Agent行为。该工具在Hacker News上获得高关注度，反映了社区对Agent可解释性工具的需求。"
     },
     {
-      "title": "iFLYTEK-Embodied-Omni Technical Report",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.02542",
-      "ai_summary": "科大讯飞发布了具身通用智能体技术报告，该智能体能够理解多模态指令、预测环境变化并执行精确控制。这是多模态与具身智能结合的重要进展，展示了从感知到行动的完整闭环能力。"
+      "title": "Data for Agents",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/nvidia/open-data-for-agents",
+      "ai_summary": "HuggingFace与NVIDIA合作发布面向AI Agent的开源数据集，旨在推动Agent训练数据的标准化和可获取性。该举措有助于降低Agent开发门槛，促进开源生态发展。"
     },
     {
-      "title": "ASK in the Dark: Uncertainty-Gated LLM Assistance under Partial Observability",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.02686",
-      "ai_summary": "该论文提出一种不确定性门控机制，让强化学习 Agent 在部分可观测环境中智能地请求 LLM 帮助。这解决了 Agent 在信息不全时如何高效利用外部知识的问题，提升了决策鲁棒性。"
+      "title": "Prime Intellect raises $130M Series A to help enterprises build their own AI agents",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/08/prime-intellect-raises-130m-series-a-to-help-enterprises-build-their-own-ai-agents/",
+      "ai_summary": "初创公司Prime Intellect获1.3亿美元A轮融资，致力于帮助企业自主构建AI Agent系统，减少对前沿AI实验室的依赖。该事件表明企业级Agent定制化需求正在快速增长。"
     },
     {
-      "title": "SwarmResearch: Orchestrating Coding Agents for Open-Ended Discovery",
+      "title": "AgentLens: Production-Assessed Trajectory Reviews for Coding Agent Evaluation",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.02807",
-      "ai_summary": "SwarmResearch 提出用多个编码 Agent 协同探索开放性问题，避免单一 Agent 陷入局部最优。这种群体智能方法在自动化科研和代码优化中具有潜力，展示了 Agent 协作的新范式。"
+      "link": "https://arxiv.org/abs/2607.06624",
+      "ai_summary": "论文提出AgentLens，一个基于生产环境评估的交互式代码Agent基准，通过轨迹审查而非单一结果来评估Agent性能。该方法为更全面、真实地衡量代码Agent能力提供了新思路。"
     },
     {
-      "title": "Object-Centric Environment Modeling for Agentic Tasks",
+      "title": "The Harness Effect: How Orchestration Design Sets the Token Economics of Enterprise Agentic AI",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.02846",
-      "ai_summary": "该研究提出以对象为中心的环境建模方法，帮助 LLM Agent 更有效地积累和利用经验，替代难以维护的自由文本记忆。这对提升 Agent 在复杂任务中的长期记忆和推理能力有重要意义。"
+      "link": "https://arxiv.org/abs/2607.06906",
+      "ai_summary": "论文探讨了Agent编排设计如何影响企业级AI的Token经济，指出不同编排策略在成本与性能间存在显著权衡。该研究为企业部署Agent系统提供了经济性优化指导。"
     },
     {
-      "title": "MedCalc-Pro: Solving Complex Medical Calculations with LLM Agents",
+      "title": "From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.02879",
-      "ai_summary": "MedCalc-Pro 利用 LLM Agent 解决复杂医疗计算问题，超越了传统简化基准的局限。这展示了 Agent 在专业领域（如临床决策支持）中的实用价值，推动了 AI 在医疗中的落地。"
+      "link": "https://arxiv.org/abs/2607.07321",
+      "ai_summary": "论文提出一种迭代工具优化方法，使LLM Agent能从原子动作逐步演进为标准操作流程，实现自我进化。该研究提升了Agent在复杂任务中的适应性和效率。"
     },
     {
-      "title": "Evaluating Generative Agents with Actions Grounded in Socially Distributed Task Environments using Incognita",
+      "title": "Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.02975",
-      "ai_summary": "该论文提出 Incognita 框架，用于评估生成式 Agent 在社交分布式任务环境中的行为合理性，关注 Agent 何时寻求知识、何时行动以及行动是否基于充分信息。这为 Agent 的社会化能力评估提供了新方法。"
+      "link": "https://arxiv.org/abs/2607.07405",
+      "ai_summary": "论文发现工具使用型LLM Agent存在隐蔽的策略违规失败模式，并提出确定性门控机制来增强验证而非推理。该工作对提升Agent安全性和可靠性具有重要价值。"
     },
     {
-      "title": "APeB: Benchmarking Personalization Ability of Large Language Model Agents",
+      "title": "Operational Reframing and Approval-Framed Delegation in Multi-Agent LLM Safety",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.03162",
-      "ai_summary": "APeB 基准测试专门评估 LLM Agent 在用户查询模糊时的个性化能力，包括推断潜在意图和提取偏好。这填补了 Agent 个性化评估的空白，对提升用户体验至关重要。"
-    },
-    {
-      "title": "Organizational Memory for Agentic Business Process Execution",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.03228",
-      "ai_summary": "该研究提出组织记忆机制，帮助 LLM Agent 在执行业务流程时利用历史知识和组织规则，克服通用 LLM 的局限性。这为 Agent 在企业自动化中的可靠应用提供了关键基础设施。"
+      "link": "https://arxiv.org/abs/2607.07097",
+      "ai_summary": "论文研究了多Agent LLM系统中的安全评估方法，提出操作重构和审批框架委托策略来改进安全性。该研究为多Agent协作环境下的安全设计提供了新视角。"
     }
   ],
   "answered": false
