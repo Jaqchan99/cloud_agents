@@ -1,0 +1,5 @@
+{
+  "formats": ["linkedin", "newsletter", "podcast_script", "bilingual"],
+  "language": "zh",
+  "push_to_discord": true
+}

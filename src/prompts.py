@@ -626,7 +626,8 @@ _HELP_TEXT = {
         "`!help` - 查看帮助\n"
         "`!config` - 查看当前配置\n"
         "`!status` - 检查运行状态和最后推送时间\n"
-        "`!push` - 立即推送今日 AI 早报\n\n"
+        "`!push` - 立即推送今日 AI 早报\n"
+        "`!insight` - 查看 Insight Engine 深度解读配置\n\n"
         "**自然语言调整（直接发消息即可）：**\n"
         "  • 我只想看大模型相关的新闻\n"
         "  • 去掉论文类内容，只要行业新闻\n"
@@ -635,6 +636,11 @@ _HELP_TEXT = {
         "  • 过滤掉关于图像生成的内容\n"
         "  • 天气改成北京\n"
         "  • 用英文推送\n\n"
+        "**Insight Engine 解读设置（自然语言）：**\n"
+        "  • 去掉 newsletter 格式\n"
+        "  • 只生成双语和 LinkedIn\n"
+        "  • 用英文做解读\n"
+        "  • 暂停解读推送\n\n"
         "> ⚠️ 使用 GitHub Actions 简化版，命令响应可能有延迟（`!push` 除外，实时执行）。"
     ),
     "en": (
@@ -1001,6 +1007,82 @@ _INSIGHT_RENDER_BILINGUAL_USER = {
 
 
 # ═══════════════════════════════════════════════
+# insight_engine/config.py — natural language config changes
+# ═══════════════════════════════════════════════
+
+_INSIGHT_CONFIG_KEYWORDS = [
+    # 中文
+    "insight 配置", "insight配置", "解读配置", "深度解读设置",
+    "insight 格式", "解读格式", "渲染格式",
+    "insight 语言", "解读语言",
+    "insight 推送", "解读推送", "深度推送",
+    "linkedin 格式", "newsletter 格式", "播客格式", "双语格式",
+    "去掉 linkedin", "不要 linkedin", "去掉 newsletter", "不要 newsletter",
+    "去掉播客", "不要播客", "去掉双语", "不要双语",
+    "关闭解读推送", "开启解读推送", "暂停解读",
+    "深度解读改为", "分析语言改为",
+    # 英文
+    "insight config", "insight settings",
+    "insight format", "rendering format",
+    "insight language", "analysis language",
+    "insight push", "disable insight", "enable insight",
+    "remove linkedin", "add linkedin", "remove newsletter", "add newsletter",
+    "remove podcast", "add podcast", "remove bilingual", "add bilingual",
+]
+
+_INSIGHT_PROCESS_COMMAND_SYSTEM = {
+    "zh": "你是一名 AI 深度解读配置助手，负责管理 insight engine 的渲染偏好。请用中文回复，语气友好简洁。",
+    "en": "You are an AI insight engine config assistant, managing rendering preferences. Reply in English, with a friendly and concise tone.",
+}
+
+_INSIGHT_PROCESS_COMMAND_USER = {
+    "zh": (
+        "当前 insight engine 配置如下：\n"
+        "{config_json}\n\n"
+        '用户发送了以下消息："{user_message}"\n\n'
+        "请判断用户意图，并返回如下 JSON 格式（不要包含其他文字）：\n"
+        '{{\n'
+        '  "reply": "<给用户的回复，说明你做了什么调整>",\n'
+        '  "updated_config": <更新后的完整配置 JSON，若无需修改则返回 null>\n'
+        '}}\n\n'
+        "可调整的配置字段说明：\n"
+        "- formats: list[str]，要渲染的格式，可选值：linkedin, newsletter, podcast_script, bilingual\n"
+        "- language: str，分析语言，\"zh\" 中文或 \"en\" 英文\n"
+        "- push_to_discord: bool，是否推送到 Discord insight 频道\n"
+        "\n"
+        "用户消息示例及对应操作：\n"
+        '- "去掉 newsletter 格式" → 从 formats 中移除 "newsletter"\n'
+        '- "只生成双语和 LinkedIn" → 设置 formats 为 ["bilingual", "linkedin"]\n'
+        '- "用英文做解读" → 更新 language 为 "en"\n'
+        '- "今天不要推送到 insight 频道" → 设置 push_to_discord 为 false\n'
+        '- "加上播客脚本格式" → 向 formats 添加 "podcast_script"\n'
+        '- "暂停推送" → 设置 push_to_discord 为 false\n'
+    ),
+    "en": (
+        "Current insight engine config:\n"
+        "{config_json}\n\n"
+        'User message: "{user_message}"\n\n'
+        "Determine the user's intent and return JSON (no other text):\n"
+        '{{\n'
+        '  "reply": "<your reply to the user, explaining what you adjusted>",\n'
+        '  "updated_config": <complete updated config JSON, or null if no change>\n'
+        '}}\n\n'
+        "Configurable fields:\n"
+        "- formats: list[str], rendering formats, options: linkedin, newsletter, podcast_script, bilingual\n"
+        "- language: str, analysis language, \"zh\" or \"en\"\n"
+        "- push_to_discord: bool, whether to push to Discord insight channel\n"
+        "\n"
+        "Examples:\n"
+        '- "Remove newsletter format" → remove "newsletter" from formats\n'
+        '- "Only bilingual and LinkedIn" → set formats to ["bilingual", "linkedin"]\n'
+        '- "Analyze in English" → set language to "en"\n'
+        '- "Don\'t push to insight channel today" → set push_to_discord to false\n'
+        '- "Add podcast script format" → add "podcast_script" to formats\n'
+    ),
+}
+
+
+# ═══════════════════════════════════════════════
 # 注册表
 # ═══════════════════════════════════════════════
 
@@ -1008,6 +1090,7 @@ _INSIGHT_RENDER_BILINGUAL_USER = {
 REFINE_KEYWORDS = _REFINE_KEYWORDS
 CONFIG_KEYWORDS = _CONFIG_KEYWORDS
 CATEGORY_ICONS = _CATEGORY_ICONS
+INSIGHT_CONFIG_KEYWORDS = _INSIGHT_CONFIG_KEYWORDS
 
 
 def get_refine_keywords(lang: str = "zh") -> list[str]:
@@ -1032,6 +1115,9 @@ _PROMPTS = {
     "select_summarize_user_note_prefix": _SELECT_SUMMARIZE_USER_NOTE_PREFIX,
     "process_command_system": _PROCESS_COMMAND_SYSTEM,
     "process_command_user": _PROCESS_COMMAND_USER,
+    # insight engine config
+    "insight_process_command_system": _INSIGHT_PROCESS_COMMAND_SYSTEM,
+    "insight_process_command_user": _INSIGHT_PROCESS_COMMAND_USER,
     # morning_greeter
     "greeting_system": _GREETING_SYSTEM,
     "greeting_user": _GREETING_USER,

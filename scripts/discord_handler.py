@@ -14,12 +14,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 sys.path.insert(0, str(Path(__file__).parent))
 
-from ai_processor import process_user_command
+from ai_processor import process_user_command, process_insight_config_command
 from discord_client import get_messages, send_message, get_channel_id, get_user_id
-from prompts import get
+from prompts import get, INSIGHT_CONFIG_KEYWORDS
+from insight_engine.config import load_insight_config, save_insight_config, get_default_insight_config
 
 # ── 生产频道路径 ──
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "user_config.json"
+INSIGHT_CONFIG_PATH = Path(__file__).parent.parent / "config" / "insight_config.json"
 LAST_MSG_ID_PATH = Path(__file__).parent.parent / "config" / "last_discord_msg_id.txt"
 LAST_PUSH_DATE_PATH = Path(__file__).parent.parent / "config" / "last_push_date.txt"
 THOUGHT_CONTEXT_PATH = Path(__file__).parent.parent / "config" / "today_thought_context.json"
@@ -261,8 +263,10 @@ def handle_capture(text: str, lang: str = "zh",
     from thought_generator import classify_message_intent, generate_question_from_thought
     from prompts import CONFIG_KEYWORDS
 
-    # config 关键词检查优先
+    # config / insight config 关键词检查优先
     if any(kw in text.lower() for kw in CONFIG_KEYWORDS):
+        return None
+    if any(kw in text.lower() for kw in INSIGHT_CONFIG_KEYWORDS):
         return None
 
     if len(text) < 20:
@@ -326,6 +330,12 @@ def handle_command(text: str, config: dict, channel: str = "main",
     if text in ("!start", "!help"):
         return get("help_text", lang), None
 
+    if text in ("!insight", "!insight config"):
+        cfg = load_insight_config()
+        cfg_str = json.dumps(cfg, ensure_ascii=False, indent=2)
+        prefix = "🔍 **Insight Engine Config:**" if lang == "en" else "🔍 **Insight Engine 当前配置：**"
+        return f"{prefix}\n```json\n{cfg_str}\n```", None
+
     if text == "!config":
         config_str = json.dumps(config, ensure_ascii=False, indent=2)
         prefix = "⚙️ **Current Config:**" if lang == "en" else "⚙️ **当前配置：**"
@@ -370,6 +380,21 @@ def handle_command(text: str, config: dict, channel: str = "main",
         capture_reply = handle_capture(text, lang=lang, thought_context_path=thought_context_path)
         if capture_reply is not None:
             return capture_reply, None
+
+    # 意图为 insight config：调用 DeepSeek 修改 insight engine 配置
+    if any(kw in text.lower() for kw in INSIGHT_CONFIG_KEYWORDS):
+        try:
+            insight_cfg = load_insight_config()
+            result = process_insight_config_command(text, insight_cfg)
+            reply = result.get("reply", "Done." if lang == "en" else "已处理您的请求。")
+            updated_insight = result.get("updated_config")
+            if updated_insight:
+                save_insight_config(updated_insight)
+            return reply, None
+        except Exception as e:
+            print(f"[Handler] Insight 配置 AI 处理失败: {e}")
+            err = f"❌ Error: {e}\nPlease retry." if lang == "en" else f"❌ 处理失败：{e}\n请重试或检查 API 配置。"
+            return err, None
 
     # 意图为 config：调用 DeepSeek 修改配置
     try:

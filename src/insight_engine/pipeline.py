@@ -18,6 +18,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Optional
 
+from .config import load_insight_config
 from .ingestion import load_from_thought_context, ingest
 from .cache import get_cache, set_cache
 from .analysis import analyze
@@ -156,7 +157,10 @@ def run_insight_pipeline(
             "output_paths": {fmt: path} # 落盘路径（write_files=True 时）
         }
     """
-    formats = formats or DEFAULT_FORMATS
+    # config file provides defaults; explicit args override
+    insight_config = load_insight_config()
+    formats = formats or insight_config.get("formats") or DEFAULT_FORMATS
+    language = language or insight_config.get("language", "zh")
     ctx_path = Path(context_path) if context_path else DEFAULT_CONTEXT_PATH
     out_dir = Path(output_dir) if output_dir else DEFAULT_OUTPUT_DIR
 

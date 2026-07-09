@@ -17,6 +17,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from insight_engine import run_insight_pipeline, DEFAULT_FORMATS
+from insight_engine.config import load_insight_config
 
 
 # Discord 频道里每个格式的展示名 + emoji
@@ -54,25 +55,35 @@ def push_to_discord(rendered: dict[str, str], date: str) -> None:
 
 
 def main():
+    insight_config = load_insight_config()
+
     parser = argparse.ArgumentParser(description="运行 Insight Engine 流水线")
     parser.add_argument(
         "--formats",
         type=str,
-        default=None,
-        help=f"要渲染的格式，逗号分隔。默认: {','.join(DEFAULT_FORMATS)}",
+        default=",".join(insight_config.get("formats", DEFAULT_FORMATS)),
+        help=f"要渲染的格式，逗号分隔。默认: {','.join(insight_config.get('formats', DEFAULT_FORMATS))}",
     )
     parser.add_argument(
         "--language",
         type=str,
-        default="zh",
+        default=insight_config.get("language", "zh"),
         choices=["zh", "en"],
-        help="分析语言（zh/en）。默认 zh。",
+        help=f"分析语言（zh/en）。默认 {insight_config.get('language', 'zh')}。",
     )
     parser.add_argument(
         "--push-discord",
         action="store_true",
+        dest="push_discord",
         help="渲染后推送到 Discord insight 频道（需设置 DISCORD_INSIGHT_CHANNEL_ID）",
     )
+    parser.add_argument(
+        "--no-push-discord",
+        action="store_false",
+        dest="push_discord",
+        help="不推送到 Discord",
+    )
+    parser.set_defaults(push_discord=insight_config.get("push_to_discord", True))
     args = parser.parse_args()
 
     formats = args.formats.split(",") if args.formats else None

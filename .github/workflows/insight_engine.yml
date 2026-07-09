@@ -71,8 +71,6 @@ jobs:
       - name: 运行 Insight Engine
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          # workflow_dispatch 显式控制；workflow_run 默认推送
-          PUSH_DISCORD: ${{ github.event.inputs.push_discord || 'true' }}
           DISCORD_INSIGHT_CHANNEL_ID: ${{ secrets.DISCORD_INSIGHT_CHANNEL_ID }}
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: |
@@ -83,8 +81,10 @@ jobs:
           if [ -n "${{ github.event.inputs.language }}" ]; then
             ARGS="$ARGS --language ${{ github.event.inputs.language }}"
           fi
-          if [ "$PUSH_DISCORD" = "true" ]; then
-            ARGS="$ARGS --push-discord"
+          # 仅在 workflow_dispatch 显式设为 false 时禁用推送；
+          # workflow_run 和未指定时不传 flag，由 insight_config.json 控制
+          if [ "${{ github.event.inputs.push_discord }}" = "false" ]; then
+            ARGS="$ARGS --no-push-discord"
           fi
           python scripts/insight_engine_run.py $ARGS
 

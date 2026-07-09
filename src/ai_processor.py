@@ -135,6 +135,49 @@ def process_user_command(user_message: str, current_config: dict) -> dict:
     return result
 
 
+def process_insight_config_command(user_message: str, current_config: dict) -> dict:
+    """
+    解析用户通过 Discord 发送的自然语言指令，返回更新后的 insight engine 配置
+
+    Args:
+        user_message: 用户发送的消息
+        current_config: 当前 insight config
+
+    Returns:
+        dict，包含 reply（回复文本）和 updated_config（可能为 None 表示不更新）
+    """
+    lang = current_config.get("language", "zh")
+    system_prompt = get("insight_process_command_system", lang)
+
+    config_json = json.dumps(current_config, ensure_ascii=False, indent=2)
+    user_prompt = get("insight_process_command_user", lang).format(
+        config_json=config_json,
+        user_message=user_message,
+    )
+
+    client = get_client()
+    response = client.chat.completions.create(
+        model=DEEPSEEK_MODEL,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        temperature=0.3,
+        max_tokens=1500,
+    )
+
+    raw = response.choices[0].message.content.strip()
+
+    if "```" in raw:
+        raw = raw.split("```")[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+    raw = raw.strip()
+
+    result = json.loads(raw)
+    return result
+
+
 def format_daily_digest(articles: list[dict], date_str: str) -> str:
     """将处理后的文章列表格式化为 Telegram 消息（Markdown 格式）"""
     if not articles:
