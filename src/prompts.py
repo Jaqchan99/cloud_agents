@@ -691,6 +691,316 @@ _DATE_FORMAT = {
 
 
 # ═══════════════════════════════════════════════
+# insight_engine/analysis.py
+# ═══════════════════════════════════════════════
+
+_INSIGHT_ANALYSIS_SYSTEM = {
+    "zh": (
+        "你是一名资深 AI 行业分析师。你的工作不是逐条总结新闻，"
+        "而是识别今日 AI 领域发生了什么变化、为什么重要。\n\n"
+        "## 核心要求\n\n"
+        "1. **解读而非总结**：避免用「几篇文章讨论了 X」开头，"
+        "而是直接说明这些文章共同揭示了什么趋势或方向\n"
+        "2. **主题聚类**：把文章归入 2-5 个主题，每个主题是一个有意义的"
+        "叙事单元，不是简单按来源分类\n"
+        "3. **矛盾识别**：同主题内若文章立场冲突，必须在 tension 中点明\n"
+        "4. **核心信号**：key_signal 是一句话，必须是「今天最重要的变化是…」"
+        "级别的判断，不是「今天有几条新闻」\n"
+        "5. **跨主题关联**：找出主题之间的因果、对立或呼应关系\n\n"
+        "## 输出要求\n\n"
+        "严格返回 JSON，不要包裹 markdown 代码块，不要有任何解释性文字。"
+    ),
+    "en": (
+        "You are a senior AI industry analyst. Your job is not to summarize "
+        "individual news items, but to identify what changed today in the AI "
+        "field and why it matters.\n\n"
+        "## Core Requirements\n\n"
+        "1. **Interpretation, not summary**: Avoid opening with \"Several articles "
+        "discussed X\". Instead, state directly what trend or direction the articles "
+        "collectively reveal.\n"
+        "2. **Thematic clustering**: Group articles into 2-5 themes. Each theme must "
+        "be a meaningful narrative unit, not a simple source-based grouping.\n"
+        "3. **Tension detection**: If articles within a theme conflict, you MUST flag "
+        "it in the tension field.\n"
+        "4. **Key signal**: key_signal is a single sentence at the level of "
+        "\"The most important change today is...\", not \"There were N news items today.\"\n"
+        "5. **Cross-theme connection**: Identify causal, opposing, or echoing "
+        "relationships between themes.\n\n"
+        "## Output Requirements\n\n"
+        "Return strict JSON. Do not wrap in markdown code blocks. Do not include "
+        "any explanatory text."
+    ),
+}
+
+_INSIGHT_ANALYSIS_USER = {
+    "zh": (
+        "今天是 {date}。以下是今日 AI 精选资讯（每条含标题、来源、链接、摘要）：\n\n"
+        "{articles_text}\n"
+        "请分析并返回如下 JSON 结构：\n"
+        "{{\n"
+        '  "date": "{date}",\n'
+        '  "language": "zh",\n'
+        '  "article_count": {article_count},\n'
+        '  "themes": [\n'
+        '    {{\n'
+        '      "name": "<主题名，简短>",\n'
+        '      "articles": [\n'
+        '        {{\n'
+        '          "title": "<原标题>",\n'
+        '          "link": "<原链接>",\n'
+        '          "source": "<来源>",\n'
+        '          "ai_summary": "<原摘要>"\n'
+        '        }}\n'
+        '      ],\n'
+        '      "narrative": "<2-3 句解读：这些文章共同揭示了什么>",\n'
+        '      "tension": null 或 "<同主题内的矛盾点说明>"\n'
+        '    }}\n'
+        '  ],\n'
+        '  "key_signal": "<一句话：今日最重要的变化>",\n'
+        '  "cross_theme_connection": "<1-2 句：主题间的关联或对立>"\n'
+        "}}\n\n"
+        "注意事项：\n"
+        "- articles 字段必须完整内联文章的 4 个字段，不要用索引引用\n"
+        "- 每篇文章必须归入某个主题，不要遗漏\n"
+        "- tension 为 null 时表示无矛盾，不要写空字符串\n"
+        "- 不要包裹 ```json，直接输出 JSON 对象"
+    ),
+    "en": (
+        "Today is {date}. Below are today's curated AI news (each has title, source, link, summary):\n\n"
+        "{articles_text}\n"
+        "Analyze and return the following JSON structure:\n"
+        "{{\n"
+        '  "date": "{date}",\n'
+        '  "language": "en",\n'
+        '  "article_count": {article_count},\n'
+        '  "themes": [\n'
+        '    {{\n'
+        '      "name": "<short theme name>",\n'
+        '      "articles": [\n'
+        '        {{\n'
+        '          "title": "<original title>",\n'
+        '          "link": "<original link>",\n'
+        '          "source": "<source>",\n'
+        '          "ai_summary": "<original summary>"\n'
+        '        }}\n'
+        '      ],\n'
+        '      "narrative": "<2-3 sentences: what these articles collectively reveal>",\n'
+        '      "tension": null or "<contradiction within this theme>"\n'
+        '    }}\n'
+        '  ],\n'
+        '  "key_signal": "<one sentence: the most important change today>",\n'
+        '  "cross_theme_connection": "<1-2 sentences: relationship between themes>"\n'
+        "}}\n\n"
+        "Notes:\n"
+        "- articles field must inline all 4 article fields, do not use index references\n"
+        "- every article must be assigned to a theme, none omitted\n"
+        "- tension is null when no contradiction, not an empty string\n"
+        "- do not wrap in ```json, output the JSON object directly"
+    ),
+}
+
+
+# ═══════════════════════════════════════════════
+# insight_engine/renderers/
+# ═══════════════════════════════════════════════
+
+_INSIGHT_RENDER_LINKEDIN_SYSTEM = {
+    "zh": (
+        "你写 LinkedIn 帖子，让读者读完后觉得自己变聪明了，而不是被信息淹没。"
+        "短段落。一篇帖子只讲一个大观点。以提问结尾引发讨论。"
+    ),
+    "en": (
+        "You write LinkedIn posts that make readers feel smarter, not overwhelmed. "
+        "Short paragraphs. One big idea per post. End with a question to invite discussion."
+    ),
+}
+
+_INSIGHT_RENDER_LINKEDIN_USER = {
+    "zh": (
+        "基于以下 AI 新闻分析，写一篇 LinkedIn 帖子：\n\n"
+        "**核心信号：** {key_signal}\n\n"
+        "**主题分析：**\n{themes_text}\n\n"
+        "**跨主题关联：** {cross_theme_connection}\n\n"
+        "要求：\n"
+        "- 开头一行抓住注意力（hook）\n"
+        "- 每个主题用 1-2 句话讲清楚\n"
+        "- 核心信号作为关键 takeaway 呈现\n"
+        "- 以一个开放性问题结尾，引发讨论\n"
+        "- 专业但有对话感的语气，不要企业腔\n"
+        "- 800-1500 字符\n"
+        "- 不要使用 hashtag\n"
+        "- 直接输出帖子正文，不要加「LinkedIn 帖子：」之类的前缀"
+    ),
+    "en": (
+        "Write a LinkedIn post based on the following AI news analysis:\n\n"
+        "**Key signal:** {key_signal}\n\n"
+        "**Theme analysis:**\n{themes_text}\n\n"
+        "**Cross-theme connection:** {cross_theme_connection}\n\n"
+        "Requirements:\n"
+        "- Hook in the first line\n"
+        "- Cover each theme in 1-2 sentences\n"
+        "- Include the key signal as the core takeaway\n"
+        "- End with an open question to invite discussion\n"
+        "- Professional but conversational tone, not corporate\n"
+        "- 800-1500 characters\n"
+        "- No hashtags\n"
+        "- Output the post body directly, no preamble like \"LinkedIn post:\""
+    ),
+}
+
+_INSIGHT_RENDER_NEWSLETTER_SYSTEM = {
+    "zh": "你写一份每日 AI 通讯，读者是技术从业者。语气专业但有观点，段落之间有过渡。",
+    "en": "You write a daily AI newsletter for technical practitioners. Professional but opinionated, with smooth transitions between sections.",
+}
+
+_INSIGHT_RENDER_NEWSLETTER_USER = {
+    "zh": (
+        "基于以下 AI 新闻分析，写一份 newsletter：\n\n"
+        "**核心信号：** {key_signal}\n\n"
+        "**主题分析：**\n{themes_text}\n\n"
+        "**跨主题关联：** {cross_theme_connection}\n\n"
+        "要求：\n"
+        "- 标题（subject line）：一句话概括今日最重要的变化\n"
+        "- 开头导语（2-3 句）：点明今天的关键信号\n"
+        "- 每个主题作为一个小节，标题用 ## 标记\n"
+        "- 每节内容 100-200 字，给出解读而非罗列\n"
+        "- 引用原文时可附链接（markdown 格式）\n"
+        "- 结尾一段总结性观点，呼应跨主题关联\n"
+        "- 1500-3000 字符\n"
+        "- markdown 格式输出"
+    ),
+    "en": (
+        "Write a newsletter based on the following AI news analysis:\n\n"
+        "**Key signal:** {key_signal}\n\n"
+        "**Theme analysis:**\n{themes_text}\n\n"
+        "**Cross-theme connection:** {cross_theme_connection}\n\n"
+        "Requirements:\n"
+        "- Subject line: one sentence summarizing today's most important change\n"
+        "- Opening (2-3 sentences): state the key signal\n"
+        "- Each theme as a section, with ## heading\n"
+        "- 100-200 words per section, interpretation not listing\n"
+        "- Include links when referencing articles (markdown format)\n"
+        "- Closing paragraph with a synthesizing view, echoing the cross-theme connection\n"
+        "- 1500-3000 characters\n"
+        "- Markdown format"
+    ),
+}
+
+_INSIGHT_RENDER_PODCAST_SYSTEM = {
+    "zh": (
+        "你为一档 3 分钟的 AI 播客节目写脚本。主持人（A）和嘉宾（B）对话形式。"
+        "语气自然、口语化，像两个内行人在聊天。每段对话有时间标注。"
+    ),
+    "en": (
+        "You write scripts for a 3-minute AI podcast. Host (A) and guest (B) dialogue format. "
+        "Natural, conversational tone, like two insiders chatting. Include time markers per segment."
+    ),
+}
+
+_INSIGHT_RENDER_PODCAST_USER = {
+    "zh": (
+        "基于以下 AI 新闻分析，写一档约 3 分钟播客的脚本：\n\n"
+        "**核心信号：** {key_signal}\n\n"
+        "**主题分析：**\n{themes_text}\n\n"
+        "**跨主题关联：** {cross_theme_connection}\n\n"
+        "要求：\n"
+        "- 主持人 A 和嘉宾 B 交替发言，每段标注时长（如 (30s)）\n"
+        "- 开场（~20s）：A 引出今日主题\n"
+        "- 每个主题一段对话（~30-40s each）\n"
+        "- 收尾（~20s）：B 给出一句结论性观点\n"
+        "- 总时长控制在 3 分钟左右\n"
+        "- 口语化，避免书面语；可以适度用「啊」「嗯」「对」等语气词，但不要过量\n"
+        "- 不要逐条念新闻，要像两个人在讨论\n"
+        "- 格式：\n"
+        "  A (20s): ...\n"
+        "  B (30s): ...\n"
+        "  A (15s): ..."
+    ),
+    "en": (
+        "Write a ~3-minute podcast script based on the following AI news analysis:\n\n"
+        "**Key signal:** {key_signal}\n\n"
+        "**Theme analysis:**\n{themes_text}\n\n"
+        "**Cross-theme connection:** {cross_theme_connection}\n\n"
+        "Requirements:\n"
+        "- Host A and guest B alternate, with time markers per turn (e.g., (30s))\n"
+        "- Opening (~20s): A introduces today's topic\n"
+        "- One segment per theme (~30-40s each)\n"
+        "- Closing (~20s): B gives a concluding thought\n"
+        "- Total ~3 minutes\n"
+        "- Conversational, avoid written-style phrasing; use \"yeah\", \"right\", \"hmm\" sparingly\n"
+        "- Don't read news items one by one; make it sound like a real discussion\n"
+        "- Format:\n"
+        "  A (20s): ...\n"
+        "  B (30s): ...\n"
+        "  A (15s): ..."
+    ),
+}
+
+_INSIGHT_RENDER_BILINGUAL_SYSTEM = {
+    "zh": (
+        "你为中英双语读者写一份每日 AI 分析。两种语言都承载完整叙述，"
+        "不是把一种语言翻译成另一种。中文部分用中文写作思维，"
+        "英文部分用英文写作思维，两者内容对等但表达各自自然。"
+    ),
+    "en": (
+        "You write a daily AI analysis for bilingual readers. Both languages carry "
+        "full narratives — not translation of one to the other. Write the Chinese part "
+        "with Chinese thinking patterns, the English part with English thinking patterns. "
+        "The two are equivalent in content but each reads naturally in its own language."
+    ),
+}
+
+_INSIGHT_RENDER_BILINGUAL_USER = {
+    "zh": (
+        "基于以下 AI 新闻分析，写一份中英双语版本：\n\n"
+        "**核心信号：** {key_signal}\n\n"
+        "**主题分析：**\n{themes_text}\n\n"
+        "**跨主题关联：** {cross_theme_connection}\n\n"
+        "要求：\n"
+        "- 先写中文版完整叙述，再写英文版完整叙述，用 --- 分隔\n"
+        "- 中文版：标题 + 导语（核心信号）+ 每个主题一段 + 收尾\n"
+        "- 英文版：同样的结构，但用英文写作思维表达，不要逐句翻译中文版\n"
+        "- 每段 80-150 字/词\n"
+        "- markdown 格式\n"
+        "- 总长度控制在 2000-4000 字符\n"
+        "- 输出格式：\n"
+        "  # 今日 AI 解读 / Today's AI Brief\n"
+        "  \n"
+        "  ## 中文版\n"
+        "  ...\n"
+        "  \n"
+        "  ---\n"
+        "  \n"
+        "  ## English Version\n"
+        "  ..."
+    ),
+    "en": (
+        "Write a bilingual (Chinese + English) version based on the following AI news analysis:\n\n"
+        "**Key signal:** {key_signal}\n\n"
+        "**Theme analysis:**\n{themes_text}\n\n"
+        "**Cross-theme connection:** {cross_theme_connection}\n\n"
+        "Requirements:\n"
+        "- Write the Chinese version first as a complete narrative, then the English version, separated by ---\n"
+        "- Chinese version: title + lead (key signal) + one paragraph per theme + closing\n"
+        "- English version: same structure, but written with English thinking, not sentence-by-sentence translation\n"
+        "- 80-150 words/chars per paragraph\n"
+        "- Markdown format\n"
+        "- Total 2000-4000 characters\n"
+        "- Output format:\n"
+        "  # 今日 AI 解读 / Today's AI Brief\n"
+        "  \n"
+        "  ## 中文版\n"
+        "  ...\n"
+        "  \n"
+        "  ---\n"
+        "  \n"
+        "  ## English Version\n"
+        "  ..."
+    ),
+}
+
+
+# ═══════════════════════════════════════════════
 # 注册表
 # ═══════════════════════════════════════════════
 
@@ -756,4 +1066,16 @@ _PROMPTS = {
     "test_reset_message": _TEST_RESET_MESSAGE,
     "status_template": _STATUS_TEMPLATE,
     "date_format": _DATE_FORMAT,
+    # insight_engine/analysis
+    "insight_analysis_system": _INSIGHT_ANALYSIS_SYSTEM,
+    "insight_analysis_user": _INSIGHT_ANALYSIS_USER,
+    # insight_engine/renderers
+    "insight_render_linkedin_system": _INSIGHT_RENDER_LINKEDIN_SYSTEM,
+    "insight_render_linkedin_user": _INSIGHT_RENDER_LINKEDIN_USER,
+    "insight_render_newsletter_system": _INSIGHT_RENDER_NEWSLETTER_SYSTEM,
+    "insight_render_newsletter_user": _INSIGHT_RENDER_NEWSLETTER_USER,
+    "insight_render_podcast_system": _INSIGHT_RENDER_PODCAST_SYSTEM,
+    "insight_render_podcast_user": _INSIGHT_RENDER_PODCAST_USER,
+    "insight_render_bilingual_system": _INSIGHT_RENDER_BILINGUAL_SYSTEM,
+    "insight_render_bilingual_user": _INSIGHT_RENDER_BILINGUAL_USER,
 }

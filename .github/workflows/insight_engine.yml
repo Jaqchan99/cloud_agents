@@ -1,0 +1,102 @@
+name: Insight Engine — AI 新闻深度解读
+
+on:
+  # 上游推送完成后自动触发
+  workflow_run:
+    workflows: ["AI 每日资讯推送"]
+    types: [completed]
+    branches: [main]
+  # 支持手动触发（用于调试/重跑）
+  workflow_dispatch:
+    inputs:
+      formats:
+        description: "要渲染的格式，逗号分隔（留空 = 全部）"
+        required: false
+        default: ""
+      language:
+        description: "分析语言（zh/en）"
+        required: false
+        default: "zh"
+      push_discord:
+        description: "是否推送到 Discord insight 频道（true/false）"
+        required: false
+        default: "true"
+
+jobs:
+  insight-engine:
+    name: 运行 Insight 流水线
+    # 仅在 workflow_run 触发时：上游成功才跑；workflow_dispatch 总是跑
+    if: >
+      (github.event_name == 'workflow_dispatch') ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 确定 checkout ref
+        id: ref
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            echo "ref=${{ github.event.workflow_run.head_sha }}" >> "$GITHUB_OUTPUT"
+            echo "使用 workflow_run.head_sha 作为 checkout ref（含最新 context 文件 commit）"
+          else
+            echo "ref=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+            echo "使用 github.sha 作为 checkout ref（workflow_dispatch 模式）"
+          fi
+
+      - name: Checkout 代码（含写入权限）
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 1
+          ref: ${{ steps.ref.outputs.ref }}
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 检查 upstream context 文件
+        run: |
+          if [ ! -f config/today_thought_context.json ]; then
+            echo "config/today_thought_context.json 不存在 — 上游未运行或运行失败"
+            exit 1
+          fi
+          echo "context 文件就绪"
+
+      - name: 运行 Insight Engine
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          # workflow_dispatch 显式控制；workflow_run 默认推送
+          PUSH_DISCORD: ${{ github.event.inputs.push_discord || 'true' }}
+          DISCORD_INSIGHT_CHANNEL_ID: ${{ secrets.DISCORD_INSIGHT_CHANNEL_ID }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.formats }}" ]; then
+            ARGS="$ARGS --formats ${{ github.event.inputs.formats }}"
+          fi
+          if [ -n "${{ github.event.inputs.language }}" ]; then
+            ARGS="$ARGS --language ${{ github.event.inputs.language }}"
+          fi
+          if [ "$PUSH_DISCORD" = "true" ]; then
+            ARGS="$ARGS --push-discord"
+          fi
+          python scripts/insight_engine_run.py $ARGS
+
+      - name: 保存输出（InsightPackage + 渲染结果）
+        run: |
+          git config user.name "AI News Bot"
+          git config user.email "bot@github-actions"
+          git add config/insight_cache/ output/insight/
+          if git diff --staged --quiet; then
+            echo "无新的 insight 输出"
+          else
+            git commit -m "chore: 自动更新 insight 输出 [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi
