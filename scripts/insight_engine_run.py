@@ -53,6 +53,23 @@ def push_to_discord(rendered: dict[str, str], date: str) -> None:
         send_long_message(separator + text, channel_id=channel_id)
         print(f"[Insight] Discord: 已推送 {fmt} → 频道 {channel_id}")
 
+    # 推送配置面板（交互式按钮/菜单）
+    try:
+        from insight_engine.config_panel import build_config_panel
+        from insight_engine.config import load_insight_config
+        from discord_client import send_message_with_components
+
+        cfg = load_insight_config()
+        panel = build_config_panel(cfg)
+        send_message_with_components(
+            content="⚙️ **配置面板** — 点击下方按钮调整 Insight Engine 设置，修改即时生效。",
+            components=panel,
+            channel_id=channel_id,
+        )
+        print("[Insight] Discord: 已推送配置面板")
+    except Exception as e:
+        print(f"[Insight] Discord: 配置面板推送失败（不影响主流程）— {e}")
+
 
 def main():
     insight_config = load_insight_config()

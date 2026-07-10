@@ -101,6 +101,24 @@ def send_embed(title: str, description: str, fields: list[dict] | None = None,
     return result
 
 
+def send_message_with_components(
+    content: str,
+    components: list[dict],
+    channel_id: Optional[str] = None,
+) -> dict:
+    """发送带 Message Components（按钮、下拉菜单）的消息到 Discord 频道。"""
+    target = channel_id or get_channel_id()
+    url = f"{DISCORD_API}/channels/{target}/messages"
+    payload = {"content": content, "components": components}
+    resp = requests.post(url, headers=_headers(), json=payload, timeout=15)
+    result = resp.json()
+    if resp.status_code not in (200, 201):
+        raise RuntimeError(
+            f"Discord 组件消息发送失败 ({resp.status_code}): {result.get('message')}"
+        )
+    return result
+
+
 def get_messages(channel_id: Optional[str] = None, after_id: Optional[str] = None,
                  limit: int = 20) -> list[dict]:
     """
