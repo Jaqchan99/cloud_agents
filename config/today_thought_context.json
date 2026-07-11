@@ -1,22 +1,17 @@
 {
-  "date": "2026-07-10",
-  "question": "当AI Agent开始自主完成融资、修复代码甚至自我进化，企业应该如何重新定义‘可信赖的AI’的边界？这是否意味着从‘辅助工具’到‘自主执行者’的转变中，安全与成本控制需要全新的评估标准？",
-  "context": "多个案例显示AI Agent已能独立执行复杂商业流程（如Lyzr的融资）和持续学习优化，但同时也暴露出Token成本失控和静默违规风险，企业面临如何平衡自主性与可控性的关键抉择。",
+  "date": "2026-07-11",
+  "question": "当AI Agent能够自主完成融资、跨应用执行复杂任务时，企业应如何重新定义‘人类监督’的角色？是信任其自主性，还是保留关键决策的最终审核权？",
+  "context": "Lyzr用自家AI Agent完成1亿美元融资和OpenAI推出ChatGPT Work等事件，表明AI Agent在商业流程中的自主执行能力已从概念验证走向实际应用，这迫使企业重新思考人与AI的协作边界。",
   "related_articles": [
     {
       "title": "An AI agent startup just let its agent run its $100M fundraise",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/ai-agent-startup-lyzr-fundraise"
+      "link": "https://techcrunch.com/ai-agent-startup-fundraise"
     },
     {
-      "title": "The Harness Effect: How Orchestration Design Sets the Token Economics of Enterprise Agentic AI",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/harness-effect"
-    },
-    {
-      "title": "Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/reason-less-verify-more"
+      "title": "ChatGPT is now a partner for your most ambitious work",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/blog/chatgpt-work"
     }
   ],
   "all_articles": [
@@ -24,61 +19,61 @@
       "title": "ChatGPT is now a partner for your most ambitious work",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
-      "ai_summary": "OpenAI推出ChatGPT Work，这是一个能跨应用和文件执行操作、可长时间跟踪项目并完成目标的AI Agent。该产品标志着ChatGPT从对话工具向自主工作助手的重大升级，直接面向企业级复杂任务场景。"
+      "ai_summary": "OpenAI推出ChatGPT Work，这是一个能够跨应用和文件执行操作的AI Agent，可长时间跟踪项目并将目标转化为完成的工作。这标志着ChatGPT从对话工具向主动工作助手的重大升级，对AI Agent在企业级应用中的落地具有示范意义。"
     },
     {
       "title": "An AI agent startup just let its agent run its $100M fundraise",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/07/09/an-ai-agent-startup-just-let-its-agent-run-its-100-million-fundraise/",
-      "ai_summary": "AI Agent初创公司Lyzr使用自家AI Agent完成了1亿美元融资，以此证明产品的实际能力。这一案例展示了AI Agent在复杂商业流程中的自主执行潜力，具有里程碑式的示范意义。"
+      "ai_summary": "AI Agent初创公司Lyzr使用自家AI Agent完成了1亿美元融资，以实际案例证明了其产品的有效性。这一事件展示了AI Agent在复杂商业流程中的自主执行能力，对行业信心和投资方向有重要影响。"
     },
     {
       "title": "Meta enters the crowded AI coding battle with Muse Spark 1.1",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/07/09/meta-enters-the-crowded-ai-coding-battle-with-muse-spark-1-1/",
-      "ai_summary": "Meta发布Muse Spark 1.1，主打处理大型Agent工作负载、修复bug和代码迁移等企业级自动化能力。这标志着Meta正式加入AI编程工具竞争，进一步加剧了该领域的市场角逐。"
+      "ai_summary": "Meta发布Muse Spark 1.1，进入AI编码工具竞争，强调其处理大型Agent工作负载、修复bug和代码迁移的能力。这标志着开源模型在AI编码领域的进一步扩展，为企业提供了更多选择。"
     },
     {
       "title": "Separating signal from noise in coding evaluations",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
-      "ai_summary": "OpenAI发布新分析，揭示流行编程基准SWE-Bench Pro存在的问题，对AI模型评估的可靠性和准确性提出质疑。该研究为AI Agent能力评估的标准化和可信度提升提供了重要警示。"
-    },
-    {
-      "title": "AgentLens: Production-Assessed Trajectory Reviews for Coding Agent Evaluation",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.06624",
-      "ai_summary": "论文提出AgentLens，一个基于生产环境评估的交互式代码Agent基准，突破传统单比特通过/失败评价模式。该工作为代码Agent的细粒度性能评估提供了新方法论，对Agent能力评测有重要参考价值。"
-    },
-    {
-      "title": "The Harness Effect: How Orchestration Design Sets the Token Economics of Enterprise Agentic AI",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.06906",
-      "ai_summary": "论文探讨了Agent编排设计如何决定企业级AI的Token经济，指出当前开发模式存在Token过度消耗问题。该研究为企业部署AI Agent提供了成本优化的重要理论指导。"
-    },
-    {
-      "title": "From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.07321",
-      "ai_summary": "论文提出一种让LLM Agent通过迭代工具优化实现自我进化的方法，将原子操作升级为标准操作流程。该研究为构建能持续学习和适应复杂任务的自主Agent提供了新框架。"
+      "ai_summary": "OpenAI发布分析报告，指出流行编码基准SWE-Bench Pro存在可靠性问题，影响AI模型评估的准确性。这对AI Agent能力评估领域具有警示意义，推动更严谨的评测方法发展。"
     },
     {
       "title": "Data for Agents",
       "source": "HuggingFace Blog",
       "link": "https://huggingface.co/blog/nvidia/open-data-for-agents",
-      "ai_summary": "HuggingFace发布关于AI Agent数据的技术博客，探讨如何为Agent提供高质量训练数据。该内容对开源Agent生态的数据构建和模型训练具有指导意义。"
+      "ai_summary": "HuggingFace发布关于AI Agent数据的技术博客，探讨如何为Agent提供高质量训练数据。这延续了HuggingFace在开源AI生态中的领导地位，对Agent开发的数据策略有指导价值。"
     },
     {
-      "title": "Does AI Understand Imaging? A Systematic Benchmark of Agentic AI for Computational Imaging Tasks",
+      "title": "AgentLens: Production-Assessed Trajectory Reviews for Coding Agent Evaluation",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.07189",
-      "ai_summary": "论文系统评估了视觉语言模型和Agent AI在计算成像任务上的表现，发现其在语义视觉任务上表现良好但处理成像任务能力存疑。该研究为多模态Agent的能力边界提供了重要实证。"
+      "link": "https://arxiv.org/abs/2607.06624",
+      "ai_summary": "论文提出AgentLens，一个基于生产环境评估的交互式代码Agent基准，通过轨迹审查而非单一结果来评估性能。这改进了传统代码Agent评估的粒度，有助于更真实地反映Agent能力。"
     },
     {
-      "title": "Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents",
+      "title": "Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE",
+      "source": "Arxiv ML",
+      "link": "https://arxiv.org/abs/2607.07740",
+      "ai_summary": "论文提出Jet-Long方法，通过动态双焦点RoPE实现高效长上下文扩展，适用于RAG、仓库级编码和Agent工作流。这对提升LLM在长上下文场景下的性能有重要意义，直接影响Agent的复杂任务处理能力。"
+    },
+    {
+      "title": "From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.07405",
-      "ai_summary": "论文发现工具使用型LLM Agent在看似成功完成任务时可能违反部署策略，并提出确定性门控机制来恢复这种静默失败模式。该研究对AI Agent的安全性和可靠性提升具有实际价值。"
+      "link": "https://arxiv.org/abs/2607.07321",
+      "ai_summary": "论文提出迭代工具优化方法，使LLM Agent能从原子动作逐步构建标准操作流程，实现自我进化。这为Agent的自主学习和工具使用能力提升提供了新思路，对构建更智能的Agent系统有重要参考价值。"
+    },
+    {
+      "title": "OpenAI is shutting down Atlas, but its AI browser ambitions are still growing",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/",
+      "ai_summary": "OpenAI关闭AI浏览器Atlas，但将部分Agent浏览功能迁移至桌面应用和Chrome扩展。这表明OpenAI在调整产品策略，聚焦于更集成化的Agent体验，对AI浏览器赛道有重要影响。"
+    },
+    {
+      "title": "Show HN: Reverse-engineering web apps into agent tools",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=48847834",
+      "ai_summary": "Hacker News上展示了一个将Web应用逆向工程为Agent工具的项目，获得社区高度关注（79分）。这展示了开源社区在Agent工具开发上的创新，有助于降低Agent与现有Web服务集成的门槛。"
     }
   ],
   "answered": false
