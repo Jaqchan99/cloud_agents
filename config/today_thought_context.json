@@ -1,12 +1,17 @@
 {
-  "date": "2026-07-11",
-  "question": "当AI Agent能够自主完成融资、跨应用执行复杂任务时，企业应如何重新定义‘人类监督’的角色？是信任其自主性，还是保留关键决策的最终审核权？",
-  "context": "Lyzr用自家AI Agent完成1亿美元融资和OpenAI推出ChatGPT Work等事件，表明AI Agent在商业流程中的自主执行能力已从概念验证走向实际应用，这迫使企业重新思考人与AI的协作边界。",
+  "date": "2026-07-12",
+  "question": "当AI Agent能够自主完成融资、跨应用执行项目任务时，企业如何确保其行为符合预期并具备可审计性？从“提示工程”转向“契约工程”是否是解决这一信任问题的关键路径？",
+  "context": "Lyzr使用AI Agent完成1亿美元融资和OpenAI推出ChatGPT Work展示了AI Agent的自主执行能力，但随之而来的安全与可控性挑战愈发突出。论文提出的“契约工程”方法为Agent行为提供了可验证的合约框架，这可能是企业大规模采用AI Agent的前提。",
   "related_articles": [
     {
       "title": "An AI agent startup just let its agent run its $100M fundraise",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/ai-agent-startup-fundraise"
+      "link": "https://techcrunch.com/ai-agent-fundraise"
+    },
+    {
+      "title": "From Prompts to Contracts: Harness Engineering for Auditable Enterprise LLM Agents",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/contract-engineering"
     },
     {
       "title": "ChatGPT is now a partner for your most ambitious work",
@@ -19,61 +24,61 @@
       "title": "ChatGPT is now a partner for your most ambitious work",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
-      "ai_summary": "OpenAI推出ChatGPT Work，这是一个能够跨应用和文件执行操作的AI Agent，可长时间跟踪项目并将目标转化为完成的工作。这标志着ChatGPT从对话工具向主动工作助手的重大升级，对AI Agent在企业级应用中的落地具有示范意义。"
+      "ai_summary": "OpenAI推出ChatGPT Work，这是一个能够跨应用和文件执行操作的AI Agent，可长时间跟踪项目并将目标转化为完成的工作。这标志着ChatGPT从对话助手向主动工作伙伴的进化，对AI Agent在企业级应用中的落地具有里程碑意义。"
     },
     {
       "title": "An AI agent startup just let its agent run its $100M fundraise",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/07/09/an-ai-agent-startup-just-let-its-agent-run-its-100-million-fundraise/",
-      "ai_summary": "AI Agent初创公司Lyzr使用自家AI Agent完成了1亿美元融资，以实际案例证明了其产品的有效性。这一事件展示了AI Agent在复杂商业流程中的自主执行能力，对行业信心和投资方向有重要影响。"
+      "ai_summary": "AI Agent初创公司Lyzr使用自家AI Agent完成了1亿美元融资，以此证明产品实际可用。这一事件展示了AI Agent在复杂商业流程中的自主执行能力，为行业提供了极具说服力的应用案例。"
     },
     {
       "title": "Meta enters the crowded AI coding battle with Muse Spark 1.1",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/07/09/meta-enters-the-crowded-ai-coding-battle-with-muse-spark-1-1/",
-      "ai_summary": "Meta发布Muse Spark 1.1，进入AI编码工具竞争，强调其处理大型Agent工作负载、修复bug和代码迁移的能力。这标志着开源模型在AI编码领域的进一步扩展，为企业提供了更多选择。"
+      "ai_summary": "Meta发布Muse Spark 1.1，主打处理大型Agent工作负载、修复Bug和代码迁移等企业级自动化能力。Meta的入局加剧了AI编码领域的竞争，其开源策略可能推动Agentic coding工具的普及。"
     },
     {
-      "title": "Separating signal from noise in coding evaluations",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
-      "ai_summary": "OpenAI发布分析报告，指出流行编码基准SWE-Bench Pro存在可靠性问题，影响AI模型评估的准确性。这对AI Agent能力评估领域具有警示意义，推动更严谨的评测方法发展。"
-    },
-    {
-      "title": "Data for Agents",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/nvidia/open-data-for-agents",
-      "ai_summary": "HuggingFace发布关于AI Agent数据的技术博客，探讨如何为Agent提供高质量训练数据。这延续了HuggingFace在开源AI生态中的领导地位，对Agent开发的数据策略有指导价值。"
-    },
-    {
-      "title": "AgentLens: Production-Assessed Trajectory Reviews for Coding Agent Evaluation",
+      "title": "Context Graphs for Proactive Enterprise Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.06624",
-      "ai_summary": "论文提出AgentLens，一个基于生产环境评估的交互式代码Agent基准，通过轨迹审查而非单一结果来评估性能。这改进了传统代码Agent评估的粒度，有助于更真实地反映Agent能力。"
+      "link": "https://arxiv.org/abs/2607.07721",
+      "ai_summary": "论文提出上下文图谱（Context Graphs）方法，旨在解决当前AI Agent的被动响应问题，使其具备主动感知和行动能力。该研究对提升企业Agent的自主性和效率具有重要理论价值。"
     },
     {
-      "title": "Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE",
-      "source": "Arxiv ML",
-      "link": "https://arxiv.org/abs/2607.07740",
-      "ai_summary": "论文提出Jet-Long方法，通过动态双焦点RoPE实现高效长上下文扩展，适用于RAG、仓库级编码和Agent工作流。这对提升LLM在长上下文场景下的性能有重要意义，直接影响Agent的复杂任务处理能力。"
-    },
-    {
-      "title": "From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents",
+      "title": "From Prompts to Contracts: Harness Engineering for Auditable Enterprise LLM Agents",
       "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.07321",
-      "ai_summary": "论文提出迭代工具优化方法，使LLM Agent能从原子动作逐步构建标准操作流程，实现自我进化。这为Agent的自主学习和工具使用能力提升提供了新思路，对构建更智能的Agent系统有重要参考价值。"
+      "link": "https://arxiv.org/abs/2607.08028",
+      "ai_summary": "论文提出从提示工程转向“契约工程”，为企业LLM Agent提供可审计的行为规范。该方法将Agent行为从不可控的提示转变为可验证的合约，对Agent在企业中的安全部署至关重要。"
+    },
+    {
+      "title": "Persuasion Attacks Can Decrease Effectiveness of CoT Monitoring",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.08066",
+      "ai_summary": "研究发现说服攻击可以降低链式思维（CoT）监控的有效性，暴露了当前AI Agent安全机制的新漏洞。该成果对Agent安全评估和防御策略设计具有警示意义。"
     },
     {
       "title": "OpenAI is shutting down Atlas, but its AI browser ambitions are still growing",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/",
-      "ai_summary": "OpenAI关闭AI浏览器Atlas，但将部分Agent浏览功能迁移至桌面应用和Chrome扩展。这表明OpenAI在调整产品策略，聚焦于更集成化的Agent体验，对AI浏览器赛道有重要影响。"
+      "ai_summary": "OpenAI关闭AI浏览器Atlas，但将部分Agent浏览功能迁移至桌面应用和Chrome扩展。这表明OpenAI在Agent能力落地策略上进行调整，聚焦于更集成化的产品形态。"
     },
     {
-      "title": "Show HN: Reverse-engineering web apps into agent tools",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=48847834",
-      "ai_summary": "Hacker News上展示了一个将Web应用逆向工程为Agent工具的项目，获得社区高度关注（79分）。这展示了开源社区在Agent工具开发上的创新，有助于降低Agent与现有Web服务集成的门槛。"
+      "title": "Agentic Neural Architecture Search",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.07984",
+      "ai_summary": "论文提出Agent驱动的神经架构搜索（NAS），突破传统NAS依赖人工设计搜索空间的限制。该研究将Agent自主决策能力引入模型设计，有望加速AI模型的自动化创新。"
+    },
+    {
+      "title": "Agentic AI and Retrieval-Augmented Models in Straight-Through Underwriting",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.07858",
+      "ai_summary": "论文探讨Agentic AI与检索增强模型在直通式核保中的应用，展示了AI Agent在保险等垂直行业的落地潜力。该研究为Agent在金融领域的实际部署提供了技术路径。"
+    },
+    {
+      "title": "Feedback Manipulation Regularization: Enabling Offline Agent Alignment for Imitation Learning",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.07859",
+      "ai_summary": "论文提出反馈操纵正则化方法，使离线Agent能够通过模仿学习实现对齐。该方法解决了Agent在无在线交互情况下的价值观对齐难题，对Agent安全训练具有实用价值。"
     }
   ],
   "answered": false
