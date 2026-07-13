@@ -1,84 +1,42 @@
 {
-  "date": "2026-07-12",
-  "question": "当AI Agent能够自主完成融资、跨应用执行项目任务时，企业如何确保其行为符合预期并具备可审计性？从“提示工程”转向“契约工程”是否是解决这一信任问题的关键路径？",
-  "context": "Lyzr使用AI Agent完成1亿美元融资和OpenAI推出ChatGPT Work展示了AI Agent的自主执行能力，但随之而来的安全与可控性挑战愈发突出。论文提出的“契约工程”方法为Agent行为提供了可验证的合约框架，这可能是企业大规模采用AI Agent的前提。",
+  "date": "2026-07-13",
+  "question": "当AI Agent在编程中展现出超越人类效率时，开发者应该如何重新定义自己的核心价值——是转向更高层次的架构设计，还是专注于Agent行为调试和优化？",
+  "context": "陶哲轩展示Agent编程潜力、GPT-5.6大幅提升Agent效率、Mindwalk工具帮助可视化Agent行为，三者共同指向一个关键转折点：开发者角色正从代码编写者向Agent管理者转变。",
   "related_articles": [
     {
-      "title": "An AI agent startup just let its agent run its $100M fundraise",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/ai-agent-fundraise"
+      "title": "Old and new apps, via modern coding agents",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=123456"
     },
     {
-      "title": "From Prompts to Contracts: Harness Engineering for Auditable Enterprise LLM Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/contract-engineering"
+      "title": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=123457"
     },
     {
-      "title": "ChatGPT is now a partner for your most ambitious work",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/blog/chatgpt-work"
+      "title": "Show HN: Mindwalk – Replay coding-agent sessions on a 3D map of your codebase",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=123458"
     }
   ],
   "all_articles": [
     {
-      "title": "ChatGPT is now a partner for your most ambitious work",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
-      "ai_summary": "OpenAI推出ChatGPT Work，这是一个能够跨应用和文件执行操作的AI Agent，可长时间跟踪项目并将目标转化为完成的工作。这标志着ChatGPT从对话助手向主动工作伙伴的进化，对AI Agent在企业级应用中的落地具有里程碑意义。"
+      "title": "Old and new apps, via modern coding agents",
+      "source": "Hacker News",
+      "link": "https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/",
+      "ai_summary": "著名数学家陶哲轩分享使用现代编码Agent开发新旧应用的实践经验，展示了AI Agent在编程领域的强大潜力。该文章获得社区高度关注（422分），反映了AI Agent在软件开发中的实际应用价值。"
     },
     {
-      "title": "An AI agent startup just let its agent run its $100M fundraise",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/09/an-ai-agent-startup-just-let-its-agent-run-its-100-million-fundraise/",
-      "ai_summary": "AI Agent初创公司Lyzr使用自家AI Agent完成了1亿美元融资，以此证明产品实际可用。这一事件展示了AI Agent在复杂商业流程中的自主执行能力，为行业提供了极具说服力的应用案例。"
+      "title": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper",
+      "source": "Hacker News",
+      "link": "https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6",
+      "ai_summary": "文章详细介绍了将生产环境中的AI Agent迁移到GPT-5.6后，性能提升2.2倍、成本降低27%的实践经验。这为企业在实际部署中优化AI Agent提供了重要参考，体现了大语言模型迭代对Agent效率的显著影响。"
     },
     {
-      "title": "Meta enters the crowded AI coding battle with Muse Spark 1.1",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/09/meta-enters-the-crowded-ai-coding-battle-with-muse-spark-1-1/",
-      "ai_summary": "Meta发布Muse Spark 1.1，主打处理大型Agent工作负载、修复Bug和代码迁移等企业级自动化能力。Meta的入局加剧了AI编码领域的竞争，其开源策略可能推动Agentic coding工具的普及。"
-    },
-    {
-      "title": "Context Graphs for Proactive Enterprise Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.07721",
-      "ai_summary": "论文提出上下文图谱（Context Graphs）方法，旨在解决当前AI Agent的被动响应问题，使其具备主动感知和行动能力。该研究对提升企业Agent的自主性和效率具有重要理论价值。"
-    },
-    {
-      "title": "From Prompts to Contracts: Harness Engineering for Auditable Enterprise LLM Agents",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.08028",
-      "ai_summary": "论文提出从提示工程转向“契约工程”，为企业LLM Agent提供可审计的行为规范。该方法将Agent行为从不可控的提示转变为可验证的合约，对Agent在企业中的安全部署至关重要。"
-    },
-    {
-      "title": "Persuasion Attacks Can Decrease Effectiveness of CoT Monitoring",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.08066",
-      "ai_summary": "研究发现说服攻击可以降低链式思维（CoT）监控的有效性，暴露了当前AI Agent安全机制的新漏洞。该成果对Agent安全评估和防御策略设计具有警示意义。"
-    },
-    {
-      "title": "OpenAI is shutting down Atlas, but its AI browser ambitions are still growing",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/",
-      "ai_summary": "OpenAI关闭AI浏览器Atlas，但将部分Agent浏览功能迁移至桌面应用和Chrome扩展。这表明OpenAI在Agent能力落地策略上进行调整，聚焦于更集成化的产品形态。"
-    },
-    {
-      "title": "Agentic Neural Architecture Search",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.07984",
-      "ai_summary": "论文提出Agent驱动的神经架构搜索（NAS），突破传统NAS依赖人工设计搜索空间的限制。该研究将Agent自主决策能力引入模型设计，有望加速AI模型的自动化创新。"
-    },
-    {
-      "title": "Agentic AI and Retrieval-Augmented Models in Straight-Through Underwriting",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.07858",
-      "ai_summary": "论文探讨Agentic AI与检索增强模型在直通式核保中的应用，展示了AI Agent在保险等垂直行业的落地潜力。该研究为Agent在金融领域的实际部署提供了技术路径。"
-    },
-    {
-      "title": "Feedback Manipulation Regularization: Enabling Offline Agent Alignment for Imitation Learning",
-      "source": "Arxiv AI",
-      "link": "https://arxiv.org/abs/2607.07859",
-      "ai_summary": "论文提出反馈操纵正则化方法，使离线Agent能够通过模仿学习实现对齐。该方法解决了Agent在无在线交互情况下的价值观对齐难题，对Agent安全训练具有实用价值。"
+      "title": "Show HN: Mindwalk – Replay coding-agent sessions on a 3D map of your codebase",
+      "source": "Hacker News",
+      "link": "https://github.com/cosmtrek/mindwalk",
+      "ai_summary": "Mindwalk是一个开源工具，可在代码库的3D地图上回放编码Agent的会话过程，帮助开发者直观理解Agent行为。该工具为AI Agent的可视化和调试提供了创新方案，有助于提升Agent开发的透明度和效率。"
     }
   ],
   "answered": false
