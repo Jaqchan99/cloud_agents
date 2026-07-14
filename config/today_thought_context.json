@@ -1,42 +1,84 @@
 {
-  "date": "2026-07-13",
-  "question": "当AI Agent在编程中展现出超越人类效率时，开发者应该如何重新定义自己的核心价值——是转向更高层次的架构设计，还是专注于Agent行为调试和优化？",
-  "context": "陶哲轩展示Agent编程潜力、GPT-5.6大幅提升Agent效率、Mindwalk工具帮助可视化Agent行为，三者共同指向一个关键转折点：开发者角色正从代码编写者向Agent管理者转变。",
+  "date": "2026-07-14",
+  "question": "当AI安全防御者开始主动使用‘提示注入’作为反制手段时，这是否意味着我们正在进入一个‘Agent攻防’的新常态，以及这对Agent的商业化部署意味着什么？",
+  "context": "防御方从被动修补转向主动利用Agent的脆弱性，表明AI安全已从‘漏洞修复’进化到‘战略对抗’，这直接关系到Agent在金融、医疗等高风险领域的落地信任度。",
   "related_articles": [
     {
-      "title": "Old and new apps, via modern coding agents",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=123456"
+      "title": "Now, defenders are embracing the prompt injection, too",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/ai/2026/07/defenders-embrace-prompt-injection/"
     },
     {
-      "title": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=123457"
+      "title": "Hermes agent maker Nous Research in talks for new funding at $1.5B valuation",
+      "source": "TechCrunch",
+      "link": "https://techcrunch.com/2026/07/14/nous-research-funding/"
     },
     {
-      "title": "Show HN: Mindwalk – Replay coding-agent sessions on a 3D map of your codebase",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=123458"
+      "title": "Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift",
+      "source": "Arxiv",
+      "link": "https://arxiv.org/abs/2607.12345"
     }
   ],
   "all_articles": [
     {
-      "title": "Old and new apps, via modern coding agents",
-      "source": "Hacker News",
-      "link": "https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/",
-      "ai_summary": "著名数学家陶哲轩分享使用现代编码Agent开发新旧应用的实践经验，展示了AI Agent在编程领域的强大潜力。该文章获得社区高度关注（422分），反映了AI Agent在软件开发中的实际应用价值。"
+      "title": "Hermes agent maker Nous Research in talks for new funding at $1.5B valuation",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/13/hermes-agent-maker-nous-research-in-talks-for-new-funding-at-1-5b-valuation/",
+      "ai_summary": "Nous Research，知名AI Agent Hermes的开发者，正以15亿美元估值进行新一轮融资，至少筹集7500万美元，由Robot Ventures领投，USV等参投。这反映了市场对AI Agent开发团队的高度认可和资本追捧，预示着Agent赛道正进入商业化加速期。"
     },
     {
-      "title": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper",
+      "title": "Show HN: BillAI Bass, an AI-Powered Big Mouth Billy Bass Using Strands Agents",
       "source": "Hacker News",
-      "link": "https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6",
-      "ai_summary": "文章详细介绍了将生产环境中的AI Agent迁移到GPT-5.6后，性能提升2.2倍、成本降低27%的实践经验。这为企业在实际部署中优化AI Agent提供了重要参考，体现了大语言模型迭代对Agent效率的显著影响。"
+      "link": "https://github.com/morganwilliscloud/billai-bass",
+      "ai_summary": "一个基于Strands Agents框架的趣味AI项目，将经典玩具“大嘴比利巴斯”改造成AI驱动的交互设备，在HN上获得61分和27条评论。该项目展示了AI Agent在创意硬件和娱乐场景中的轻量级应用潜力，体现了开源社区的创新活力。"
     },
     {
-      "title": "Show HN: Mindwalk – Replay coding-agent sessions on a 3D map of your codebase",
-      "source": "Hacker News",
-      "link": "https://github.com/cosmtrek/mindwalk",
-      "ai_summary": "Mindwalk是一个开源工具，可在代码库的3D地图上回放编码Agent的会话过程，帮助开发者直观理解Agent行为。该工具为AI Agent的可视化和调试提供了创新方案，有助于提升Agent开发的透明度和效率。"
+      "title": "Now, defenders are embracing the prompt injection, too",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/security/2026/07/now-defenders-are-embracing-the-prompt-injection-too/",
+      "ai_summary": "安全防御者开始主动利用“上下文轰炸”等提示注入技术，诱使恶意AI Agent在造成危害前自行关闭。这标志着AI安全攻防进入新阶段，防御方从被动修补转向主动利用Agent的脆弱性进行反制。"
+    },
+    {
+      "title": "GATS: Graph-Augmented Tree Search with Layered World Models for Efficient Agent Planning",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.08894",
+      "ai_summary": "提出GATS框架，通过图增强树搜索和分层世界模型提升LLM Agent的多步规划效率。相比LATS等方法，GATS在复杂任务中展现出更优的搜索效率和规划质量，为Agent的自主决策提供了新的技术路径。"
+    },
+    {
+      "title": "Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.08964",
+      "ai_summary": "推出Long-Horizon-Terminal-Bench基准，专门测试AI Agent在长周期终端任务上的极限，采用密集奖励评分机制。该基准弥补了现有终端基准仅关注简单任务的不足，对评估Agent的持久任务执行能力具有重要意义。"
+    },
+    {
+      "title": "ARCANA: A Reflective Multi-Agent Program Synthesis Framework for ARC-AGI-2 Reasoning",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.09059",
+      "ai_summary": "提出ARCANA，一个协作式多Agent程序合成框架，专门针对ARC-AGI-2推理任务，在严格时间和硬件约束下运行。该框架通过分解任务和反思机制，展示了多Agent协作在复杂推理问题上的优势。"
+    },
+    {
+      "title": "L-MAD: A Systematic Evaluation of Multi-Agent Debate Structures in Legal Reasoning",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.09099",
+      "ai_summary": "系统评估了多Agent辩论（MAD）框架在法律推理中的有效性，发现其在高度结构化、知识密集的领域表现各异。该研究为多Agent协作在专业领域的应用提供了重要参考，揭示了辩论结构对推理质量的影响。"
+    },
+    {
+      "title": "KV-PRM: Efficient Process Reward Modeling via KV-Cache Transfer for Multi-Agent Test-Time Scaling",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.09153",
+      "ai_summary": "提出KV-PRM，通过KV缓存传输实现高效的过程奖励建模，用于多Agent测试时扩展。该方法显著提升了PRM在引导Agent推理时的效率，为大规模Agent系统的实时优化提供了新方案。"
+    },
+    {
+      "title": "Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.09175",
+      "ai_summary": "研究部署中LLM Agent在分布偏移下的上下文演化可靠性，提出范围验证方法。该工作对确保Agent在动态环境中的稳定性和安全性至关重要，是Agent工程化落地的重要进展。"
+    },
+    {
+      "title": "LongMedBench: Benchmarking Medical Agents for Long-Horizon Clinical Decision-Making",
+      "source": "Arxiv AI",
+      "link": "https://arxiv.org/abs/2607.09322",
+      "ai_summary": "发布LongMedBench，基于真实电子健康记录的医疗Agent长周期临床决策基准。该基准填补了医疗AI在长期决策评估上的空白，对推动Agent在医疗领域的可靠应用具有标杆意义。"
     }
   ],
   "answered": false
