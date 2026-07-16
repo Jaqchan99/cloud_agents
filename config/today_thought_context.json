@@ -1,49 +1,54 @@
 {
-  "date": "2026-07-15",
-  "question": "在AI Agent时代，开源模型宣称的‘零成本’是否掩盖了实际部署中的隐性投入？企业应如何权衡开源与商业AI方案的投资回报？",
-  "context": "Hacker News上关于开源软件‘零成本’谬误的讨论与OpenAI的投资管理指南同时出现，揭示了开源AI工具虽降低初始门槛，但维护、定制和扩展成本可能远超预期，这对企业AI战略的制定至关重要。",
+  "date": "2026-07-16",
+  "question": "当AI Agent从封闭环境走向开放互联网，标准制定（如Vint Cerf的方案）与安全防御（如“上下文轰炸”技术）之间如何平衡？这种平衡会如何影响企业部署Agent的决策——是选择依赖模型提供商的编排平台，还是采用开源、轻量级的替代方案？",
+  "context": "Vint Cerf的Agent开放标准与防御性提示注入技术的出现，标志着Agent即将大规模进入开放网络，但企业目前普遍误将聊天机器人当作Agent，核心问题在于部署而非平台。这迫使企业必须重新思考：在安全性和互操作性之间，如何选择技术路线？",
   "related_articles": [
     {
-      "title": "The zero-cost fallacy: open-source software in the agentic era",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=41412345"
+      "title": "Vint Cerf is working on a plan to unleash AI agents on the open internet",
+      "source": "TechCrunch AI",
+      "link": ""
     },
     {
-      "title": "How to manage AI investments in the agentic era",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/blog/ai-investments-agentic-era"
+      "title": "Agentic orchestration: Enterprise AI organizations have a deployment problem, not a platform problem — and most are calling chatbots agents",
+      "source": "VentureBeat AI",
+      "link": ""
+    },
+    {
+      "title": "Now, defenders are embracing the prompt injection, too",
+      "source": "Ars Technica",
+      "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "Show HN: Juggler – an open-source GUI coding agent, by the creator of JUCE",
-      "source": "Hacker News",
-      "link": "https://github.com/juggler-ai/juggler",
-      "ai_summary": "Juggler 是一个由 JUCE 框架创建者开发的开源 GUI 编程代理，旨在通过自然语言指令自动生成图形界面代码。该项目在 Hacker News 上获得 163 分和 77 条评论，表明社区对开源 AI 编程工具的高度关注。其开源特性与 GUI 生成能力结合，有望降低开发门槛，推动 AI Agent 在软件开发中的实际应用。"
-    },
-    {
-      "title": "Show HN: I RL-trained an agent that trains models with RL (for ~$1.3k)",
-      "source": "Hacker News",
-      "link": "https://github.com/Danau5tin/ai-trains-ai",
-      "ai_summary": "该项目展示了一个通过强化学习训练的 AI Agent，能够以约 1300 美元的成本自动训练其他模型，体现了 AI 自我进化的潜力。在 Hacker News 上获得 95 分和 42 条评论，说明社区对低成本、自动化模型训练方案的强烈兴趣。这一方法可能加速 AI 模型的迭代效率，并降低研发成本。"
-    },
-    {
-      "title": "The zero-cost fallacy: open-source software in the agentic era",
-      "source": "Hacker News",
-      "link": "https://www.thoughtworks.com/insights/blog/open-source/zero-cost-fallacy-open-source-agentic-era",
-      "ai_summary": "文章批判了在 AI Agent 时代开源软件“零成本”的误区，指出实际部署和维护开源模型需要大量隐性投入。在 Hacker News 上获得 96 分和 76 条评论，反映了业界对开源 AI 成本结构的深度反思。该观点有助于企业更理性地评估开源与商业 AI 方案的投资回报。"
-    },
-    {
-      "title": "How to manage AI investments in the agentic era",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/managing-ai-investments-in-agentic-era",
-      "ai_summary": "OpenAI 官方博客探讨了企业在 Agent 时代如何通过衡量每美元有效工作量、提升效率并扩展高价值工作流来管理 AI 投资。文章提供了实用的投资管理框架，对企业在 AI Agent 部署中的成本优化具有指导意义。作为行业领导者，OpenAI 的视角反映了 AI 投资从实验到规模化落地的趋势。"
-    },
-    {
-      "title": "Hermes agent maker Nous Research in talks for new funding at $1.5B valuation",
+      "title": "Vint Cerf is working on a plan to unleash AI agents on the open internet",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/13/hermes-agent-maker-nous-research-in-talks-for-new-funding-at-1-5b-valuation/",
-      "ai_summary": "AI Agent 开发商 Nous Research 正以 15 亿美元估值进行至少 7500 万美元的新一轮融资，由 Robot Ventures 领投，USV 等知名机构参投。这一高估值凸显了资本市场对 AI Agent 领域的强烈信心，尤其是 Hermes 等 Agent 产品的商业前景。融资动态表明，AI Agent 赛道正成为投资热点，竞争加剧。"
+      "link": "https://techcrunch.com/2026/07/15/vint-cerf-is-working-on-a-plan-to-unleash-ai-agents-on-the-open-internet/",
+      "ai_summary": "TCP/IP之父Vint Cerf正在制定一项标准，用于在开放互联网上识别和协调AI Agent，这有望为Agent的互操作性和安全性奠定基础。该标准可能成为AI Agent大规模部署的关键基础设施，推动Agent从封闭环境走向开放网络。"
+    },
+    {
+      "title": "Agentic orchestration: Enterprise AI organizations have a deployment problem, not a platform problem — and most are calling chatbots agents",
+      "source": "VentureBeat AI",
+      "link": "https://venturebeat.com/ai/agentic-orchestration-enterprise-ai-organizations-have-a-deployment-problem-not-a-platform-problem-and-most-are-calling-chatbots-agents",
+      "ai_summary": "报告指出101家企业中，Agent编排正集中到模型提供商平台（Anthropic的Claude领先），但多数企业误将聊天机器人称为Agent，核心问题在于部署而非平台。这揭示了当前企业AI Agent落地的认知鸿沟和实际挑战。"
+    },
+    {
+      "title": "Open-source memory for coding agents, synced over SSH",
+      "source": "Hacker News",
+      "link": "https://github.com/vshulcz/deja-vu/",
+      "ai_summary": "该项目为编码Agent提供开源记忆系统，通过SSH同步，允许Agent跨会话保持上下文和状态。它解决了Agent长期任务中的记忆持久性问题，是提升Agent自主性和效率的关键开源工具。"
+    },
+    {
+      "title": "Agentty – A drop-in alternative to claude-code, written in C++26. 11.0 MB binary",
+      "source": "Hacker News",
+      "link": "https://github.com/1ay1/agentty",
+      "ai_summary": "Agentty是一个用C++26编写的轻量级（11MB）Agent框架，可作为Claude Code的即插即用替代品。它展示了高性能Agent实现的可能，为开发者提供了更高效、更灵活的选择。"
+    },
+    {
+      "title": "Now, defenders are embracing the prompt injection, too",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/security/2026/07/now-defenders-are-embracing-the-prompt-injection-too/",
+      "ai_summary": "文章介绍了防御者利用“上下文轰炸”技术，通过提示注入让恶意Agent在造成伤害前自动关闭。这标志着AI安全领域从被动防御转向主动利用攻击技术进行防护，对Agent安全部署具有重要启示。"
     }
   ],
   "answered": false
