@@ -1,54 +1,54 @@
 {
-  "date": "2026-07-16",
-  "question": "当AI Agent从封闭环境走向开放互联网，标准制定（如Vint Cerf的方案）与安全防御（如“上下文轰炸”技术）之间如何平衡？这种平衡会如何影响企业部署Agent的决策——是选择依赖模型提供商的编排平台，还是采用开源、轻量级的替代方案？",
-  "context": "Vint Cerf的Agent开放标准与防御性提示注入技术的出现，标志着Agent即将大规模进入开放网络，但企业目前普遍误将聊天机器人当作Agent，核心问题在于部署而非平台。这迫使企业必须重新思考：在安全性和互操作性之间，如何选择技术路线？",
+  "date": "2026-07-17",
+  "question": "如果你的企业明天部署一个AI Agent，你会如何确保它不会成为安全漏洞的入口？在Agent自主性提升的背景下，你应该将哪些安全原则融入设计流程？",
+  "context": "超过一半的企业已遭遇AI Agent安全事件，但多数仍允许Agent共享凭证，这暴露了安全实践与Agent能力发展之间的严重脱节。",
   "related_articles": [
     {
-      "title": "Vint Cerf is working on a plan to unleash AI agents on the open internet",
-      "source": "TechCrunch AI",
-      "link": ""
+      "title": "The agent security gap: 54% of enterprises have already had an AI agent incident, and most still let agents share credentials",
+      "source": "VentureBeat AI",
+      "link": "https://venturebeat.com/ai/agent-security-gap-54-percent-enterprises-ai-agent-incident-share-credentials"
+    },
+    {
+      "title": "What building Shippy taught us about building agents",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/shippy-agent-lessons"
     },
     {
       "title": "Agentic orchestration: Enterprise AI organizations have a deployment problem, not a platform problem — and most are calling chatbots agents",
       "source": "VentureBeat AI",
-      "link": ""
-    },
-    {
-      "title": "Now, defenders are embracing the prompt injection, too",
-      "source": "Ars Technica",
-      "link": ""
+      "link": "https://venturebeat.com/ai/agentic-orchestration-deployment-problem"
     }
   ],
   "all_articles": [
     {
-      "title": "Vint Cerf is working on a plan to unleash AI agents on the open internet",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/15/vint-cerf-is-working-on-a-plan-to-unleash-ai-agents-on-the-open-internet/",
-      "ai_summary": "TCP/IP之父Vint Cerf正在制定一项标准，用于在开放互联网上识别和协调AI Agent，这有望为Agent的互操作性和安全性奠定基础。该标准可能成为AI Agent大规模部署的关键基础设施，推动Agent从封闭环境走向开放网络。"
+      "title": "LM Studio Bionic: the AI agent for open models",
+      "source": "Hacker News",
+      "link": "https://lmstudio.ai/blog/introducing-lm-studio-bionic",
+      "ai_summary": "LM Studio 推出了 Bionic 功能，这是一个专为开源模型设计的 AI Agent，允许用户通过自然语言与本地模型交互并执行复杂任务。该工具强调隐私和离线能力，为开源社区提供了强大的 Agent 开发平台，有望推动开源模型在 Agent 领域的应用。"
+    },
+    {
+      "title": "The agent security gap: 54% of enterprises have already had an AI agent incident, and most still let agents share credentials",
+      "source": "VentureBeat AI",
+      "link": "https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials",
+      "ai_summary": "调查显示，超过一半的企业已遭遇 AI Agent 安全事件，但大多数仍允许 Agent 共享凭证，暴露出严重的安全漏洞。文章强调了在 Agent 自主性提升的同时，必须加强访问控制和身份管理，这对企业部署 Agent 具有警示意义。"
+    },
+    {
+      "title": "NVIDIA Nemotron 3 Embed Ranks #1 Overall on RTEB, Advancing Agentic Retrieval",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/nvidia/nemotron-3-embed-wins-rteb",
+      "ai_summary": "NVIDIA 的 Nemotron 3 Embed 模型在 RTEB 排行榜上排名第一，显著提升了 Agent 检索能力。该模型通过改进嵌入技术，增强了多模态数据的检索效率，为构建更智能的 Agent 系统提供了基础支持。"
+    },
+    {
+      "title": "What building Shippy taught us about building agents",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/allenai/shippy-tech-blog",
+      "ai_summary": "Allen AI 分享了构建 Shippy Agent 的经验教训，包括任务分解、上下文管理和错误处理等关键设计原则。文章提供了实用的 Agent 开发指南，对开发者构建可靠、高效的 Agent 系统具有重要参考价值。"
     },
     {
       "title": "Agentic orchestration: Enterprise AI organizations have a deployment problem, not a platform problem — and most are calling chatbots agents",
       "source": "VentureBeat AI",
       "link": "https://venturebeat.com/ai/agentic-orchestration-enterprise-ai-organizations-have-a-deployment-problem-not-a-platform-problem-and-most-are-calling-chatbots-agents",
-      "ai_summary": "报告指出101家企业中，Agent编排正集中到模型提供商平台（Anthropic的Claude领先），但多数企业误将聊天机器人称为Agent，核心问题在于部署而非平台。这揭示了当前企业AI Agent落地的认知鸿沟和实际挑战。"
-    },
-    {
-      "title": "Open-source memory for coding agents, synced over SSH",
-      "source": "Hacker News",
-      "link": "https://github.com/vshulcz/deja-vu/",
-      "ai_summary": "该项目为编码Agent提供开源记忆系统，通过SSH同步，允许Agent跨会话保持上下文和状态。它解决了Agent长期任务中的记忆持久性问题，是提升Agent自主性和效率的关键开源工具。"
-    },
-    {
-      "title": "Agentty – A drop-in alternative to claude-code, written in C++26. 11.0 MB binary",
-      "source": "Hacker News",
-      "link": "https://github.com/1ay1/agentty",
-      "ai_summary": "Agentty是一个用C++26编写的轻量级（11MB）Agent框架，可作为Claude Code的即插即用替代品。它展示了高性能Agent实现的可能，为开发者提供了更高效、更灵活的选择。"
-    },
-    {
-      "title": "Now, defenders are embracing the prompt injection, too",
-      "source": "Ars Technica",
-      "link": "https://arstechnica.com/security/2026/07/now-defenders-are-embracing-the-prompt-injection-too/",
-      "ai_summary": "文章介绍了防御者利用“上下文轰炸”技术，通过提示注入让恶意Agent在造成伤害前自动关闭。这标志着AI安全领域从被动防御转向主动利用攻击技术进行防护，对Agent安全部署具有重要启示。"
+      "ai_summary": "报告指出，企业 AI 组织面临的主要挑战是 Agent 部署而非平台选择，许多企业误将聊天机器人视为 Agent。文章分析了 Agent 编排的现状，强调需要区分真正的 Agent 与简单对话系统，以推动企业级 Agent 的落地。"
     }
   ],
   "answered": false
