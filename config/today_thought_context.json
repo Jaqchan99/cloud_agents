@@ -1,54 +1,49 @@
 {
-  "date": "2026-07-18",
-  "question": "当超过半数的企业已遭遇AI Agent安全事件，却仍允许Agent共享凭证，这是否意味着当前企业部署Agent的速度已远超其安全治理能力的建设？你认为企业应优先追求Agent的快速落地，还是先构建起与之匹配的安全架构？",
-  "context": "今日多篇报道揭示了企业在AI Agent部署中的关键矛盾：一方面Agent安全事故频发（54%企业已遇到），另一方面评估指标与真实场景脱节、部署策略模糊。这提示我们，企业在追求Agent能力提升的同时，可能忽略了系统性风险管控，而安全与效率的平衡正是当前最紧迫的决策点。",
+  "date": "2026-07-19",
+  "question": "当超过半数企业已遭遇AI Agent安全事故，且多数仍允许Agent共享凭证，这是否意味着企业更看重Agent的部署速度而非安全性？在Agent安全与效率之间，你所在的企业会如何权衡？",
+  "context": "AI Agent的安全漏洞和评估缺陷已成为企业落地的核心障碍，但企业似乎仍在加速部署而非优先修复问题，这反映出商业竞争压力下的风险偏好失衡。",
   "related_articles": [
     {
       "title": "The agent security gap: 54% of enterprises have already had an AI agent incident, and most still let agents share credentials",
       "source": "VentureBeat AI",
-      "link": "https://venturebeat.com/ai/agent-security-gap-enterprises-incidents-share-credentials/"
+      "link": "https://venturebeat.com/ai/agent-security-gap-54-percent-enterprises-have-had-ai-agent-incident"
     },
     {
-      "title": "The agent evaluation gap: Enterprise AI organizations have a reality-alignment problem, not a coverage problem",
+      "title": "The agent evaluation gap: Enterprise AI organizations have a reality-alignment problem, not a coverage problem — and most are shipping to production anyway",
       "source": "VentureBeat AI",
-      "link": "https://venturebeat.com/ai/agent-evaluation-gap-reality-alignment-problem/"
-    },
-    {
-      "title": "Agentic orchestration: Enterprise AI organizations have a deployment problem, not a platform problem",
-      "source": "VentureBeat AI",
-      "link": "https://venturebeat.com/ai/agentic-orchestration-deployment-problem/"
+      "link": "https://venturebeat.com/ai/agent-evaluation-gap-enterprise-ai-reality-alignment-problem"
     }
   ],
   "all_articles": [
     {
-      "title": "What building Shippy taught us about building agents",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/allenai/shippy-tech-blog",
-      "ai_summary": "HuggingFace 推出 AI Agent 能力排行榜，涵盖 SWE-Bench Verified、BrowseComp+、AppWorld 等多个指标，每个 Agent 使用统一框架（任务、上下文、动作集），可自由组合模型和框架。实验表明不同组合在价格和表现上差异显著，通用 Agent 配置已能持平甚至超越领域特定方案，为 Agent 评估提供了标准化参考。"
-    },
-    {
       "title": "The agent security gap: 54% of enterprises have already had an AI agent incident, and most still let agents share credentials",
       "source": "VentureBeat AI",
       "link": "https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials",
-      "ai_summary": "调查显示 54% 的企业已遭遇 AI Agent 安全事件，但多数企业仍允许 Agent 共享凭证，暴露出严重的安全管控滞后。该文强调 Agent 安全是系统性问题，需从架构层面加强防护，对 AI Agent 在企业中的安全部署具有警示意义。"
+      "ai_summary": "调查显示54%的企业已遭遇AI Agent安全事故，但多数企业仍允许Agent共享凭证，暴露出安全管控严重滞后于Agent部署速度。该研究基于107家企业数据，揭示了Agent权限滥用和身份认证漏洞的普遍性，对AI Agent安全治理具有重要警示意义。"
     },
     {
       "title": "The agent evaluation gap: Enterprise AI organizations have a reality-alignment problem, not a coverage problem — and most are shipping to production anyway",
       "source": "VentureBeat AI",
       "link": "https://venturebeat.com/ai/the-agent-evaluation-gap-enterprise-ai-organizations-have-a-reality-alignment-problem-not-a-coverage-problem-and-most-are-shipping-to-production-anyway",
-      "ai_summary": "研究发现企业 AI Agent 评估存在现实对齐问题，半数企业曾将通过内部测试但实际表现不佳的 Agent 部署到生产环境。文章指出评估覆盖率不足并非核心矛盾，关键在于评估指标与真实场景脱节，对 Agent 能力评估体系构建有重要参考价值。"
+      "ai_summary": "研究发现企业AI Agent评估存在严重的现实对齐问题，半数企业曾将未通过内部测试的Agent直接部署到生产环境。该报告基于157家企业数据，指出当前评估体系无法有效衡量Agent在真实场景中的表现，对Agent能力评估标准提出了严峻挑战。"
     },
     {
-      "title": "Agentic orchestration: Enterprise AI organizations have a deployment problem, not a platform problem — and most are calling chatbots agents",
+      "title": "The AI context gap: Enterprise AI organizations have a trust problem, not a retrieval problem — and most are still building the fix",
       "source": "VentureBeat AI",
-      "link": "https://venturebeat.com/ai/agentic-orchestration-enterprise-ai-organizations-have-a-deployment-problem-not-a-platform-problem-and-most-are-calling-chatbots-agents",
-      "ai_summary": "调查显示企业 Agent 编排正集中到模型提供商平台（Anthropic Claude 领先），但多数企业将简单聊天机器人误称为 Agent，暴露出部署策略与能力认知的偏差。文章强调部署问题比平台选择更关键，对 AI Agent 在企业中的落地实践具有指导意义。"
+      "link": "https://venturebeat.com/ai/the-ai-context-gap-enterprise-ai-organizations-have-a-trust-problem-not-a-retrieval-problem-and-most-are-still-building-the-fix",
+      "ai_summary": "企业AI Agent面临的核心问题不是检索能力不足，而是对上下文信息的信任缺失。基于101家企业调查，RAG虽已成为默认方案，但企业仍在构建信任机制以确保Agent使用的业务上下文准确可靠，反映了AI Agent落地中的关键瓶颈。"
     },
     {
-      "title": "VulnHunter: Capital One's agentic AI code security tool",
-      "source": "Hacker News",
-      "link": "https://www.capitalone.com/tech/open-source/announcing-vulnhunter/",
-      "ai_summary": "Capital One 开源了基于 Agent 的代码安全工具 VulnHunter，利用 AI Agent 自主发现和修复代码漏洞。该工具展示了 Agent 在安全领域的应用潜力，对开源社区和企业安全实践具有重要参考价值。"
+      "title": "Vertu wants executives to pay $6,880 for an AI agent — here’s how it actually performs",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/17/vertu-wants-executives-to-pay-6880-for-an-ai-agent-heres-how-it-actually-performs",
+      "ai_summary": "奢侈手机品牌Vertu推出售价6880美元的AI Agent折叠屏手机，面向高管用户。评测从AI工作流、电池续航到安全性全面测试了这款高价设备的实际表现，反映了AI Agent在高端消费电子领域的商业化尝试。"
+    },
+    {
+      "title": "Yes, you can now order DoorDash from the command line",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/16/yes-you-can-now-order-doordash-from-the-command-line",
+      "ai_summary": "DoorDash推出命令行工具dd-cli的限量测试版，允许开发者和AI Agent通过终端搜索商店、构建购物车并下单。这标志着外卖平台向软件化、Agent可编程化迈出重要一步，展示了AI Agent与真实商业服务集成的潜力。"
     }
   ],
   "answered": false
