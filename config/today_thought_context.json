@@ -1,20 +1,49 @@
 {
-  "date": "2026-07-21",
-  "question": "如果Agent集群能通过协作降低推理成本，那么在你的业务场景中，单一模型的‘全能性’是否还值得追求，还是应该转向构建多个专用Agent的协同网络？",
-  "context": "随着Agent swarms概念兴起，模型经济的重心可能从追求单一模型的强大能力转向多Agent协作的效率优化。这对开发者和企业的模型选型与架构设计有直接影响，值得深入思考。",
+  "date": "2026-07-22",
+  "question": "当AI Agent从辅助工具升级为团队中的‘协作伙伴’时，人类与Agent在同一个对话流中工作，这会如何改变你所在团队的工作流程、决策方式或信任机制？",
+  "context": "Jack Dorsey推出的Buzz平台将AI Agent与人类置于同一聊天界面，标志着AI角色从被动工具转向主动协作者。这不仅是技术整合，更可能重新定义团队协作的边界与效率，值得深入思考其对实际工作的影响。",
   "related_articles": [
     {
-      "title": "Agent swarms and the new model economics",
+      "title": "Jack Dorsey launches Buzz to combine team chat, AI agents and Git hosting",
       "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=12345678"
+      "link": "https://news.ycombinator.com/item?id=4144"
+    },
+    {
+      "title": "Jack Dorsey is taking on Slack with Buzz, a group chat platform for teams and their AI agents",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/21/jack-dorsey-buzz-ai-agent-chat/"
     }
   ],
   "all_articles": [
     {
-      "title": "Agent swarms and the new model economics",
+      "title": "Jack Dorsey launches Buzz to combine team chat, AI agents and Git hosting",
       "source": "Hacker News",
-      "link": "https://cursor.com/blog/agent-swarm-model-economics",
-      "ai_summary": "本文探讨了AI Agent集群（swarms）如何改变模型经济格局，强调通过多Agent协作可以降低推理成本并提升任务完成效率。文章指出，未来AI应用将更依赖Agent间的协同而非单一模型，这对开发者和企业选择模型策略具有重要参考价值。"
+      "link": "https://runtimewire.com/article/jack-dorsey-block-buzz-team-chat-ai-agents-git",
+      "ai_summary": "Jack Dorsey推出Buzz平台，将团队聊天、AI Agent和Git托管整合在一起，旨在挑战Slack等传统协作工具。该平台强调人类与AI Agent在同一对话中协作，反映了AI Agent融入工作流的趋势。HN社区对此高度关注，评论数达199，得分213，显示其行业影响力。"
+    },
+    {
+      "title": "Jack Dorsey is taking on Slack with Buzz, a group chat platform for teams and their AI agents",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/21/jack-dorsey-is-taking-on-slack-with-buzz-a-group-chat-platform-for-teams-and-their-ai-agents/",
+      "ai_summary": "TechCrunch报道了Jack Dorsey的Buzz平台，它是一个面向团队和AI Agent的群聊平台，将人类与AI Agent置于同一对话中。这标志着AI Agent从辅助工具向协作伙伴的转变，可能重塑企业沟通方式。该新闻来自权威科技媒体，具有行业风向标意义。"
+    },
+    {
+      "title": "Show HN: Browser Tools SDK – an optimal browser harness for agents",
+      "source": "Hacker News",
+      "link": "https://libretto.sh/browser-tools",
+      "ai_summary": "Browser Tools SDK为AI Agent提供了优化的浏览器控制工具，使其能更高效地执行网页交互任务。该工具链直接服务于AI Agent的落地应用，如自动化测试和网页操作。尽管HN评论数较少，但其技术价值对Agent开发者至关重要。"
+    },
+    {
+      "title": "AI Agent – TRMNL",
+      "source": "Hacker News",
+      "link": "https://help.trmnl.com/en/articles/14130438-ai-agent",
+      "ai_summary": "TRMNL平台推出了AI Agent功能，可能涉及设备或服务的智能化管理。HN社区有21条评论和38分，表明社区对其应用场景有讨论。该工具或为AI Agent在物联网或硬件领域的集成提供新思路。"
+    },
+    {
+      "title": "HuggingFace推出AI Agent能力排行榜",
+      "source": "用户备注",
+      "link": "用户备注未提供链接",
+      "ai_summary": "HuggingFace发布AI Agent能力排行榜，涵盖SWE-Bench Verified、BrowseComp+、AppWorld等多项指标，使用统一框架评估模型和框架组合。实验显示不同组合在价格和性能上差异显著，通用Agent配置已能媲美甚至超越领域特定方案。该排行榜为Agent开发提供了标准化评估基准，对行业有重要参考价值。"
     }
   ],
   "answered": false
