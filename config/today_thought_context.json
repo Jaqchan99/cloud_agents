@@ -1,49 +1,49 @@
 {
-  "date": "2026-07-22",
-  "question": "当AI Agent从辅助工具升级为团队中的‘协作伙伴’时，人类与Agent在同一个对话流中工作，这会如何改变你所在团队的工作流程、决策方式或信任机制？",
-  "context": "Jack Dorsey推出的Buzz平台将AI Agent与人类置于同一聊天界面，标志着AI角色从被动工具转向主动协作者。这不仅是技术整合，更可能重新定义团队协作的边界与效率，值得深入思考其对实际工作的影响。",
+  "date": "2026-07-23",
+  "question": "当AI Agent从工具变成协作伙伴，企业沟通平台（如Buzz）和AI Agent平台（如OpenAI Presence）是否会融合？这对现有企业软件格局意味着什么？",
+  "context": "Jack Dorsey的Buzz将人类和AI Agent置于同一聊天界面，而OpenAI的Presence则提供企业级Agent部署。两者都指向AI Agent深度嵌入工作流，但路径不同：一个从沟通切入，一个从任务自动化切入。这引发了一个关键问题：未来企业软件的核心入口是聊天还是自动化平台？",
   "related_articles": [
     {
-      "title": "Jack Dorsey launches Buzz to combine team chat, AI agents and Git hosting",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=4144"
+      "title": "OpenAI Blog: Introducing OpenAI Presence",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/blog/introducing-openai-presence"
     },
     {
       "title": "Jack Dorsey is taking on Slack with Buzz, a group chat platform for teams and their AI agents",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/21/jack-dorsey-buzz-ai-agent-chat/"
+      "link": "https://techcrunch.com/2026/07/23/jack-dorsey-buzz-ai-agent-chat/"
     }
   ],
   "all_articles": [
     {
-      "title": "Jack Dorsey launches Buzz to combine team chat, AI agents and Git hosting",
-      "source": "Hacker News",
-      "link": "https://runtimewire.com/article/jack-dorsey-block-buzz-team-chat-ai-agents-git",
-      "ai_summary": "Jack Dorsey推出Buzz平台，将团队聊天、AI Agent和Git托管整合在一起，旨在挑战Slack等传统协作工具。该平台强调人类与AI Agent在同一对话中协作，反映了AI Agent融入工作流的趋势。HN社区对此高度关注，评论数达199，得分213，显示其行业影响力。"
+      "title": "Introducing OpenAI Presence",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/introducing-openai-presence",
+      "ai_summary": "OpenAI正式推出企业级AI Agent平台Presence，支持部署可信赖的语音和聊天代理，用于客户服务及内部工作流。这标志着OpenAI从模型提供商向完整Agent解决方案提供商的战略转型，对行业竞争格局有重要影响。"
     },
     {
       "title": "Jack Dorsey is taking on Slack with Buzz, a group chat platform for teams and their AI agents",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/07/21/jack-dorsey-is-taking-on-slack-with-buzz-a-group-chat-platform-for-teams-and-their-ai-agents/",
-      "ai_summary": "TechCrunch报道了Jack Dorsey的Buzz平台，它是一个面向团队和AI Agent的群聊平台，将人类与AI Agent置于同一对话中。这标志着AI Agent从辅助工具向协作伙伴的转变，可能重塑企业沟通方式。该新闻来自权威科技媒体，具有行业风向标意义。"
+      "ai_summary": "Jack Dorsey推出Buzz，一个将人类与AI Agent置于同一对话中的团队聊天平台，直接挑战Slack。该产品体现了AI Agent深度融入协作工具的趋势，可能重新定义企业沟通方式。"
     },
     {
-      "title": "Show HN: Browser Tools SDK – an optimal browser harness for agents",
+      "title": "Glow emerges from stealth at $1.2B valuation to challenge endpoint security in the AI era",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/22/glow-emerges-from-stealth-at-1-2b-valuation-to-challenge-endpoint-security-in-the-ai-era/",
+      "ai_summary": "安全初创公司Glow以12亿美元估值走出隐身模式，专注于解决AI Agent和开发者工具在企业内快速采用带来的新型端点风险。这反映了AI Agent普及催生的新安全需求，是AI基础设施领域的重要动向。"
+    },
+    {
+      "title": "Show HN: DeepSQL – A self-hostable DBA agent for Postgres and MySQL",
       "source": "Hacker News",
-      "link": "https://libretto.sh/browser-tools",
-      "ai_summary": "Browser Tools SDK为AI Agent提供了优化的浏览器控制工具，使其能更高效地执行网页交互任务。该工具链直接服务于AI Agent的落地应用，如自动化测试和网页操作。尽管HN评论数较少，但其技术价值对Agent开发者至关重要。"
+      "link": "https://deepsql.ai/",
+      "ai_summary": "DeepSQL是一款可自托管的数据库管理员Agent，专为Postgres和MySQL设计，在Hacker News上获得44分和24条评论。它展示了AI Agent在数据库运维领域的落地潜力，属于开源与实用工具的结合。"
     },
     {
-      "title": "AI Agent – TRMNL",
+      "title": "NotchAgent – native macOS notch control for AI agents running under herdr",
       "source": "Hacker News",
-      "link": "https://help.trmnl.com/en/articles/14130438-ai-agent",
-      "ai_summary": "TRMNL平台推出了AI Agent功能，可能涉及设备或服务的智能化管理。HN社区有21条评论和38分，表明社区对其应用场景有讨论。该工具或为AI Agent在物联网或硬件领域的集成提供新思路。"
-    },
-    {
-      "title": "HuggingFace推出AI Agent能力排行榜",
-      "source": "用户备注",
-      "link": "用户备注未提供链接",
-      "ai_summary": "HuggingFace发布AI Agent能力排行榜，涵盖SWE-Bench Verified、BrowseComp+、AppWorld等多项指标，使用统一框架评估模型和框架组合。实验显示不同组合在价格和性能上差异显著，通用Agent配置已能媲美甚至超越领域特定方案。该排行榜为Agent开发提供了标准化评估基准，对行业有重要参考价值。"
+      "link": "https://github.com/ykushch/agsig",
+      "ai_summary": "NotchAgent是一个macOS原生工具，用于控制运行在herdr下的AI Agent的刘海区域，尽管热度较低（5分），但体现了AI Agent与操作系统交互的微创新。这类工具对提升Agent用户体验有参考价值。"
     }
   ],
   "answered": false
