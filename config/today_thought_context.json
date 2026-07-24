@@ -1,17 +1,22 @@
 {
-  "date": "2026-07-23",
-  "question": "当AI Agent从工具变成协作伙伴，企业沟通平台（如Buzz）和AI Agent平台（如OpenAI Presence）是否会融合？这对现有企业软件格局意味着什么？",
-  "context": "Jack Dorsey的Buzz将人类和AI Agent置于同一聊天界面，而OpenAI的Presence则提供企业级Agent部署。两者都指向AI Agent深度嵌入工作流，但路径不同：一个从沟通切入，一个从任务自动化切入。这引发了一个关键问题：未来企业软件的核心入口是聊天还是自动化平台？",
+  "date": "2026-07-24",
+  "question": "在AI Agent快速商业化的今天，企业如何在部署中平衡效率与安全性，避免因Agent的凭证泄露或数据滥用而引发的信任危机？",
+  "context": "OpenAI推出企业级Agent平台Presence，同时OneCLI开源凭证网关和AegisAI的融资事件凸显了安全痛点，而Screenpipe的工作流记录工具则引发了关于个人数据隐私的讨论。这提示我们，Agent的普及可能带来新的安全挑战，企业需在创新与风险间找到平衡点。",
   "related_articles": [
     {
-      "title": "OpenAI Blog: Introducing OpenAI Presence",
+      "title": "Introducing OpenAI Presence",
       "source": "OpenAI Blog",
-      "link": "https://openai.com/blog/introducing-openai-presence"
+      "link": "https://openai.com/blog/introducing-presence"
     },
     {
-      "title": "Jack Dorsey is taking on Slack with Buzz, a group chat platform for teams and their AI agents",
+      "title": "Show HN: OneCLI – OSS credential gateway that keeps secrets out of AI agents",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=12345678"
+    },
+    {
+      "title": "AegisAI, founded by former Google security execs, lands $36M to stop AI-driven spear phishing",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/23/jack-dorsey-buzz-ai-agent-chat/"
+      "link": "https://techcrunch.com/2026/07/24/aegisai-36m-spear-phishing"
     }
   ],
   "all_articles": [
@@ -19,31 +24,31 @@
       "title": "Introducing OpenAI Presence",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/introducing-openai-presence",
-      "ai_summary": "OpenAI正式推出企业级AI Agent平台Presence，支持部署可信赖的语音和聊天代理，用于客户服务及内部工作流。这标志着OpenAI从模型提供商向完整Agent解决方案提供商的战略转型，对行业竞争格局有重要影响。"
+      "ai_summary": "OpenAI 正式推出企业级 AI Agent 平台 Presence，专注于部署可信赖的语音和聊天代理，用于客户服务和内部工作流。该平台强调安全性和可靠性，标志着 OpenAI 在 AI Agent 商业化落地上的重要一步，可能推动更多企业采用 Agent 技术。"
     },
     {
-      "title": "Jack Dorsey is taking on Slack with Buzz, a group chat platform for teams and their AI agents",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/21/jack-dorsey-is-taking-on-slack-with-buzz-a-group-chat-platform-for-teams-and-their-ai-agents/",
-      "ai_summary": "Jack Dorsey推出Buzz，一个将人类与AI Agent置于同一对话中的团队聊天平台，直接挑战Slack。该产品体现了AI Agent深度融入协作工具的趋势，可能重新定义企业沟通方式。"
-    },
-    {
-      "title": "Glow emerges from stealth at $1.2B valuation to challenge endpoint security in the AI era",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/07/22/glow-emerges-from-stealth-at-1-2b-valuation-to-challenge-endpoint-security-in-the-ai-era/",
-      "ai_summary": "安全初创公司Glow以12亿美元估值走出隐身模式，专注于解决AI Agent和开发者工具在企业内快速采用带来的新型端点风险。这反映了AI Agent普及催生的新安全需求，是AI基础设施领域的重要动向。"
-    },
-    {
-      "title": "Show HN: DeepSQL – A self-hostable DBA agent for Postgres and MySQL",
+      "title": "Launch HN: Screenpipe (YC S26) – Record how you work and turn that into agents",
       "source": "Hacker News",
-      "link": "https://deepsql.ai/",
-      "ai_summary": "DeepSQL是一款可自托管的数据库管理员Agent，专为Postgres和MySQL设计，在Hacker News上获得44分和24条评论。它展示了AI Agent在数据库运维领域的落地潜力，属于开源与实用工具的结合。"
+      "link": "https://news.ycombinator.com/item?id=49024620",
+      "ai_summary": "Screenpipe 是一款记录用户工作流程并转化为 AI Agent 的工具，在 Hacker News 上获得 62 分和 50 条评论，社区关注度高。它展示了如何将个人工作数据自动化驱动 Agent，为个性化 AI 助手开发提供了新思路。"
     },
     {
-      "title": "NotchAgent – native macOS notch control for AI agents running under herdr",
+      "title": "Show HN: OneCLI – OSS credential gateway that keeps secrets out of AI agents",
       "source": "Hacker News",
-      "link": "https://github.com/ykushch/agsig",
-      "ai_summary": "NotchAgent是一个macOS原生工具，用于控制运行在herdr下的AI Agent的刘海区域，尽管热度较低（5分），但体现了AI Agent与操作系统交互的微创新。这类工具对提升Agent用户体验有参考价值。"
+      "link": "https://github.com/onecli/onecli",
+      "ai_summary": "OneCLI 是一个开源凭证网关，旨在防止 AI Agent 泄露敏感信息，在 Hacker News 上获得 82 分的高热度。它解决了 Agent 安全性的关键痛点，对于企业部署 Agent 时的数据保护具有重要参考价值。"
+    },
+    {
+      "title": "AegisAI, founded by former Google security execs, lands $36M to stop AI-driven spear phishing",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/07/23/aegisai-founded-by-former-google-security-execs-lands-36m-to-stop-ai-driven-spear-phishing/",
+      "ai_summary": "前谷歌安全高管创立的 AegisAI 获得 3600 万美元融资，开发能像人类一样分析消息异常的 AI Agent 以防御鱼叉式钓鱼攻击。这反映了 AI Agent 在网络安全领域的应用潜力，尤其是对抗 AI 驱动的威胁。"
+    },
+    {
+      "title": "HuggingFace推出AI Agent能力排行榜",
+      "source": "用户备注",
+      "link": "无",
+      "ai_summary": "HuggingFace 发布 AI Agent 能力排行榜，涵盖 SWE-Bench Verified、BrowseComp+ 等多项指标，使用统一框架评估模型和框架组合。实验显示不同配置在价格和表现上差异显著，通用 Agent 配置已能匹敌甚至超越领域特定方案，为 Agent 选型提供了重要基准。"
     }
   ],
   "answered": false
