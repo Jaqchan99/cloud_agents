@@ -67,7 +67,6 @@ def push_to_discord(rendered: dict[str, str], date: str) -> None:
     # 推送配置面板（交互式按钮/菜单）
     try:
         from insight_engine.config_panel import build_config_panel
-        from insight_engine.config import load_insight_config
         from discord_client import send_message_with_components
 
         cfg = load_insight_config()
