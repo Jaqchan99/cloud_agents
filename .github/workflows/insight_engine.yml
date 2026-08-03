@@ -88,7 +88,7 @@ jobs:
           # 推送到 main 带重试：处理 daily_push 同步提交的竞态
           for i in 1 2 3; do
             git fetch origin main
-            if git rebase origin/main && git push origin main; then
+            if git rebase origin/main && git push origin HEAD:refs/heads/main; then
               echo "git push 成功"
               exit 0
             fi
