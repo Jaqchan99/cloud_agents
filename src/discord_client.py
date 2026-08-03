@@ -68,13 +68,18 @@ def send_long_message(content: str, channel_id: Optional[str] = None) -> list[di
     if current:
         chunks.append(current)
 
+    errors = []
     for chunk in chunks:
         payload = {"content": chunk}
         resp = requests.post(url, headers=_headers(), json=payload, timeout=15)
         if resp.status_code in (200, 201):
             results.append(resp.json())
         else:
-            print(f"[Discord] 分块发送失败: {resp.status_code} {resp.text}")
+            err_msg = f"Discord 分块发送失败 ({resp.status_code}): {resp.text}"
+            print(f"[Discord] {err_msg}")
+            errors.append(err_msg)
+    if errors:
+        raise RuntimeError(f"{len(errors)}/{len(chunks)} 个分块发送失败: {'; '.join(errors)}")
     return results
 
 
