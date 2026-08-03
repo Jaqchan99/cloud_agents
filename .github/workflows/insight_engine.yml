@@ -1,12 +1,7 @@
 name: Insight Engine — AI 新闻深度解读
 
 on:
-  # 上游推送完成后自动触发
-  workflow_run:
-    workflows: ["AI 每日资讯推送"]
-    types: [completed]
-    branches: [main]
-  # 支持手动触发（用于调试/重跑）
+  # 手动触发（用于调试/重跑）。日常自动运行已集成在 daily_push.yml 中。
   workflow_dispatch:
     inputs:
       formats:
@@ -25,10 +20,6 @@ on:
 jobs:
   insight-engine:
     name: 运行 Insight 流水线
-    # 仅在 workflow_run 触发时：上游成功才跑；workflow_dispatch 总是跑
-    if: >
-      (github.event_name == 'workflow_dispatch') ||
-      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -36,13 +27,8 @@ jobs:
       - name: 确定 checkout ref
         id: ref
         run: |
-          if [ "${{ github.event_name }}" = "workflow_run" ]; then
-            echo "ref=${{ github.event.workflow_run.head_sha }}" >> "$GITHUB_OUTPUT"
-            echo "使用 workflow_run.head_sha 作为 checkout ref（含最新 context 文件 commit）"
-          else
-            echo "ref=${{ github.sha }}" >> "$GITHUB_OUTPUT"
-            echo "使用 github.sha 作为 checkout ref（workflow_dispatch 模式）"
-          fi
+          echo "ref=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+          echo "使用 github.sha 作为 checkout ref"
 
       - name: Checkout 代码（含写入权限）
         uses: actions/checkout@v4
@@ -81,8 +67,7 @@ jobs:
           if [ -n "${{ github.event.inputs.language }}" ]; then
             ARGS="$ARGS --language ${{ github.event.inputs.language }}"
           fi
-          # 仅在 workflow_dispatch 显式设为 false 时禁用推送；
-          # workflow_run 和未指定时不传 flag，由 insight_config.json 控制
+          # 仅在显式设为 false 时禁用推送；未指定时由 insight_config.json 控制
           if [ "${{ github.event.inputs.push_discord }}" = "false" ]; then
             ARGS="$ARGS --no-push-discord"
           fi

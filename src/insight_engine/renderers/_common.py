@@ -63,7 +63,8 @@ def build_themes_text(package: dict) -> str:
             for a in articles:
                 title = a.get("title", "")
                 source = a.get("source", "")
-                lines.append(f"- {title} ({source})")
+                link = a.get("link", "")
+                lines.append(f"- {title} ({source}) {link}")
         lines.append("")  # 空行分隔
 
     return "\n".join(lines).strip()

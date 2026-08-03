@@ -637,8 +637,7 @@ _HELP_TEXT = {
         "  • 天气改成北京\n"
         "  • 用英文推送\n\n"
         "**Insight Engine 解读设置（自然语言）：**\n"
-        "  • 去掉 newsletter 格式\n"
-        "  • 只生成双语和 LinkedIn\n"
+        "  • 只生成社媒帖子\n"
         "  • 用英文做解读\n"
         "  • 暂停解读推送\n\n"
         "> ⚠️ 使用 GitHub Actions 简化版，命令响应可能有延迟（`!push` 除外，实时执行）。"
@@ -810,87 +809,59 @@ _INSIGHT_ANALYSIS_USER = {
 # insight_engine/renderers/
 # ═══════════════════════════════════════════════
 
-_INSIGHT_RENDER_LINKEDIN_SYSTEM = {
+# ═══════════════════════════════════════════════
+# insight_engine/renderers/bilingual_social.py — 双语社媒帖子（观点驱动）
+# ═══════════════════════════════════════════════
+
+_INSIGHT_RENDER_BILINGUAL_SOCIAL_SYSTEM = {
     "zh": (
-        "你写 LinkedIn 帖子，让读者读完后觉得自己变聪明了，而不是被信息淹没。"
-        "短段落。一篇帖子只讲一个大观点。以提问结尾引发讨论。"
-    ),
-    "en": (
-        "You write LinkedIn posts that make readers feel smarter, not overwhelmed. "
-        "Short paragraphs. One big idea per post. End with a question to invite discussion."
+        "你是一个 AI 行业评论作者，负责将每日 AI 新闻转化为有观点的社媒帖子。\n\n"
+        "写作风格：Mic paper style — 简洁、锋利、有立场。读者看完应该记住你的观点，"
+        "而不是感觉被信息淹没。\n\n"
+        "# 核心规则\n\n"
+        "1. **一个帖子＝一个观点。** 不要试图覆盖所有新闻，选今天最值得说的一个角度深挖。\n"
+        "2. **观点先于信息。** 前 3 句话内读者必须知道你的立场是什么。不要用「近日多家公司发布了…」开头。\n"
+        "3. **新闻是论据，不是内容本身。** 引用新闻是为了支撑你的论点，而非罗列事实。\n"
+        "4. **深度优于覆盖面。** 宁可把一个观点说透，不要说一堆不痛不痒的。\n"
+        "5. **没有强信号就不写。** 如果今天的新闻不足以支撑一个有意义的观点，直接返回 "
+        "\"今天没有形成足够强的行业信号，不生成评论。\"，不要硬凑。\n\n"
+        "# 输出要求\n\n"
+        "返回严格 JSON，不要包裹 markdown 代码块。"
     ),
 }
 
-_INSIGHT_RENDER_LINKEDIN_USER = {
+_INSIGHT_RENDER_BILINGUAL_SOCIAL_USER = {
     "zh": (
-        "基于以下 AI 新闻分析，写一篇 LinkedIn 帖子：\n\n"
+        "基于以下 AI 新闻分析，生成中英双语社媒帖子：\n\n"
         "**核心信号：** {key_signal}\n\n"
         "**主题分析：**\n{themes_text}\n\n"
         "**跨主题关联：** {cross_theme_connection}\n\n"
         "要求：\n"
-        "- 开头一行抓住注意力（hook）\n"
-        "- 每个主题用 1-2 句话讲清楚\n"
-        "- 核心信号作为关键 takeaway 呈现\n"
-        "- 以一个开放性问题结尾，引发讨论\n"
-        "- 专业但有对话感的语气，不要企业腔\n"
-        "- 800-1500 字符\n"
-        "- 不要使用 hashtag\n"
-        "- 直接输出帖子正文，不要加「LinkedIn 帖子：」之类的前缀"
-    ),
-    "en": (
-        "Write a LinkedIn post based on the following AI news analysis:\n\n"
-        "**Key signal:** {key_signal}\n\n"
-        "**Theme analysis:**\n{themes_text}\n\n"
-        "**Cross-theme connection:** {cross_theme_connection}\n\n"
-        "Requirements:\n"
-        "- Hook in the first line\n"
-        "- Cover each theme in 1-2 sentences\n"
-        "- Include the key signal as the core takeaway\n"
-        "- End with an open question to invite discussion\n"
-        "- Professional but conversational tone, not corporate\n"
-        "- 800-1500 characters\n"
-        "- No hashtags\n"
-        "- Output the post body directly, no preamble like \"LinkedIn post:\""
+        "- 选一个最有价值的观点深挖，不要面面俱到\n"
+        "- 开头直接亮观点，不要铺垫\n"
+        "- 用新闻中的具体事实作为论据，引用时附带文章链接\n"
+        "- 中文版用中文写作思维，英文版用英文写作思维，各自独立表达而非互译\n"
+        "- 每个版本 800-1500 字符\n"
+        "- 语气像业内人士在聊天，不要企业腔、不要 AI 腔\n\n"
+        "如果今天新闻不足以形成有价值的观点，post_zh 和 post_en 都设为空字符串，"
+        "title_zh 设为 \"今天没有形成足够强的行业信号，不生成评论。\"\n\n"
+        "严格返回如下 JSON，不要有其他文字：\n"
+        "{{\n"
+        '  "title_zh": "<中文 hook 标题>",\n'
+        '  "title_en": "<English hook title>",\n'
+        '  "thesis_zh": "<一句话核心观点（中）>",\n'
+        '  "thesis_en": "<Core thesis in one sentence (EN)>",\n'
+        '  "target_audience": ["<谁会关心这个话题>", ...],\n'
+        '  "post_zh": "<中文社媒帖子正文>",\n'
+        '  "post_en": "<English social media post body>",\n'
+        '  "supporting_news": ["<引用的文章链接>", ...]\n'
+        "}}"
     ),
 }
 
-_INSIGHT_RENDER_NEWSLETTER_SYSTEM = {
-    "zh": "你写一份每日 AI 通讯，读者是技术从业者。语气专业但有观点，段落之间有过渡。",
-    "en": "You write a daily AI newsletter for technical practitioners. Professional but opinionated, with smooth transitions between sections.",
-}
-
-_INSIGHT_RENDER_NEWSLETTER_USER = {
-    "zh": (
-        "基于以下 AI 新闻分析，写一份 newsletter：\n\n"
-        "**核心信号：** {key_signal}\n\n"
-        "**主题分析：**\n{themes_text}\n\n"
-        "**跨主题关联：** {cross_theme_connection}\n\n"
-        "要求：\n"
-        "- 标题（subject line）：一句话概括今日最重要的变化\n"
-        "- 开头导语（2-3 句）：点明今天的关键信号\n"
-        "- 每个主题作为一个小节，标题用 ## 标记\n"
-        "- 每节内容 100-200 字，给出解读而非罗列\n"
-        "- 引用原文时可附链接（markdown 格式）\n"
-        "- 结尾一段总结性观点，呼应跨主题关联\n"
-        "- 1500-3000 字符\n"
-        "- markdown 格式输出"
-    ),
-    "en": (
-        "Write a newsletter based on the following AI news analysis:\n\n"
-        "**Key signal:** {key_signal}\n\n"
-        "**Theme analysis:**\n{themes_text}\n\n"
-        "**Cross-theme connection:** {cross_theme_connection}\n\n"
-        "Requirements:\n"
-        "- Subject line: one sentence summarizing today's most important change\n"
-        "- Opening (2-3 sentences): state the key signal\n"
-        "- Each theme as a section, with ## heading\n"
-        "- 100-200 words per section, interpretation not listing\n"
-        "- Include links when referencing articles (markdown format)\n"
-        "- Closing paragraph with a synthesizing view, echoing the cross-theme connection\n"
-        "- 1500-3000 characters\n"
-        "- Markdown format"
-    ),
-}
+# ═══════════════════════════════════════════════
+# insight_engine/renderers/podcast_script.py
+# ═══════════════════════════════════════════════
 
 _INSIGHT_RENDER_PODCAST_SYSTEM = {
     "zh": (
@@ -942,69 +913,6 @@ _INSIGHT_RENDER_PODCAST_USER = {
     ),
 }
 
-_INSIGHT_RENDER_BILINGUAL_SYSTEM = {
-    "zh": (
-        "你为中英双语读者写一份每日 AI 分析。两种语言都承载完整叙述，"
-        "不是把一种语言翻译成另一种。中文部分用中文写作思维，"
-        "英文部分用英文写作思维，两者内容对等但表达各自自然。"
-    ),
-    "en": (
-        "You write a daily AI analysis for bilingual readers. Both languages carry "
-        "full narratives — not translation of one to the other. Write the Chinese part "
-        "with Chinese thinking patterns, the English part with English thinking patterns. "
-        "The two are equivalent in content but each reads naturally in its own language."
-    ),
-}
-
-_INSIGHT_RENDER_BILINGUAL_USER = {
-    "zh": (
-        "基于以下 AI 新闻分析，写一份中英双语版本：\n\n"
-        "**核心信号：** {key_signal}\n\n"
-        "**主题分析：**\n{themes_text}\n\n"
-        "**跨主题关联：** {cross_theme_connection}\n\n"
-        "要求：\n"
-        "- 先写中文版完整叙述，再写英文版完整叙述，用 --- 分隔\n"
-        "- 中文版：标题 + 导语（核心信号）+ 每个主题一段 + 收尾\n"
-        "- 英文版：同样的结构，但用英文写作思维表达，不要逐句翻译中文版\n"
-        "- 每段 80-150 字/词\n"
-        "- markdown 格式\n"
-        "- 总长度控制在 2000-4000 字符\n"
-        "- 输出格式：\n"
-        "  # 今日 AI 解读 / Today's AI Brief\n"
-        "  \n"
-        "  ## 中文版\n"
-        "  ...\n"
-        "  \n"
-        "  ---\n"
-        "  \n"
-        "  ## English Version\n"
-        "  ..."
-    ),
-    "en": (
-        "Write a bilingual (Chinese + English) version based on the following AI news analysis:\n\n"
-        "**Key signal:** {key_signal}\n\n"
-        "**Theme analysis:**\n{themes_text}\n\n"
-        "**Cross-theme connection:** {cross_theme_connection}\n\n"
-        "Requirements:\n"
-        "- Write the Chinese version first as a complete narrative, then the English version, separated by ---\n"
-        "- Chinese version: title + lead (key signal) + one paragraph per theme + closing\n"
-        "- English version: same structure, but written with English thinking, not sentence-by-sentence translation\n"
-        "- 80-150 words/chars per paragraph\n"
-        "- Markdown format\n"
-        "- Total 2000-4000 characters\n"
-        "- Output format:\n"
-        "  # 今日 AI 解读 / Today's AI Brief\n"
-        "  \n"
-        "  ## 中文版\n"
-        "  ...\n"
-        "  \n"
-        "  ---\n"
-        "  \n"
-        "  ## English Version\n"
-        "  ..."
-    ),
-}
-
 
 # ═══════════════════════════════════════════════
 # insight_engine/config.py — natural language config changes
@@ -1016,9 +924,9 @@ _INSIGHT_CONFIG_KEYWORDS = [
     "insight 格式", "解读格式", "渲染格式",
     "insight 语言", "解读语言",
     "insight 推送", "解读推送", "深度推送",
-    "linkedin 格式", "newsletter 格式", "播客格式", "双语格式",
-    "去掉 linkedin", "不要 linkedin", "去掉 newsletter", "不要 newsletter",
-    "去掉播客", "不要播客", "去掉双语", "不要双语",
+    "社媒格式", "播客格式",
+    "去掉社媒", "不要社媒",
+    "去掉播客", "不要播客",
     "关闭解读推送", "开启解读推送", "暂停解读",
     "深度解读改为", "分析语言改为",
     # 英文
@@ -1026,8 +934,7 @@ _INSIGHT_CONFIG_KEYWORDS = [
     "insight format", "rendering format",
     "insight language", "analysis language",
     "insight push", "disable insight", "enable insight",
-    "remove linkedin", "add linkedin", "remove newsletter", "add newsletter",
-    "remove podcast", "add podcast", "remove bilingual", "add bilingual",
+    "remove social", "add social", "remove podcast", "add podcast",
 ]
 
 _INSIGHT_PROCESS_COMMAND_SYSTEM = {
@@ -1046,16 +953,17 @@ _INSIGHT_PROCESS_COMMAND_USER = {
         '  "updated_config": <更新后的完整配置 JSON，若无需修改则返回 null>\n'
         '}}\n\n'
         "可调整的配置字段说明：\n"
-        "- formats: list[str]，要渲染的格式，可选值：linkedin, newsletter, podcast_script, bilingual\n"
+        "- formats: list[str]，要渲染的格式，可选值：bilingual_social, podcast_script\n"
         "- language: str，分析语言，\"zh\" 中文或 \"en\" 英文\n"
         "- push_to_discord: bool，是否推送到 Discord insight 频道\n"
+        "- push_language: str，Discord 推送的语言版本，\"zh\" 中文或 \"en\" 英文\n"
         "\n"
         "用户消息示例及对应操作：\n"
-        '- "去掉 newsletter 格式" → 从 formats 中移除 "newsletter"\n'
-        '- "只生成双语和 LinkedIn" → 设置 formats 为 ["bilingual", "linkedin"]\n'
+        '- "去掉社媒帖子格式" → 从 formats 中移除 "bilingual_social"\n'
+        '- "只生成播客脚本" → 设置 formats 为 ["podcast_script"]\n'
         '- "用英文做解读" → 更新 language 为 "en"\n'
         '- "今天不要推送到 insight 频道" → 设置 push_to_discord 为 false\n'
-        '- "加上播客脚本格式" → 向 formats 添加 "podcast_script"\n'
+        '- "加上社媒帖子" → 向 formats 添加 "bilingual_social"\n'
         '- "暂停推送" → 设置 push_to_discord 为 false\n'
     ),
     "en": (
@@ -1068,16 +976,17 @@ _INSIGHT_PROCESS_COMMAND_USER = {
         '  "updated_config": <complete updated config JSON, or null if no change>\n'
         '}}\n\n'
         "Configurable fields:\n"
-        "- formats: list[str], rendering formats, options: linkedin, newsletter, podcast_script, bilingual\n"
+        "- formats: list[str], rendering formats, options: bilingual_social, podcast_script\n"
         "- language: str, analysis language, \"zh\" or \"en\"\n"
         "- push_to_discord: bool, whether to push to Discord insight channel\n"
+        "- push_language: str, which language version to push to Discord, \"zh\" or \"en\"\n"
         "\n"
         "Examples:\n"
-        '- "Remove newsletter format" → remove "newsletter" from formats\n'
-        '- "Only bilingual and LinkedIn" → set formats to ["bilingual", "linkedin"]\n'
+        '- "Remove social media posts" → remove "bilingual_social" from formats\n'
+        '- "Only podcast script" → set formats to ["podcast_script"]\n'
         '- "Analyze in English" → set language to "en"\n'
         '- "Don\'t push to insight channel today" → set push_to_discord to false\n'
-        '- "Add podcast script format" → add "podcast_script" to formats\n'
+        '- "Add social media posts" → add "bilingual_social" to formats\n'
     ),
 }
 
@@ -1156,12 +1065,8 @@ _PROMPTS = {
     "insight_analysis_system": _INSIGHT_ANALYSIS_SYSTEM,
     "insight_analysis_user": _INSIGHT_ANALYSIS_USER,
     # insight_engine/renderers
-    "insight_render_linkedin_system": _INSIGHT_RENDER_LINKEDIN_SYSTEM,
-    "insight_render_linkedin_user": _INSIGHT_RENDER_LINKEDIN_USER,
-    "insight_render_newsletter_system": _INSIGHT_RENDER_NEWSLETTER_SYSTEM,
-    "insight_render_newsletter_user": _INSIGHT_RENDER_NEWSLETTER_USER,
+    "insight_render_bilingual_social_system": _INSIGHT_RENDER_BILINGUAL_SOCIAL_SYSTEM,
+    "insight_render_bilingual_social_user": _INSIGHT_RENDER_BILINGUAL_SOCIAL_USER,
     "insight_render_podcast_system": _INSIGHT_RENDER_PODCAST_SYSTEM,
     "insight_render_podcast_user": _INSIGHT_RENDER_PODCAST_USER,
-    "insight_render_bilingual_system": _INSIGHT_RENDER_BILINGUAL_SYSTEM,
-    "insight_render_bilingual_user": _INSIGHT_RENDER_BILINGUAL_USER,
 }

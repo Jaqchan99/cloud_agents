@@ -1,5 +1,6 @@
 {
-  "formats": ["linkedin", "newsletter", "podcast_script", "bilingual"],
+  "formats": ["bilingual_social", "podcast_script"],
   "language": "zh",
-  "push_to_discord": true
+  "push_to_discord": true,
+  "push_language": "zh"
 }

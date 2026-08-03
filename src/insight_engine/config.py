@@ -16,9 +16,10 @@ DEFAULT_INSIGHT_CONFIG_PATH = Path(__file__).parent.parent.parent / "config" / "
 
 def get_default_insight_config() -> dict:
     return {
-        "formats": ["linkedin", "newsletter", "podcast_script", "bilingual"],
+        "formats": ["bilingual_social", "podcast_script"],
         "language": "zh",
         "push_to_discord": True,
+        "push_language": "zh",
     }
 
 

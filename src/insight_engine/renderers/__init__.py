@@ -5,25 +5,19 @@ Stage 3: Renderers — 将 InsightPackage 转换为多种终端格式
 注册表 `RENDERERS` 映射格式名到渲染函数，pipeline 通过它动态选择输出格式。
 
 格式列表：
-- linkedin        : 800-1500 字符 LinkedIn 帖子
-- newsletter      : 1500-3000 字符 markdown 通讯
-- podcast_script  : ~3 分钟 A/B 对话脚本
-- bilingual       : 2000-4000 字符中英双语版本
+- bilingual_social : 中英双语社媒帖子（观点驱动）
+- podcast_script   : ~3 分钟 A/B 对话脚本
 """
 
 from typing import Callable
 
-from .linkedin import render_linkedin
-from .newsletter import render_newsletter
+from .bilingual_social import render_bilingual_social
 from .podcast_script import render_podcast_script
-from .bilingual import render_bilingual
 
 
 RENDERERS: dict[str, Callable[[dict], str]] = {
-    "linkedin": render_linkedin,
-    "newsletter": render_newsletter,
+    "bilingual_social": render_bilingual_social,
     "podcast_script": render_podcast_script,
-    "bilingual": render_bilingual,
 }
 
 

@@ -5,7 +5,7 @@ Insight Engine run script — GitHub Actions 入口点。
 将渲染结果写入 output/insight/{date}/{format}.md，并可选推送到 Discord 频道。
 
 用法：
-    python scripts/insight_engine_run.py [--formats linkedin,newsletter]
+    python scripts/insight_engine_run.py [--formats bilingual_social,podcast_script]
                                          [--language zh]
                                          [--push-discord]
 """
@@ -22,10 +22,8 @@ from insight_engine.config import load_insight_config
 
 # Discord 频道里每个格式的展示名 + emoji
 DISCORD_FORMAT_LABELS: dict[str, str] = {
-    "linkedin": "💼 LinkedIn 帖子",
-    "newsletter": "📰 Newsletter",
+    "bilingual_social": "📢 双语社媒帖子",
     "podcast_script": "🎙️ 播客脚本",
-    "bilingual": "🌐 中英双语",
 }
 
 
@@ -47,7 +45,20 @@ def push_to_discord(rendered: dict[str, str], date: str) -> None:
     header = f"📋 **AI 深度解读 · {date}**\n\n"
     send_long_message(header, channel_id=channel_id)
 
+    push_lang = load_insight_config().get("push_language", "zh")
+
     for fmt, text in rendered.items():
+        # 双语社媒：按 push_language 只推送指定语言版本
+        if fmt == "bilingual_social":
+            parts = text.split("\n\n---\n\n")
+            if push_lang == "en" and len(parts) >= 2:
+                text = parts[1]
+            elif push_lang == "zh" and parts:
+                text = parts[0]
+            # 清理掉 # 标题行（Discord 消息里会显得重复）
+            if text.startswith("# "):
+                text = text.split("\n", 1)[1] if "\n" in text else text
+
         label = DISCORD_FORMAT_LABELS.get(fmt, fmt)
         separator = f"\n\n---\n**{label}**\n\n"
         send_long_message(separator + text, channel_id=channel_id)

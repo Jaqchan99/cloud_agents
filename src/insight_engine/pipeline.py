@@ -29,7 +29,7 @@ BEIJING_TZ = timezone(timedelta(hours=8))
 DEFAULT_CONTEXT_PATH = Path(__file__).parent.parent.parent / "config" / "today_thought_context.json"
 DEFAULT_OUTPUT_DIR = Path(__file__).parent.parent.parent / "output" / "insight"
 
-DEFAULT_FORMATS = ["linkedin", "newsletter", "podcast_script", "bilingual"]
+DEFAULT_FORMATS = ["bilingual_social", "podcast_script"]
 
 
 def _today_date_beijing() -> str:

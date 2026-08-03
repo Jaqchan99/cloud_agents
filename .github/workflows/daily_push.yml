@@ -54,17 +54,26 @@ jobs:
             python scripts/daily_push.py --channel "$PUSH_TARGET"
           fi
 
+      - name: 运行 Insight Engine 深度解读
+        continue-on-error: true
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DISCORD_INSIGHT_CHANNEL_ID: ${{ secrets.DISCORD_INSIGHT_CHANNEL_ID }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+        run: python scripts/insight_engine_run.py
+
       - name: 保存推送状态
         run: |
           git config user.name "AI News Bot"
           git config user.email "bot@github-actions"
           git add config/last_push_date.txt config/last_push_date_test.txt \
                   config/today_thought_context.json \
-                  config/today_thought_context_test.json 2>/dev/null || true
+                  config/today_thought_context_test.json \
+                  config/insight_cache/ output/insight/ 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "无状态变更"
           else
-            git commit -m "chore: 记录今日推送完成 [skip ci]"
+            git commit -m "chore: 记录今日推送及 Insight 输出 [skip ci]"
             git pull --rebase origin main
             git push origin main
           fi

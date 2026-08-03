@@ -8,20 +8,16 @@ Insight Engine 配置面板 — Discord Message Components
   - Button: 立即重跑
 """
 
-ALL_FORMATS = ["linkedin", "newsletter", "podcast_script", "bilingual"]
+ALL_FORMATS = ["bilingual_social", "podcast_script"]
 
 FORMAT_LABELS: dict[str, str] = {
-    "linkedin": "LinkedIn",
-    "newsletter": "Newsletter",
+    "bilingual_social": "双语社媒",
     "podcast_script": "播客",
-    "bilingual": "双语",
 }
 
 FORMAT_EMOJI: dict[str, str] = {
-    "linkedin": "💼",
-    "newsletter": "📰",
+    "bilingual_social": "📢",
     "podcast_script": "🎙️",
-    "bilingual": "🌐",
 }
 
 
