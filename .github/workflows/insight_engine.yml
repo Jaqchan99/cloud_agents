@@ -78,7 +78,7 @@ jobs:
           set -e
           git config user.name "AI News Bot"
           git config user.email "bot@github-actions"
-          git add config/insight_cache/ output/insight/
+          git add config/insight_cache/ output/insight/ 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "无新的 insight 输出"
             exit 0
