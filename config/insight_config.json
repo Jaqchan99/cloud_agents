@@ -1,6 +1,9 @@
 {
-  "formats": ["bilingual_social", "podcast_script"],
+  "formats": [
+    "bilingual_social",
+    "podcast_script"
+  ],
   "language": "zh",
-  "push_to_discord": true,
+  "push_to_discord": false,
   "push_language": "zh"
 }
