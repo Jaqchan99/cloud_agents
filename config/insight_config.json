@@ -4,6 +4,6 @@
     "podcast_script"
   ],
   "language": "zh",
-  "push_to_discord": false,
+  "push_to_discord": true,
   "push_language": "zh"
 }
