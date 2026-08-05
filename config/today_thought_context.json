@@ -1,42 +1,54 @@
 {
-  "date": "2026-08-04",
-  "question": "当AI Agent从云端走向本地设备（如手机）时，你认为安全评估工具的‘轻量化’会带来哪些新的风险与机遇？这如何影响你对AI Agent部署边界的判断？",
-  "context": "Nightcrawler展示了本地AI渗透测试的可行性，而Hoplite和MCP分析工具则推动Agent的工程化与可观测性。这些进展共同指向Agent部署模式的多元化，但本地化也意味着安全责任和评估方式的转变。",
+  "date": "2026-08-05",
+  "question": "当 AI Agent 从云端走向边缘设备（如 LFM2.5-2.6B）并成为开发工具（如 Warp Agent CLI）和交易主体（如 Cloudflare Wallets）时，你所在的工作流中，哪些环节最适合被这样的智能体接管？又该如何界定人机协作的边界？",
+  "context": "AI Agent 正快速渗透到开发、支付、安全等基础设施层面，轻量化模型让端侧部署成为可能，但这也意味着智能体将更深度参与日常决策。理解哪些任务适合交给 Agent，哪些需要保留人类判断，是每个从业者即将面对的实操问题。",
   "related_articles": [
     {
-      "title": "Show HN: Nightcrawler – A local AI pentesting agent running on a smartphone",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=41234567"
+      "title": "Deploy local agents everywhere with LFM2.5-2.6B",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog"
     },
     {
-      "title": "Launch HN: Hoplite (YC S26) – Effortlessly deploy cloud coding agents",
+      "title": "The Warp Agent CLI",
       "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=41234568"
+      "link": "https://news.ycombinator.com/"
     },
     {
-      "title": "Show HN: Product analytics (and evals) for agent sessions on your MCP",
+      "title": "Cloudflare Wallets: the programmable wallet for the agentic Internet",
       "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=41234569"
+      "link": "https://news.ycombinator.com/"
     }
   ],
   "all_articles": [
     {
-      "title": "Show HN: Nightcrawler – A local AI pentesting agent running on a smartphone",
-      "source": "Hacker News",
-      "link": "https://github.com/garagehq/nightcrawler/",
-      "ai_summary": "Nightcrawler是一款完全本地运行在智能手机上的AI渗透测试代理，无需云端依赖即可执行安全扫描和漏洞检测。该项目展示了AI Agent在移动端和网络安全领域的轻量化应用潜力，降低了渗透测试的门槛，对安全研究和AI落地场景具有启发意义。"
+      "title": "Deploy local agents everywhere with LFM2.5-2.6B",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
+      "ai_summary": "HuggingFace 发布 LFM2.5-2.6B 模型，主打轻量化本地部署，让 AI Agent 能在边缘设备上高效运行。该模型在保持小体积的同时优化了推理性能，为资源受限场景下的智能体应用提供了新选择，推动了开源模型在端侧落地的进程。"
     },
     {
-      "title": "Launch HN: Hoplite (YC S26) – Effortlessly deploy cloud coding agents",
-      "source": "Hacker News",
-      "link": "https://hoplite.sh",
-      "ai_summary": "Hoplite是YC孵化的新项目，旨在简化云端编码代理的部署流程，让开发者能快速启动和管理AI编程助手。该工具聚焦于提升AI Agent在软件开发中的可用性和效率，反映了当前AI Agent从实验走向工程化部署的趋势，对开发者工具链有实际价值。"
+      "title": "Nvidia doesn’t mess around: A week after open AI industry group formed, it’s already showing progress",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/08/04/nvidia-doesnt-mess-around-a-week-after-open-ai-industry-group-formed-its-already-showing-progress/",
+      "ai_summary": "Nvidia 主导的 Open Secure AI Alliance 成立仅一周便吸引超 120 家公司加入，并已提出针对 AI Agent 的防御方案。该联盟快速推进安全标准，旨在应对日益增长的智能体安全威胁，对行业生态具有重要规范意义。"
     },
     {
-      "title": "Show HN: Product analytics (and evals) for agent sessions on your MCP",
+      "title": "The Warp Agent CLI",
       "source": "Hacker News",
-      "link": "https://armature.tech/",
-      "ai_summary": "该项目为基于MCP（模型上下文协议）的AI Agent会话提供产品分析和评估工具，帮助开发者追踪代理行为、性能指标并优化交互质量。在AI Agent能力评估日益重要的背景下，该工具填补了会话级监控和评测的空白，对提升代理可靠性和用户体验有直接帮助。"
+      "link": "https://www.warp.dev/blog/introducing-the-warp-agent-cli-coding-agent",
+      "ai_summary": "Warp 推出 Agent CLI 编码工具，将 AI Agent 能力集成到命令行环境，支持自动化代码生成与任务执行。该工具在 HN 上获得 96 分热度，反映了开发者对高效命令行智能体的强烈需求，是 AI Agent 在开发工具领域的重要实践。"
+    },
+    {
+      "title": "Cloudflare Wallets: the programmable wallet for the agentic Internet",
+      "source": "Hacker News",
+      "link": "https://blog.cloudflare.com/wallets/",
+      "ai_summary": "Cloudflare 推出可编程钱包，专为智能体互联网设计，为 AI Agent 提供安全、可编程的交易与身份管理能力。该方案有望成为智能体经济的基础设施，解决 Agent 间支付与授权问题，是 AI Agent 生态的关键补全。"
+    },
+    {
+      "title": "HuggingFace推出AI Agent能力排行榜",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
+      "ai_summary": "HuggingFace 发布 AI Agent 能力排行榜，涵盖 SWE-Bench Verified、BrowseComp+、AppWorld 等多项指标，采用统一框架评估不同模型与框架的组合。实验显示通用 Agent 配置已能持平甚至超越领域特定方案，为 Agent 选型提供了重要参考依据。"
     }
   ],
   "answered": false
