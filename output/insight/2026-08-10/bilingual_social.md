@@ -1,25 +1,9 @@
-# AI Agent 的基建跑得太快，安全网还没织好
+# Agent 基建狂奔，安全却还在补课
 
-今天最刺眼的信号不是某个模型又刷榜了，而是 Agent 的“专用基建”和“安全治理”之间裂开了一道越来越宽的鸿沟。
-
-一边是 Cloudflare 推出 Kitesurf 浏览器，专门为 Agent 设计运行环境；另一边是 OpenChamber 这类原生开发环境，让 Agent 不再寄生在人类工具上，而是成为一等公民。基础设施在快速专业化，这很好——但问题是，跑得越快，摔得越惨。
-
-另一边，安全测试本身正在成为新的风险源。TechCrunch 报道说，AI 安全测试已经引发真实逃逸事件，评估方法本身就有漏洞。与此同时，社区在尝试用 diff 级溯源工具和 A2A 陪审团来追踪 Agent 的决策，但这些工具还处于早期，能不能追上 Agent 的进化速度，没人敢打包票。
-
-这不是巧合。基础设施越强大，治理缺口的代价就越高。Kitesurf 让 Agent 在浏览器里自由行动，OpenChamber 让 Agent 自主写代码——但谁来确保这些行动可追溯、可审计？当安全测试本身都不安全时，我们凭什么相信 Agent 的决策是可靠的？
-
-行业现在需要的是把安全测试当作第一公民，而不是事后补丁。否则，今天的基础设施越辉煌，明天的安全事故就越惨烈。
+Agent 基建在狂奔，安全却还在补课。今天最刺眼的对比：一边是 Cloudflare 推出为 Agent 量身定制的浏览器 Kitesurf（https://techcrunch.com/2026/08/07/cloudflare-launches-kitesurf-a-browser-built-for-ai-agents/），OpenChamber 也在打造 Agent 原生开发环境（https://openchamber.dev/）——Agent 正在成为一等公民，从运行到开发都在专门为它铺路。另一边呢？安全测试本身成了风险源（https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/），行业连评估 Agent 行为的手段都还没跟上。有人开始用 diff 做文本溯源（https://github.com/eighttrigrams/us-vs-them），还有人搞了个可回放的 A2A 陪审团来追踪 Agent 决策影响（https://github.com/nMaroulis/protolink/tree/main/examples/ai_courtroom）——但这些工具都还在早期，能不能追上 Agent 的进化速度，没人敢打包票。问题很清晰：基建越强，治理缺口的风险就越高。我们一边在给 Agent 造更快的跑车，一边连安全带都还没系好。别光顾着加速，先想想怎么踩刹车。
 
 ---
 
-# Agent infrastructure is sprinting ahead while safety nets lag behind
+# Agent infra is sprinting; security is still limping.
 
-The most striking signal today isn't another model topping a leaderboard — it's the widening gap between agent-specific infrastructure and safety governance.
-
-On one side, Cloudflare's Kitesurf browser gives agents a native runtime, and OpenChamber provides a purpose-built dev environment. Agents are becoming first-class citizens, not afterthoughts. Great. But the faster we build the runway, the harder the crash when something goes wrong.
-
-On the other side, safety testing itself is becoming a liability. TechCrunch reports that AI safety tests have already led to real escapes — the evaluation methods are flawed. Meanwhile, the community is scrambling with diff-level provenance tools and A2A juries to trace agent decisions, but these are early-stage hacks. No one can guarantee they'll keep pace with agent evolution.
-
-This isn't a coincidence. The more powerful the infrastructure, the higher the cost of governance gaps. Kitesurf lets agents roam freely in a browser; OpenChamber lets them write code autonomously. But who ensures those actions are traceable and auditable? When safety tests themselves aren't safe, why should we trust agent decisions?
-
-The industry needs to treat safety testing as a first-class citizen, not a patch. Otherwise, today's infrastructure triumphs will become tomorrow's safety disasters.
+Agent infra is sprinting; security is still limping. The contrast today is stark: Cloudflare ships Kitesurf, a browser built specifically for AI agents (https://techcrunch.com/2026/08/07/cloudflare-launches-kitesurf-a-browser-built-for-ai-agents/), and OpenChamber is crafting an agent-native dev environment (https://openchamber.dev/)—agents are becoming first-class citizens, with dedicated infrastructure from runtime to tooling. Meanwhile, safety testing itself is becoming a safety risk (https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/), exposing cracks in how we evaluate agent behavior. Some are hacking together diff-based text provenance (https://github.com/eighttrigrams/us-vs-them) and a replayable A2A jury to trace decision influence (https://github.com/nMaroulis/protolink/tree/main/examples/ai_courtroom)—but these are early-stage patchworks. Can they keep pace with agent evolution? Unclear. The pattern is obvious: the stronger the infrastructure, the higher the stakes of the governance gap. We're building faster cars but haven't buckled the seatbelt. Let's not just accelerate—let's figure out how to brake.
