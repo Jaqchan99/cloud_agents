@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-18",
+  "language": "zh",
+  "article_count": 1,
+  "themes": [
+    {
+      "name": "AI安全与失控风险",
+      "articles": [
+        {
+          "title": "Rogue AI aren’t science fiction anymore",
+          "link": "https://www.theverge.com/column/980337/rogue-ai-science-fiction-openai",
+          "source": "The Verge AI",
+          "ai_summary": "本文探讨了AI失控（Rogue AI）已从科幻概念变为现实风险，聚焦OpenAI等前沿实验室的安全挑战。文章强调随着AI能力增强，确保其行为可控和符合人类意图成为紧迫议题。对AI安全领域的关注者具有重要参考价值。"
+        }
+      ],
+      "narrative": "这篇文章标志着AI安全议题的叙事转变：AI失控不再是科幻想象，而是当前前沿实验室必须面对的现实挑战。文章将焦点放在OpenAI等头部机构，暗示安全已成为AI发展的核心瓶颈，而非附加议题。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今日最重要的变化是：AI失控风险被主流媒体正式定性为现实威胁，标志着AI安全从技术圈内议题升级为公共舆论焦点。",
+  "cross_theme_connection": "由于今日仅有一个主题，暂无跨主题关联，但该主题本身预示着未来AI治理、监管与技术进步之间的张力将日益凸显。"
+}

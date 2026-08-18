@@ -1,43 +1,20 @@
 {
-  "date": "2026-08-17",
-  "question": "当多智能体系统的协作效率受限于通信开销和任务分配时，你认为更优的架构是倾向于中心化协调还是去中心化自治？这对你所在团队或行业中的 Agent 部署有何启示？",
-  "context": "Anthropic 的研究揭示了多 Agent 系统在扩展时的核心瓶颈，而 Kog 的 GPU 优化则暗示了基础设施层面的缓解可能。这迫使我们在设计层面重新权衡架构选择，以平衡成本、稳定性和自主性。",
+  "date": "2026-08-18",
+  "question": "当AI系统开始展现出超出其训练数据范围的自主行为时，我们如何区分‘创新性偏差’与‘失控风险’？在你的工作场景中，你会如何设定AI行为的‘安全边界’？",
+  "context": "Rogue AI从科幻变为现实风险，但并非所有偏离预期行为都意味着危险。理解偏差的性质和可控边界，是每个AI使用者和开发者都需要面对的实际问题。",
   "related_articles": [
     {
-      "title": "Patterns and problems in emerging multi-agent systems",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/"
-    },
-    {
-      "title": "Kog is going deeper to squeeze more inference out of GPUs",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/"
+      "title": "Rogue AI aren’t science fiction anymore",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai"
     }
   ],
   "all_articles": [
     {
-      "title": "Patterns and problems in emerging multi-agent systems",
-      "source": "Hacker News",
-      "link": "https://www.anthropic.com/research/multiagent-systems",
-      "ai_summary": "Anthropic 发布的研究深入探讨了新兴多智能体系统的模式与问题，分析了多 Agent 协作中的架构设计、通信开销和任务分配等关键挑战。该研究为构建更高效、稳定的多 Agent 系统提供了重要参考，是当前 AI Agent 领域最前沿的实践总结。"
-    },
-    {
-      "title": "MathCode, Mathematical Coding Agent",
-      "source": "Hacker News",
-      "link": "https://math-ai-org.github.io/mathcode/",
-      "ai_summary": "MathCode 是一个专注于数学问题求解的编码 Agent，通过将数学推理与代码生成结合，提升了复杂数学任务的自动化解决能力。该工具展示了 AI Agent 在专业垂直领域的应用潜力，对推动数学与 AI 交叉研究具有积极意义。"
-    },
-    {
-      "title": "Kog is going deeper to squeeze more inference out of GPUs",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/08/14/kog-is-going-deeper-to-squeeze-more-inference-out-of-gpus/",
-      "ai_summary": "法国初创公司 Kog 提出 GPU 并不天然不适合 Agent 工作流，并通过深度优化推理过程来提升 GPU 利用率。这一思路有望降低大模型 Agent 的部署成本，对行业基础设施优化具有重要启示。"
-    },
-    {
       "title": "Rogue AI aren’t science fiction anymore",
       "source": "The Verge AI",
       "link": "https://www.theverge.com/column/980337/rogue-ai-science-fiction-openai",
-      "ai_summary": "文章指出失控 AI 已不再是科幻概念，而是现实中的安全威胁，并围绕 OpenAI 等机构的实践展开讨论。该文强调了 AI 安全治理的紧迫性，对公众理解 AI 风险具有警示和教育意义。"
+      "ai_summary": "本文探讨了AI失控（Rogue AI）已从科幻概念变为现实风险，聚焦OpenAI等前沿实验室的安全挑战。文章强调随着AI能力增强，确保其行为可控和符合人类意图成为紧迫议题。对AI安全领域的关注者具有重要参考价值。"
     }
   ],
   "answered": false
