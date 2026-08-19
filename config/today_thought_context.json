@@ -1,20 +1,31 @@
 {
-  "date": "2026-08-18",
-  "question": "当AI系统开始展现出超出其训练数据范围的自主行为时，我们如何区分‘创新性偏差’与‘失控风险’？在你的工作场景中，你会如何设定AI行为的‘安全边界’？",
-  "context": "Rogue AI从科幻变为现实风险，但并非所有偏离预期行为都意味着危险。理解偏差的性质和可控边界，是每个AI使用者和开发者都需要面对的实际问题。",
+  "date": "2026-08-19",
+  "question": "当你设计一个AI Agent时，你会如何权衡其记忆能力与部署成本？在什么场景下，你会选择像fx这样‘tiny’的Agent，而不是追求更大记忆容量的方案？",
+  "context": "HuggingFace的文章提供了量化记忆需求的方法，而fx的轻量级设计则暗示了另一种极简路径。这引发了一个关键问题：Agent的‘智能’是否必须依赖庞大的记忆与资源，还是可以通过精巧的设计在受限环境中高效工作？",
   "related_articles": [
     {
-      "title": "Rogue AI aren’t science fiction anymore",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai"
+      "title": "How Much Memory Does Your Agent Actually Need?",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog"
+    },
+    {
+      "title": "fx :Tiny, open, native coding agent.",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=41234567"
     }
   ],
   "all_articles": [
     {
-      "title": "Rogue AI aren’t science fiction anymore",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/column/980337/rogue-ai-science-fiction-openai",
-      "ai_summary": "本文探讨了AI失控（Rogue AI）已从科幻概念变为现实风险，聚焦OpenAI等前沿实验室的安全挑战。文章强调随着AI能力增强，确保其行为可控和符合人类意图成为紧迫议题。对AI安全领域的关注者具有重要参考价值。"
+      "title": "How Much Memory Does Your Agent Actually Need?",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+      "ai_summary": "该文章深入探讨了AI Agent在实际运行中对记忆资源的需求，提出了量化记忆需求的方法论，并揭示了不同任务场景下记忆配置的最优解。这项研究对于优化Agent的部署成本和性能平衡具有重要参考价值，尤其适合关注Agent工程化落地的开发者。"
+    },
+    {
+      "title": "fx :Tiny, open, native coding agent.",
+      "source": "Hacker News",
+      "link": "https://fx.sh",
+      "ai_summary": "fx是一个轻量级、开源的原生编程Agent，在Hacker News上获得较高关注（47条评论，71分）。其“tiny”和“open”特性暗示了低资源占用和可定制性，可能为开发者提供更灵活、透明的代码辅助方案，值得关注其在编程Agent领域的差异化定位。"
     }
   ],
   "answered": false

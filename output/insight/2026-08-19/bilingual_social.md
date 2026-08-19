@@ -1,0 +1,9 @@
+# Agent 的下一战不是能力，是成本
+
+别再问 Agent 能干什么了，该问它花你多少资源。今天的行业信号很清楚：Agent 的工程化重心已经从功能扩展转向资源效率与透明性。HuggingFace 上 IBM 的研究直接量化了『你的 Agent 到底需要多少记忆』，给出一套方法在成本和性能之间找平衡——这不再是学术游戏，是生产环境里每个 token 都要算账的现实。另一边，开源社区冒出的 fx.sh，一个只有几 KB 的原生 coding agent，摆明了要告诉你：不是所有任务都需要一个 70B 参数的庞然大物。这两条新闻放在一起，指向同一个结论：Agent 的下一战不是能力竞赛，是成本竞赛。过去我们被 GPT 类大模型的能力冲昏头，以为越强越好。但真到了部署阶段，内存占用、推理延迟、每任务 token 消耗，这些才是你能否 scale 的关键。IBM 那篇研究不是让你少用记忆，而是告诉你记忆有价，得量化着用。fx.sh 则是在用行动证明：轻量、透明、够用就好，才是大多数场景的正解。说白了，行业正在从『秀肌肉』转向『过日子』。谁能把资源效率做到极致，谁就能让 Agent 真正跑进生产环境。别等到你的集群账单爆了才想起来优化，现在就该重新审视你的 Agent 架构。
+
+---
+
+# The Next Battle for Agents Isn't Capability, It's Cost
+
+Stop asking what your agent can do. Start asking what it costs you. Today's signal is loud and clear: the engineering focus for AI agents has shifted from feature expansion to resource efficiency and transparency. IBM Research just published a method to quantify exactly how much memory your agent actually needs — balancing cost and performance. This isn't academic navel-gazing; it's about counting every token in production. Meanwhile, the open-source community drops fx.sh, a tiny, native coding agent that fits in a few KB, proving you don't need a 70B-parameter monster for every task. Put these two together and the conclusion is obvious: the next battle for agents isn't capability, it's cost. We got drunk on the raw power of GPT-scale models and assumed bigger is always better. But in real deployment, memory footprint, inference latency, token burn per task — that's what determines whether you can scale. IBM's research isn't saying use less memory; it's saying memory has a price, so measure it. fx.sh is showing by example that lightweight, transparent, and good enough is the right answer for most use cases. The industry is moving from flexing muscles to balancing books. Whoever nails resource efficiency will be the one who gets agents into actual production. Don't wait for your cluster bill to shock you — rethink your agent architecture now.
