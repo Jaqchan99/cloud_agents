@@ -1,31 +1,54 @@
 {
-  "date": "2026-08-19",
-  "question": "当你设计一个AI Agent时，你会如何权衡其记忆能力与部署成本？在什么场景下，你会选择像fx这样‘tiny’的Agent，而不是追求更大记忆容量的方案？",
-  "context": "HuggingFace的文章提供了量化记忆需求的方法，而fx的轻量级设计则暗示了另一种极简路径。这引发了一个关键问题：Agent的‘智能’是否必须依赖庞大的记忆与资源，还是可以通过精巧的设计在受限环境中高效工作？",
+  "date": "2026-08-20",
+  "question": "当编码智能体工具（如 fx、Claude Code）越来越强调“原生”和“可配置”（如 AGENTS.md）时，我们是否正在走向一个由标准化协议（如 CHAP）定义的“智能体操作系统”时代？这对团队协作和开发者角色意味着什么？",
+  "context": "今日多条资讯均指向编码智能体的生态化：从轻量级工具到团队级沙箱，再到成本优化和交互协议，表明AI编程正从单点工具向基础设施演进。理解这一趋势有助于开发者提前调整工作方式与工具选型策略。",
   "related_articles": [
-    {
-      "title": "How Much Memory Does Your Agent Actually Need?",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog"
-    },
     {
       "title": "fx :Tiny, open, native coding agent.",
       "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=41234567"
+      "link": "https://news.ycombinator.com/item?id=1"
+    },
+    {
+      "title": "Feature Request: Support AGENTS.md",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=2"
+    },
+    {
+      "title": "Collaborative Human Agent Protocol (CHAP)",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=5"
     }
   ],
   "all_articles": [
     {
-      "title": "How Much Memory Does Your Agent Actually Need?",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
-      "ai_summary": "该文章深入探讨了AI Agent在实际运行中对记忆资源的需求，提出了量化记忆需求的方法论，并揭示了不同任务场景下记忆配置的最优解。这项研究对于优化Agent的部署成本和性能平衡具有重要参考价值，尤其适合关注Agent工程化落地的开发者。"
-    },
-    {
       "title": "fx :Tiny, open, native coding agent.",
       "source": "Hacker News",
       "link": "https://fx.sh",
-      "ai_summary": "fx是一个轻量级、开源的原生编程Agent，在Hacker News上获得较高关注（47条评论，71分）。其“tiny”和“open”特性暗示了低资源占用和可定制性，可能为开发者提供更灵活、透明的代码辅助方案，值得关注其在编程Agent领域的差异化定位。"
+      "ai_summary": "fx 是一款轻量级、开源的本地编码智能体，旨在为开发者提供高效、透明的自动化编程辅助。该项目在 Hacker News 上获得 172 分和 85 条评论，显示出社区对轻量级、可自托管 AI 编码工具的高度兴趣，其“原生”定位可能意味着更紧密的 IDE 或终端集成。"
+    },
+    {
+      "title": "Feature Request: Support AGENTS.md",
+      "source": "Hacker News",
+      "link": "https://github.com/anthropics/claude-code/issues/6235",
+      "ai_summary": "该 issue 请求 Claude Code 支持 AGENTS.md 文件，这是一种让开发者定义智能体行为、上下文和约束的标准化方式。获得 126 分和 71 条评论，反映了社区对 AI 编码智能体可配置性和可复用性的强烈需求，可能推动编码智能体生态的标准化进程。"
+    },
+    {
+      "title": "Launch HN: OneCLI (YC S26) – OSS sandboxed agent harness for teams",
+      "source": "Hacker News",
+      "link": "https://github.com/onecli/onecli",
+      "ai_summary": "OneCLI 是一个开源的沙箱化智能体运行框架，专为团队协作设计，旨在安全地运行和管理多个 AI 智能体。作为 YC S26 项目，它获得 51 分和 16 条评论，其沙箱机制对企业级 AI 应用的安全性和可控性具有重要意义，可能成为团队部署 AI Agent 的基础设施。"
+    },
+    {
+      "title": "Show HN: Frugal Tokens – explore costs and usage across coding agents",
+      "source": "Hacker News",
+      "link": "https://demo.frugaltokens.com/",
+      "ai_summary": "Frugal Tokens 是一个用于比较不同编码智能体在成本和 token 使用量的工具，帮助开发者优化 AI 编程的支出。获得 26 分和 6 条评论，虽然热度中等，但切中了当前 AI Agent 应用中的成本痛点，对企业和个人开发者选择高效方案具有实用价值。"
+    },
+    {
+      "title": "Collaborative Human Agent Protocol (CHAP)",
+      "source": "Hacker News",
+      "link": "https://github.com/BrightbeamAI/chap",
+      "ai_summary": "CHAP 提出了一种协作式人类-智能体协议，旨在标准化人类与 AI 智能体之间的交互和协作方式。尽管 HN 评论数较少（3 条），但该协议可能为多智能体系统和人类-AI 协同工作提供基础框架，对 AI Agent 的互操作性和协作能力有潜在影响。"
     }
   ],
   "answered": false

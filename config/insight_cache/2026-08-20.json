@@ -1,0 +1,60 @@
+{
+  "date": "2026-08-20",
+  "language": "zh",
+  "article_count": 5,
+  "themes": [
+    {
+      "name": "编码智能体的标准化与可配置性",
+      "articles": [
+        {
+          "title": "Feature Request: Support AGENTS.md",
+          "link": "https://github.com/anthropics/claude-code/issues/6235",
+          "source": "Hacker News",
+          "ai_summary": "该 issue 请求 Claude Code 支持 AGENTS.md 文件，这是一种让开发者定义智能体行为、上下文和约束的标准化方式。获得 126 分和 71 条评论，反映了社区对 AI 编码智能体可配置性和可复用性的强烈需求，可能推动编码智能体生态的标准化进程。"
+        },
+        {
+          "title": "Collaborative Human Agent Protocol (CHAP)",
+          "link": "https://github.com/BrightbeamAI/chap",
+          "source": "Hacker News",
+          "ai_summary": "CHAP 提出了一种协作式人类-智能体协议，旨在标准化人类与 AI 智能体之间的交互和协作方式。尽管 HN 评论数较少（3 条），但该协议可能为多智能体系统和人类-AI 协同工作提供基础框架，对 AI Agent 的互操作性和协作能力有潜在影响。"
+        }
+      ],
+      "narrative": "这两条资讯共同指向编码智能体生态正在从「工具」向「平台」演进，社区对标准化配置文件（AGENTS.md）和交互协议（CHAP）的呼声，意味着开发者希望智能体行为可复用、可移植，并与人机协作流程无缝集成。这标志着 AI 编码工具正从单点功能转向生态基础设施。",
+      "tension": null
+    },
+    {
+      "name": "轻量级与成本优化的编码智能体",
+      "articles": [
+        {
+          "title": "fx :Tiny, open, native coding agent.",
+          "link": "https://fx.sh",
+          "source": "Hacker News",
+          "ai_summary": "fx 是一款轻量级、开源的本地编码智能体，旨在为开发者提供高效、透明的自动化编程辅助。该项目在 Hacker News 上获得 172 分和 85 条评论，显示出社区对轻量级、可自托管 AI 编码工具的高度兴趣，其“原生”定位可能意味着更紧密的 IDE 或终端集成。"
+        },
+        {
+          "title": "Show HN: Frugal Tokens – explore costs and usage across coding agents",
+          "link": "https://demo.frugaltokens.com/",
+          "source": "Hacker News",
+          "ai_summary": "Frugal Tokens 是一个用于比较不同编码智能体在成本和 token 使用量的工具，帮助开发者优化 AI 编程的支出。获得 26 分和 6 条评论，虽然热度中等，但切中了当前 AI Agent 应用中的成本痛点，对企业和个人开发者选择高效方案具有实用价值。"
+        }
+      ],
+      "narrative": "这两条资讯反映了开发者对编码智能体的「轻量」和「经济」诉求：fx 强调本地、开源、透明，Frugal Tokens 则直接解决 token 成本可视化问题。它们共同揭示了一个趋势：随着 AI 编码工具普及，开发者开始关注资源占用和运行成本，追求更高效、更可控的替代方案。",
+      "tension": null
+    },
+    {
+      "name": "企业级智能体安全与协作基础设施",
+      "articles": [
+        {
+          "title": "Launch HN: OneCLI (YC S26) – OSS sandboxed agent harness for teams",
+          "link": "https://github.com/onecli/onecli",
+          "source": "Hacker News",
+          "ai_summary": "OneCLI 是一个开源的沙箱化智能体运行框架，专为团队协作设计，旨在安全地运行和管理多个 AI 智能体。作为 YC S26 项目，它获得 51 分和 16 条评论，其沙箱机制对企业级 AI 应用的安全性和可控性具有重要意义，可能成为团队部署 AI Agent 的基础设施。"
+        }
+      ],
+      "narrative": "OneCLI 的发布标志着 AI 智能体从个人开发工具向团队级基础设施的跨越，沙箱化运行和集中管理解决了企业在采用 AI Agent 时最关心的安全与治理问题。这预示着 AI Agent 将进入企业工作流，成为可审计、可管控的协作单元。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今日最重要的变化是：编码智能体社区正集体推动标准化（AGENTS.md、CHAP）和基础设施化（OneCLI），同时追求轻量化和成本透明（fx、Frugal Tokens），标志着 AI 编码工具从「玩具」走向「企业级生态」的拐点。",
+  "cross_theme_connection": "标准化主题（AGENTS.md、CHAP）与基础设施主题（OneCLI）形成互补：前者定义智能体行为规范，后者提供安全运行环境，共同构建企业级 AI Agent 的底座；而轻量化主题（fx、Frugal Tokens）则是对这一趋势的「反作用力」，强调在生态膨胀中保持简单和低成本，三者构成「标准化 vs 轻量化」的张力，但最终都指向更成熟的 AI 工程实践。"
+}
