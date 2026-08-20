@@ -1,17 +1,25 @@
-# 编码智能体正在经历它的「Linux 时刻」——但轻量化才是真正的终局
+# AI 编码代理正在经历一场静默的“工业化革命”
 
-编码智能体正在经历它的「Linux 时刻」。今天，社区同时出现了 AGENTS.md 的标准化请求（[github.com/anthropics/claude-code/issues/6235](https://github.com/anthropics/claude-code/issues/6235)）、CHAP 人机协作协议（[github.com/BrightbeamAI/chap](https://github.com/BrightbeamAI/chap)），以及 OneCLI 这样的沙箱化团队级 harness（[github.com/onecli/onecli](https://github.com/onecli/onecli)）。这不是巧合，这是行业在集体喊：别再给我一个会写代码的玩具，给我一个能放进企业工作流的基建。
+别再看单个 coding agent 的 demo 了。今天真正的信号是——整个生态在集体“工业化”。
 
-但注意，另一股力量也在同步崛起：fx 强调本地、开源、透明（[fx.sh](https://fx.sh)），Frugal Tokens 直接可视化 token 成本（[demo.frugaltokens.com](https://demo.frugaltokens.com/)）。当所有人都在往「平台化」狂奔时，这些项目在提醒我们：生态越复杂，简单就越值钱。
+AGENTS.md 被要求成为标配（[GitHub issue](https://github.com/anthropics/claude-code/issues/6235)），CHAP 协议想把人类和 agent 的协作变成标准流程（[CHAP](https://github.com/BrightbeamAI/chap)），OneCLI 直接把 agent 装进沙箱，变成团队可审计的基础设施（[OneCLI](https://github.com/onecli/onecli)）。这不是三个独立新闻，是同一个趋势的三块拼图：编码代理正在从“我的脚本”变成“公司的系统”。
 
-我的判断：标准化和基础设施是入场券，不是护城河。真正能活到最后的，是那些在标准化之上依然保持轻量、让开发者看得懂成本、控制得住资源的工具。别被「企业级」三个字冲昏头脑——开发者永远会为「少一点复杂，多一点透明」投票。
+但有意思的是反作用力。fx 这种“tiny, open, native”的代理（[fx.sh](https://fx.sh)）和 Frugal Tokens 这种把 token 成本做成仪表盘的工具（[demo](https://demo.frugaltokens.com/)），都在对抗生态膨胀。标准化让 agent 变重，轻量化让它保持敏捷。两者打架，恰恰说明这个市场开始有真正的工程约束了。
+
+我的判断：接下来赢的不是功能最多的 agent，而是能同时搞定“标准化”和“成本透明”的那批。企业不会为黑盒买单，也不会为失控的 token 账单买单。AGENTS.md 和 Frugal Tokens 的结合，可能就是未来企业 AI 编码的默认姿势。
+
+如果你还在纠结用哪个 agent，不如先看看它支不支持 AGENTS.md，能不能让你看清成本。这才是企业级的分水岭。
 
 ---
 
-# Coding agents are having their 'Linux moment' — but lightweight is the real endgame
+# The Quiet Industrialization of AI Coding Agents
 
-Coding agents are having their 'Linux moment.' Today alone, we saw a feature request for AGENTS.md standardization ([github.com/anthropics/claude-code/issues/6235](https://github.com/anthropics/claude-code/issues/6235)), the CHAP protocol for human-agent collaboration ([github.com/BrightbeamAI/chap](https://github.com/BrightbeamAI/chap)), and OneCLI, a sandboxed agent harness for teams ([github.com/onecli/onecli](https://github.com/onecli/onecli)). This isn't coincidence — it's the community collectively saying: stop giving me a toy that writes code, give me infrastructure that fits into enterprise workflows.
+Stop watching individual coding agent demos. The real signal today is that the entire ecosystem is industrializing.
 
-But here's the counter-current: fx is doubling down on local, open, and transparent ([fx.sh](https://fx.sh)), and Frugal Tokens is making token costs visible ([demo.frugaltokens.com](https://demo.frugaltokens.com/)). While everyone races toward 'platformization,' these projects remind us that the more complex the ecosystem gets, the more valuable simplicity becomes.
+AGENTS.md is being demanded as a standard ([GitHub issue](https://github.com/anthropics/claude-code/issues/6235)), CHAP wants to turn human-agent collaboration into a standardized protocol ([CHAP](https://github.com/BrightbeamAI/chap)), and OneCLI puts agents in a sandbox, making them auditable team infrastructure ([OneCLI](https://github.com/onecli/onecli)). These aren't three separate news items—they're three pieces of the same puzzle: coding agents are moving from "my script" to "our company's system."
 
-My take: standardization and infrastructure are table stakes, not moats. The ones who survive will be those who stay lightweight on top of the standards, keep costs transparent, and give developers control. Don't get drunk on 'enterprise-grade' — developers will always vote for 'less complexity, more transparency.'
+But here's the counter-force. fx, a "tiny, open, native" agent ([fx.sh](https://fx.sh)), and Frugal Tokens, which turns token costs into a dashboard ([demo](https://demo.frugaltokens.com/)), are pushing back against bloat. Standardization makes agents heavier; lightweight tools keep them agile. The friction between these two forces is exactly what tells me this market is starting to have real engineering constraints.
+
+My take: the winners won't be the agents with the most features. They'll be the ones that nail both standardization and cost transparency. Enterprises won't buy black boxes, and they won't tolerate runaway token bills. The combination of AGENTS.md and Frugal Tokens might just be the default posture for enterprise AI coding.
+
+If you're still debating which agent to use, stop. Check if it supports AGENTS.md and whether you can see its costs. That's the real enterprise litmus test.
