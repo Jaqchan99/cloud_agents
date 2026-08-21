@@ -1,33 +1,29 @@
-# AI Agent 正在接管交易，但责任却甩给了用户
+# AI Agent 正在成为交易员，但监管还在看戏
 
-AI Agent 已经能替你炒币了，但亏了钱，平台说：你自己的锅。
+今天最值得警惕的消息，不是又一个开源框架发布，也不是 Slack 把 Agent 塞进聊天框——而是 Binance 正式让 AI Agent 下场交易加密货币，并且明确告诉你：风险自负，平台不兜底。
 
-Binance 上线 Agent OS，允许 AI Agent 自主执行交易。这是 Agent 从聊天助手跃升为真金白银执行者的标志性时刻。但 TechCrunch 的报道点破了要害：风险控制基本靠用户自己。平台只提供工具，不承担后果。
+这不是工具升级，这是 Agent 从「辅助你决策」变成「替你执行决策」的分水岭。但分水岭的另一边，没有护栏。TechCrunch 的报道说得很清楚：用户可以设置一些限制，但本质上，Agent 的每个交易行为，责任都在用户身上（[链接](https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/)）。
 
-这就像把方向盘交给一个新手司机，然后告诉他：撞了算你的。
+讽刺的是，同一周，社区在呼吁 AGENTS.md 标准化（[链接](https://github.com/anthropics/claude-code/issues/6235)），TrueForge 在搞开源 harness（[链接](https://github.com/truefoundry/trueforge)），IBM 在研究 Agent 到底需要多少记忆才够用（[链接](https://huggingface.co/blog/ibm-research/altk-evolve-hmm)）——大家都在认真讨论怎么把 Agent 做得更高效、更可移植。但没有人回答一个更基础的问题：当 Agent 犯错造成真金白银的损失，谁负责？
 
-我们正在把高风险的金融决策外包给 AI，却没有对应的责任框架。监管滞后是事实，但平台不能拿监管当挡箭牌——至少应该提供更透明的决策日志、强制性的风险限制，或者某种形式的保险机制。
+平台说「用户自己看着办」，监管还没跟上，开发者忙着堆功能。这不是技术问题，这是责任真空。
 
-现在的情况是：AI 赚了，平台抽成；AI 亏了，用户全责。这不是创新，这是责任的金融化转移。
+AI Agent 的自主性正在快速膨胀，但我们的问责机制还停留在「工具时代」。如果你在金融场景用 Agent，或者正在为 Agent 写交易策略，我劝你停一下：你信任的不是代码，是一个没有法律人格、没有保险、没有兜底的黑箱。
 
-如果 Agent 真的要在金融领域长期存在，责任边界必须重新划定。否则，下一次市场暴跌时，我们看到的将不是技术问题，而是一地鸡毛的追责大战。
-
-https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/
+Agent 可以替你赚钱，但别让它替你背锅——因为它背不动，最后锅还是你的。
 
 ---
 
-# AI Agents Are Trading Now — And the Blame Is All Yours
+# AI Agents Are Trading Now—And Nobody's Watching the Door
 
-AI agents can now trade crypto for you. But when they blow up your portfolio, Binance's answer is: not our problem.
+The most alarming AI story today isn't another open-source harness or Slack putting agents in your chat sidebar. It's Binance letting AI agents trade crypto—and explicitly telling users: you're on your own.
 
-Agent OS just turned AI from a chatbot into an autonomous executor moving real money. TechCrunch's report cuts to the chase: keeping these agents in check is mostly on the user. Binance provides the tool, but zero liability.
+This isn't a tool upgrade. It's the moment agents cross from 'assisting your decision' to 'making the decision for you.' But on the other side of that line, there are no guardrails. TechCrunch's coverage makes it clear: you can set some limits, but ultimately, every trade your agent makes is your responsibility ([link](https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/)).
 
-That's like handing the wheel to a learner driver and saying — if you crash, it's on you.
+Meanwhile, the same week, the community is pushing for AGENTS.md standardization ([link](https://github.com/anthropics/claude-code/issues/6235)), TrueForge is building open-source agent harnesses ([link](https://github.com/truefoundry/trueforge)), and IBM is studying how much memory agents actually need ([link](https://huggingface.co/blog/ibm-research/altk-evolve-hmm)). Everyone's busy making agents more efficient, more portable, more capable. Nobody's answering the basic question: when an agent fucks up and loses real money, who pays?
 
-We're outsourcing high-stakes financial decisions to AI without a corresponding accountability framework. Regulation lags, sure, but platforms can't hide behind that. They could at least offer transparent decision logs, mandatory risk limits, or some form of insurance.
+Platforms say 'user beware.' Regulators are asleep. Developers are shipping features. This isn't a technology gap—it's an accountability vacuum.
 
-Right now, the AI wins, the platform takes a cut; the AI loses, the user eats the loss. That's not innovation — that's financialized liability shifting.
+Agent autonomy is scaling fast, but our liability framework is still stuck in the tool era. If you're using agents in finance, or building trading strategies for them, stop for a second: you're not trusting code, you're trusting a black box with no legal personality, no insurance, and no backstop.
 
-If agents are going to stick around in finance, the responsibility boundary has to move. Otherwise, the next market crash won't be a tech problem — it'll be a blame game with no rules.
-
-https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/
+Agents can make you money. But don't let them take the fall for you—they can't. The fall always lands on you.
