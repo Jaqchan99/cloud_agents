@@ -1,0 +1,53 @@
+{
+  "date": "2026-08-22",
+  "language": "zh",
+  "article_count": 5,
+  "themes": [
+    {
+      "name": "Agent 的「外挂」时代：框架与工具链成为新战场",
+      "articles": [
+        {
+          "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
+          "link": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+          "source": "TechCrunch AI",
+          "ai_summary": "Nvidia的研究表明，AI Agent的表现关键在于外部框架（harness）而非模型本身，通过微调框架即可让普通模型稳定完成任务。这一发现颠覆了“模型越强Agent越强”的认知，为低成本构建高性能Agent提供了新路径。"
+        },
+        {
+          "title": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "link": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory/",
+          "source": "Hacker News",
+          "ai_summary": "文章详细介绍了如何搭建一个近乎完全自托管、沙箱化的Agentic软件工厂，实现代码生成、测试与部署的自动化闭环。该方案强调安全隔离与自主可控，对希望在企业内部落地AI开发流程的团队具有重要参考价值。"
+        },
+        {
+          "title": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
+          "link": "https://github.com/proliferate-ai/proliferate",
+          "source": "Hacker News",
+          "ai_summary": "Proliferate是一个开源的、可自托管的Codex替代品，支持接入任意编码Agent，提供统一的交互与调度界面。该项目降低了企业对专有AI编程工具的依赖，推动了开源Agent生态的多样化发展。"
+        }
+      ],
+      "narrative": "这三篇文章共同指向一个趋势：AI Agent 的能力重心正在从模型本身转向外部框架、工具链和部署环境。Nvidia 的研究从学术上证明了框架的杠杆作用，而软件工厂和 Proliferate 则从工程实践上展示了如何通过自托管、开源的方式构建和调度 Agent。这标志着 Agent 开发进入「外挂」时代，竞争焦点从模型参数转向工程化能力。",
+      "tension": null
+    },
+    {
+      "name": "Agent 商业化加速：从协作编程到金融交易",
+      "articles": [
+        {
+          "title": "Binance now lets AI agents trade, but keeping them in check is largely up to users",
+          "link": "https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/",
+          "source": "TechCrunch AI",
+          "ai_summary": "币安推出Agent OS，允许AI Agent（如ChatGPT、Claude Code、Cursor）直接进行加密货币交易，但风险控制主要依赖用户自行设置。这一事件标志着AI Agent在金融交易领域的商业化落地，同时也引发了对安全与监管的担忧。"
+        },
+        {
+          "title": "Slack is launching collaborative vibe-coding channels",
+          "link": "https://www.theverge.com/tech/982628/slack-code-vibe-coding-channels-launch",
+          "source": "The Verge AI",
+          "ai_summary": "Slack推出Slack Code功能，为团队提供专门的协作式vibe-coding频道，让成员与AI Agent在同一空间内共同编程，减少工具切换成本。此举将AI编程从个人工具扩展为团队协作场景，可能重塑软件开发的工作流。"
+        }
+      ],
+      "narrative": "币安和 Slack 的举措表明，AI Agent 正在从技术实验快速走向商业场景：前者将 Agent 直接接入金融交易，后者将 AI 编程融入团队协作。这不仅是功能扩展，更是 Agent 作为「数字员工」进入核心业务流程的标志，同时也暴露出安全与责任归属的空白。",
+      "tension": "商业化速度与风险控制之间的张力：币安将风险责任推给用户，而 Slack 的协作模式则隐含了对 Agent 行为的团队监督，两者对 Agent 失控的应对策略截然不同。"
+    }
+  ],
+  "key_signal": "今日最重要的变化是：AI Agent 的竞争力正从模型本身转移到外部框架与工程化能力，同时 Agent 开始大规模进入商业场景（金融、协作编程），但安全与责任机制尚未跟上。",
+  "cross_theme_connection": "框架与工具链的成熟（主题一）是 Agent 商业化落地（主题二）的前提——只有当 Agent 可以被可靠地调度、隔离和自托管时，企业才敢将其用于交易和团队协作；而商业化场景反过来又对框架提出更高的安全与合规要求，形成双向驱动。"
+}

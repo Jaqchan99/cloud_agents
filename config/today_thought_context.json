@@ -1,54 +1,49 @@
 {
-  "date": "2026-08-21",
-  "question": "当AI Agent在金融交易、团队协作和编码中承担越来越多自主任务时，我们应如何设计“风险边界”，既释放效率红利，又不让用户或开发者独自承担失控后果？",
-  "context": "今日多条资讯显示，AI Agent正从辅助工具走向自主执行者（如Binance的自动交易、Slack的协作编码），但其安全与责任机制仍停留在用户自担阶段，这引发了对Agent治理架构的深层讨论。",
+  "date": "2026-08-22",
+  "question": "当Nvidia的研究表明Agent表现更多取决于外部框架而非模型本身时，我们是否应该将AI开发的战略重心从“训练更强模型”转向“构建更优的Agent框架”？这对你的团队或行业意味着什么？",
+  "context": "Nvidia的发现挑战了“模型越大越好”的主流认知，可能引发AI开发范式的转变。理解这一转变对于资源有限的团队尤其关键，可能带来新的竞争机会。",
   "related_articles": [
     {
-      "title": "Binance now lets AI agents trade, but keeping them in check is largely up to users",
+      "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/ai/2026/08/21/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users"
+      "link": "https://techcrunch.com/ai/2026/08/22/nvidia-harness-not-model-hero"
     },
     {
-      "title": "Slack is launching collaborative vibe-coding channels",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai/2026/08/21/slack-collaborative-vibe-coding-channels"
-    },
-    {
-      "title": "Feature Request: Support AGENTS.md",
+      "title": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
       "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=35123456"
+      "link": "https://news.ycombinator.com/item?id=20260822"
     }
   ],
   "all_articles": [
     {
-      "title": "How Much Memory Does Your Agent Actually Need?",
-      "source": "HuggingFace Blog",
-      "link": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
-      "ai_summary": "IBM Research在HuggingFace发布研究，探讨AI Agent实际需要多少记忆容量，挑战了“越大越好”的直觉。文章通过实验分析不同记忆机制对Agent任务表现的影响，为设计更高效、更省资源的Agent提供了关键参考。"
+      "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+      "ai_summary": "Nvidia的研究表明，AI Agent的表现关键在于外部框架（harness）而非模型本身，通过微调框架即可让普通模型稳定完成任务。这一发现颠覆了“模型越强Agent越强”的认知，为低成本构建高性能Agent提供了新路径。"
     },
     {
-      "title": "Feature Request: Support AGENTS.md",
+      "title": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
       "source": "Hacker News",
-      "link": "https://github.com/anthropics/claude-code/issues/6235",
-      "ai_summary": "该GitHub issue在Hacker News引发热烈讨论（216条评论，353分），呼吁Claude Code支持AGENTS.md标准文件，以统一Agent的项目级配置和上下文管理。这一需求反映了社区对Agent可移植性和协作标准化的强烈诉求，可能推动开源生态的进一步整合。"
+      "link": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory/",
+      "ai_summary": "文章详细介绍了如何搭建一个近乎完全自托管、沙箱化的Agentic软件工厂，实现代码生成、测试与部署的自动化闭环。该方案强调安全隔离与自主可控，对希望在企业内部落地AI开发流程的团队具有重要参考价值。"
     },
     {
       "title": "Binance now lets AI agents trade, but keeping them in check is largely up to users",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/",
-      "ai_summary": "Binance推出Agent OS，允许用户通过ChatGPT、Claude Code和Cursor等工具让AI Agent直接进行加密货币交易。文章强调，尽管自动化交易带来便利，但风险控制责任完全落在用户身上，凸显了AI Agent在金融领域应用的安全与监管挑战。"
+      "ai_summary": "币安推出Agent OS，允许AI Agent（如ChatGPT、Claude Code、Cursor）直接进行加密货币交易，但风险控制主要依赖用户自行设置。这一事件标志着AI Agent在金融交易领域的商业化落地，同时也引发了对安全与监管的担忧。"
     },
     {
       "title": "Slack is launching collaborative vibe-coding channels",
       "source": "The Verge AI",
       "link": "https://www.theverge.com/tech/982628/slack-code-vibe-coding-channels-launch",
-      "ai_summary": "Slack推出Slack Code功能，为团队提供专门的“vibe-coding”频道，让成员能与AI Agent在同一空间内协作编码，避免在多个工具间切换。这一举措将AI Agent协作深度嵌入团队工作流，标志着企业级AI协作工具的进一步普及。"
+      "ai_summary": "Slack推出Slack Code功能，为团队提供专门的协作式vibe-coding频道，让成员与AI Agent在同一空间内共同编程，减少工具切换成本。此举将AI编程从个人工具扩展为团队协作场景，可能重塑软件开发的工作流。"
     },
     {
-      "title": "TrueForge – The open-source agent harness",
+      "title": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
       "source": "Hacker News",
-      "link": "https://github.com/truefoundry/trueforge",
-      "ai_summary": "TrueForge是一个开源Agent harness框架，旨在简化AI Agent的构建、部署和运行管理。该项目在Hacker News上获得关注，为开发者提供了更灵活的自托管Agent基础设施选择，有助于推动Agent技术的开源生态发展。"
+      "link": "https://github.com/proliferate-ai/proliferate",
+      "ai_summary": "Proliferate是一个开源的、可自托管的Codex替代品，支持接入任意编码Agent，提供统一的交互与调度界面。该项目降低了企业对专有AI编程工具的依赖，推动了开源Agent生态的多样化发展。"
     }
   ],
   "answered": false
