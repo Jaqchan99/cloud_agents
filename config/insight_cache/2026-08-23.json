@@ -1,0 +1,53 @@
+{
+  "date": "2026-08-23",
+  "language": "zh",
+  "article_count": 5,
+  "themes": [
+    {
+      "name": "Agent 工程化：从模型到系统的重心转移",
+      "articles": [
+        {
+          "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
+          "link": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero",
+          "source": "TechCrunch AI",
+          "ai_summary": "Nvidia的研究表明，通过精心设计的“harness”（即Agent框架和工具链），即使底层AI模型能力一般，也能让AI Agent表现出色且稳定。这一发现颠覆了“模型为王”的传统认知，强调Agent工程和框架设计的重要性。对于AI Agent的实际部署和性能优化，该研究提供了新的思路，预示着未来竞争焦点将转向Agent基础设施。"
+        },
+        {
+          "title": "Autolith: A programming agent with a live runtime",
+          "link": "https://www.lambda-symbolics.com/autolith",
+          "source": "Hacker News",
+          "ai_summary": "Autolith是一款具备实时运行环境的编程Agent，在Hacker News上获得109分和43条评论，引发开发者社区关注。它通过将Agent与实时执行环境深度集成，使AI能更高效地编写、调试和运行代码，提升开发自动化水平。这一创新代表了编程Agent从静态代码生成向动态交互式开发助手演进的方向。"
+        }
+      ],
+      "narrative": "Nvidia 的研究与 Autolith 的发布共同指向一个趋势：AI Agent 的竞争力不再单纯取决于底层模型，而是越来越依赖于外部框架、工具链和运行时环境的精心设计。这标志着行业从“模型竞赛”转向“系统工程竞赛”，Agent 的可靠性、可控性和环境集成能力成为新的决胜点。",
+      "tension": null
+    },
+    {
+      "name": "多 Agent 协作：从个人工具到团队基础设施",
+      "articles": [
+        {
+          "title": "Inherent, founded by DeepMind alumni, says its AI ‘teammate’ just outperformed Anthropic and OpenAI at replicating research",
+          "link": "https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research",
+          "source": "TechCrunch AI",
+          "ai_summary": "由DeepMind校友创立的英国AI实验室Inherent发布了AI智能体Faraday，声称其在复现科学论文任务上超越了Anthropic和OpenAI的模型。这一突破展示了AI Agent在科研自动化领域的巨大潜力，可能成为加速科学创新的关键工具。该成果凸显了专业领域AI Agent的竞争力，对科研工作流变革具有重要意义。"
+        },
+        {
+          "title": "Slack is launching collaborative vibe-coding channels",
+          "link": "https://www.theverge.com/tech/982628/slack-code-vibe-coding-channels-launch",
+          "source": "The Verge AI",
+          "ai_summary": "Slack推出协作式“vibe-coding”频道，允许团队在统一平台内与AI Agent共同进行代码开发，无需切换多个工具。这一功能将AI编程协作融入日常团队沟通工具，降低了协作门槛，提升了开发效率。此举标志着AI Agent从个人工具向团队协作基础设施的扩展，对软件开发流程有深远影响。"
+        },
+        {
+          "title": "Munder Difflin – Agent harness to run an office of your clones",
+          "link": "https://munderdifflin.in/",
+          "source": "Hacker News",
+          "ai_summary": "Munder Difflin是一个Agent框架，允许用户运行一个由“数字克隆”组成的虚拟办公室，在Hacker News上获得245分和114条评论，热度极高。该工具探索了多Agent协作和模拟办公场景，可能用于自动化流程或测试团队协作策略。其高关注度反映了社区对多Agent系统和自主协作模式的浓厚兴趣。"
+        }
+      ],
+      "narrative": "从 Inherent 的科研 Agent 到 Slack 的协作编码频道，再到 Munder Difflin 的“克隆办公室”，这些产品共同展示了 AI Agent 正从单点工具演变为团队协作的基础设施。它们不仅提升个人效率，更在重新定义人类与 AI 在团队中的协作模式，甚至模拟整个组织的运作方式。",
+      "tension": "Inherent 强调专业领域 Agent 的超越性表现（“teammate”），而 Munder Difflin 则聚焦于通用多 Agent 协作框架，两者在“专业化 vs 通用化”路径上存在潜在张力，反映了 Agent 发展方向的路线分歧。"
+    }
+  ],
+  "key_signal": "今日最重要的变化是：AI Agent 的竞争焦点正从模型能力转向 Agent 工程与协作基础设施，Nvidia 的 harness 研究、Slack 的协作频道和 Munder Difflin 的虚拟办公室共同标志着这一转折点。",
+  "cross_theme_connection": "两个主题之间存在因果呼应：Nvidia 对 harness 的强调为多 Agent 协作提供了技术基础，而 Slack 和 Munder Difflin 则展示了这种工程化能力在团队场景中的具体应用，共同指向 Agent 从“个体智能”向“组织智能”的演进。"
+}

@@ -1,49 +1,54 @@
 {
-  "date": "2026-08-22",
-  "question": "当Nvidia的研究表明Agent表现更多取决于外部框架而非模型本身时，我们是否应该将AI开发的战略重心从“训练更强模型”转向“构建更优的Agent框架”？这对你的团队或行业意味着什么？",
-  "context": "Nvidia的发现挑战了“模型越大越好”的主流认知，可能引发AI开发范式的转变。理解这一转变对于资源有限的团队尤其关键，可能带来新的竞争机会。",
+  "date": "2026-08-23",
+  "question": "当Nvidia的研究表明Agent框架（harness）比底层模型更重要时，你所在的组织应如何重新分配资源——是继续投入模型微调，还是转向构建更强大的Agent工具链？",
+  "context": "这一发现挑战了‘模型为王’的共识，尤其对AI Agent的实际部署有直接影响。它提示我们，在模型能力趋同的背景下，工程化能力可能成为新的竞争壁垒。",
   "related_articles": [
     {
       "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/ai/2026/08/22/nvidia-harness-not-model-hero"
+      "link": "https://techcrunch.com/2026/08/23/nvidia-harness-agent"
     },
     {
-      "title": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+      "title": "Inherent, founded by DeepMind alumni, says its AI ‘teammate’ just outperformed Anthropic and OpenAI at replicating research",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/08/23/inherent-faraday-agent"
+    },
+    {
+      "title": "Autolith: A programming agent with a live runtime",
       "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=20260822"
+      "link": "https://news.ycombinator.com/item?id=41234567"
     }
   ],
   "all_articles": [
     {
+      "title": "Inherent, founded by DeepMind alumni, says its AI ‘teammate’ just outperformed Anthropic and OpenAI at replicating research",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/",
+      "ai_summary": "由DeepMind校友创立的英国AI实验室Inherent发布了AI智能体Faraday，声称其在复现科学论文任务上超越了Anthropic和OpenAI的模型。这一突破展示了AI Agent在科研自动化领域的巨大潜力，可能成为加速科学创新的关键工具。该成果凸显了专业领域AI Agent的竞争力，对科研工作流变革具有重要意义。"
+    },
+    {
       "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
-      "ai_summary": "Nvidia的研究表明，AI Agent的表现关键在于外部框架（harness）而非模型本身，通过微调框架即可让普通模型稳定完成任务。这一发现颠覆了“模型越强Agent越强”的认知，为低成本构建高性能Agent提供了新路径。"
+      "ai_summary": "Nvidia的研究表明，通过精心设计的“harness”（即Agent框架和工具链），即使底层AI模型能力一般，也能让AI Agent表现出色且稳定。这一发现颠覆了“模型为王”的传统认知，强调Agent工程和框架设计的重要性。对于AI Agent的实际部署和性能优化，该研究提供了新的思路，预示着未来竞争焦点将转向Agent基础设施。"
     },
     {
-      "title": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+      "title": "Autolith: A programming agent with a live runtime",
       "source": "Hacker News",
-      "link": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory/",
-      "ai_summary": "文章详细介绍了如何搭建一个近乎完全自托管、沙箱化的Agentic软件工厂，实现代码生成、测试与部署的自动化闭环。该方案强调安全隔离与自主可控，对希望在企业内部落地AI开发流程的团队具有重要参考价值。"
-    },
-    {
-      "title": "Binance now lets AI agents trade, but keeping them in check is largely up to users",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/",
-      "ai_summary": "币安推出Agent OS，允许AI Agent（如ChatGPT、Claude Code、Cursor）直接进行加密货币交易，但风险控制主要依赖用户自行设置。这一事件标志着AI Agent在金融交易领域的商业化落地，同时也引发了对安全与监管的担忧。"
+      "link": "https://www.lambda-symbolics.com/autolith",
+      "ai_summary": "Autolith是一款具备实时运行环境的编程Agent，在Hacker News上获得109分和43条评论，引发开发者社区关注。它通过将Agent与实时执行环境深度集成，使AI能更高效地编写、调试和运行代码，提升开发自动化水平。这一创新代表了编程Agent从静态代码生成向动态交互式开发助手演进的方向。"
     },
     {
       "title": "Slack is launching collaborative vibe-coding channels",
       "source": "The Verge AI",
       "link": "https://www.theverge.com/tech/982628/slack-code-vibe-coding-channels-launch",
-      "ai_summary": "Slack推出Slack Code功能，为团队提供专门的协作式vibe-coding频道，让成员与AI Agent在同一空间内共同编程，减少工具切换成本。此举将AI编程从个人工具扩展为团队协作场景，可能重塑软件开发的工作流。"
+      "ai_summary": "Slack推出协作式“vibe-coding”频道，允许团队在统一平台内与AI Agent共同进行代码开发，无需切换多个工具。这一功能将AI编程协作融入日常团队沟通工具，降低了协作门槛，提升了开发效率。此举标志着AI Agent从个人工具向团队协作基础设施的扩展，对软件开发流程有深远影响。"
     },
     {
-      "title": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
+      "title": "Munder Difflin – Agent harness to run an office of your clones",
       "source": "Hacker News",
-      "link": "https://github.com/proliferate-ai/proliferate",
-      "ai_summary": "Proliferate是一个开源的、可自托管的Codex替代品，支持接入任意编码Agent，提供统一的交互与调度界面。该项目降低了企业对专有AI编程工具的依赖，推动了开源Agent生态的多样化发展。"
+      "link": "https://munderdifflin.in/",
+      "ai_summary": "Munder Difflin是一个Agent框架，允许用户运行一个由“数字克隆”组成的虚拟办公室，在Hacker News上获得245分和114条评论，热度极高。该工具探索了多Agent协作和模拟办公场景，可能用于自动化流程或测试团队协作策略。其高关注度反映了社区对多Agent系统和自主协作模式的浓厚兴趣。"
     }
   ],
   "answered": false
