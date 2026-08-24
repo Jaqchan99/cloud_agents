@@ -1,29 +1,29 @@
-# 模型不再是主角：AI Agent 的胜负手已经转移
+# 模型崇拜终结：AI Agent 的胜负手在工程框架
 
-别再盯着模型榜单了。今天真正值得关注的是：AI Agent 的竞争已经从“谁的模型强”变成了“谁的框架好”。
+别再吹模型了。今天的两个新闻，一个来自 Nvidia，一个来自 DeepMind 校友创立的 Inherent，都在打同一个脸：决定 AI Agent 上限的不是模型，是框架。
 
-Nvidia 的实验直接点破了这一点——他们用精心设计的 harness 让基础模型发挥出超常水平，结论是：harness 才是真正的英雄，模型反而成了配角。这不只是技术细节，而是一个产业信号：当模型能力趋于同质化，工程化设计成了拉开差距的唯一变量。
+Nvidia 的实验直接说了——harness（外部控制框架）才是真正的英雄。同样的基础模型，套上精心设计的 harness，表现能超常发挥。这就像同一台发动机，装在拖拉机和赛车上，跑出来的成绩能一样吗？模型只是引擎，框架才是整车。
 
-更值得玩味的是，这个思路正在快速渗透到各个领域。Inherent 的 Faraday Agent 在科研复现任务上击败了 Anthropic 和 OpenAI 的模型，靠的不是更大的参数，而是针对科研场景的精细框架设计。而 agent.md 的实践也说明，这种“框架为王”的思路已经下沉到普通开发者的日常——一份结构化的指令文件，就能显著提升编码 Agent 的上下文理解。
+Inherent 的 Faraday Agent 更狠，在科研复现任务上直接干翻了 Anthropic 和 OpenAI 的模型。凭什么？凭的是工程化设计——把科学方法论拆解成 Agent 能执行的步骤，而不是靠模型自己瞎猜。这不是模型能力的胜利，是系统设计的胜利。
 
-把这几件事放在一起，你会看到一个清晰的拐点：AI 行业正在从“模型崇拜”转向“系统优化”。过去我们比的是谁训练出了更聪明的模型，现在比的是谁能为模型设计出更聪明的“工作环境”。
+还有 agent.md 这个实践，一个开发者用结构化指令文件让编码 Agent 的上下文理解暴涨。这玩意儿不是新模型，就是一个文档规范。但效果立竿见影。
 
-这对所有做 AI 应用的人来说都是一个提醒：别再迷信基础模型的参数神话了。真正决定你产品上限的，是你给 Agent 搭的框架、配的工具、写的指令。工程细节，正在成为新的护城河。
+看清楚了吗？AI 赛道正在从“模型崇拜”转向“系统优化”。谁能在工程细节上抠出优势，谁就能赢。那些还在拼参数量、拼训练数据的，方向已经偏了。
 
-[链接: Nvidia harness 实验](https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/) | [agent.md 实践](https://fabiensanglard.net/agent.md/index.html) | [Inherent 科研 Agent](https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/)
+这不是说模型不重要，而是说模型已经成了商品，框架才是护城河。Nvidia 和 Inherent 都看明白了，你还没看明白吗？
 
 ---
 
-# The Model Is No Longer the Star: The Battle for AI Agents Has Shifted
+# The End of Model Worship: Engineering Frameworks Decide AI Agent Victory
 
-Stop obsessing over model leaderboards. The real story today: AI agent competition has shifted from 'who has the strongest model' to 'who builds the best harness.'
+Stop worshipping models. Two news items today—one from Nvidia, one from Inherent (founded by DeepMind alumni)—are slapping the same face: what determines an AI Agent's ceiling is not the model, it's the framework.
 
-Nvidia just proved it—by carefully designing the harness, they got a base model to perform far beyond its usual level. Their conclusion? The harness is the hero, not the model. This isn't just a technical nuance; it's an industry signal. As model capabilities converge, engineering design has become the only variable that separates winners from the pack.
+Nvidia's experiment says it directly: the harness is the real hero. The same base model, wrapped in a well-designed harness, can perform beyond its baseline. It's like putting the same engine in a tractor versus a race car—the results aren't the same. The model is just the engine; the framework is the whole vehicle.
 
-What's more telling is how fast this idea is spreading across domains. Inherent's Faraday Agent beat Anthropic and OpenAI on research replication tasks—not by using a bigger model, but by tailoring the framework to the scientific workflow. And the agent.md practice shows this 'framework-first' mindset has trickled down to everyday developers: a simple structured instruction file can dramatically improve a coding agent's context understanding.
+Inherent's Faraday Agent goes further—it outperformed Anthropic and OpenAI models on research replication tasks. How? Through engineering design: breaking down scientific methodology into executable steps for the Agent, not letting the model guess on its own. This isn't a model capability win; it's a system design win.
 
-Put these together and you see a clear inflection point: AI is moving from 'model worship' to 'system optimization.' We used to compete on who trained the smartest model; now we compete on who designs the smartest working environment around it.
+And then there's agent.md, a developer who used a structured instruction file to dramatically boost coding Agent context understanding. No new model, just a document spec. But the effect is immediate.
 
-For anyone building AI applications, this is a wake-up call. Stop fetishizing the base model's parameter count. What actually determines your product's ceiling is the framework you build, the tools you integrate, and the instructions you write. Engineering details are the new moat.
+See the pattern? The AI race is shifting from 'model worship' to 'system optimization.' Whoever squeezes advantage from engineering details wins. Those still obsessing over parameter counts and training data are heading the wrong way.
 
-[Link: Nvidia harness experiment](https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/) | [agent.md practice](https://fabiensanglard.net/agent.md/index.html) | [Inherent research agent](https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/)
+This isn't to say models don't matter—they do. But they've become commodities. The framework is the moat. Nvidia and Inherent see it. Do you?
