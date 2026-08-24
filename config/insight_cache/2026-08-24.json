@@ -1,0 +1,41 @@
+{
+  "date": "2026-08-24",
+  "language": "zh",
+  "article_count": 3,
+  "themes": [
+    {
+      "name": "AI Agent 的工程化与框架化",
+      "articles": [
+        {
+          "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
+          "link": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+          "source": "TechCrunch AI",
+          "ai_summary": "Nvidia的研究表明，通过精细的微调和外部框架（harness）设计，AI Agent即使基于性能一般的模型也能表现出色且稳定。这一发现强调了Agent框架和工程优化的重要性，而非单纯依赖模型本身，为AI Agent的实际部署提供了新思路。"
+        },
+        {
+          "title": "My agent.md to improve LLM-assisted code quality",
+          "link": "https://fabiensanglard.net/agent.md/index.html",
+          "source": "Hacker News",
+          "ai_summary": "作者提出使用agent.md文件来优化LLM辅助编程的代码质量，通过结构化指令引导AI Agent更准确地理解项目上下文。该方法在Hacker News上获得广泛讨论，反映了开发者对提升AI编码工具实用性的迫切需求。"
+        }
+      ],
+      "narrative": "这两篇文章共同指向一个趋势：AI Agent 的竞争力正从模型本身转移到外部工程化设计。Nvidia 的实验表明，通过精心设计的“harness”可以让基础模型发挥超常水平；而 agent.md 的实践则展示了如何通过结构化指令文件来提升编码 Agent 的上下文理解。这标志着 AI 领域正在从“模型崇拜”转向“系统优化”，工程细节成为决定实际效果的关键。",
+      "tension": null
+    },
+    {
+      "name": "AI Agent 在科研自动化中的突破",
+      "articles": [
+        {
+          "title": "Inherent, founded by DeepMind alumni, says its AI ‘teammate’ just outperformed Anthropic and OpenAI at replicating research",
+          "link": "https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/",
+          "source": "TechCrunch AI",
+          "ai_summary": "由DeepMind校友创立的英国AI实验室Inherent发布了AI Agent“Faraday”，宣称其在复现科学论文任务上超越了Anthropic和OpenAI的模型。这一成果展示了AI Agent在科研自动化领域的巨大潜力，可能成为推动科学创新的重要基石。"
+        }
+      ],
+      "narrative": "Inherent 的 Faraday Agent 在科研复现任务上超越主流模型，表明 AI Agent 不仅能辅助编程，还能深入科学研究的核心流程。这一突破可能预示着 AI 将加速科学发现，但同时也引发了对科研诚信和自动化研究边界的思考。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今日最重要的变化是：AI Agent 的竞争焦点从模型能力转向工程化框架与领域适配，Nvidia 和 Inherent 的进展共同表明，系统设计与外部工具链正在成为决定 Agent 实际表现的主导因素。",
+  "cross_theme_connection": "两个主题之间存在因果呼应：Nvidia 强调的“harness”工程化思想，正是 Inherent 的 Faraday 能在科研任务中脱颖而出的方法论基础——通过精细的框架设计来最大化模型在特定领域的效能。同时，agent.md 的实践也印证了这种趋势在开发者社区的普及，说明“框架为王”已成为 AI Agent 发展的共识。"
+}
