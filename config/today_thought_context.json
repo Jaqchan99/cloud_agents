@@ -1,37 +1,38 @@
 {
-  "date": "2026-08-24",
-  "question": "当Agent的工程框架（如Nvidia的harness）比模型本身更能决定性能时，我们该如何重新评估AI能力的竞争焦点——是继续追逐更大更强的模型，还是转向构建更聪明的Agent架构？",
-  "context": "Nvidia的研究和Inherent的成果同时指向一个趋势：AI Agent的实际表现越来越依赖外部设计和工程优化，而非单一模型能力。这挑战了“模型越大越好”的行业共识，对企业的技术投资方向有直接影响。",
+  "date": "2026-08-25",
+  "question": "当AI Agent从“辅助工具”进化为“科研协作者”甚至“自主研究者”，科学发现的验证与信任机制将如何重构？你所在的领域，是否准备好接受一个“AI队友”来挑战或加速你的专业判断？",
+  "context": "Inherent的Faraday Agent在复现科学论文任务上超越OpenAI和Anthropic，这不仅是技术突破，更触及了科研范式与人类专家角色的根本性问题。",
   "related_articles": [
-    {
-      "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/08/24/nvidia-harness-ai-agent/"
-    },
     {
       "title": "Inherent, founded by DeepMind alumni, says its AI ‘teammate’ just outperformed Anthropic and OpenAI at replicating research",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/08/24/inherent-ai-teammate/"
+      "link": "https://techcrunch.com/2026/08/25/inherent-ai-teammate-research-replication/"
     }
   ],
   "all_articles": [
     {
+      "title": "OpenAI is building AI agents for everything. Will everyone use them?",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them/",
+      "ai_summary": "本文深入探讨了OpenAI将AI Agent从面向软件工程师扩展到大众市场的战略布局，分析了其通用Agent产品在应用场景、易用性和生态构建上的潜力与挑战。文章核心意义在于揭示了AI Agent从专业工具走向全民化应用的关键转折点，以及OpenAI在这一进程中的主导角色和可能面临的用户采纳风险。"
+    },
+    {
       "title": "Inherent, founded by DeepMind alumni, says its AI ‘teammate’ just outperformed Anthropic and OpenAI at replicating research",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/",
-      "ai_summary": "由DeepMind校友创立的英国AI实验室Inherent发布了AI Agent“Faraday”，宣称其在复现科学论文任务上超越了Anthropic和OpenAI的模型。这一成果展示了AI Agent在科研自动化领域的巨大潜力，可能成为推动科学创新的重要基石。"
+      "ai_summary": "由DeepMind校友创立的英国AI实验室Inherent发布了名为Faraday的AI Agent，声称其在复现科学论文任务上的表现超越了Anthropic和OpenAI的同类产品。这一成果展示了AI Agent在科研自动化领域的巨大潜力，可能成为加速科学创新和验证的重要工具，也凸显了专业领域Agent的差异化竞争力。"
     },
     {
-      "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
+      "title": "Valor, Point72 back General Intuition at $6B valuation as AI startup pushes into robotics",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
-      "ai_summary": "Nvidia的研究表明，通过精细的微调和外部框架（harness）设计，AI Agent即使基于性能一般的模型也能表现出色且稳定。这一发现强调了Agent框架和工程优化的重要性，而非单纯依赖模型本身，为AI Agent的实际部署提供了新思路。"
+      "link": "https://techcrunch.com/2026/08/24/valor-point72-back-general-intuition-at-6b-valuation-as-ai-startup-pushes-into-robotics/",
+      "ai_summary": "AI初创公司General Intuition正在以60亿美元估值进行融资，投资方包括Valor和Point72，资金将用于推进其通用AI Agent在机器人领域的应用。该公司专注于训练AI Agent在空间和时间中运动的基础模型，这一高估值融资凸显了资本市场对具身智能和通用Agent技术前景的强烈信心。"
     },
     {
-      "title": "My agent.md to improve LLM-assisted code quality",
+      "title": "Agent Lightning v1.0",
       "source": "Hacker News",
-      "link": "https://fabiensanglard.net/agent.md/index.html",
-      "ai_summary": "作者提出使用agent.md文件来优化LLM辅助编程的代码质量，通过结构化指令引导AI Agent更准确地理解项目上下文。该方法在Hacker News上获得广泛讨论，反映了开发者对提升AI编码工具实用性的迫切需求。"
+      "link": "https://github.com/microsoft/agent-lightning/releases/tag/v1.0.1",
+      "ai_summary": "微软发布了Agent Lightning v1.0版本，这是一个开源项目，旨在提供轻量级、高效的AI Agent开发框架。该版本标志着Agent Lightning进入稳定阶段，为开发者提供了更可靠的工具来构建和部署Agent应用，对推动开源Agent生态的发展具有重要意义。"
     }
   ],
   "answered": false
