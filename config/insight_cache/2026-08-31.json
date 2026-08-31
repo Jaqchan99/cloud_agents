@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-31",
+  "language": "zh",
+  "article_count": 2,
+  "themes": [
+    {
+      "name": "Agent 生态的周期性与领域化转向",
+      "articles": [
+        {
+          "title": "The Rise and Fall of Agent Civilizations",
+          "link": "https://www.dwarkesh.com/p/openai-huggingface",
+          "source": "Hacker News",
+          "ai_summary": "这篇文章在Hacker News上引发了热烈讨论（127条评论，218分），探讨了AI Agent生态系统的兴衰规律，可能涉及OpenAI与HuggingFace在Agent领域的竞争与合作。其核心意义在于帮助从业者理解Agent技术发展的周期性，以及平台生态对Agent演进的影响。"
+        },
+        {
+          "title": "Domain-Driven Agents",
+          "link": "https://coldtake.dev/blog/domain-driven-agents",
+          "source": "Hacker News",
+          "ai_summary": "文章提出了领域驱动的Agent设计理念，强调Agent应针对特定业务场景进行定制化开发，而非追求通用性。这一观点对当前Agent泛化与专用化的平衡问题提供了新思路，对实际工程落地具有指导价值。"
+        }
+      ],
+      "narrative": "今日两篇文章共同指向Agent发展的一个关键转折：从追求通用性、平台化竞争，转向对生命周期规律和领域定制的深度思考。第一篇从宏观视角审视Agent文明的兴衰，暗示平台生态的周期性波动；第二篇则从微观工程视角提出领域驱动设计，强调专用化是落地关键。两者合力表明，Agent领域正在从概念炒作进入务实迭代阶段，从业者开始关注如何让Agent在真实业务中存活并创造价值。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今日最重要的变化是Agent领域从通用性叙事转向领域驱动与生态周期反思，标志着行业进入理性落地阶段。",
+  "cross_theme_connection": "两篇文章虽视角不同，但共同构成对Agent发展路径的互补解读：宏观生态的兴衰规律为领域驱动设计提供了背景动因，而领域驱动则是应对生态波动的具体策略，二者形成从认知到实践的闭环。"
+}
