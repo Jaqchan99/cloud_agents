@@ -1,25 +1,29 @@
-# Agent记忆不再是配角，它正在成为AI的新基础设施
+# 记忆，是Agent的下一个战场
 
-别再盯着上下文窗口了，Agent记忆才是下一场硬仗。
+别再盯着上下文窗口了，Agent的记忆才是下一个主战场。
 
-今天看到两篇独立文章，不约而同指向同一个方向：记忆正在从Agent的辅助功能变成核心基础设施。一篇提出把记忆做成文件格式（[calpaterson.com/memoryfields.html](https://calpaterson.com/memoryfields.html)），另一篇干脆给Agent引入了人类认知里的遗忘曲线（[eris-system.dev/blog/forgetting-curve](https://eris-system.dev/blog/forgetting-curve)）。
+今天有两篇独立文章，不约而同指向同一个方向：Agent的记忆正在从“临时拼接”转向“核心基础设施”。一篇提议用文件格式标准化记忆（[链接](https://calpaterson.com/memoryfields.html)），另一篇直接给Agent引入人类认知中的“遗忘曲线”（[链接](https://eris-system.dev/blog/forgetting-curve)）。
 
-这说明什么？说明行业终于开始认真对待长期运行的Agent了。过去我们靠临时拼接上下文窗口，让Agent在对话里勉强保持连贯。但真正的Agent要跨天、跨任务、跨项目工作，它需要记住用户偏好、历史决策、失败教训——这已经不是窗口能塞得下的问题，而是需要一套持久化、可查询、能自我管理的记忆系统。
+这背后的信号很明确：我们受够了上下文窗口的临时拼接。你让Agent跑一个长任务，它聊着聊着就忘了前面说了什么，这种体验根本没法用。所以行业开始认真对待记忆问题——不是简单地塞进向量数据库，而是思考记忆如何存储、如何检索、如何遗忘。
 
-有意思的是，两篇文章的方案正好互补：文件格式解决了记忆存储的标准化问题，遗忘曲线则解决了记忆内容的选择问题——哪些该留，哪些该丢，什么时候该强化。一个管存储，一个管取舍，合起来就是一个完整的记忆管理系统。
+这两篇文章分别给出了不同的答案：文件格式提供存储基础，遗忘曲线优化存储内容的选择。两者完全可以互补——一个解决“怎么存”，一个解决“存什么”。
 
-我不觉得这是巧合。当Agent从玩具变成工具，记忆就是它的工作台。谁先把记忆基础设施做扎实，谁就能在下一波Agent应用里占住身位。别等上下文窗口不够用才想起来做记忆，那时候就晚了。
+但更深层的问题是：记忆不只是技术问题，更是认知建模问题。人类记忆不是无限存储，而是有选择、有遗忘、有优先级。Agent要真正长期陪伴用户，就必须模仿这种机制。谁先解决这个问题，谁就能让Agent从“一次性工具”进化为“长期伙伴”。
+
+别错过这个方向。
 
 ---
 
-# Agent Memory Is No Longer a Sidekick—It's Becoming Core Infrastructure
+# Memory is the Next Battlefield for Agents
 
-Stop obsessing over context windows—agent memory is the real battleground.
+Stop obsessing over context windows—agent memory is the next battleground.
 
-Two independent posts today point to the same shift: memory is moving from a side feature to core infrastructure for agents. One proposes standardizing agent memory as a file format ([calpaterson.com/memoryfields.html](https://calpaterson.com/memoryfields.html)), the other introduces a forgetting curve borrowed from human cognition to manage what an agent retains ([eris-system.dev/blog/forgetting-curve](https://eris-system.dev/blog/forgetting-curve)).
+Two independent posts today converge on the same signal: memory is shifting from a stopgap to core infrastructure. One proposes standardizing memory as a file format ([link](https://calpaterson.com/memoryfields.html)); the other introduces a human-inspired forgetting curve for agents ([link](https://eris-system.dev/blog/forgetting-curve)).
 
-This is the industry finally taking long-running agents seriously. We've been stitching together context windows to keep agents coherent across a conversation. But real agents need to work across days, tasks, and projects—recalling user preferences, past decisions, and lessons learned. That's not a window-size problem; it's a memory-system problem.
+We're all tired of the context-window hack. You run a long task, the agent forgets what it said five minutes ago—and the whole thing falls apart. So the industry is finally taking memory seriously—not just dumping everything into a vector DB, but thinking about how memory is stored, retrieved, and forgotten.
 
-What's striking is how complementary the two approaches are. The file format solves storage standardization; the forgetting curve solves content selection—what to keep, what to drop, when to reinforce. One handles the shelf, the other handles the curation. Together, they sketch a complete memory management layer.
+These two posts offer different pieces: the file format gives you the storage substrate; the forgetting curve tells you what to keep. They're complementary—one solves 'how to store,' the other solves 'what to store.'
 
-This isn't a coincidence. As agents evolve from toys to tools, memory becomes their workbench. Whoever builds solid memory infrastructure first will own the next wave of agent applications. Don't wait until context windows run out—by then, it's too late.
+But the deeper point is this: memory isn't just an engineering problem, it's a cognitive modeling problem. Human memory isn't infinite storage—it's selective, prioritized, and forgetful. If agents are ever going to be long-term companions, they need to mimic that. Whoever cracks this first turns agents from one-shot tools into something that actually sticks around.
+
+Don't sleep on this direction.
