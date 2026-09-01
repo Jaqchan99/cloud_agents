@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-01",
+  "language": "zh",
+  "article_count": 2,
+  "themes": [
+    {
+      "name": "Agent记忆的工程化与认知建模",
+      "articles": [
+        {
+          "title": "Agent memory as a file format",
+          "link": "https://calpaterson.com/memoryfields.html",
+          "source": "Hacker News",
+          "ai_summary": "本文探讨将Agent记忆设计为一种文件格式的构想，强调通过标准化文件结构来持久化和管理Agent的上下文与经验。这一思路有助于提升Agent的可移植性和可调试性，对构建长期运行的AI Agent系统具有重要参考价值。"
+        },
+        {
+          "title": "I built a forgetting curve for an agent with one user",
+          "link": "https://eris-system.dev/blog/forgetting-curve",
+          "source": "Hacker News",
+          "ai_summary": "作者为单一用户场景下的AI Agent构建了遗忘曲线模型，模拟人类记忆衰减规律来优化Agent的上下文管理。该研究为个性化Agent的长期交互记忆机制提供了创新思路，有助于提升Agent在持续对话中的相关性和效率。"
+        }
+      ],
+      "narrative": "这两篇文章共同揭示了Agent记忆正从「辅助功能」转向「核心基础设施」的趋势：一篇主张用文件格式标准化记忆，另一篇则引入人类认知模型来动态管理记忆。这标志着行业开始认真对待Agent的长期记忆问题，不再仅仅依赖上下文窗口的临时拼接，而是寻求更持久、更智能的记忆机制。",
+      "tension": null
+    }
+  ],
+  "key_signal": "Agent记忆正从临时上下文转向可持久化、可建模的核心组件，成为构建长期运行Agent的关键技术方向。",
+  "cross_theme_connection": "两篇文章虽独立提出不同方案（文件格式 vs. 遗忘曲线），但共同指向同一目标：让Agent在长期交互中保持连贯性与效率，且两种方案可互补——文件格式提供存储基础，遗忘曲线则优化存储内容的选择。"
+}
