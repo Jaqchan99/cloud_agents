@@ -1,0 +1,60 @@
+{
+  "date": "2026-09-02",
+  "language": "zh",
+  "article_count": 5,
+  "themes": [
+    {
+      "name": "AI Agent 的企业级落地与成本优化",
+      "articles": [
+        {
+          "title": "Anthropic launches Claude Fable 5.1 and says it’s up to 45 percent cheaper for agentic work",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/987830/anthropic-claude-fable-mythos-5-1",
+          "source": "The Verge AI",
+          "ai_summary": "Anthropic发布新一代模型Claude Fable 5.1和Mythos 5.1，针对企业客户关注的成本、数据保留和过度安全限制等问题进行优化，宣称在Agent任务上成本降低最高达45%。这一举措直击AI Agent落地中的核心痛点，有望推动大模型在复杂工作流中的更广泛应用。"
+        },
+        {
+          "title": "How AI-native companies turn workflows into operating capability",
+          "link": "https://openai.com/index/ai-native-company-workflows",
+          "source": "OpenAI Blog",
+          "ai_summary": "OpenAI通过Basis、Clay和Exa Labs等案例，展示AI Agent如何将企业工作流转化为核心运营能力，涵盖入职、客户管理和开发者集成等场景。文章为企业领导者提供了可借鉴的AI原生转型路径，强调Agent在提升组织效率方面的实际价值。"
+        }
+      ],
+      "narrative": "这两篇文章共同指向AI Agent从概念验证走向企业级规模化部署的关键转折点。Anthropic通过降价和优化安全限制，直接回应了企业采用Agent时的成本与合规顾虑；OpenAI则从方法论层面，展示领先企业如何将Agent嵌入核心业务流程，形成可持续的运营能力。二者一攻一守，合力推动Agent成为企业基础设施的一部分。",
+      "tension": null
+    },
+    {
+      "name": "Agent 安全治理与生态信任建设",
+      "articles": [
+        {
+          "title": "AIR raises $50M to help companies vet the skills and add-ons AI agents use",
+          "link": "https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use/",
+          "source": "TechCrunch AI",
+          "ai_summary": "AIR获得5000万美元融资，其平台能够自动发现企业内运行的AI Agent，持续审查其使用的技能和插件，并阻止不当行为。随着AI Agent在企业中大规模部署，安全治理成为关键需求，AIR的解决方案填补了这一市场空白，对Agent生态的健康发展具有重要意义。"
+        }
+      ],
+      "narrative": "AIR的融资凸显了AI Agent生态中一个被忽视却至关重要的环节：安全治理。随着Agent数量激增，企业面临技能滥用、数据泄露等新型风险，AIR的自动审查与阻断能力，为Agent的规模化应用提供了信任基础。这标志着市场正从关注Agent的能力转向关注其可控性。",
+      "tension": null
+    },
+    {
+      "name": "Agent 交互范式与基础设施创新",
+      "articles": [
+        {
+          "title": "Keenable SELECT: an agent that searches the web in SQL",
+          "link": "https://keenableai.github.io/select-showcase/",
+          "source": "Hacker News",
+          "ai_summary": "Keenable SELECT是一个创新AI Agent，允许用户通过SQL语法进行网络搜索，将数据库查询思维引入信息检索领域。该工具在Hacker News上引发讨论，展示了Agent在交互范式上的新可能性，可能为开发者提供更高效、结构化的搜索方式。"
+        },
+        {
+          "title": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+          "link": "https://huggingface.co/blog/webgpu-kernels",
+          "source": "HuggingFace Blog",
+          "ai_summary": "HuggingFace推出包含200多个WebGPU内核的开源库，大幅提升本地AI推理性能，使浏览器端运行大模型成为更可行的方案。这一开源贡献将降低AI应用部署门槛，推动边缘计算和隐私保护场景下的模型应用。"
+        }
+      ],
+      "narrative": "这两篇文章从不同维度展示了Agent生态的底层创新：Keenable SELECT重新定义了人机交互方式，将SQL的严谨性带入自然语言搜索，为开发者提供了更结构化的工具；HuggingFace的WebGPU内核则从基础设施层面，让Agent在浏览器端高效运行成为可能，降低了部署门槛。二者共同指向Agent技术栈的多元化和民主化。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今日最重要的变化是AI Agent正从『能力展示』全面转向『企业级落地』，成本、安全与基础设施的同步成熟标志着Agent进入规模化部署阶段。",
+  "cross_theme_connection": "企业级落地（主题1）与安全治理（主题2）构成供需关系：Anthropic和OpenAI推动Agent普及，而AIR的融资则反映了随之而来的治理需求，两者共同决定Agent能否真正成为企业核心资产。同时，交互与基础设施创新（主题3）为Agent的普及提供了技术底座，与主题1的成本优化形成呼应，共同加速Agent的生态成熟。"
+}
