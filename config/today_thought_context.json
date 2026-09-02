@@ -1,31 +1,49 @@
 {
-  "date": "2026-09-01",
-  "question": "如果将Agent的记忆设计为一种可移植的文件格式，是否会催生类似于人类简历的‘AI记忆档案’？这种档案能否成为跨平台、跨Agent的通用身份凭证，从而改变AI服务的竞争格局？",
-  "context": "两条资讯分别从文件格式和遗忘曲线两个角度探讨Agent记忆管理，共同指向记忆作为Agent核心资产的可能性。当记忆可以被标准化、持久化甚至迁移时，用户与AI的关系将从‘使用工具’转向‘长期协作’，这对AI产品的用户粘性和生态壁垒产生深远影响。",
+  "date": "2026-09-02",
+  "question": "当AI Agent的成本大幅下降（如Claude Fable 5.1降价45%）时，企业应如何重新评估其部署策略——是优先扩大Agent应用范围，还是将节省的成本投入到更严格的安全治理（如AIR类工具）上？",
+  "context": "Anthropic的降价直击Agent落地的成本痛点，但AIR的融资凸显了安全治理的紧迫性。这迫使企业思考：在Agent规模化进程中，成本优化与安全投入如何平衡，才能避免“跑得快却摔得重”的风险？",
   "related_articles": [
     {
-      "title": "Agent memory as a file format",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=12345678"
+      "title": "Anthropic launches Claude Fable 5.1 and says it’s up to 45 percent cheaper for agentic work",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai"
     },
     {
-      "title": "I built a forgetting curve for an agent with one user",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=87654321"
+      "title": "AIR raises $50M to help companies vet the skills and add-ons AI agents use",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/ai"
     }
   ],
   "all_articles": [
     {
-      "title": "Agent memory as a file format",
-      "source": "Hacker News",
-      "link": "https://calpaterson.com/memoryfields.html",
-      "ai_summary": "本文探讨将Agent记忆设计为一种文件格式的构想，强调通过标准化文件结构来持久化和管理Agent的上下文与经验。这一思路有助于提升Agent的可移植性和可调试性，对构建长期运行的AI Agent系统具有重要参考价值。"
+      "title": "Anthropic launches Claude Fable 5.1 and says it’s up to 45 percent cheaper for agentic work",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/987830/anthropic-claude-fable-mythos-5-1",
+      "ai_summary": "Anthropic发布新一代模型Claude Fable 5.1和Mythos 5.1，针对企业客户关注的成本、数据保留和过度安全限制等问题进行优化，宣称在Agent任务上成本降低最高达45%。这一举措直击AI Agent落地中的核心痛点，有望推动大模型在复杂工作流中的更广泛应用。"
     },
     {
-      "title": "I built a forgetting curve for an agent with one user",
+      "title": "AIR raises $50M to help companies vet the skills and add-ons AI agents use",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use/",
+      "ai_summary": "AIR获得5000万美元融资，其平台能够自动发现企业内运行的AI Agent，持续审查其使用的技能和插件，并阻止不当行为。随着AI Agent在企业中大规模部署，安全治理成为关键需求，AIR的解决方案填补了这一市场空白，对Agent生态的健康发展具有重要意义。"
+    },
+    {
+      "title": "How AI-native companies turn workflows into operating capability",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/ai-native-company-workflows",
+      "ai_summary": "OpenAI通过Basis、Clay和Exa Labs等案例，展示AI Agent如何将企业工作流转化为核心运营能力，涵盖入职、客户管理和开发者集成等场景。文章为企业领导者提供了可借鉴的AI原生转型路径，强调Agent在提升组织效率方面的实际价值。"
+    },
+    {
+      "title": "Keenable SELECT: an agent that searches the web in SQL",
       "source": "Hacker News",
-      "link": "https://eris-system.dev/blog/forgetting-curve",
-      "ai_summary": "作者为单一用户场景下的AI Agent构建了遗忘曲线模型，模拟人类记忆衰减规律来优化Agent的上下文管理。该研究为个性化Agent的长期交互记忆机制提供了创新思路，有助于提升Agent在持续对话中的相关性和效率。"
+      "link": "https://keenableai.github.io/select-showcase/",
+      "ai_summary": "Keenable SELECT是一个创新AI Agent，允许用户通过SQL语法进行网络搜索，将数据库查询思维引入信息检索领域。该工具在Hacker News上引发讨论，展示了Agent在交互范式上的新可能性，可能为开发者提供更高效、结构化的搜索方式。"
+    },
+    {
+      "title": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+      "source": "HuggingFace Blog",
+      "link": "https://huggingface.co/blog/webgpu-kernels",
+      "ai_summary": "HuggingFace推出包含200多个WebGPU内核的开源库，大幅提升本地AI推理性能，使浏览器端运行大模型成为更可行的方案。这一开源贡献将降低AI应用部署门槛，推动边缘计算和隐私保护场景下的模型应用。"
     }
   ],
   "answered": false
