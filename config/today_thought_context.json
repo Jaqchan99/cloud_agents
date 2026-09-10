@@ -1,66 +1,66 @@
 {
-  "date": "2026-09-09",
-  "question": "当 Meta 的 Muse 智能体需要访问你的邮件、日历、支付和健康数据才能提供个性化服务时，你会在什么条件下信任它？这种信任与对 OpenAI 或 Google 的信任有何不同？",
-  "context": "Meta 推出 Muse 个人 AI 智能体，但其对敏感数据的深度访问引发信任质疑。这触及消费级 AI Agent 落地的核心矛盾：便利与隐私的权衡，以及科技巨头信誉对产品采纳的影响。",
+  "date": "2026-09-10",
+  "question": "当 AI Agent 开始拥有自己的邮箱、能自主注册账户并代表你与企业交互时，我们应如何划定它的权限边界与责任归属？你愿意让 Agent 在多大程度上'代表'你行动？",
+  "context": "Instinct 获得独立邮箱、Cymphony 获红杉加注治理非人类身份、Geiger 让用户看清 Agent 能触碰什么——这三条资讯共同指向一个临界点：AI Agent 正从'对话工具'变成'行动主体'。权限给少了 Agent 无用，给多了风险失控，这个平衡将决定个人与企业如何真正接纳 Agent。",
   "related_articles": [
     {
-      "title": "Meta debuts its Muse AI agent. Will consumers trust it?",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/09/09/meta-muse-ai-agent-trust/"
+      "title": "Viral AI assistant Instinct now has its own email address",
+      "source": "TechCrunch AI",
+      "link": ""
     },
     {
-      "title": "Meta bets on AI agent Muse to catch up in AI race",
-      "source": "The Verge",
-      "link": "https://www.theverge.com/2026/09/09/meta-muse-ai-agent"
+      "title": "Sequoia doubles down on Cymphony as AI agents create new enterprise security risks",
+      "source": "TechCrunch AI",
+      "link": ""
     },
     {
-      "title": "Muse – Meta’s personal AI agent",
+      "title": "Show HN: Geiger – See every AI agent on your machine and what it can touch",
       "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=41450000"
+      "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "Research acceleration: The view inside OpenAI",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/research-acceleration-view-inside-openai",
-      "ai_summary": "OpenAI 首次披露内部使用编码智能体加速 AI 研究的早期数据，展示了智能体在实验速度、任务复杂度和研究加速方面的显著作用。这一视角为理解 AI Agent 如何重塑研发流程提供了权威的一手案例，对评估 Agent 的实际生产力价值具有重要参考意义。"
-    },
-    {
       "title": "Muse – Meta’s personal AI agent",
       "source": "Hacker News",
       "link": "https://ai.meta.com/muse/",
-      "ai_summary": "Meta 正式推出个人 AI 智能体 Muse，引发社区高度关注（HN 评论 211 条，得分 220）。该产品是 Meta 在 AI Agent 领域的重要布局，旨在将 AI 能力普及至更广泛用户，其设计思路和功能定位值得深入分析。"
+      "ai_summary": "Meta 正式发布个人 AI Agent 产品 Muse，定位为面向普通用户的通用型智能助手。该产品在 Hacker News 上引发极高热度（703 条评论、638 分），是今日讨论度最高的 AI 话题。作为 Meta 在 AI Agent 赛道的重要布局，Muse 的发布标志着大厂在个人智能体领域的竞争进一步升级。"
     },
     {
-      "title": "Meta debuts its Muse AI agent. Will consumers trust it?",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/",
-      "ai_summary": "TechCrunch 分析指出，Meta 的 Muse 智能体需要访问用户邮件、日历、支付、健康服务等敏感数据，这使其成为 Meta 最大的消费者 AI 押注，也直接考验用户对科技巨头的信任度。文章聚焦 AI Agent 在隐私与便利之间的平衡，是理解消费级 Agent 落地挑战的关键报道。"
-    },
-    {
-      "title": "Meta bets on AI agent Muse to catch up in AI race",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/991216/meta-bets-on-ai-agent-muse-to-catch-up-in-ai-race",
-      "ai_summary": "The Verge 报道称，Meta 正借助 Muse 个人助手在 AI 竞赛中追赶对手，该产品被视为将 AI 交到几乎所有人手中的最新尝试。文章梳理了 Meta 在 AI Agent 领域的战略意图，揭示了其面对 OpenAI、Google 等竞争者的差异化路径。"
-    },
-    {
-      "title": "I-have-ADHD: A skill to stop coding agents from burying the answer",
+      "title": "Muse, the band, lost its social media handles to Muse, Meta's new AI agent",
       "source": "Hacker News",
-      "link": "https://github.com/ayghri/i-have-adhd",
-      "ai_summary": "一个名为 'I-have-ADHD' 的开源技能项目在 HN 上获得高分（293 分，230 条评论），旨在解决编码智能体在输出中'埋没'关键答案的问题。该工具反映了开发者对 Agent 交互体验的精细化需求，是社区驱动 Agent 优化的典型案例。"
+      "link": "https://www.engadget.com/2254419/muse-the-band-lost-its-social-media-handles-to-muse-meta-s-new-ai-agent/",
+      "ai_summary": "英国摇滚乐队 Muse 因 Meta 新 AI Agent 产品同名而失去了社交媒体账号标识，引发广泛关注。这一事件折射出 AI 产品命名对现有品牌生态的冲击，也引发了关于大科技公司品牌霸权的讨论。HN 上获得 112 分、44 条评论，反映出社区对 AI 产品命名伦理和品牌冲突问题的关注。"
     },
     {
-      "title": "How well do agents use test/verification techniques?",
+      "title": "Procedural Graphs: Self-Evolving Execution Structures for LLM Agents",
       "source": "Hacker News",
-      "link": "https://danluu.com/agentic-testing/",
-      "ai_summary": "Dan Luu 的技术分析探讨了 AI Agent 在编程任务中运用测试与验证技术的实际能力，HN 社区讨论热烈（64 条评论，得分 173）。该文为评估 Agent 在真实工程场景中的可靠性提供了实证视角，对理解 Agent 能力边界具有参考价值。"
+      "link": "https://arxiv.org/abs/2609.09153",
+      "ai_summary": "该论文提出 Procedural Graphs（过程图）方法，为 LLM Agent 构建可自我演化的执行结构，使 Agent 能动态调整任务执行流程而非依赖固定编排。这一方法有望提升 Agent 在复杂任务中的适应性和效率，是 AI Agent 架构设计方向的重要学术探索。"
     },
     {
-      "title": "Authors push back as publishers and agents make claims on Anthropic settlement",
+      "title": "Viral AI assistant Instinct now has its own email address",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/",
-      "ai_summary": "TechCrunch 报道了作者群体对出版商和代理机构在 Anthropic 和解案中索取更多份额的抗议，揭示了 AI 训练数据版权纠纷中的利益分配矛盾。该事件对 AI 内容合规和版权生态具有深远影响，是行业治理的重要风向标。"
+      "link": "https://techcrunch.com/2026/09/09/viral-ai-assistant-instinct-now-has-its-own-email-address/",
+      "ai_summary": "热门 AI 助手 Instinct 新增独立电子邮件地址功能，使其能够自主创建和管理账户、联系企业、处理客服请求等。这标志着 AI Agent 从对话助手向具备真实世界操作能力的自主代理迈出关键一步，也引发了关于 AI 代理身份和权限边界的新讨论。"
+    },
+    {
+      "title": "Sequoia doubles down on Cymphony as AI agents create new enterprise security risks",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/09/09/sequoia-doubles-down-on-cymphony-as-ai-agents-create-new-enterprise-security-risks/",
+      "ai_summary": "红杉资本加注 Cymphony，该公司专注于为安全团队提供员工、AI Agent 及其他非人类身份的统一视图，包括其可访问的系统和敏感数据。随着企业部署越来越多 AI Agent，非人类身份的安全治理成为新兴刚需，Cymphony 的融资反映了这一赛道的快速增长。"
+    },
+    {
+      "title": "Show HN: Geiger – See every AI agent on your machine and what it can touch",
+      "source": "Hacker News",
+      "link": "https://github.com/Atomburstofficial/geiger",
+      "ai_summary": "Geiger 是一款开源工具，可扫描并展示用户机器上运行的所有 AI Agent 及其可访问的资源范围。随着本地 AI Agent 数量增多，用户对 Agent 权限和行为的可见性需求日益迫切，该工具为 Agent 安全审计提供了实用方案。"
+    },
+    {
+      "title": "Show HN: Self-hosted company OS, Claude Code and Codex agents in departments",
+      "source": "Hacker News",
+      "link": "https://github.com/OtoDock/oto-dock",
+      "ai_summary": "Oto Dock 是一个自托管的公司操作系统项目，将 Claude Code 和 Codex 等 AI Agent 按部门进行组织和管理。该项目展示了多 Agent 协作在企业场景中的落地思路，为希望私有化部署 AI Agent 工作流的团队提供了开源参考。"
     }
   ],
   "answered": false
