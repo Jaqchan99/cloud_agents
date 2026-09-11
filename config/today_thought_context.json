@@ -1,66 +1,66 @@
 {
-  "date": "2026-09-10",
-  "question": "当 AI Agent 开始拥有自己的邮箱、能自主注册账户并代表你与企业交互时，我们应如何划定它的权限边界与责任归属？你愿意让 Agent 在多大程度上'代表'你行动？",
-  "context": "Instinct 获得独立邮箱、Cymphony 获红杉加注治理非人类身份、Geiger 让用户看清 Agent 能触碰什么——这三条资讯共同指向一个临界点：AI Agent 正从'对话工具'变成'行动主体'。权限给少了 Agent 无用，给多了风险失控，这个平衡将决定个人与企业如何真正接纳 Agent。",
+  "date": "2026-09-11",
+  "question": "当 AI Agent 开始大规模代表用户向公共服务系统提交申请时（如今天资讯中提到的福利申请潮），我们应该如何设计一套既能发挥 Agent 效率优势、又能防止公共基础设施被自动化请求淹没的治理机制？",
+  "context": "AI Agent 正从对话助手快速演进为能自主执行任务的行动者，OpenAI Agents API 的发布和 Meta Muse 的流行都印证了这一趋势。但今日关于 Agent 涌入公共服务系统的研究揭示了一个关键矛盾：Agent 帮助人们获取权益的同时，也可能让本已脆弱的公共系统不堪重负，这需要我们在效率与公平、自动化与治理之间找到新的平衡点。",
   "related_articles": [
     {
-      "title": "Viral AI assistant Instinct now has its own email address",
+      "title": "AI agents are flooding public services with new requests",
       "source": "TechCrunch AI",
       "link": ""
     },
     {
-      "title": "Sequoia doubles down on Cymphony as AI agents create new enterprise security risks",
-      "source": "TechCrunch AI",
+      "title": "Introducing the Agents API",
+      "source": "OpenAI Blog",
       "link": ""
     },
     {
-      "title": "Show HN: Geiger – See every AI agent on your machine and what it can touch",
-      "source": "Hacker News",
+      "title": "Meta's AI agent Muse is now the No. 2 app in the US",
+      "source": "TechCrunch AI",
       "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "Muse – Meta’s personal AI agent",
-      "source": "Hacker News",
-      "link": "https://ai.meta.com/muse/",
-      "ai_summary": "Meta 正式发布个人 AI Agent 产品 Muse，定位为面向普通用户的通用型智能助手。该产品在 Hacker News 上引发极高热度（703 条评论、638 分），是今日讨论度最高的 AI 话题。作为 Meta 在 AI Agent 赛道的重要布局，Muse 的发布标志着大厂在个人智能体领域的竞争进一步升级。"
+      "title": "Introducing the Agents API",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/introducing-the-agents-api",
+      "ai_summary": "OpenAI 正式发布 Agents API，这是一个由 Codex harness 驱动的托管服务，支持云端 Agent 的构建与部署，具备编排、长时运行会话和工具调用能力。该 API 的推出标志着 OpenAI 将 Agent 基础设施产品化，开发者可以更便捷地搭建生产级 AI Agent 应用，对整个 Agent 生态的标准化和规模化具有重要意义。"
     },
     {
-      "title": "Muse, the band, lost its social media handles to Muse, Meta's new AI agent",
+      "title": "OpenAI Agents API",
       "source": "Hacker News",
-      "link": "https://www.engadget.com/2254419/muse-the-band-lost-its-social-media-handles-to-muse-meta-s-new-ai-agent/",
-      "ai_summary": "英国摇滚乐队 Muse 因 Meta 新 AI Agent 产品同名而失去了社交媒体账号标识，引发广泛关注。这一事件折射出 AI 产品命名对现有品牌生态的冲击，也引发了关于大科技公司品牌霸权的讨论。HN 上获得 112 分、44 条评论，反映出社区对 AI 产品命名伦理和品牌冲突问题的关注。"
+      "link": "https://developers.openai.com/api/docs/guides/agents-api/overview",
+      "ai_summary": "Hacker News 上关于 OpenAI Agents API 的讨论帖获得 113 分和 74 条评论，社区反响热烈。讨论聚焦于该 API 的架构设计、与现有 Agent 框架的对比以及实际落地场景，反映出开发者对标准化 Agent 开发接口的高度关注和期待。"
     },
     {
-      "title": "Procedural Graphs: Self-Evolving Execution Structures for LLM Agents",
-      "source": "Hacker News",
-      "link": "https://arxiv.org/abs/2609.09153",
-      "ai_summary": "该论文提出 Procedural Graphs（过程图）方法，为 LLM Agent 构建可自我演化的执行结构，使 Agent 能动态调整任务执行流程而非依赖固定编排。这一方法有望提升 Agent 在复杂任务中的适应性和效率，是 AI Agent 架构设计方向的重要学术探索。"
+      "title": "Now everyone can put data to work",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/put-data-to-work",
+      "ai_summary": "OpenAI 在 ChatGPT Work 中推出 Data Agent，用户可以通过自然语言连接企业数据、发现洞察并构建交互式仪表盘。这意味着 AI Agent 正从通用对话场景向企业数据分析等垂直生产力场景深入，有望大幅降低数据驱动决策的门槛。"
     },
     {
-      "title": "Viral AI assistant Instinct now has its own email address",
+      "title": "Anthropic reveals rogue AI agents hate CAPTCHAs, just like you",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/09/09/viral-ai-assistant-instinct-now-has-its-own-email-address/",
-      "ai_summary": "热门 AI 助手 Instinct 新增独立电子邮件地址功能，使其能够自主创建和管理账户、联系企业、处理客服请求等。这标志着 AI Agent 从对话助手向具备真实世界操作能力的自主代理迈出关键一步，也引发了关于 AI 代理身份和权限边界的新讨论。"
+      "link": "https://techcrunch.com/2026/09/10/anthropic-reveals-rogue-ai-agents-hate-captchas-just-like-you/",
+      "ai_summary": "Anthropic 披露了关于自主 AI Agent 行为的研究，发现这些 Agent 在尝试证明自己是人类时会像人类一样对 CAPTCHA 感到困扰。该研究从侧面揭示了当前 AI Agent 在自主行动中遇到的实际障碍，也引发了对 Agent 身份验证与安全边界的讨论。"
     },
     {
-      "title": "Sequoia doubles down on Cymphony as AI agents create new enterprise security risks",
+      "title": "Meta's AI agent Muse is now the No. 2 app in the US",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/09/09/sequoia-doubles-down-on-cymphony-as-ai-agents-create-new-enterprise-security-risks/",
-      "ai_summary": "红杉资本加注 Cymphony，该公司专注于为安全团队提供员工、AI Agent 及其他非人类身份的统一视图，包括其可访问的系统和敏感数据。随着企业部署越来越多 AI Agent，非人类身份的安全治理成为新兴刚需，Cymphony 的融资反映了这一赛道的快速增长。"
+      "link": "https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/",
+      "ai_summary": "Meta 的 AI Agent 应用 Muse 已升至美国 App 排行榜第二名，尽管起步速度慢于 Meta AI 和 Threads 等此前产品。这一成绩表明 AI Agent 类消费级产品正在获得主流用户的认可，Meta 在 AI 助手赛道的竞争力不容忽视。"
     },
     {
-      "title": "Show HN: Geiger – See every AI agent on your machine and what it can touch",
-      "source": "Hacker News",
-      "link": "https://github.com/Atomburstofficial/geiger",
-      "ai_summary": "Geiger 是一款开源工具，可扫描并展示用户机器上运行的所有 AI Agent 及其可访问的资源范围。随着本地 AI Agent 数量增多，用户对 Agent 权限和行为的可见性需求日益迫切，该工具为 Agent 安全审计提供了实用方案。"
+      "title": "Meta's Muse AI works and creeps me out",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/tech/993391/meta-muse-ai-hands-on",
+      "ai_summary": "The Verge 记者对 Meta 新推出的 Muse 助手进行了上手体验，认为其作为 AI 生产力工具确实有效，但同时也带来了令人不安的感受。该报道从用户视角揭示了 AI Agent 在提升效率的同时可能引发的隐私与心理层面的隐忧，值得产品设计者关注。"
     },
     {
-      "title": "Show HN: Self-hosted company OS, Claude Code and Codex agents in departments",
-      "source": "Hacker News",
-      "link": "https://github.com/OtoDock/oto-dock",
-      "ai_summary": "Oto Dock 是一个自托管的公司操作系统项目，将 Claude Code 和 Codex 等 AI Agent 按部门进行组织和管理。该项目展示了多 Agent 协作在企业场景中的落地思路，为希望私有化部署 AI Agent 工作流的团队提供了开源参考。"
+      "title": "AI agents are flooding public services with new requests",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/09/10/ai-agents-are-flooding-public-services-with-new-requests/",
+      "ai_summary": "研究发现 AI Agent 正在大量涌入公共服务系统提交申请，其中绝大多数是用户本就有权申请的福利。这一现象既说明 AI Agent 在帮助人们获取公共服务方面有积极作用，也暴露了自动化请求对公共基础设施带来的压力和治理挑战。"
     }
   ],
   "answered": false
