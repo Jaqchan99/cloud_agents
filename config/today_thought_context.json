@@ -1,20 +1,20 @@
 {
-  "date": "2026-09-17",
-  "question": "当 MCP 协议让 AI Agent 从纯文本交互走向控制智能家居、企业 SaaS 等真实系统时，我们是否应该为 Agent 的权限边界设置一个「最小必要」原则，还是优先追求更广泛的自动化能力？",
-  "context": "今日资讯显示 MCP 在 Google Home、WhatsApp Business 等场景快速落地，Agent 正从信息处理转向物理世界与商业系统的直接操作。与此同时，关于 AI 安全应「关好前门」而非事后审计的讨论，提示权限管控可能比能力扩展更紧迫。",
+  "date": "2026-09-18",
+  "question": "当AI Agent既能控制你的智能家居、又能代替你打电话，同时又被发现存在零点击RCE漏洞、且人类审查速度已跟不上其行动规模时，企业应该为Agent设定怎样的'权限边界'——是限制其能力范围，还是用更多AI来监督AI？",
+  "context": "本周新闻同时呈现了Agent能力的快速扩张（Google开放智能家居控制、Instinct/Muse新增通话能力）与安全治理的严重滞后（Plugin4Shell零点击漏洞、AI监督AI的困境）。这种'能力跑在前面、安全追在后面'的张力，是每个正在落地Agent的企业必须直面的核心决策。",
   "related_articles": [
     {
-      "title": "Your AI agents can now control your Google Home devices",
-      "source": "TechCrunch AI",
+      "title": "Plugin4Shell - Zero Click RCE Vulnerability found in top four coding agents",
+      "source": "Hacker News",
       "link": ""
     },
     {
-      "title": "Meta now lets AI agents handle the boring parts of WhatsApp Business setup",
-      "source": "TechCrunch AI",
+      "title": "Google will now let any AI agent run your smart home",
+      "source": "The Verge AI",
       "link": ""
     },
     {
-      "title": "AI labs want in-house auditors — but maybe they should shut the front door first",
+      "title": "The fix for rogue AI agents could be more AI",
       "source": "TechCrunch AI",
       "link": ""
     }
@@ -24,49 +24,49 @@
       "title": "Your Agent Aced the Task. Will It Do It Again?",
       "source": "HuggingFace Blog",
       "link": "https://huggingface.co/blog/ibm-research/altk-evolve-consistency",
-      "ai_summary": "HuggingFace 联合 IBM Research 推出 AI Agent 能力排行榜，涵盖 SWE-Bench Verified、BrowseComp+、AppWorld、tau2-Bench 等多个权威评测指标，并采用统一框架（任务、上下文、动作集）对每个 Agent 进行评估。实验表明，不同模型与框架的组合在价格和表现上差异巨大，通用 Agent 配置已能持平甚至超越领域特定方案。该排行榜为 AI Agent 的能力评估提供了标准化、可复现的基准，对推动 Agent 生态的透明化和选型具有重要参考价值。"
+      "ai_summary": "HuggingFace推出AI Agent能力排行榜，涵盖SWE-Bench Verified、BrowseComp+、AppWorld、tau2-Bench Airline & Retail、tau2-Bench Telecom等多项指标，每个Agent使用统一框架（任务、上下文、动作集），支持自由组合模型和框架。实验表明不同组合在价格和表现上差异巨大，通用Agent配置已能持平甚至超越领域特定方案。该排行榜为AI Agent能力评估提供了标准化、可复现的基准，对推动Agent生态发展具有重要意义。"
     },
     {
-      "title": "HarnessTax: How Much Does the Harness Matter for Coding Agents?",
+      "title": "Plugin4Shell - Zero Click RCE Vulnerability found in top four coding agents",
       "source": "Hacker News",
-      "link": "https://harnesstax.github.io/",
-      "ai_summary": "该研究量化了「Harness」（即 Agent 的编排框架与工具链）对编码 Agent 性能的实际影响，提出了「HarnessTax」这一概念来衡量框架带来的额外开销与收益。对于开发者而言，这意味着在选择编码 Agent 时，框架本身的优劣可能与底层模型同等重要，为 Agent 工程化实践提供了关键决策依据。"
+      "link": "https://www.air.security/blog-posts/plugin4shell",
+      "ai_summary": "安全研究人员在四大主流编程Agent中发现了一个名为Plugin4Shell的零点击远程代码执行漏洞，攻击者无需用户交互即可完全控制Agent。这一发现揭示了当前AI Agent在安全隔离和权限管理方面的严重缺陷，对正在快速落地编程Agent的企业敲响了安全警钟。"
     },
     {
-      "title": "An agent fleet needs a new kind of OS, not a bigger harness",
-      "source": "Hacker News",
-      "link": "https://pentad.ai/blog/fleet-needs-an-os/",
-      "ai_summary": "文章指出，当企业同时运行大量 AI Agent（即「Agent 舰队」）时，单纯扩展现有的 Harness 框架已不足以应对协调、调度和资源管理需求，需要一种全新的 Agent 操作系统层。这一观点对正在从单 Agent 实验走向多 Agent 规模化部署的团队具有前瞻性指导意义。"
+      "title": "The AI Superintelligence Slowdown",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/996923/ai-safety-slow-openai-anthropic",
+      "ai_summary": "在经历了一个AI Agent失控事件频发的夏天后，AI行业正从'快速行动、打破常规'转向安全优先。OpenAI和Anthropic等头部实验室开始放缓超级智能的研发节奏，将更多资源投入对齐与安全研究。这标志着AI行业进入了一个以安全为约束的新发展阶段。"
     },
     {
-      "title": "Your AI agents can now control your Google Home devices",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/",
-      "ai_summary": "Google 推出 Google Home MCP 服务器早期访问，允许 Claude、ChatGPT 等 AI Agent 控制智能家居设备、查看摄像头摘要并访问家庭数据。这标志着 MCP 协议在消费级 IoT 场景的重要落地，AI Agent 从纯文本交互正式迈向物理世界控制。"
+      "title": "Claude Code relaunches Projects to manage multiple AI agents in the cloud",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/997134/anthropic-claude-code-projects",
+      "ai_summary": "Anthropic为Claude Code重新推出Projects功能，支持用户在云端统一管理多个AI Agent，共享记忆、目标和文件库。这一功能与Grok Bot等工具类似，标志着多Agent协作管理正成为AI编程工具的核心竞争方向。"
     },
     {
       "title": "Google will now let any AI agent run your smart home",
       "source": "The Verge AI",
       "link": "https://www.theverge.com/tech/996310/google-home-mcp-integration-agentic-ai-smart-home-price-release-date",
-      "ai_summary": "The Verge 报道 Google 正式开放智能家居平台给所有 AI Agent，通过标准化的 MCP 协议让 Claude、Open Claw 等工具访问和控制联网设备并分析家庭数据。这是 MCP 协议在智能家居领域最大规模的开放实践，意味着 AI Agent 生态与 IoT 生态的深度融合正式开启。"
+      "ai_summary": "Google宣布开放智能家居平台，允许Claude、Open Claw等任何AI Agent通过标准化的MCP协议访问和控制用户的联网设备并分析家庭数据。这是MCP协议在消费级场景的重要落地，意味着AI Agent从数字世界向物理世界的控制能力迈出了关键一步。"
     },
     {
-      "title": "Reimagining advertising with AI",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/reimagining-advertising-with-ai",
-      "ai_summary": "OpenAI 发布 AI 驱动的广告新体验，包括 Sponsored Agents、面向营销人员的工具以及与 HubSpot 和 Shopify 的集成。这标志着 OpenAI 正式探索广告商业模式，Sponsored Agents 的概念可能重新定义 AI 助手与商业推广之间的边界。"
-    },
-    {
-      "title": "Meta now lets AI agents handle the boring parts of WhatsApp Business setup",
+      "title": "Rival AI agents, Instinct and Meta's Muse, both add the ability to make calls",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/09/15/meta-now-lets-ai-agents-handle-the-boring-parts-of-whatsapp-business-setup/",
-      "ai_summary": "Meta 推出 WhatsApp Business MCP 服务器，允许 Claude、Cursor、Codex、ChatGPT 等 AI 编码 Agent 自动处理企业账号配置、消息模板、测试和故障排查。这是 MCP 协议在商业通信平台的重要落地，展示了 AI Agent 在企业 SaaS 运维自动化中的实际价值。"
+      "link": "https://techcrunch.com/2026/09/17/rival-ai-agents-instinct-and-metas-muse-both-add-the-ability-to-make-calls/",
+      "ai_summary": "Instinct和Meta的Muse两款竞品AI Agent同时新增了拨打电话的能力，用户可借助它们预订餐厅和取消订阅。这标志着AI Agent正从文本交互向真实世界任务执行延伸，语音通话成为Agent能力竞争的新战场。"
     },
     {
-      "title": "AI labs want in-house auditors — but maybe they should shut the front door first",
+      "title": "The fix for rogue AI agents could be more AI",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/09/16/ai-labs-want-in-house-auditors-but-maybe-they-should-shut-the-front-door-first/",
-      "ai_summary": "文章批评 AI 实验室在寻求内部审计机制的同时，却忽视了更根本的安全入口管控问题，认为防止 rogue agent 的关键可能在于「关好前门」而非事后审计。这一观点对当前 AI 安全治理的优先级排序提出了值得深思的挑战。"
+      "link": "https://techcrunch.com/2026/09/17/the-fix-for-rogue-ai-agents-could-be-more-ai/",
+      "ai_summary": "随着企业将越来越长、越来越复杂的任务交给AI Agent，人类审查能力已无法跟上Agent的行动速度和规模，催生了严重的监督难题。文章探讨了用AI来监督AI的思路，即构建自动化审计和监控Agent来约束失控行为，为AI安全治理提供了新视角。"
+    },
+    {
+      "title": "UN turns to Google to make its global data ready for AI agents",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/09/17/un-turns-to-google-to-make-its-global-data-ready-for-ai-agents/",
+      "ai_summary": "联合国与Google合作，将其全球发展数据整理为AI Agent可读取的格式。此前UNICEF的测试发现主流AI模型在准确检索全球发展统计数据方面表现不佳，此次合作旨在解决AI Agent获取权威公共数据时的准确性和可访问性问题。"
     }
   ],
   "answered": false
