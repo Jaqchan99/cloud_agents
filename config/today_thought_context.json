@@ -1,20 +1,20 @@
 {
-  "date": "2026-09-20",
-  "question": "当 AI Agent 从个人助理走向家庭共享场景，家庭成员之间的隐私边界和数据权限该如何设计？这是否会成为消费级 AI Agent 大规模普及的关键障碍？",
-  "context": "Google 将 AI Agent「CC」定位为家庭事务协调助手，意味着 AI 需要访问多个家庭成员的邮件、日程和任务数据。个人助理时代「一人一 AI」的隐私模型在多人共享场景下不再适用，如何在便利性与隐私之间取得平衡，将直接影响这类产品的用户信任和 adoption 速度。",
+  "date": "2026-09-21",
+  "question": "当大厂纷纷开源 Agent 编排框架时，中小团队应该直接采用这些方案，还是自建轻量级编排层？这个选择会如何影响你未来的技术栈和产品迭代速度？",
+  "context": "Google 开源 Agentic Orchestrator 标志着多 Agent 协作从实验走向工程化，但大厂方案的抽象度和依赖成本可能不适合所有团队。这个选择将直接决定团队在 Agent 时代的架构自主权和试错效率。",
   "related_articles": [
     {
-      "title": "Google's new 'CC' is an AI agent that helps families run their households",
-      "source": "TechCrunch AI",
+      "title": "Google's Open Agentic Orchestrator",
+      "source": "Hacker News",
       "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "Google’s new ‘CC’ is an AI agent that helps families run their households",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/09/18/googles-new-cc-is-an-ai-agent-that-helps-families-run-their-households/",
-      "ai_summary": "Google 将旗下 AI Agent「CC」重新定位为家庭事务协调助手，允许家庭成员共享邮件、日程和任务，由 AI 统一管理日历、填写表单、生成购物清单和规划餐食。这标志着消费级 AI Agent 从个人助理向多人协作场景延伸，也显示 Google 正试图在家庭场景中建立 AI 入口。"
+      "title": "Google's Open Agentic Orchestrator",
+      "source": "Hacker News",
+      "link": "https://agentexecutor.io",
+      "ai_summary": "Google 推出开源 Agentic Orchestrator，用于编排和协调多个 AI Agent 的协作流程。该项目在 Hacker News 上引发 63 条评论、146 分的热议，反映出开发者对 Agent 编排框架的高度关注。作为大厂开源方案，它有望推动 AI Agent 从单体走向多智能体协同的工程化落地。"
     }
   ],
   "answered": false

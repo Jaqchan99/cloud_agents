@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-21",
+  "language": "zh",
+  "article_count": 1,
+  "themes": [
+    {
+      "name": "Agent 编排走向工程化",
+      "articles": [
+        {
+          "title": "Google's Open Agentic Orchestrator",
+          "link": "https://agentexecutor.io",
+          "source": "Hacker News",
+          "ai_summary": "Google 推出开源 Agentic Orchestrator，用于编排和协调多个 AI Agent 的协作流程。该项目在 Hacker News 上引发 63 条评论、146 分的热议，反映出开发者对 Agent 编排框架的高度关注。作为大厂开源方案，它有望推动 AI Agent 从单体走向多智能体协同的工程化落地。"
+        }
+      ],
+      "narrative": "Google 以开源方式切入 Agent 编排层，实质是把竞争焦点从单个模型能力转向多智能体协作的基础设施。编排框架一旦被大厂开源并形成事实标准，Agent 生态的入口将从模型 API 上移到调度层，开发者的迁移成本和锁定风险也随之转移。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今天最重要的变化是 Google 把 Agent 编排层开源，多智能体协同从实验性 demo 进入大厂主导的基础设施标准化阶段。",
+  "cross_theme_connection": "今日仅一个主题，尚无跨主题关联；但该信号本身预示后续模型厂商与云厂商将在编排层入口展开直接竞争。"
+}
