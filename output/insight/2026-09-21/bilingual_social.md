@@ -1,25 +1,33 @@
-# Google 开源 Agent 编排层，真正的战场不在模型，在调度
+# Google 开源 Agent 编排层，真正的战场不在模型，在调度台
 
-Google 把 Agent 编排层开源了，这件事比又一个模型发布重要得多。
+Google 把 Agent 编排层开源了（https://agentexecutor.io），这件事比看起来重要得多。
 
-多智能体协同过去一年基本停留在 demo 阶段——能跑通，但没人敢上生产。原因很简单：没有标准，每家自己造轮子，调度逻辑写死在业务代码里，换个模型就得重写一遍。
+大多数人还在比谁的模型跑分高，但真正决定 Agent 生态格局的，从来不是单个模型的能力，而是谁掌握了多智能体的调度台。Google 这一步，等于把竞争入口从模型 API 上移了一层——编排框架一旦被大厂开源并形成事实标准，开发者绑定的就不再是某家的模型，而是某家的调度逻辑。
 
-Google 这次直接开源编排层（https://agentexecutor.io），等于把竞争焦点从「谁的模型更强」拽到了「谁来调度这些模型」。这是个结构性变化。一旦大厂开源的东西变成事实标准，Agent 生态的入口就不再是模型 API，而是调度层。开发者迁移成本和锁定风险也跟着从模型层转移到了编排层——你以为你在选模型，其实你在选调度框架。
+这意味着两件事：
 
-更值得盯的是接下来的连锁反应。模型厂商和云厂商一定会在编排层入口正面撞上：谁控制了调度，谁就控制了 Agent 调用哪个模型、走哪条链路、花谁的钱。这不是技术问题，是入口问题。
+第一，Agent 从「实验性 demo」正式进入「基础设施标准化」阶段。以前每个团队自己搓一套多智能体协作逻辑，现在大厂直接给你一套开源底座，省事，但也意味着你的架构从此长在别人的地基上。
 
-给开发者的实际建议：现在选 Agent 框架，别只看它支持多少模型，看它的编排层会不会变成你拆不掉的那一层。开源不等于中立，标准往往是先到先得。
+第二，锁定风险转移了。过去你担心被单一模型 API 绑死，现在你该担心被编排层绑死——迁移成本从换模型变成了重写整个调度逻辑，这比换 API 疼得多。
+
+接下来值得盯的是：模型厂商和云厂商会在编排层入口正面撞上。谁的开源框架先成为事实标准，谁就拿到了 Agent 时代的分发权。
+
+别只盯着模型榜单了，调度台才是下一个卡位点。
 
 ---
 
-# Google Just Open-Sourced the Agent Orchestration Layer — The Real Battle Isn't Models, It's Scheduling
+# Google Just Open-Sourced the Agent Layer. The Real Fight Isn't Models — It's the Control Plane.
 
-Google just open-sourced its agent orchestration layer. That matters way more than another model drop.
+Google just open-sourced its agent orchestrator (https://agentexecutor.io), and this matters way more than it looks.
 
-Multi-agent coordination has been stuck in demo purgatory for the past year — it works, but nobody ships it to production. Why? No standard. Everyone builds their own glue, scheduling logic gets hardcoded into business code, and swapping a model means rewriting the whole thing.
+Everyone's still comparing model benchmarks, but the thing that actually decides the agent ecosystem isn't any single model's capability — it's who owns the multi-agent control plane. Google just moved the competitive entry point up a layer. Once a big player open-sources an orchestration framework and it becomes the de facto standard, developers aren't locked into a model anymore. They're locked into a scheduling logic.
 
-By open-sourcing the orchestration layer (https://agentexecutor.io), Google is yanking the competitive focus away from "whose model is smarter" toward "who gets to schedule those models." That's a structural shift. Once a big tech open-source project becomes the de facto standard, the entry point to the agent ecosystem stops being the model API and becomes the scheduling layer. Migration cost and lock-in risk move right along with it — you think you're picking a model, but you're actually picking an orchestration framework.
+Two implications:
 
-The real story is what happens next. Model vendors and cloud vendors are on a collision course at the orchestration layer: whoever controls scheduling controls which model gets called, through which pipeline, on whose dime. That's not a technical question. It's a chokepoint question.
+First, agents just graduated from "experimental demo" to "infrastructure standardization." Teams used to hand-roll their own multi-agent coordination. Now a hyperscaler hands you an open-source foundation — convenient, but your architecture now grows on someone else's soil.
 
-Practical takeaway for builders: when you pick an agent framework today, don't just count how many models it supports. Ask whether its orchestration layer is something you'll ever be able to rip out. Open source doesn't mean neutral — standards tend to go to whoever shows up first.
+Second, the lock-in risk moved. You used to worry about being tied to one model API. Now worry about being tied to the orchestration layer — migration cost goes from swapping an API to rewriting your entire scheduling logic. That hurts a lot more.
+
+What to watch next: model vendors and cloud vendors are about to collide head-on at the orchestration entry point. Whoever's open-source framework becomes the de facto standard wins distribution for the entire agent era.
+
+Stop staring at model leaderboards. The control plane is the next chokepoint.
