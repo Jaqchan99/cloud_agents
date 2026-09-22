@@ -1,20 +1,72 @@
 {
-  "date": "2026-09-21",
-  "question": "当大厂纷纷开源 Agent 编排框架时，中小团队应该直接采用这些方案，还是自建轻量级编排层？这个选择会如何影响你未来的技术栈和产品迭代速度？",
-  "context": "Google 开源 Agentic Orchestrator 标志着多 Agent 协作从实验走向工程化，但大厂方案的抽象度和依赖成本可能不适合所有团队。这个选择将直接决定团队在 Agent 时代的架构自主权和试错效率。",
+  "date": "2026-09-22",
+  "question": "当亚马逊可以屏蔽 Meta 的 Agent、Meta 的 Agent 又因高权限漏洞被劫持时，你认为 AI Agent 生态的未来更可能走向'平台各自封闭的围墙花园'，还是'需要类似互联网协议层的开放标准'？如果你是企业决策者，你会押注哪一边？",
+  "context": "同一天内，亚马逊以商业竞争为由封锁 Meta 的 Muse Agent，而 Muse 又因高权限零日漏洞被完全劫持，联合国则呼吁各国不要等待风险明确就建立保障机制。这三件事共同指向一个核心矛盾：Agent 的能力越强、权限越高，平台封闭与安全治理的张力就越尖锐，而目前没有任何一方给出兼顾开放与安全的可行路径。",
   "related_articles": [
     {
-      "title": "Google's Open Agentic Orchestrator",
-      "source": "Hacker News",
+      "title": "Meta’s AI agent has been blocked from using Amazon.com",
+      "source": "TechCrunch AI",
+      "link": ""
+    },
+    {
+      "title": "Muse, Meta's extraordinarily privileged AI assistant, has a serious 0-day",
+      "source": "Ars Technica",
+      "link": ""
+    },
+    {
+      "title": "UN says AI safeguards can’t wait for certainty",
+      "source": "The Verge AI",
       "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "Google's Open Agentic Orchestrator",
+      "title": "AX – Google’s Open Agentic Orchestrator",
       "source": "Hacker News",
       "link": "https://agentexecutor.io",
-      "ai_summary": "Google 推出开源 Agentic Orchestrator，用于编排和协调多个 AI Agent 的协作流程。该项目在 Hacker News 上引发 63 条评论、146 分的热议，反映出开发者对 Agent 编排框架的高度关注。作为大厂开源方案，它有望推动 AI Agent 从单体走向多智能体协同的工程化落地。"
+      "ai_summary": "Google 推出了名为 AX 的开源 Agent 编排器，在 Hacker News 上引发热烈讨论（288 条评论、630 分）。该工具旨在帮助开发者协调和管理多个 AI Agent 的协作流程，是 Google 在 Agent 基础设施领域的重要开源布局。对于关注 AI Agent 生态和开源工具的开发者而言，这是一个值得深入研究的项目。"
+    },
+    {
+      "title": "UN says AI safeguards can’t wait for certainty",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle",
+      "ai_summary": "联合国科学小组在首次重大 AI 评估报告中警告，各国政府不应等到 AI Agent 的风险完全明确后才采取行动，而应基于预防原则尽快建立保障机制。报告特别提及 Hugging Face 遭黑客攻击事件作为警示案例。这标志着国际社会对 AI Agent 治理的紧迫性达成了更高共识，可能推动各国加速 AI 监管立法。"
+    },
+    {
+      "title": "Muse, Meta's extraordinarily privileged AI assistant, has a serious 0-day",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/",
+      "ai_summary": "Meta 的 AI 助手 Muse 被曝存在严重的零日漏洞，攻击者可通过简单的 ClickFix 攻击完全劫持该 Agent。由于 Muse 拥有极高的系统权限，这一漏洞的影响范围可能非常广泛。该事件凸显了高权限 AI Agent 在安全防护方面的薄弱环节，为整个行业敲响了警钟。"
+    },
+    {
+      "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
+      "ai_summary": "据 Appfigures 估算，Meta 的新 AI Agent Muse 在美国和加拿大的下载量和日活跃用户数已超过 ChatGPT 移动端发布同期的表现。这表明 Meta 凭借其庞大的社交生态在 AI 助手分发上具有显著优势。Muse 的强劲开局可能重塑 AI 助手市场的竞争格局。"
+    },
+    {
+      "title": "Meta’s AI agent has been blocked from using Amazon.com",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/09/21/metas-ai-agent-has-been-blocked-from-using-amazon-com/",
+      "ai_summary": "亚马逊已阻止 Meta 的 AI Agent Muse 代表用户在其平台上进行购物操作。亚马逊拥有自己的基础模型和推理平台，在法律上没有义务向竞争对手的 Agent 开放访问。这一事件反映了 AI Agent 在跨平台操作时面临的商业壁垒，也预示着 Agent 生态的封闭化趋势。"
+    },
+    {
+      "title": "How V7 gives AI agents institutional memory",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/v7",
+      "ai_summary": "V7 利用 GPT-5.6 将企业分散的文件转化为 Agent 可用的上下文，使其能够完成复杂的、可溯源的工作任务。这一方案为 AI Agent 赋予了机构记忆能力，解决了 Agent 在企业场景中缺乏长期知识积累的痛点。对于希望将 AI Agent 落地于企业工作流的团队来说，这是一个重要的参考案例。"
+    },
+    {
+      "title": "Show HN: Foremerge – Catch intent conflicts between parallel coding agents",
+      "source": "Hacker News",
+      "link": "https://github.com/naw103/foremerge",
+      "ai_summary": "Foremerge 是一个开源工具，用于检测多个并行编码 Agent 之间的意图冲突。随着越来越多的开发者同时运行多个 AI 编码助手，代码冲突和意图不一致的问题日益突出。该工具在 Hacker News 上获得了 36 分和 4 条评论，反映了社区对多 Agent 协作可靠性问题的关注。"
+    },
+    {
+      "title": "Amazon blocks Meta’s Muse AI agent",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping",
+      "ai_summary": "The Verge 报道称亚马逊已正式屏蔽 Meta 的 Muse AI Agent，Muse 用户开始收到弹窗提示称未经授权的访问已被限制。这是亚马逊与 Meta 在 AI Agent 生态控制权上的直接对抗。该事件与 TechCrunch 的报道相互印证，表明主流平台正在积极阻止第三方 Agent 访问其服务。"
     }
   ],
   "answered": false
