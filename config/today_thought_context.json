@@ -1,72 +1,72 @@
 {
-  "date": "2026-09-23",
-  "question": "当 AI Agent 同时具备高系统权限（如 Meta Muse 可被 ClickFix 劫持）和跨平台自主行动能力（如代用户购物遭亚马逊封堵）时，企业应该如何在赋予 Agent 足够权限与保留平台控制权之间设计安全边界？",
-  "context": "Meta Muse 的零日漏洞暴露了高权限 Agent 被完全劫持的风险，而亚马逊阻止 Muse 代购则表明平台方正以安全为由收紧对 Agent 的访问。这两件事共同指向一个尚未解决的架构难题：Agent 的能力越强，权限与信任的边界就越难划定，而这直接决定了 AI Agent 能否在企业级场景中规模化落地。",
+  "date": "2026-09-24",
+  "question": "当 AI Agent 同时获得高权限（如 Muse 的系统级权限、独立邮箱、支付能力）和被发现存在 0-day 漏洞、过度消费等问题时，企业在把 Agent 从「对话助手」升级为「可信执行者」的过程中，应该优先解决权限边界还是安全防护？或者说，这两者是否应该被当作同一个工程问题来设计？",
+  "context": "Meta Muse 的 0-day 漏洞与高权限、过度消费风险同时暴露，而 Claude Code 的遥测行为又引发信任争议——Agent 的能力越强、权限越高，其安全与透明度的设计缺陷造成的后果就越不可逆。这直接决定了企业是否敢把真实任务交给 Agent，以及监管会以什么力度介入。",
   "related_articles": [
-    {
-      "title": "Meta patches Muse exploit that let attackers control the AI agent",
-      "source": "The Verge AI",
-      "link": ""
-    },
     {
       "title": "Muse, Meta's extraordinarily privileged AI assistant, has a serious 0-day",
       "source": "Ars Technica",
       "link": ""
     },
     {
-      "title": "Amazon blocks Meta’s Muse AI agent",
+      "title": "Meta's AI agent is a cute little guy who's great at spending my money",
       "source": "The Verge AI",
+      "link": ""
+    },
+    {
+      "title": "Claude Code reads AGENTS.md only when telemetry is on [fixed]",
+      "source": "Hacker News",
       "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "UN says AI safeguards can’t wait for certainty",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle",
-      "ai_summary": "联合国科学小组首次发布关于AI的重大评估报告，警告各国政府不应等待风险完全明确后再行动，而应尽早对日益强大的AI Agent进行监管。报告还提及Hugging Face遭黑客攻击事件，强调预防原则的重要性。这标志着国际社会对AI Agent安全治理的共识正在加速形成。"
-    },
-    {
-      "title": "Meta patches Muse exploit that let attackers control the AI agent",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent",
-      "ai_summary": "Meta修复了其Muse macOS应用中的一个零日漏洞，该漏洞允许攻击者完全控制AI Agent。漏洞由安全研究员发现，凸显了高权限AI Agent面临的严峻安全挑战。这一事件为整个AI Agent行业敲响了安全警钟。"
+      "title": "Claude Code reads AGENTS.md only when telemetry is on [fixed]",
+      "source": "Hacker News",
+      "link": "https://blog.szypowi.cz/p/claude-code-reads-agents.md-only-when-telemetry-is-on/",
+      "ai_summary": "开发者发现 Claude Code 仅在遥测开启时才会读取 AGENTS.md 文件，这一行为引发社区对隐私与工具透明度的激烈讨论，该帖在 Hacker News 上获得 447 分和 254 条评论。此事揭示了 AI 编程工具在用户不知情的情况下可能存在的隐性数据收集逻辑，对开发者信任和工具合规性提出了重要质疑。"
     },
     {
       "title": "Muse, Meta's extraordinarily privileged AI assistant, has a serious 0-day",
       "source": "Ars Technica",
       "link": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/",
-      "ai_summary": "Ars Technica深入报道了Meta Muse AI助手的严重零日漏洞，指出简单的ClickFix攻击即可完全劫持该Agent。文章强调Muse拥有极高的系统权限，一旦被利用后果严重。这引发了对AI Agent权限设计范式的深刻反思。"
+      "ai_summary": "Meta 的 AI 助手 Muse 被曝存在严重的 0-day 漏洞，攻击者可通过简单的 ClickFix 攻击完全劫持该 Agent。由于 Muse 拥有极高的系统权限，这一漏洞的影响范围可能远超普通应用，凸显了高权限 AI Agent 在安全防护方面的严峻挑战。"
+    },
+    {
+      "title": "ChatGPT mobile app gets voice-based agentic features",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/09/23/chatgpt-mobile-app-gets-voice-based-agentic-features/",
+      "ai_summary": "ChatGPT 移动端应用新增基于语音的 Agent 功能，Pro 和 Plus 用户可通过手机上的 Work 标签页完成 Agent 任务。这标志着 OpenAI 将 Agent 能力从桌面端扩展至移动端，并引入语音交互入口，进一步降低了普通用户使用 AI Agent 的门槛。"
+    },
+    {
+      "title": "Meta is making Muse more powerful and will let you video chat with it, too",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/tech/999454/meta-muse-ai-agent-video-chat-connect-2026",
+      "ai_summary": "Meta 在 Meta Connect 大会上宣布对 Muse AI Agent 进行多项重大升级，包括赋予其独立邮箱地址和视频通话能力。Muse 正从简单的对话助手快速演进为具备多模态交互能力的综合型 Agent，体现了 Meta 在 AI Agent 领域的激进迭代策略。"
+    },
+    {
+      "title": "Ringg's AI agents resolve up to 65% of customer calls with OpenAI",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/ringg",
+      "ai_summary": "Ringg 基于 GPT-5.6 构建的多语言 AI Agent 能够解决高达 65% 的客户来电，覆盖语音、聊天、WhatsApp 和网页等多渠道，且成本比 GPT-4.1 降低 90%。这一案例展示了最新大语言模型在企业客服场景中的显著降本增效能力，为 AI Agent 的商业化落地提供了有力参考。"
     },
     {
       "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
-      "ai_summary": "Parallel公司利用GPT-6 Astra驱动其AI Agent进行劳动力市场数据研究，时间和成本均较前代模型减半。该案例展示了新一代大语言模型在AI Agent实际业务场景中的显著效率提升。这也表明模型迭代正在直接转化为Agent生产力的跃升。"
+      "ai_summary": "Parallel 公司利用 GPT-6 Astra 驱动其 Agent 进行劳动力市场数据的研究与综合，时间和成本均较前代模型减半。该案例说明新一代大模型在复杂研究型 Agent 任务中已具备显著的效率优势，对 AI Agent 在专业研究领域的应用具有示范意义。"
     },
     {
-      "title": "How V7 gives AI agents institutional memory",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/v7",
-      "ai_summary": "V7利用GPT-5.6将企业散落的文件转化为AI Agent可用的上下文，使其能够完成复杂的、可溯源的工作。这相当于为AI Agent赋予了机构记忆能力，解决了Agent在企业场景中缺乏长期知识积累的痛点。该方案对推动AI Agent在企业级落地具有重要意义。"
-    },
-    {
-      "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
-      "ai_summary": "据Appfigures估算，Meta新AI Agent Muse在美国和加拿大的下载量和日活用户数均超过ChatGPT移动端发布同期表现。这表明Meta凭借其社交生态优势在AI Agent消费级市场快速起量。AI Agent的C端竞争格局正在发生重大变化。"
-    },
-    {
-      "title": "Amazon blocks Meta’s Muse AI agent",
+      "title": "Meta's AI agent is a cute little guy who's great at spending my money",
       "source": "The Verge AI",
-      "link": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping",
-      "ai_summary": "亚马逊阻止Meta的Muse AI Agent代表用户在其平台上购物，Muse用户收到弹窗提示称未经授权的访问已被限制。这反映了AI Agent与电商平台之间围绕数据访问和商业利益的博弈正在升级。Agent代理购物这一场景面临平台方的强力阻击。"
+      "link": "https://www.theverge.com/ai-artificial-intelligence/999526/meta-muse-ai-agent-hands-on-shopping",
+      "ai_summary": "The Verge 记者对 Meta Muse AI Agent 进行了实际体验，发现其在购物场景中表现出色但存在过度消费的风险。这篇上手评测从用户视角揭示了 AI Agent 在自主执行任务时的实际能力边界与潜在问题，为理解消费级 AI Agent 的真实体验提供了有价值的参考。"
     },
     {
-      "title": "Unreal Agent",
-      "source": "Hacker News",
-      "link": "https://unreallabs.ai/blog/unreal-agent/",
-      "ai_summary": "Unreal Labs在HN上发布了其AI Agent产品，引发社区71条评论和119分的热议。该讨论反映了开发者社区对新型Agent架构和能力的浓厚兴趣。HN的高热度表明AI Agent仍是技术社区最关注的方向之一。"
+      "title": "Meta is making a standalone Muse AI gadget",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/tech/999750/muse-charm-meta-ai-hardware",
+      "ai_summary": "Meta 正在为 Muse AI Agent 打造独立硬件设备 Muse Charm，Zuckerberg 在 Meta Connect 发布会结尾短暂展示了该产品。此举表明 Meta 正试图将 AI Agent 从软件层面延伸至专属硬件载体，探索 AI 助手与可穿戴设备结合的新形态。"
     }
   ],
   "answered": false
