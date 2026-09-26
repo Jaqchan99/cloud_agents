@@ -2,6 +2,6 @@
 
 日期：2026-09-26｜文章数：8
 
-原因：JSONDecodeError: Unterminated string starting at: line 8 column 14 (char 1991)
+原因：JSONDecodeError: Unterminated string starting at: line 13 column 14 (char 1959)
 
 请检查 DEEPSEEK_API_KEY 与上游 InsightPackage。
