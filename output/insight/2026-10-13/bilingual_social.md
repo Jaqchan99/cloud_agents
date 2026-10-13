@@ -1,29 +1,27 @@
-# Agent 最大的敌人不是能力不够，是你不敢让它联网
+# Agent 不是不够聪明，是没人敢让它自己跑
 
-Agent 最大的敌人不是能力不够，是你不敢让它联网。
+Agent 不是不够聪明，是没人敢让它自己跑。
 
-今天三件事放在一起看，结论很清楚：Anthropic 把内部评估环境的网络直接切断了（https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet），YC 项目 Agent37 在卖低成本沙箱（https://news.ycombinator.com/item?id=50059096），HuggingFace 上线了 Agent 能力排行榜（https://huggingface.co/blog/agent-leaderboard）。一个头部实验室被迫收缩，一个创业公司在卖隔离，一个平台在给 Agent 打分。
+今天两条新闻放在一起看很有意思：Anthropic 把内部评估的网线拔了（https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet），YC 系创业公司 Agent37 上线低成本 Agent 沙箱（https://news.ycombinator.com/item?id=50059096）。一个是头部实验室被迫做的防御性收缩，一个是创业公司嗅到需求后的商品化供给。需求端和供给端同时出现，说明 Agent 安全隔离已经不是「最佳实践」，而是必须采购的东西。
 
-这不是三条新闻，这是一条产业链的雏形：需求端已经痛到要断网自救，供给端开始把「安全隔离」商品化，中间层开始试着给 Agent 定标准。
+与此同时，HuggingFace 发了 Agent 能力排行榜（https://huggingface.co/blog/agent-leaderboard），想给选型一个标准答案。但 Ars Technica 的实证文章直接泼冷水：编程 Agent 产出的代码量在涨，软件价值没涨（https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/）。
 
-但真正扎心的是 Ars Technica 那篇观察——AI 编程 Agent 产出的代码量在涨，软件价值没涨（https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/）。排行榜在算基准分数和成本效率，真实工程世界里代码多了不等于软件多了。度量体系和真实价值之间，有一道没人愿意承认的鸿沟。
+这两件事的矛盾才是重点。排行榜用基准分数和成本效率衡量进步，暗示能力在快速提升；但真实工程场景里，更多代码不等于更多软件。标准化基准和真实世界价值之间，存在一条没人愿意承认的度量鸿沟。
 
-我的判断：2026 年 Agent 的竞争焦点不是谁更聪明，是谁能先证明自己「可控」。Anthropic 断网不是保守，是清醒——它比谁都清楚，一个能越界的 Agent 在评估环境里意味着什么。沙箱会成为标配，不是加分项。而排行榜如果不能把「真实产出」纳入度量，就只是又一张好看的营销图。
-
-能力不是问题。信任才是。谁先把信任做成基础设施，谁就拿到下一轮的入场券。
+我的判断是：现在押注 Agent 能力提升的边际收益正在递减，而可控性和可信度量的溢价还没被充分定价。谁能把「Agent 干了什么、为什么这么干、出事了怎么兜底」这套东西做成企业敢买的基础设施，谁就拿到了下一阶段的入场券。比谁家 Agent 更聪明更重要的，是比谁家 Agent 更敢放出去跑。
 
 ---
 
-# The Agent Bottleneck Isn't Capability — It's That You Can't Let It Online
+# Agents Aren't Too Dumb. They're Just Too Dangerous to Run.
 
-The biggest enemy of agents isn't weak capability — it's that you can't bring yourself to let them online.
+Agents aren't too dumb. They're just too dangerous to run.
 
-Three things landed today, and together they tell one story. Anthropic cut its internal evaluation environments off from the internet entirely (https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet). YC's Agent37 is selling low-cost sandboxes (https://news.ycombinator.com/item?id=50059096). HuggingFace shipped an agent capability leaderboard (https://huggingface.co/blog/agent-leaderboard). One top lab retreating, one startup selling isolation, one platform trying to score agents.
+Two stories today tell the same story from opposite ends. Anthropic cut its internal evals off from the internet (https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet) — a defensive retreat from a top lab. Meanwhile YC-backed Agent37 launched low-cost agent sandboxes (https://news.ycombinator.com/item?id=50059096) — a startup commoditizing the exact thing Anthropic just realized it needed.
 
-That's not three headlines. That's the skeleton of a supply chain: demand-side pain bad enough to justify going offline, supply-side starting to commoditize safety isolation, and a middle layer trying to define the standard.
+Demand and supply showing up simultaneously is how you know something has crossed from "best practice" to "line item in the budget." Agent sandboxing is now infrastructure.
 
-But here's the part that stings. Ars Technica observed that AI coding agents are producing more code without producing more software (https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/). The leaderboard measures benchmark scores and cost efficiency. The real world measures whether anything actually got built. There's a gap between the metric and the value, and nobody wants to name it.
+Then there's HuggingFace's new agent leaderboard (https://huggingface.co/blog/agent-leaderboard), trying to give the market a standard answer for picking agents. But Ars Technica's field report throws cold water: coding agents are generating more code, not more software (https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/).
 
-My read: the 2026 agent race isn't about who's smartest. It's about who can prove they're controllable first. Anthropic going offline isn't caution — it's clarity. They know better than anyone what a boundary-crossing agent means inside an eval environment. Sandboxes will become table stakes, not a feature. And a leaderboard that can't measure real output is just another pretty marketing chart.
+That gap is the real story. Benchmarks measure capability and cost-efficiency, implying rapid progress. Real engineering workflows measure shipped value, and the needle isn't moving. There's a measurement chasm between standardized scores and actual utility that nobody wants to name.
 
-Capability isn't the problem. Trust is. Whoever turns trust into infrastructure gets the next ticket in.
+My take: the marginal return on raw agent capability is declining fast, while the premium on controllability and trustworthy measurement is still underpriced. Whoever turns "what did the agent do, why, and who cleans up when it breaks" into infrastructure enterprises will actually buy, wins the next phase. The question isn't whose agent is smartest anymore. It's whose agent you'd actually let off the leash.
