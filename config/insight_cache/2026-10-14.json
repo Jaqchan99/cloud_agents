@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-14",
+  "language": "zh",
+  "article_count": 4,
+  "themes": [
+    {
+      "name": "代理式电商的基础设施竞赛",
+      "articles": [
+        {
+          "title": "Shopify opens its catalog up to more AI agents",
+          "link": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents",
+          "source": "The Verge AI",
+          "ai_summary": "Shopify 宣布向更多 AI Agent 开放其商品目录，允许第三方智能体浏览并代用户完成购买，进一步扩展其「代理式电商」布局。这意味着 AI Agent 正从信息助手走向实际交易执行环节，电商平台开始主动为 Agent 生态提供接口支持。此举可能重塑线上购物的流量入口与商家竞争格局，也带来授权与支付安全等新问题。"
+        },
+        {
+          "title": "Amex introduces a framework to prevent AI agents from making unauthorized purchases",
+          "link": "https://techcrunch.com/2026/10/13/amex-introduces-a-framework-to-prevent-ai-agents-from-making-unauthorized-purchases/",
+          "source": "TechCrunch AI",
+          "ai_summary": "美国运通（Amex）推出新框架，确保 AI Agent 只能执行用户已授权的购买行为，以降低智能体自动购物带来的误购和纠纷风险。随着 AI 代理购物逐渐普及，支付环节的授权与责任界定成为关键基础设施问题。该框架反映了金融支付机构正主动为 Agent 经济建立信任与风控标准。"
+        }
+      ],
+      "narrative": "电商平台与支付网络在同一天分别从「开放入口」和「约束出口」两端为 Agent 经济铺设轨道：Shopify 让智能体可以浏览并下单，Amex 则确保智能体只能在授权范围内花钱。两者共同表明，AI Agent 正从对话助手变成真正的交易主体，而围绕它的商业基础设施正在被重新设计。谁掌握 Agent 的购物入口与支付授权，谁就掌握下一代流量与风控的主动权。",
+      "tension": "Shopify 追求的是让 Agent 尽可能自由地代用户完成购买以扩大交易量，而 Amex 的核心诉求是限制 Agent 的行为边界以防误购与纠纷——开放与管控之间存在天然张力，双方尚未就授权粒度与责任归属形成统一标准。"
+    },
+    {
+      "name": "端侧 Agent 与具身智能的落地前验证",
+      "articles": [
+        {
+          "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
+          "link": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+          "source": "HuggingFace Blog",
+          "ai_summary": "LiquidAI 在 HuggingFace 发布 LFM2.5-24B-A2B 模型，主打在本地设备上运行快速、私密的 AI Agent，无需依赖云端即可完成推理与任务执行。该模型采用稀疏激活架构（总参数 24B、激活约 2B），在保持较小计算开销的同时兼顾能力表现，适合对隐私和延迟敏感的场景。这为端侧 AI Agent 的落地提供了新的开源选择，也顺应了模型小型化与本地化部署的趋势。"
+        },
+        {
+          "title": "Laplace Intelligence red-teams robots and self-driving cars before they hit the real world",
+          "link": "https://techcrunch.com/2026/10/13/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-the-real-world/",
+          "source": "TechCrunch AI",
+          "ai_summary": "密歇根大学衍生公司 Laplace Intelligence 利用 AI Agent 和交互式仿真，在机器人及自动驾驶车辆实际部署前对其进行「红队」压力测试。该初创公司已实现盈利，专注于在虚拟环境中暴露潜在安全漏洞与极端场景风险。这体现了 AI Agent 在安全评估与仿真测试领域的应用价值，也呼应了具身智能落地前的验证需求。"
+        }
+      ],
+      "narrative": "一端是模型层把 Agent 能力压缩到本地设备，另一端是仿真层在物理世界部署前用 Agent 做红队测试——两者共同指向同一个方向：Agent 正在从云端演示走向真实环境中的可靠运行。端侧推理解决的是隐私与延迟，仿真红队解决的是安全与极端场景，它们分别对应 Agent 落地的两个前置条件。这说明行业关注点已从「Agent 能做什么」转向「Agent 能在哪里安全地做」。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今天最重要的变化是 AI Agent 正式跨过「演示」阶段进入交易与物理世界：电商和支付网络开始为它重建授权与结算规则，模型和仿真工具则同时为它的端侧运行与安全部署补齐前提条件。",
+  "cross_theme_connection": "端侧与仿真主题解决的是 Agent 的「能力与安全底座」，代理式电商主题解决的是 Agent 的「商业与信任接口」——前者决定 Agent 能否可靠运行，后者决定 Agent 能否被放心地赋予花钱和下单的权力，两者互为前提：没有可信的本地执行与安全验证，支付机构就不会开放授权；而没有真实的交易场景，端侧 Agent 也缺乏规模化落地的动力。"
+}
