@@ -1,21 +1,21 @@
 {
-  "date": "2026-10-14",
-  "question": "当 AI Agent 既能替你购物、又需要支付机构来约束它的购买权限时，信任的锚点应该放在哪里——是模型厂商、电商平台，还是支付网络？如果你所在的公司要接入代理式交易，你会把「授权边界」设计在哪一层？",
-  "context": "Shopify 向第三方 Agent 开放商品目录、Amex 同步推出防未授权购买的框架，说明 Agent 经济正在从「能做什么」转向「该被允许做什么」。授权与责任界定将成为代理式商业能否规模化的关键基础设施，也直接决定企业在接入时的架构选择与风险承担方式。",
+  "date": "2026-10-15",
+  "question": "当 AI Agent 从『辅助建议』走向『自主执行』（如 TV4 素材被误删、Third Moment 同时运行上万 Agent），企业应如何在赋予 Agent 更高操作权限与保留必要人工干预之间划定边界？",
+  "context": "今日资讯同时呈现了两个极端：一端是 Agent 大规模、长时间自主运行带来的效率跃升，另一端是 Agent 误操作导致节目延期至 2027 年的真实事故。这种张力说明，Agent 的能力边界正在从『生成内容』扩展到『执行操作』，而权限管理与安全防护机制尚未跟上。",
   "related_articles": [
     {
-      "title": "Shopify opens its catalog up to more AI agents",
-      "source": "The Verge AI",
+      "title": "TV4 postpones show after AI agent erases edited material",
+      "source": "Hacker News",
       "link": ""
     },
     {
-      "title": "Amex introduces a framework to prevent AI agents from making unauthorized purchases",
+      "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
+      "source": "OpenAI Blog",
+      "link": ""
+    },
+    {
+      "title": "Figma announces new features to define how agents work on its platform",
       "source": "TechCrunch AI",
-      "link": ""
-    },
-    {
-      "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
-      "source": "HuggingFace Blog",
       "link": ""
     }
   ],
@@ -24,25 +24,49 @@
       "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
       "source": "HuggingFace Blog",
       "link": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
-      "ai_summary": "LiquidAI 在 HuggingFace 发布 LFM2.5-24B-A2B 模型，主打在本地设备上运行快速、私密的 AI Agent，无需依赖云端即可完成推理与任务执行。该模型采用稀疏激活架构（总参数 24B、激活约 2B），在保持较小计算开销的同时兼顾能力表现，适合对隐私和延迟敏感的场景。这为端侧 AI Agent 的落地提供了新的开源选择，也顺应了模型小型化与本地化部署的趋势。"
+      "ai_summary": "HuggingFace 博客介绍了 LiquidAI 的 LFM2.5-24B-A2B 模型，这是一款专为端侧快速、私密 AI Agent 设计的开源模型。该模型让开发者能够在本地设备上运行 AI Agent，无需依赖云端，兼顾速度与隐私保护，对推动端侧 Agent 生态具有重要意义。"
     },
     {
-      "title": "Shopify opens its catalog up to more AI agents",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents",
-      "ai_summary": "Shopify 宣布向更多 AI Agent 开放其商品目录，允许第三方智能体浏览并代用户完成购买，进一步扩展其「代理式电商」布局。这意味着 AI Agent 正从信息助手走向实际交易执行环节，电商平台开始主动为 Agent 生态提供接口支持。此举可能重塑线上购物的流量入口与商家竞争格局，也带来授权与支付安全等新问题。"
+      "title": "LFM2.5-24B-A2B: Built for fast on-device agents",
+      "source": "Hacker News",
+      "link": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "ai_summary": "LiquidAI 发布 LFM2.5-24B-A2B 模型，专为端侧 AI Agent 场景打造，强调快速推理和本地部署能力。该模型在 Hacker News 上获得 212 分和 44 条评论，社区关注度极高，反映出开发者对端侧 Agent 方案的强烈需求。"
     },
     {
-      "title": "Amex introduces a framework to prevent AI agents from making unauthorized purchases",
+      "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/third-moment-research",
+      "ai_summary": "Third Moment Research 利用 GPT-6 Astra、GPT-6.1 Sol、Codex 和 Daybreak 等 OpenAI 模型，实现了同时运行 10,000 个 AI Agent 超过 36 小时的壮举。这些 Agent 能够长时间保持专注并在使用中持续改进，展示了大规模 Agent 编排在科研场景中的前沿能力。"
+    },
+    {
+      "title": "Amp puts AI agents to work beyond code with OpenAI models",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/amp-beyond-coding",
+      "ai_summary": "Amp 借助 GPT-6 Astra、Ultrafast、GPT-Live-1 等 OpenAI 模型，将 AI Agent 的应用从编程扩展到更广泛的场景。该案例展示了 Agent 在代码之外的通用任务处理能力，体现了 OpenAI 模型在推动 Agent 能力边界方面的最新进展。"
+    },
+    {
+      "title": "The EU's next chapter in AI is agentic",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
+      "ai_summary": "OpenAI 发布分析报告，展示 Agentic AI 在欧盟企业和中小企业中的采用增长趋势，并指出更深入的应用有望释放更大价值。该报告为理解 AI Agent 在区域市场的落地现状和潜力提供了重要参考。"
+    },
+    {
+      "title": "TV4 postpones show after AI agent erases edited material",
+      "source": "Hacker News",
+      "link": "https://swedenherald.com/article/tv4-postpones-the-challenge-until-2027-after-technical-failure-erases-edited-footage",
+      "ai_summary": "瑞典电视台 TV4 因 AI Agent 误删已编辑的节目素材，被迫将节目推迟至 2027 年。这一事件在 Hacker News 上引发 83 条评论和 146 分的热议，凸显了 AI Agent 在实际生产环境中操作权限管理和安全防护的紧迫性。"
+    },
+    {
+      "title": "Figma announces new features to define how agents work on its platform",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/13/amex-introduces-a-framework-to-prevent-ai-agents-from-making-unauthorized-purchases/",
-      "ai_summary": "美国运通（Amex）推出新框架，确保 AI Agent 只能执行用户已授权的购买行为，以降低智能体自动购物带来的误购和纠纷风险。随着 AI 代理购物逐渐普及，支付环节的授权与责任界定成为关键基础设施问题。该框架反映了金融支付机构正主动为 Agent 经济建立信任与风控标准。"
+      "link": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/",
+      "ai_summary": "Figma 宣布新功能，允许开发者定义 AI Agent 在其平台上的工作方式，同时开放代码层功能的公测。这表明设计工具平台正在积极拥抱 AI Agent，为 Agent 与设计工作流的深度集成铺平道路。"
     },
     {
       "title": "Laplace Intelligence red-teams robots and self-driving cars before they hit the real world",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/10/13/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-the-real-world/",
-      "ai_summary": "密歇根大学衍生公司 Laplace Intelligence 利用 AI Agent 和交互式仿真，在机器人及自动驾驶车辆实际部署前对其进行「红队」压力测试。该初创公司已实现盈利，专注于在虚拟环境中暴露潜在安全漏洞与极端场景风险。这体现了 AI Agent 在安全评估与仿真测试领域的应用价值，也呼应了具身智能落地前的验证需求。"
+      "ai_summary": "密歇根大学衍生公司 Laplace Intelligence 利用 AI Agent 和交互式仿真，在机器人和自动驾驶汽车部署前进行红队压力测试。这家已实现盈利的初创公司专注于提升具身智能系统的安全性，代表了 AI Agent 在安全验证领域的重要应用方向。"
     }
   ],
   "answered": false
