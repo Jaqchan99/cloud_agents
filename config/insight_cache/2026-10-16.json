@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-16",
+  "language": "zh",
+  "article_count": 8,
+  "themes": [
+    {
+      "name": "Agent 从云端走向端侧",
+      "articles": [
+        {
+          "title": "LFM2.5-24B-A2B: Built for fast on-device agents",
+          "link": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+          "source": "Hacker News",
+          "ai_summary": "Liquid AI 发布了 LFM2.5-24B-A2B 模型，专为在设备端快速运行 AI Agent 而设计，在 Hacker News 上引发热烈讨论（283 分、76 条评论）。该模型主打端侧部署场景，兼顾速度与隐私，为本地化 Agent 应用提供了新的开源选择。"
+        },
+        {
+          "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
+          "link": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+          "source": "HuggingFace Blog",
+          "ai_summary": "HuggingFace 官方博客同步介绍了 LFM2.5-24B-A2B 模型，强调其可在设备端运行快速、私密的 AI Agent。该模型面向端侧推理优化，让开发者和用户无需依赖云端即可部署 Agent，对隐私敏感场景和离线应用具有重要意义。"
+        }
+      ],
+      "narrative": "Liquid AI 与 HuggingFace 同步发布 LFM2.5-24B-A2B，标志着开源端侧 Agent 模型开始具备可实际部署的成熟度。端侧推理的卖点从「能跑」转向「跑得快且私密」，意味着 Agent 的算力重心正从云端向设备侧分流，为隐私敏感和离线场景打开新空间。",
+      "tension": null
+    },
+    {
+      "name": "大规模 Agent 编排与能力边界外扩",
+      "articles": [
+        {
+          "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
+          "link": "https://openai.com/index/third-moment-research",
+          "source": "OpenAI Blog",
+          "ai_summary": "Third Moment Research 利用 GPT-6 Astra、GPT-6.1 Sol、Codex 和 Daybreak 等 OpenAI 模型，实现了同时运行 10,000 个 Agent 超过 36 小时的壮举。这些 Agent 能够长时间保持专注并随使用不断改进，展示了大规模 Agent 编排在持续任务场景下的前沿能力。"
+        },
+        {
+          "title": "Amp puts AI agents to work beyond code with OpenAI models",
+          "link": "https://openai.com/index/amp-beyond-coding",
+          "source": "OpenAI Blog",
+          "ai_summary": "Amp 借助 GPT-6 Astra、Ultrafast、GPT-Live-1 以及 Sign in with ChatGPT 等 OpenAI 模型，将 AI Agent 的应用从编码扩展到更广泛的领域。该案例展示了 Agent 在非代码任务中的潜力，标志着 Agent 能力边界从软件开发向通用工作流的延伸。"
+        }
+      ],
+      "narrative": "OpenAI 生态内两个案例共同指向同一方向：Agent 正同时在「规模」和「广度」两个维度突破——一边是上万 Agent 持续运行数十小时的长时编排，一边是从编码走向通用工作流的能力外扩。这暗示 Agent 的竞争焦点已从单次任务质量转向长时稳定性和跨领域泛化。",
+      "tension": null
+    },
+    {
+      "name": "Agent 渗透垂直场景：设计、反欺诈、汽车",
+      "articles": [
+        {
+          "title": "Figma announces new features to define how agents work on its platform",
+          "link": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/",
+          "source": "TechCrunch AI",
+          "ai_summary": "Figma 宣布推出新功能，用于定义 AI Agent 在其设计平台上的工作方式，同时代码层（code layers）功能进入公开测试。这意味着设计工具正在主动拥抱 Agent 生态，为 Agent 参与设计协作建立规范和接口。"
+        },
+        {
+          "title": "Apate sends AI agents undercover to get scammed so they can gather fraud intelligence",
+          "link": "https://techcrunch.com/2026/10/14/apate-sends-ai-agents-undercover-to-get-scammed-so-they-can-gather-fraud-intelligence/",
+          "source": "TechCrunch AI",
+          "ai_summary": "Apate.ai 将 AI Agent 派往诈骗场景中\"卧底\"，主动被诈骗以收集欺诈情报。这一创新应用将 Agent 从效率工具转变为安全防御手段，为反欺诈领域提供了全新的数据获取和威胁情报思路。"
+        },
+        {
+          "title": "AI agents are coming to Rivian's cars",
+          "link": "https://techcrunch.com/2026/10/15/ai-agents-are-coming-to-rivians-cars/",
+          "source": "TechCrunch AI",
+          "ai_summary": "Rivian 计划将 AI Agent 引入其汽车产品中，更多细节预计将在 12 月的\"AI & Autonomy Day\"活动上公布。这标志着 Agent 技术正从软件领域向智能座舱和自动驾驶等物理场景渗透，值得关注其具体落地形态。"
+        }
+      ],
+      "narrative": "Figma、Apate、Rivian 三个案例显示 Agent 正从通用工具转向垂直场景的深度嵌入：设计平台开始为 Agent 制定协作规范，反欺诈领域把 Agent 当作主动防御手段，汽车厂商则将其带入物理座舱。Agent 的价值主张正在从「提效」分化为「平台接口」「安全情报」和「物理交互」等差异化形态。",
+      "tension": "Figma 试图为 Agent 建立受控的协作规范，而 Apate 则让 Agent 主动进入不可控的诈骗环境「以身试险」——同属 Agent 落地，一方强调平台治理与边界，另一方强调开放环境中的自主对抗，反映出行业对 Agent 自主性边界尚未形成共识。"
+    },
+    {
+      "name": "Agentic AI 的区域性采纳与政策叙事",
+      "articles": [
+        {
+          "title": "The EU's next chapter in AI is agentic",
+          "link": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
+          "source": "OpenAI Blog",
+          "ai_summary": "OpenAI 发布分析报告，展示 Agentic AI 在欧盟各类企业和小型企业中的采用增长趋势，并指出更深入的使用有望释放更大价值。该报告为理解 Agent 技术在欧洲市场的落地现状和未来潜力提供了数据支撑。"
+        }
+      ],
+      "narrative": "OpenAI 主动为欧盟市场撰写 Agentic AI 采纳报告，说明 Agent 的竞争已从技术能力延伸到区域市场叙事与政策话语权。将「更深入使用」与「更大价值」绑定，本质上是在为 Agent 在欧洲的监管与商业落地铺路。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今天最重要的变化是 Agent 的部署形态开始分叉——一边是端侧私有化模型让 Agent 脱离云端，一边是云端上万 Agent 的长时大规模编排，Agent 的基础设施路线正在同时向「本地」和「超大规模」两端拉伸。",
+  "cross_theme_connection": "端侧模型（LFM2.5）与云端大规模编排（OpenAI 万级 Agent）构成算力部署上的对立两极，而垂直场景（Figma、Apate、Rivian）和区域采纳（欧盟）则共同说明：无论算力落在哪一端，Agent 的商业价值最终都要在具体行业和市场中兑现。"
+}
