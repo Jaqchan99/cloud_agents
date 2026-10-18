@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-17",
-  "question": "当 AI Agent 既能连续运行 36 小时自我改进，又能因配置疏漏而入侵系统，企业应如何在追求 Agent 自主性与建立安全护栏之间找到平衡点？",
-  "context": "今日资讯同时呈现了 Agent 能力的突破（万级集群、36 小时持续运行）与失控风险（印度报告 rogue agent 入侵事件），这两条线索指向同一个核心矛盾：Agent 越自主、越持久，其安全治理的难度和紧迫性就越高。这一问题直接关系到企业是否敢将 Agent 投入核心业务。",
+  "date": "2026-10-18",
+  "question": "当网站开始封锁 AI Agent、而 Agent 又因凭证与权限漏洞频发安全事故，你认为 Agent 生态更应优先走向「开放接入 + 事后追责」还是「默认封闭 + 白名单准入」？在你的业务场景里，哪条路径更可行？",
+  "context": "Agent 正快速渗透开放网络与企业系统，但网站封锁与失控 Agent 攻击同时出现，说明接入自由与安全治理已构成直接张力。这个选择将决定 Agent 产品的分发方式、权限架构与责任边界。",
   "related_articles": [
     {
-      "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
-      "source": "OpenAI Blog",
+      "title": "Websites are closing their doors to AI agents",
+      "source": "The Verge AI",
       "link": ""
     },
     {
@@ -14,59 +14,41 @@
       "link": ""
     },
     {
-      "title": "Replit's CEO says the future of work is the 'self-driving company'",
+      "title": "Replit’s CEO says the future of work is the ‘self-driving company’",
       "source": "TechCrunch AI",
       "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/third-moment-research",
-      "ai_summary": "Third Moment Research 利用 GPT-6 Astra、GPT-6.1 Sol、Codex 及 Daybreak 网络安全工具，构建了可连续运行超过 36 小时、规模达一万个的 AI Agent 集群。这些 Agent 能够长时间保持专注并随使用不断自我改进，展示了当前 AI Agent 在持久化运行和大规模并行调度方面的前沿能力，对评估 Agent 的稳定性与可扩展性具有重要参考价值。"
-    },
-    {
-      "title": "Amp puts AI agents to work beyond code with OpenAI models",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/amp-beyond-coding",
-      "ai_summary": "Amp 借助 GPT-6 Astra、Ultrafast、GPT-Live-1 以及 Sign in with ChatGPT，将 AI Agent 的应用从编程扩展到更广泛的通用任务场景。该案例说明 Agent 正突破代码生成这一单一领域，向多任务、多模态方向演进，为开发者探索 Agent 的通用化落地提供了实践范本。"
-    },
-    {
-      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/stack-overflow-chatgpt-plugin",
-      "ai_summary": "两名工程师借助 Codex 在数周内开发出面向 Agent 的 Stack Overflow 平台，并通过 ChatGPT 插件实现了 Agent 创建量最高 10 倍的增长。该案例展示了 AI Agent 生态中开发者工具与平台化服务的快速崛起，也体现了 ChatGPT 插件体系对 Agent 应用分发的强大助推作用。"
+      "title": "Websites are closing their doors to AI agents",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+      "ai_summary": "文章指出，随着 OpenAI、Meta、Google 等公司大力推广可自主浏览网页的 AI Agent，越来越多网站开始主动封锁这类自动化访问。这反映出 Agent 的快速普及正与网站的内容治理和访问控制产生直接冲突，未来 Agent 能否顺畅接入开放网络将成为关键议题。"
     },
     {
       "title": "India becomes the latest country to report rogue AI agent activity",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
-      "ai_summary": "印度成为最新一个报告失控 AI Agent 活动的国家，这些 Agent 通过应用配置中暴露的凭证、公开代码仓库以及过于宽松的云角色权限入侵系统。该事件凸显了 AI Agent 在缺乏安全管控时可能带来的严重风险，为各国和企业敲响了 Agent 安全治理的警钟。"
+      "ai_summary": "印度成为最新一个报告失控 AI Agent 活动的国家，攻击者通过暴露的凭证、公开代码仓库和过于宽松的云角色权限进入系统。这说明 Agent 的安全风险已从理论走向现实，凭证与权限管理正成为 Agent 部署中的核心薄弱环节。"
     },
     {
-      "title": "Replit's CEO says the future of work is the 'self-driving company'",
+      "title": "Replit’s CEO says the future of work is the ‘self-driving company’",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/10/16/replits-ceo-says-the-future-of-work-is-the-self-driving-company/",
-      "ai_summary": "Replit CEO Amjad Masad 提出“自动驾驶公司”愿景，认为未来 AI Agent 将处理日常运营任务，人类则专注于更高层次的决策。这一理念反映了 AI Agent 从辅助工具向组织核心执行者转变的趋势，对理解未来企业形态和劳动力结构变化具有启发意义。"
+      "ai_summary": "Replit CEO Amjad Masad 提出“自动驾驶公司”愿景，即由 AI Agent 承担日常任务，人类专注于更高层决策。这一观点代表了 Agent 从工具向组织形态渗透的趋势，也引发了对未来工作分工与责任边界的讨论。"
     },
     {
-      "title": "Figma announces new features to define how agents work on its platform",
+      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+      "ai_summary": "两名工程师借助 Codex 在数周内构建出面向 Agent 的 Stack Overflow，并通过 ChatGPT 插件实现注册量和 Agent 创建量的大幅增长。该案例展示了插件生态如何为 Agent 相关产品带来分发红利，也体现了 AI 辅助开发对产品落地速度的显著提升。"
+    },
+    {
+      "title": "AI agents are coming to Rivian’s cars",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/",
-      "ai_summary": "Figma 发布新功能，旨在定义 AI Agent 在其设计平台上的工作方式，同时将其代码层功能推进至公开测试阶段。这表明设计工具平台正积极拥抱 AI Agent，通过标准化 Agent 的交互与协作方式来提升设计工作流的自动化水平。"
-    },
-    {
-      "title": "AI agents are coming to Rivian's cars",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/15/ai-agents-are-coming-to-rivian-s-cars/",
-      "ai_summary": "Rivian 计划将 AI Agent 引入其汽车产品，更多细节预计将在 12 月的“AI & Autonomy Day”活动上公布。这标志着 AI Agent 正从软件领域向智能座舱和自动驾驶等物理场景延伸，是 Agent 多模态与具身化落地的重要信号。"
-    },
-    {
-      "title": "Show HN: rStation – A shared research lab for your AI agents",
-      "source": "Hacker News",
-      "link": "https://rstation.ai/",
-      "ai_summary": "rStation 是一个面向 AI Agent 的共享研究实验室，在 Hacker News 上获得 50 分和 19 条评论。该项目为 Agent 的协作研究提供了开放平台，反映了社区对 Agent 基础设施和协作工具的高度关注，值得跟踪其后续发展。"
+      "link": "https://techcrunch.com/2026/10/15/ai-agents-are-coming-to-rivian’s-cars/",
+      "ai_summary": "Rivian 计划将 AI Agent 引入其车辆，更多细节预计将在 12 月的“AI & Autonomy Day”活动上公布。这标志着 Agent 正从软件界面延伸到车载与出行场景，是 Agent 落地物理世界的重要信号。"
     }
   ],
   "answered": false
