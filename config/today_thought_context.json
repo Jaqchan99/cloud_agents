@@ -1,7 +1,7 @@
 {
-  "date": "2026-10-18",
-  "question": "当网站开始封锁 AI Agent、而 Agent 又因凭证与权限漏洞频发安全事故，你认为 Agent 生态更应优先走向「开放接入 + 事后追责」还是「默认封闭 + 白名单准入」？在你的业务场景里，哪条路径更可行？",
-  "context": "Agent 正快速渗透开放网络与企业系统，但网站封锁与失控 Agent 攻击同时出现，说明接入自由与安全治理已构成直接张力。这个选择将决定 Agent 产品的分发方式、权限架构与责任边界。",
+  "date": "2026-10-19",
+  "question": "当网站开始封堵 AI Agent、而失控 Agent 又频发安全事故时，Agent 生态更可能走向“围墙花园”（平台授权+白名单准入）还是“开放协议+身份认证”的路径？你的判断依据是什么？",
+  "context": "Agent 正从演示走向真实上网执行任务，但网站封堵与凭证泄露事件同时暴露出：当前生态缺乏可被双方信任的准入与身份机制。这一选择将直接决定 Agent 产品的可用边界和企业的部署策略。",
   "related_articles": [
     {
       "title": "Websites are closing their doors to AI agents",
@@ -14,41 +14,35 @@
       "link": ""
     },
     {
-      "title": "Replit’s CEO says the future of work is the ‘self-driving company’",
-      "source": "TechCrunch AI",
+      "title": "Hybrid Reasoning Agents: LLM agents that think in latent space, act through text",
+      "source": "Hacker News",
       "link": ""
     }
   ],
   "all_articles": [
     {
+      "title": "Hybrid Reasoning Agents: LLM agents that think in latent space, act through text",
+      "source": "Hacker News",
+      "link": "https://arxiv.org/abs/2610.18861",
+      "ai_summary": "该研究提出混合推理智能体，让 LLM Agent 在潜空间中完成推理、再通过文本执行动作，试图兼顾推理效率与可解释性。HN 上获得 188 分、113 条评论，说明社区对 Agent 推理架构创新高度关注。这一思路可能为 Agent 的推理—行动范式提供新的设计方向。"
+    },
+    {
       "title": "Websites are closing their doors to AI agents",
       "source": "The Verge AI",
       "link": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
-      "ai_summary": "文章指出，随着 OpenAI、Meta、Google 等公司大力推广可自主浏览网页的 AI Agent，越来越多网站开始主动封锁这类自动化访问。这反映出 Agent 的快速普及正与网站的内容治理和访问控制产生直接冲突，未来 Agent 能否顺畅接入开放网络将成为关键议题。"
+      "ai_summary": "报道指出，随着自主 Agent 成为 AI 最热方向，越来越多网站开始限制或封堵 AI Agent 的访问。这反映出 Agent 大规模上网执行任务与网站内容治理、反爬和授权机制之间的现实冲突。该趋势将直接影响 Agent 产品的可用性与生态规则。"
     },
     {
       "title": "India becomes the latest country to report rogue AI agent activity",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
-      "ai_summary": "印度成为最新一个报告失控 AI Agent 活动的国家，攻击者通过暴露的凭证、公开代码仓库和过于宽松的云角色权限进入系统。这说明 Agent 的安全风险已从理论走向现实，凭证与权限管理正成为 Agent 部署中的核心薄弱环节。"
+      "ai_summary": "印度成为最新报告“失控 AI Agent”活动的国家，攻击者通过应用配置、公开代码仓库和过度宽松的云权限中泄露的凭证与连接设置入侵。事件凸显 Agent 在凭证管理和权限控制上的安全风险。随着 Agent 自主性提升，相关安全治理正成为各国关注重点。"
     },
     {
       "title": "Replit’s CEO says the future of work is the ‘self-driving company’",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/10/16/replits-ceo-says-the-future-of-work-is-the-self-driving-company/",
-      "ai_summary": "Replit CEO Amjad Masad 提出“自动驾驶公司”愿景，即由 AI Agent 承担日常任务，人类专注于更高层决策。这一观点代表了 Agent 从工具向组织形态渗透的趋势，也引发了对未来工作分工与责任边界的讨论。"
-    },
-    {
-      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/stack-overflow-chatgpt-plugin",
-      "ai_summary": "两名工程师借助 Codex 在数周内构建出面向 Agent 的 Stack Overflow，并通过 ChatGPT 插件实现注册量和 Agent 创建量的大幅增长。该案例展示了插件生态如何为 Agent 相关产品带来分发红利，也体现了 AI 辅助开发对产品落地速度的显著提升。"
-    },
-    {
-      "title": "AI agents are coming to Rivian’s cars",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/15/ai-agents-are-coming-to-rivian’s-cars/",
-      "ai_summary": "Rivian 计划将 AI Agent 引入其车辆，更多细节预计将在 12 月的“AI & Autonomy Day”活动上公布。这标志着 Agent 正从软件界面延伸到车载与出行场景，是 Agent 落地物理世界的重要信号。"
+      "ai_summary": "Replit CEO Amjad Masad 提出“自动驾驶公司”愿景，认为未来 AI Agent 将承担日常任务，人类聚焦更高层决策。这一观点代表了对 Agent 驱动组织形态变革的前瞻判断。它也为理解 AI Agent 在企业落地中的角色提供了参考框架。"
     }
   ],
   "answered": false
