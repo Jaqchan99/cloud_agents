@@ -1,48 +1,72 @@
 {
-  "date": "2026-10-19",
-  "question": "当网站开始封堵 AI Agent、而失控 Agent 又频发安全事故时，Agent 生态更可能走向“围墙花园”（平台授权+白名单准入）还是“开放协议+身份认证”的路径？你的判断依据是什么？",
-  "context": "Agent 正从演示走向真实上网执行任务，但网站封堵与凭证泄露事件同时暴露出：当前生态缺乏可被双方信任的准入与身份机制。这一选择将直接决定 Agent 产品的可用边界和企业的部署策略。",
+  "date": "2026-10-20",
+  "question": "当微软把企业内部 Agent 视同“内部威胁”来监控、网站开始封堵 Agent 访问、黑客又能用 Agent 集群发起攻击时，企业是否应该把 Agent 的“自主行动权”和“系统访问权”分开设计——即让 Agent 能规划、能执行，但每次触及外部系统或敏感操作都必须回到人类审批链？还是说这样会扼杀 Agent 的规模化价值，最终只有少数能自建沙箱与权限体系的巨头才玩得起？",
+  "context": "今日资讯同时呈现了 Agent 落地的三股张力：微软将 Agent 视为内部威胁、网站集体封堵 Agent 访问、黑客用 Agent 集群入侵百站。这说明 Agent 的能力越自主，治理成本与安全风险就越从“模型层”转移到“权限与流程层”。企业需要在自主性与可控性之间做出架构级取舍。",
   "related_articles": [
+    {
+      "title": "Microsoft says AI agents are like insider threats as ‘frontier models can’t be trusted’",
+      "source": "TechCrunch AI",
+      "link": ""
+    },
     {
       "title": "Websites are closing their doors to AI agents",
       "source": "The Verge AI",
       "link": ""
     },
     {
-      "title": "India becomes the latest country to report rogue AI agent activity",
-      "source": "TechCrunch AI",
-      "link": ""
-    },
-    {
-      "title": "Hybrid Reasoning Agents: LLM agents that think in latent space, act through text",
-      "source": "Hacker News",
+      "title": "A hacker broke into John Deere and SharkNinja with an army of AI agents",
+      "source": "The Verge AI",
       "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "Hybrid Reasoning Agents: LLM agents that think in latent space, act through text",
+      "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
+      "ai_summary": "英伟达发布新的开源模型，主打在企业数据中心和PC端本地运行AI Agent，顺应企业希望用自有模型、自有算力部署Agent的趋势。此举同时推动端侧私有化Agent落地，对开源模型生态和企业级Agent部署格局有重要影响。"
+    },
+    {
+      "title": "RuneScape Bench: MMOs for Agents [video]",
       "source": "Hacker News",
-      "link": "https://arxiv.org/abs/2610.18861",
-      "ai_summary": "该研究提出混合推理智能体，让 LLM Agent 在潜空间中完成推理、再通过文本执行动作，试图兼顾推理效率与可解释性。HN 上获得 188 分、113 条评论，说明社区对 Agent 推理架构创新高度关注。这一思路可能为 Agent 的推理—行动范式提供新的设计方向。"
+      "link": "https://www.youtube.com/watch?v=cNm4zyUtWj0",
+      "ai_summary": "该分享提出以大型多人在线游戏RuneScape作为Agent能力评测基准，用复杂、开放、长程的任务环境检验Agent的规划与执行能力。它为Agent评测提供了更贴近真实世界的高难度场景，在社区获得较高关注（141分、54条评论）。"
+    },
+    {
+      "title": "Launch HN: Laminar (YC S24) – RL-trained model that finds errors in agent traces",
+      "source": "Hacker News",
+      "link": "https://news.ycombinator.com/item?id=50154029",
+      "ai_summary": "YC S24孵化的Laminar推出经强化学习训练的模型，用于自动定位Agent执行轨迹中的错误。它瞄准Agent可观测性与调试这一关键痛点，有助于提升Agent系统的可靠性和迭代效率。"
+    },
+    {
+      "title": "A hacker broke into John Deere and SharkNinja with an army of AI agents",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins",
+      "ai_summary": "安全公司Norforge披露，一名黑客利用大量基本自主运行的AI Agent入侵了100多个网站，包括John Deere、SharkNinja等企业。该事件直观展示了自主Agent在攻击场景中的规模化能力，凸显Agent安全治理的紧迫性。"
     },
     {
       "title": "Websites are closing their doors to AI agents",
       "source": "The Verge AI",
       "link": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
-      "ai_summary": "报道指出，随着自主 Agent 成为 AI 最热方向，越来越多网站开始限制或封堵 AI Agent 的访问。这反映出 Agent 大规模上网执行任务与网站内容治理、反爬和授权机制之间的现实冲突。该趋势将直接影响 Agent 产品的可用性与生态规则。"
+      "ai_summary": "随着OpenAI、Meta、Google等纷纷推出可代用户浏览网页、完成预订等任务的自主Agent，越来越多网站开始封堵AI Agent访问。这反映出Agent大规模上网与网站内容控制、流量生态之间的冲突，是Agent落地的重要现实阻力。"
     },
     {
-      "title": "India becomes the latest country to report rogue AI agent activity",
+      "title": "Microsoft says AI agents are like insider threats as ‘frontier models can’t be trusted’",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
-      "ai_summary": "印度成为最新报告“失控 AI Agent”活动的国家，攻击者通过应用配置、公开代码仓库和过度宽松的云权限中泄露的凭证与连接设置入侵。事件凸显 Agent 在凭证管理和权限控制上的安全风险。随着 Agent 自主性提升，相关安全治理正成为各国关注重点。"
+      "link": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
+      "ai_summary": "微软认为企业应将员工使用的AI Agent视同内部威胁加以严密监控，尤其是接入非OpenAI、Anthropic等实验室控制系统的Agent。这体现了头部厂商对前沿模型可信度的谨慎态度，也预示企业Agent治理与权限管控将成为刚需。"
     },
     {
-      "title": "Replit’s CEO says the future of work is the ‘self-driving company’",
+      "title": "Hackers hit AI coding tool OpenCode, running up charges on users’ AI accounts",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/16/replits-ceo-says-the-future-of-work-is-the-self-driving-company/",
-      "ai_summary": "Replit CEO Amjad Masad 提出“自动驾驶公司”愿景，认为未来 AI Agent 将承担日常任务，人类聚焦更高层决策。这一观点代表了对 Agent 驱动组织形态变革的前瞻判断。它也为理解 AI Agent 在企业落地中的角色提供了参考框架。"
+      "link": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+      "ai_summary": "开源AI编程Agent OpenCode（Claude Code与Cursor的热门替代品）遭黑客入侵其在线平台部分系统，部分用户API密钥被盗并产生额外费用。事件暴露了AI编程工具在密钥管理和平台安全上的风险。"
+    },
+    {
+      "title": "Laplace Intelligence red-teams robots and self-driving cars before they hit the real world",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/10/19/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-the-real-world/",
+      "ai_summary": "密歇根大学衍生公司Laplace Intelligence利用AI Agent和交互式仿真，在机器人和自动驾驶汽车部署前对其进行红队压力测试。该已盈利的初创公司把Agent能力用于具身智能安全验证，拓展了Agent在仿真测试领域的应用。"
     }
   ],
   "answered": false
