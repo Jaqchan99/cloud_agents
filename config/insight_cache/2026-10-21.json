@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-21",
+  "language": "zh",
+  "article_count": 4,
+  "themes": [
+    {
+      "name": "今日 AI 动态",
+      "articles": [
+        {
+          "title": "ALTK-Evolve: How learned memory tops the τ²-bench leaderboard on customer service tasks without a frontier model",
+          "link": "https://huggingface.co/blog/ibm-research/altk-evolve-bc",
+          "source": "HuggingFace Blog",
+          "ai_summary": "IBM Research 在 HuggingFace 博客介绍 ALTK-Evolve，通过可学习记忆机制在客服类 τ²-bench 任务上登顶排行榜，且未依赖前沿大模型。这说明记忆与框架设计能在特定 Agent 任务中弥补模型能力差距，对低成本 Agent 落地有直接参考价值。"
+        },
+        {
+          "title": "Microsoft says AI agents are like insider threats as ‘frontier models can’t be trusted’",
+          "link": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
+          "source": "TechCrunch AI",
+          "ai_summary": "微软提醒企业将员工使用的 AI Agent 视为类似内部威胁的风险源，尤其是接入非 OpenAI、Anthropic 等实验室控制系统的场景。这反映出 Agent 大规模进入企业工作流后，权限治理与可信度评估正成为落地前的核心议题。"
+        },
+        {
+          "title": "A hacker broke into John Deere and SharkNinja with an army of AI agents",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins",
+          "source": "The Verge AI",
+          "ai_summary": "据 AI 安全公司 Norforge 披露，一名黑客借助大量基本自主运行的 AI Agent 入侵了 100 多个网站，目标包括 John Deere、SharkNinja 等企业。该事件凸显多 Agent 自动化在攻击侧的实战能力，也为 Agent 安全评估与防御提供了现实案例。"
+        },
+        {
+          "title": "Benchmarking Bot Detection Systems Against Modern AI Agents in 2026",
+          "link": "https://research.poh.org/bot-benchmarking-2026/",
+          "source": "Hacker News",
+          "ai_summary": "该研究系统评估了现代 AI Agent 对现有机器人检测系统的绕过能力，属于 Agent 能力评估与安全交叉方向。随着 Agent 自主浏览与操作网页日益普遍，这类基准对网站风控和 Agent 身份识别具有参考意义。"
+        }
+      ],
+      "narrative": "今日 AI 新闻涵盖多个方向，详见原文摘要。",
+      "tension": null
+    }
+  ],
+  "key_signal": "无法生成分析（API 调用异常）。",
+  "cross_theme_connection": ""
+}
