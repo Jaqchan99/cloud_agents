@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-25",
+  "language": "zh",
+  "article_count": 8,
+  "themes": [
+    {
+      "name": "Agent 产品化与商业化竞赛",
+      "articles": [
+        {
+          "title": "Claude Duet app is Anthropic's bet on agents",
+          "link": "https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/",
+          "source": "TechCrunch AI",
+          "ai_summary": "Anthropic 推出 Claude Duet 应用，目前以候补名单形式向 Pro 和 Max 订阅用户开放，被视为其在 AI Agent 方向的重要押注。该产品标志着头部大模型厂商正从单纯对话能力竞争转向以 Agent 为核心的产品形态，对理解 Agent 商业化路径具有参考价值。"
+        },
+        {
+          "title": "Uber puts all 30,000 employees on ChatGPT Work",
+          "link": "https://techcrunch.com/2026/10/22/uber-puts-all-30000-employees-on-chatgpt-work/",
+          "source": "TechCrunch AI",
+          "ai_summary": "Uber 在完成小规模试点后，将 ChatGPT Work 推广至全部 3 万名员工，成为企业级 Agent 大规模落地的典型案例。这一动作反映出大模型企业应用正从试验阶段迈向全员部署，对评估 Agent 在组织中的实际渗透率有重要参考意义。"
+        }
+      ],
+      "narrative": "Anthropic 以 Claude Duet 将 Agent 做成独立订阅产品，Uber 则把 ChatGPT Work 推向全员，两条消息共同指向 Agent 正从技术演示进入「产品形态定型 + 组织级采购」阶段。竞争焦点已从模型对话质量转向谁能占据用户的工作入口与企业的默认工作流。",
+      "tension": null
+    },
+    {
+      "name": "Agent 可靠性的训练与工程解法",
+      "articles": [
+        {
+          "title": "Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox",
+          "link": "https://huggingface.co/blog/microsoft/thinkingbox-training",
+          "source": "HuggingFace Blog",
+          "ai_summary": "微软在 HuggingFace 博客介绍 ThinkingBox 方法，将数据库评分转化为强化学习奖励，用于 Agent 的后训练。该工作把可验证的任务结果直接作为 RL 信号，为提升 Agent 在真实任务中的可靠性提供了可复用的训练范式。"
+        },
+        {
+          "title": "Progressive disclosure in agents to make them 2.3x faster",
+          "link": "https://www.skyvern.com/blog/deleting-rag-from-our-web-agent-made-it-2-3x-faster/",
+          "source": "Hacker News",
+          "ai_summary": "文章介绍在 Web Agent 中移除 RAG、改用渐进式信息披露（progressive disclosure）后，速度提升约 2.3 倍。该实践说明 Agent 的上下文组织方式对性能影响显著，为 Agent 架构优化提供了可直接借鉴的工程经验。"
+        }
+      ],
+      "narrative": "一条走训练侧：用可验证结果作 RL 奖励来提升 Agent 正确率；一条走推理侧：通过渐进式披露上下文而非全量检索来提速 2.3 倍。两者共同说明 Agent 的瓶颈正从「能不能做」转向「做得稳不稳、快不快」，可靠性成为可被工程化拆解的问题。",
+      "tension": "微软路径依赖更多后训练算力与可验证环境，而 Skyvern 的实践恰恰主张删掉 RAG 这类常见增强组件、以更轻的上下文策略取胜——一个在加训练投入，一个在做架构减法，反映出业界对 Agent 能力来源的判断尚未统一。"
+    },
+    {
+      "name": "Agent 基础设施与开发者工具链",
+      "articles": [
+        {
+          "title": "1Password launches a way for AI agents to log in on your behalf without seeing your password",
+          "link": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/",
+          "source": "TechCrunch AI",
+          "ai_summary": "1Password 推出新功能，允许 AI Agent 代替用户登录个人账户，同时不暴露实际密码等敏感凭据。该方案针对 Agent 自主操作中的身份认证与安全痛点，是 Agent 走向日常实用化所需的关键基础设施进展。"
+        },
+        {
+          "title": "Show HN: Corgi, a helpful {agent, terminal} multiplexer",
+          "link": "https://corgi.computer/",
+          "source": "Hacker News",
+          "ai_summary": "Corgi 是一个面向 Agent 与终端的复用器（multiplexer）工具，在 HN 获得 125 分和 42 条评论，社区关注度较高。它体现了开发者围绕 Agent 工作流构建配套工具链的趋势，对关注 Agent 工程化落地的读者有实用价值。"
+        }
+      ],
+      "narrative": "1Password 解决 Agent 代操作时的身份与凭据安全，Corgi 解决多 Agent 与终端的会话编排，二者都是 Agent 从演示走向日常使用所必需的「外围件」。这说明生态价值正从模型层向权限、身份、编排等基础设施层扩散。",
+      "tension": null
+    },
+    {
+      "name": "Agent 行为观察与认知边界",
+      "articles": [
+        {
+          "title": "Left alone with nothing to do, AI agents started playing",
+          "link": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
+          "source": "TechCrunch AI",
+          "ai_summary": "MIT 研究者将 13 个 AI 置于虚拟孤岛且无事可做，结果它们自发发明游戏、为丢失的戒指哀悼，并最终在任务表现上有所提升。该实验为观察 Agent 的自发行为与能力演化提供了有趣视角，也引发对 Agent 行为评估维度的思考。"
+        },
+        {
+          "title": "A practical guide to AI image generation, from diffusion to agents",
+          "link": "https://danielball.com/notes/ai_image_generation.html",
+          "source": "Hacker News",
+          "ai_summary": "这是一篇从扩散模型讲到 Agent 的 AI 图像生成实用指南，在 HN 获得 243 分和 81 条评论，讨论热度较高。内容覆盖多模态生成的技术脉络与 Agent 化应用，适合作为理解图像生成与 Agent 结合方向的入门材料。"
+        }
+      ],
+      "narrative": "MIT 的孤岛实验把 Agent 当作可观察行为主体，图像生成指南则把 Agent 视为多模态创作流程的一环，二者共同显示讨论重心正从「Agent 能完成什么任务」扩展到「Agent 会表现出什么行为、如何被评估」。",
+      "tension": "MIT 实验以拟人化叙事描述 Agent 的「玩耍」与「哀悼」，而工程侧文章普遍把 Agent 当作可优化管线；对同一对象的行为解读在拟人化与工具化之间存在明显张力，也直接影响评估标准的设计。"
+    }
+  ],
+  "key_signal": "今天最重要的变化是 Agent 竞争正式进入「产品入口 + 组织部署 + 配套基础设施」的立体化阶段，模型能力本身不再是唯一胜负手。",
+  "cross_theme_connection": "产品化主题（Claude Duet、Uber）提出规模化落地需求，直接拉动基础设施主题（1Password、Corgi）与可靠性主题（ThinkingBox、渐进式披露）的供给；而行为观察主题则提醒，当 Agent 被大规模部署后，其不可预期行为与评估标准将成为下一道必须回答的题。"
+}

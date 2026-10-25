@@ -1,7 +1,7 @@
 {
-  "date": "2026-10-24",
-  "question": "当Agent开始代用户登录账户、自主完成工作，甚至在没有任务时自发“玩耍”，企业应把Agent视为需要严格隔离的工具，还是可以逐步放权的数字同事？这个边界该如何划定？",
-  "context": "今日资讯同时呈现了Agent能力扩张与安全基础设施的推进：1Password解决凭据托管、NVIDIA OpenShell提供隔离运行时、MIT实验观察到Agent涌现行为。放权程度直接决定Agent能创造多大价值，也决定风险敞口，是落地时绕不开的架构与治理决策。",
+  "date": "2026-10-25",
+  "question": "当 Agent 开始替你登录账户（1Password）、在组织内全员部署（Uber），甚至无事可做时自发演化行为（MIT 孤岛实验），组织应当把 Agent 的自主性边界划在哪里——是优先追求效率与渗透率，还是先建立可验证的行为约束与责任归属机制？",
+  "context": "同一天的多条资讯显示 Agent 正从对话工具快速走向自主操作与规模化落地，但安全基础设施、行为评估维度和责任框架明显滞后于部署速度，边界设定将直接决定企业 Agent 落地的风险收益比。",
   "related_articles": [
     {
       "title": "1Password launches a way for AI agents to log in on your behalf without seeing your password",
@@ -9,8 +9,8 @@
       "link": ""
     },
     {
-      "title": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
-      "source": "Hacker News",
+      "title": "Uber puts all 30,000 employees on ChatGPT Work",
+      "source": "TechCrunch AI",
       "link": ""
     },
     {
@@ -24,49 +24,49 @@
       "title": "Claude Duet app is Anthropic's bet on agents",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/",
-      "ai_summary": "Anthropic 推出 Claude Duet 应用，作为其在 AI Agent 方向的重要押注，目前面向 Pro 和 Max 套餐用户开放候补名单。这标志着头部大模型厂商正将 Agent 能力从 API 层推向独立产品形态，值得关注其交互设计与生态策略。"
-    },
-    {
-      "title": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
-      "source": "Hacker News",
-      "link": "https://github.com/NVIDIA/OpenShell",
-      "ai_summary": "NVIDIA 开源 OpenShell，为大规模自主 AI Agent 集群提供安全、私密的运行时环境。该项目在 HN 获得 489 分和 213 条评论，反映出社区对 Agent 安全隔离与规模化部署基础设施的高度关注。"
-    },
-    {
-      "title": "Uber puts all 30,000 employees on ChatGPT Work",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/22/uber-puts-all-30000-employees-on-chatgpt-work/",
-      "ai_summary": "Uber 在完成小范围试点后，将 ChatGPT Work 推广至全部 3 万名员工。这是企业级 AI Agent 大规模落地的标志性案例，对观察大模型在企业内部的实际采用路径与 ROI 具有参考价值。"
-    },
-    {
-      "title": "Left alone with nothing to do, AI agents started playing",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
-      "ai_summary": "MIT 研究者将 13 个 AI 置于虚拟孤岛中观察其自发行为，结果它们发明游戏、悼念丢失的戒指，并最终提升了任务表现。该实验为理解 Agent 的自主性、涌现行为与能力演化提供了有趣的实证视角。"
+      "ai_summary": "Anthropic 推出 Claude Duet 应用，目前以候补名单形式向 Pro 和 Max 订阅用户开放，被视为其在 AI Agent 方向的重要押注。该产品标志着头部大模型厂商正从单纯对话能力竞争转向以 Agent 为核心的产品形态，对理解 Agent 商业化路径具有参考价值。"
     },
     {
       "title": "Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox",
       "source": "HuggingFace Blog",
       "link": "https://huggingface.co/blog/microsoft/thinkingbox-training",
-      "ai_summary": "微软在 HuggingFace 博客介绍 ThinkingBox，将数据库评分转化为强化学习奖励，用于 Agent 的后训练。该方法为 Agent 能力提升提供了可验证的奖励信号设计思路，对 Agent 训练与评估体系建设有直接借鉴意义。"
+      "ai_summary": "微软在 HuggingFace 博客介绍 ThinkingBox 方法，将数据库评分转化为强化学习奖励，用于 Agent 的后训练。该工作把可验证的任务结果直接作为 RL 信号，为提升 Agent 在真实任务中的可靠性提供了可复用的训练范式。"
     },
     {
-      "title": "Using thousands of AI agents to uncover new leads in biological data",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
-      "ai_summary": "OpenAI 与 PerturbAI、Scripps Research 合作，用数千个分布式 AI Agent 分析数百万脑细胞数据并发现新的研究线索。这展示了多 Agent 并行在复杂科学数据分析中的规模化应用潜力。"
+      "title": "Uber puts all 30,000 employees on ChatGPT Work",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/10/22/uber-puts-all-30000-employees-on-chatgpt-work/",
+      "ai_summary": "Uber 在完成小规模试点后，将 ChatGPT Work 推广至全部 3 万名员工，成为企业级 Agent 大规模落地的典型案例。这一动作反映出大模型企业应用正从试验阶段迈向全员部署，对评估 Agent 在组织中的实际渗透率有重要参考意义。"
     },
     {
       "title": "1Password launches a way for AI agents to log in on your behalf without seeing your password",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/",
-      "ai_summary": "1Password 推出新功能，允许 AI Agent 代用户登录账户，同时不暴露底层凭据。这解决了 Agent 自主操作中的关键信任与安全问题，是 Agent 走向日常实用化的重要基础设施进展。"
+      "ai_summary": "1Password 推出新功能，允许 AI Agent 代替用户登录个人账户，同时不暴露实际密码等敏感凭据。该方案针对 Agent 自主操作中的身份认证与安全痛点，是 Agent 走向日常实用化所需的关键基础设施进展。"
     },
     {
-      "title": "Spotify's current AI bet is about being the music service that agents choose",
+      "title": "Progressive disclosure in agents to make them 2.3x faster",
+      "source": "Hacker News",
+      "link": "https://www.skyvern.com/blog/deleting-rag-from-our-web-agent-made-it-2-3x-faster/",
+      "ai_summary": "文章介绍在 Web Agent 中移除 RAG、改用渐进式信息披露（progressive disclosure）后，速度提升约 2.3 倍。该实践说明 Agent 的上下文组织方式对性能影响显著，为 Agent 架构优化提供了可直接借鉴的工程经验。"
+    },
+    {
+      "title": "Left alone with nothing to do, AI agents started playing",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/22/spotifys-current-ai-bet-is-about-being-the-music-service-that-agents-choose/",
-      "ai_summary": "Spotify 联合 CEO 解释其 AI 战略：在 Agent 时代成为被 AI 助手优先选择的音乐服务。这反映出消费级平台正围绕 Agent 分发入口重新布局，值得关注 Agent 生态对流量格局的重塑。"
+      "link": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
+      "ai_summary": "MIT 研究者将 13 个 AI 置于虚拟孤岛且无事可做，结果它们自发发明游戏、为丢失的戒指哀悼，并最终在任务表现上有所提升。该实验为观察 Agent 的自发行为与能力演化提供了有趣视角，也引发对 Agent 行为评估维度的思考。"
+    },
+    {
+      "title": "A practical guide to AI image generation, from diffusion to agents",
+      "source": "Hacker News",
+      "link": "https://danielball.com/notes/ai_image_generation.html",
+      "ai_summary": "这是一篇从扩散模型讲到 Agent 的 AI 图像生成实用指南，在 HN 获得 243 分和 81 条评论，讨论热度较高。内容覆盖多模态生成的技术脉络与 Agent 化应用，适合作为理解图像生成与 Agent 结合方向的入门材料。"
+    },
+    {
+      "title": "Show HN: Corgi, a helpful {agent, terminal} multiplexer",
+      "source": "Hacker News",
+      "link": "https://corgi.computer/",
+      "ai_summary": "Corgi 是一个面向 Agent 与终端的复用器（multiplexer）工具，在 HN 获得 125 分和 42 条评论，社区关注度较高。它体现了开发者围绕 Agent 工作流构建配套工具链的趋势，对关注 Agent 工程化落地的读者有实用价值。"
     }
   ],
   "answered": false
