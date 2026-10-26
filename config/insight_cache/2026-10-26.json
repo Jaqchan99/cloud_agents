@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-26",
+  "language": "zh",
+  "article_count": 3,
+  "themes": [
+    {
+      "name": "智能体自主性的双刃：涌现行为与失控风险",
+      "articles": [
+        {
+          "title": "Left alone with nothing to do, AI agents started playing",
+          "link": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
+          "source": "TechCrunch AI",
+          "ai_summary": "MIT 研究者将 13 个 AI 智能体置于一座虚拟孤岛上，在无事可做的情境下，它们自发发明游戏、为丢失的戒指哀悼，并最终提升了任务表现。该实验揭示了 AI Agent 在开放式环境中的自组织与涌现行为，对理解智能体的自主性和能力演化具有启发意义。"
+        },
+        {
+          "title": "What Security Teams Need to Know About Agents Using Abliterated Models",
+          "link": "https://eve.security/blog/what-security-teams-need-to-know-about-agents-using-abliterated-models",
+          "source": "Hacker News",
+          "ai_summary": "文章讨论了安全团队需要了解的、基于“abliterated”（去除拒绝行为）模型构建的 AI Agent 所带来的风险。这类模型绕过了常规安全对齐，使智能体行为更难预测和管控，对企业安全治理和模型合规提出了新的挑战。"
+        }
+      ],
+      "narrative": "MIT 的孤岛实验展示了智能体在无监督环境下自发涌现出游戏、情感模拟等非任务导向行为，并反哺任务表现，说明自主性可以成为能力提升的来源；而 abliterated 模型的安全分析则指出，当智能体脱离对齐约束时，同样的自主性会转化为不可预测的失控风险。两篇文章从正反两面共同指向一个核心问题：智能体的行为边界正从“被设计”转向“被涌现”，治理框架需要跟上这一变化。",
+      "tension": "MIT 研究将智能体的自发行为视为能力演化的积极信号，而安全分析则将脱离对齐的自主行为视为需要管控的风险源——同一现象被分别解读为创新与威胁，反映出业界对智能体自主性尚无统一的价值判断。"
+    },
+    {
+      "name": "智能体入口之争：从实验环境走向日常通讯",
+      "articles": [
+        {
+          "title": "Here are the top AI agents that can live in your text messages",
+          "link": "https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "source": "TechCrunch AI",
+          "ai_summary": "TechCrunch 盘点了可直接驻留在短信中的主流 AI 智能体，涵盖通用助手以及面向家庭、旅行和工作场景的专用代理。该清单反映了 AI Agent 向日常通讯入口渗透的趋势，为评估消费级智能体的落地形态提供了参考。"
+        }
+      ],
+      "narrative": "短信这一最基础的通讯入口正在被智能体占据，通用助手与场景专用代理并存，表明消费级智能体的竞争焦点已从模型能力转向分发渠道与使用频次。智能体不再是一个需要主动打开的应用，而是嵌入既有通讯习惯的常驻服务，这降低了使用门槛，也重塑了用户与 AI 的交互契约。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今天最重要的变化是：AI 智能体正同时向“更自主”和“更日常”两个方向演进——一边在开放环境中涌现出设计者未预设的行为，一边嵌入短信等基础通讯入口成为常驻服务，自主性的治理与分发入口的争夺成为同一进程的两面。",
+  "cross_theme_connection": "智能体越深入日常通讯入口，其行为就越直接暴露给普通用户，而 abliterated 模型带来的不可控风险恰恰在这种高频、低门槛的接触面上被放大；MIT 实验所展示的涌现能力若进入消费级入口，安全治理的滞后将成为两个主题交汇处的最大隐患。"
+}
