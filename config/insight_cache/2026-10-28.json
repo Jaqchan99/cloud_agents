@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-28",
+  "language": "zh",
+  "article_count": 8,
+  "themes": [
+    {
+      "name": "Agent 能力规模化与商业验证",
+      "articles": [
+        {
+          "title": "Retell uses OpenAI models to help power 100M monthly calls",
+          "link": "https://openai.com/index/retell-ai",
+          "source": "OpenAI Blog",
+          "ai_summary": "Retell 基于 OpenAI 模型支撑每月 1 亿次语音通话，GPT-6 Astra 在其语音 Agent 基准测试中登顶，Codex 则帮助其实现每名员工 160 万美元的年化营收。这展示了语音 AI Agent 在规模化商业落地中的成熟度，以及模型能力对 Agent 产品竞争力的直接拉动。"
+        },
+        {
+          "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+          "link": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+          "source": "OpenAI Blog",
+          "ai_summary": "CodeRabbit 使用 GPT-6.1 Sol 在复杂代码库中排查安全风险，其安全 Agent 可帮助开发者审阅发现并给出修复建议。这是大模型在代码安全 Agent 场景的典型落地，说明模型能力正被封装为可协作的专业 Agent 工作流。"
+        }
+      ],
+      "narrative": "语音 Agent 月均 1 亿次通话与代码安全 Agent 的规模化部署，共同证明 Agent 已跨过概念验证阶段，进入可量化的商业产出期。模型能力（GPT-6 Astra / GPT-6.1 Sol）直接决定 Agent 产品的基准排名与营收效率，形成「模型即产品竞争力」的传导链。",
+      "tension": null
+    },
+    {
+      "name": "Agent 入口争夺与生态绑定",
+      "articles": [
+        {
+          "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
+          "link": "https://openai.com/index/oracle-apps-in-chatgpt",
+          "source": "OpenAI Blog",
+          "ai_summary": "OpenAI 与 Oracle 扩大合作，将企业应用与 AI Agent 引入 ChatGPT，同时为 Oracle 的新产品提供能力支持。这意味着 ChatGPT 正加速成为企业级 Agent 的入口，大模型厂商与云/企业软件厂商的生态绑定进一步加深。"
+        },
+        {
+          "title": "How OpenAI turned its coding tools into dots, an always-on personal assistant",
+          "link": "https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant/",
+          "source": "TechCrunch AI",
+          "ai_summary": "OpenAI 将其编程工具演进为常驻式个人助理 dots，负责该产品的高管明确表示不愿与别人的 AI Agent 开会。这反映出 AI Agent 正从编码场景向通用个人助理延伸，也折射出 Agent 之间交互与身份边界的新问题。"
+        }
+      ],
+      "narrative": "OpenAI 同时从企业侧（Oracle 应用入驻 ChatGPT）和个人侧（编程工具演化为常驻助理 dots）扩张 Agent 入口，表明其战略重心正从模型 API 转向掌控 Agent 的分发界面。高管「不愿与别人的 Agent 开会」的表态，则提前暴露了 Agent 身份与互操作性的治理空白。",
+      "tension": null
+    },
+    {
+      "name": "Agent 落地中的信任、责任与平台摩擦",
+      "articles": [
+        {
+          "title": "The RealReal won’t let AI agents hog designer clothing",
+          "link": "https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal",
+          "source": "The Verge AI",
+          "ai_summary": "二手奢侈品平台 The RealReal 升级机器人防御系统，限制 AI Agent 在其站点购物，此举发生在 Meta 推出 agentic 购物功能数日之后。它体现了 Agent 自动化购物与平台反爬/公平性之间的张力，是 Agent 商业化落地中的现实摩擦点。"
+        },
+        {
+          "title": "Bank of America kindly asks that you don’t share your banking password with your AI assistant",
+          "link": "https://techcrunch.com/2026/10/27/bank-of-america-kindly-asks-that-you-dont-share-your-banking-password-with-your-ai-assistant/",
+          "source": "TechCrunch AI",
+          "ai_summary": "美国银行提醒客户不要向 AI 助理透露银行密码，并强调客户需对 AI Agent 访问所引发的账户活动负责。这凸显了 AI Agent 介入个人金融场景时的安全与责任划分问题，是 Agent 普及过程中必须解决的信任障碍。"
+        },
+        {
+          "title": "Here be monsters: What do you still need to know when agents do the work?",
+          "link": "https://blog.adrq.dev/here-be-monsters-what-do-you-still-need-to-know-when-agents-do-the-work",
+          "source": "Hacker News",
+          "ai_summary": "该文讨论当 AI Agent 承担实际工作后，人类仍需掌握哪些知识与判断力，HN 上获得 152 分和 82 条评论的高热度讨论。它触及 Agent 能力评估之外的关键议题：可解释性、责任归属与人类监督边界，对 Agent 落地实践有参考价值。"
+        }
+      ],
+      "narrative": "平台侧（The RealReal 封堵购物 Agent）、金融侧（美银警告密码泄露与责任归属）与社区讨论（HN 热议人类监督边界）从三个方向指向同一问题：Agent 自主行动越快，外部系统对它的信任赤字与责任真空就越突出。这些摩擦不是技术故障，而是 Agent 进入真实经济流程后必然遭遇的制度性阻力。",
+      "tension": "Meta 等厂商力推 agentic 购物以扩大 Agent 自主权，而 The RealReal 等平台则以反机器人手段限制 Agent 访问——同一技术在不同利益方眼中分别是「便利」与「滥用」，Agent 的合法身份尚无共识。"
+    },
+    {
+      "name": "Agent 工程化与可验证性实践",
+      "articles": [
+        {
+          "title": "Show HN: Specification First Agentic Development Plugin and Prove",
+          "link": "https://spec-first.dev/",
+          "source": "Hacker News",
+          "ai_summary": "该项目提出“规格优先”的 Agent 开发插件与方法，强调先写规格再让 Agent 执行并可验证。它为 Agent 开发提供了工程化、可验证的实践思路，契合当前对 Agent 可靠性与能力评估的关注。"
+        }
+      ],
+      "narrative": "「规格优先」方法把软件工程的契约思想引入 Agent 开发，试图用可验证的规格约束 Agent 行为。这与 HN 上关于人类监督边界的讨论形成呼应：可靠性不能只靠模型能力提升，还需要开发范式层面的结构性约束。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今天最重要的变化是：Agent 的商业规模化（1 亿次通话、企业入口绑定）已跑在信任与责任机制前面，平台封堵、银行免责与工程化约束同时出现，标志着行业进入「能力兑现」与「制度补课」赛跑的新阶段。",
+  "cross_theme_connection": "入口争夺与生态绑定（主题二）放大了 Agent 的自主行动范围，直接触发了平台与金融机构的防御性摩擦（主题三）；而「规格优先」的工程化实践（主题四）则是从开发侧回应这些信任赤字的自下而上尝试，与自上而下的制度约束形成互补。"
+}
