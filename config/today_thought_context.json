@@ -1,72 +1,72 @@
 {
-  "date": "2026-10-28",
-  "question": "当 AI Agent 开始代表个人或企业与其他 Agent 交互（如 OpenAI 高管拒绝与别人的 Agent 开会、The RealReal 限制 Agent 购物、银行警告勿向 AI 助理透露密码），我们应如何为 Agent 建立身份、授权与责任边界——是由平台单方面设防，还是需要一套可验证的 Agent 身份与委托协议？",
-  "context": "Agent 正从工具变为具有“行为主体”色彩的执行者，但身份归属、权限授予和后果承担仍无共识。这直接决定 Agent 能否进入金融、企业协作等高信任场景，也影响平台、用户与模型厂商之间的责任划分。",
+  "date": "2026-10-29",
+  "question": "当 Google 将 Gemini 和搜索向更多应用开放、Cursor 推出 Agent SDK、而税务等专业领域的 Agent 基准开始检验真实工作能力时，应用分发与专业服务的价值将更多转移到“Agent 可调用性”上——你认为企业当前更应优先构建自己的 Agent 能力，还是优先让服务被主流 Agent 生态集成？",
+  "context": "头部厂商正同时推进 Agent 基础设施开放和垂直场景能力验证，这使企业面临一个具体战略选择：自建 Agent 还是接入生态。选错优先级可能影响分发入口和专业服务竞争力的构建节奏。",
   "related_articles": [
     {
-      "title": "How OpenAI turned its coding tools into dots, an always-on personal assistant",
+      "title": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
       "source": "TechCrunch AI",
       "link": ""
     },
     {
-      "title": "The RealReal won’t let AI agents hog designer clothing",
-      "source": "The Verge AI",
+      "title": "The Agent SDK",
+      "source": "Hacker News",
       "link": ""
     },
     {
-      "title": "Bank of America kindly asks that you don’t share your banking password with your AI assistant",
-      "source": "TechCrunch AI",
+      "title": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
+      "source": "Hacker News",
       "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "Retell uses OpenAI models to help power 100M monthly calls",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/retell-ai",
-      "ai_summary": "Retell 基于 OpenAI 模型支撑每月 1 亿次语音通话，GPT-6 Astra 在其语音 Agent 基准测试中登顶，Codex 则帮助其实现每名员工 160 万美元的年化营收。这展示了语音 AI Agent 在规模化商业落地中的成熟度，以及模型能力对 Agent 产品竞争力的直接拉动。"
+      "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+      "ai_summary": "Google 发布新一代前沿模型 Gemini 4 Carbon，在编程、Agent 任务和网络安全方面取得显著提升。这是头部厂商在大模型能力上的又一次重要迭代，尤其强调 Agent 与安全场景，值得关注其对竞争格局的影响。"
     },
     {
-      "title": "How OpenAI turned its coding tools into dots, an always-on personal assistant",
+      "title": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant/",
-      "ai_summary": "OpenAI 将其编程工具演进为常驻式个人助理 dots，负责该产品的高管明确表示不愿与别人的 AI Agent 开会。这反映出 AI Agent 正从编码场景向通用个人助理延伸，也折射出 Agent 之间交互与身份边界的新问题。"
+      "link": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
+      "ai_summary": "Google 推出新的开发者平台，允许企业将服务接入 Gemini 和搜索等 AI 体验。随着 AI Agent 重塑用户获取和使用应用的方式，这一开放策略可能改变应用分发与发现生态。"
     },
     {
-      "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
-      "ai_summary": "CodeRabbit 使用 GPT-6.1 Sol 在复杂代码库中排查安全风险，其安全 Agent 可帮助开发者审阅发现并给出修复建议。这是大模型在代码安全 Agent 场景的典型落地，说明模型能力正被封装为可协作的专业 Agent 工作流。"
+      "title": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
+      "source": "Hacker News",
+      "link": "https://surgehq.ai/blog/dayjob-tax",
+      "ai_summary": "该研究用 50 个专业税务任务评估 AI Agent 的真实工作能力，属于高价值的垂直领域 Agent 基准。它为衡量 Agent 在专业场景中的可靠性提供了实证参考，社区讨论热度较高。"
     },
     {
-      "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/oracle-apps-in-chatgpt",
-      "ai_summary": "OpenAI 与 Oracle 扩大合作，将企业应用与 AI Agent 引入 ChatGPT，同时为 Oracle 的新产品提供能力支持。这意味着 ChatGPT 正加速成为企业级 Agent 的入口，大模型厂商与云/企业软件厂商的生态绑定进一步加深。"
+      "title": "The Agent SDK",
+      "source": "Hacker News",
+      "link": "https://cursor.com/blog/agent-sdk",
+      "ai_summary": "Cursor 发布 Agent SDK，为开发者构建和集成 AI Agent 提供统一工具链。作为热门编程工具厂商的 Agent 基础设施布局，它有望降低 Agent 开发门槛并推动生态扩展。"
     },
     {
       "title": "Here be monsters: What do you still need to know when agents do the work?",
       "source": "Hacker News",
       "link": "https://blog.adrq.dev/here-be-monsters-what-do-you-still-need-to-know-when-agents-do-the-work",
-      "ai_summary": "该文讨论当 AI Agent 承担实际工作后，人类仍需掌握哪些知识与判断力，HN 上获得 152 分和 82 条评论的高热度讨论。它触及 Agent 能力评估之外的关键议题：可解释性、责任归属与人类监督边界，对 Agent 落地实践有参考价值。"
+      "ai_summary": "文章探讨当 AI Agent 承担实际工作后，人类仍需掌握哪些知识与判断能力。它从实践角度反思 Agent 自动化的边界与风险，对理解人机协作模式有启发意义。"
     },
     {
-      "title": "Show HN: Specification First Agentic Development Plugin and Prove",
-      "source": "Hacker News",
-      "link": "https://spec-first.dev/",
-      "ai_summary": "该项目提出“规格优先”的 Agent 开发插件与方法，强调先写规格再让 Agent 执行并可验证。它为 Agent 开发提供了工程化、可验证的实践思路，契合当前对 Agent 可靠性与能力评估的关注。"
+      "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+      "ai_summary": "CodeRabbit 使用 GPT-6.1 Sol 在复杂代码库中排查安全风险，其安全 Agent 可辅助开发者审查发现与修复建议。这展示了前沿模型在代码安全这一高价值场景中的落地能力。"
     },
     {
-      "title": "The RealReal won’t let AI agents hog designer clothing",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal",
-      "ai_summary": "二手奢侈品平台 The RealReal 升级机器人防御系统，限制 AI Agent 在其站点购物，此举发生在 Meta 推出 agentic 购物功能数日之后。它体现了 Agent 自动化购物与平台反爬/公平性之间的张力，是 Agent 商业化落地中的现实摩擦点。"
+      "title": "Retell uses OpenAI models to help power 100M monthly calls",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/retell-ai",
+      "ai_summary": "Retell 借助 OpenAI 模型支撑每月 1 亿次通话，GPT-6 Astra 在其语音 Agent 基准中排名第一。案例还显示 Codex 帮助其达到每名员工 160 万美元年收入，体现了语音 Agent 的商业化潜力。"
     },
     {
-      "title": "Bank of America kindly asks that you don’t share your banking password with your AI assistant",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/27/bank-of-america-kindly-asks-that-you-dont-share-your-banking-password-with-your-ai-assistant/",
-      "ai_summary": "美国银行提醒客户不要向 AI 助理透露银行密码，并强调客户需对 AI Agent 访问所引发的账户活动负责。这凸显了 AI Agent 介入个人金融场景时的安全与责任划分问题，是 Agent 普及过程中必须解决的信任障碍。"
+      "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+      "source": "OpenAI Blog",
+      "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
+      "ai_summary": "OpenAI 与 ServiceNow 扩大合作，将 OpenAI 模型和 Agent 引入 ServiceNow，同时把 ServiceNow 工作流接入 ChatGPT 和 Codex。这反映出企业级 Agent 工作流集成正成为大模型商业化的重要方向。"
     }
   ],
   "answered": false
