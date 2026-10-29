@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-29",
+  "language": "zh",
+  "article_count": 8,
+  "themes": [
+    {
+      "name": "Agent 基础设施与生态开放",
+      "articles": [
+        {
+          "title": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
+          "link": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
+          "source": "TechCrunch AI",
+          "ai_summary": "Google 推出新的开发者平台，允许企业将服务接入 Gemini 和搜索等 AI 体验。随着 AI Agent 重塑用户获取和使用应用的方式，这一开放策略可能改变应用分发与发现生态。"
+        },
+        {
+          "title": "The Agent SDK",
+          "link": "https://cursor.com/blog/agent-sdk",
+          "source": "Hacker News",
+          "ai_summary": "Cursor 发布 Agent SDK，为开发者构建和集成 AI Agent 提供统一工具链。作为热门编程工具厂商的 Agent 基础设施布局，它有望降低 Agent 开发门槛并推动生态扩展。"
+        }
+      ],
+      "narrative": "Agent 正从模型能力竞争转向分发入口与开发工具链的争夺。Google 把 Gemini 和搜索开放给第三方应用，Cursor 则用 SDK 收编开发者，两者都在抢占 Agent 时代的『操作系统』位置。这意味着竞争焦点已从『谁的模型更强』转向『谁定义 Agent 的运行与分发规则』。",
+      "tension": null
+    },
+    {
+      "name": "前沿模型的能力跃迁与安全落地",
+      "articles": [
+        {
+          "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
+          "link": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+          "source": "The Verge AI",
+          "ai_summary": "Google 发布新一代前沿模型 Gemini 4 Carbon，在编程、Agent 任务和网络安全方面取得显著提升。这是头部厂商在大模型能力上的又一次重要迭代，尤其强调 Agent 与安全场景，值得关注其对竞争格局的影响。"
+        },
+        {
+          "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+          "link": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+          "source": "OpenAI Blog",
+          "ai_summary": "CodeRabbit 使用 GPT-6.1 Sol 在复杂代码库中排查安全风险，其安全 Agent 可辅助开发者审查发现与修复建议。这展示了前沿模型在代码安全这一高价值场景中的落地能力。"
+        }
+      ],
+      "narrative": "两大头部厂商不约而同把『网络安全』作为新一代模型的核心卖点，说明安全正从合规成本变成模型能力的展示场。Gemini 4 Carbon 强调 Agent 与安全能力同步跃升，GPT-6.1 Sol 则通过 CodeRabbit 在真实代码库中验证安全 Agent 的落地。模型竞赛的下一阶段，比拼的是在高风险专业场景中的可靠性与可验证性。",
+      "tension": null
+    },
+    {
+      "name": "Agent 真实工作能力的检验与边界反思",
+      "articles": [
+        {
+          "title": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
+          "link": "https://surgehq.ai/blog/dayjob-tax",
+          "source": "Hacker News",
+          "ai_summary": "该研究用 50 个专业税务任务评估 AI Agent 的真实工作能力，属于高价值的垂直领域 Agent 基准。它为衡量 Agent 在专业场景中的可靠性提供了实证参考，社区讨论热度较高。"
+        },
+        {
+          "title": "Here be monsters: What do you still need to know when agents do the work?",
+          "link": "https://blog.adrq.dev/here-be-monsters-what-do-you-still-need-to-know-when-agents-do-the-work",
+          "source": "Hacker News",
+          "ai_summary": "文章探讨当 AI Agent 承担实际工作后，人类仍需掌握哪些知识与判断能力。它从实践角度反思 Agent 自动化的边界与风险，对理解人机协作模式有启发意义。"
+        }
+      ],
+      "narrative": "当厂商高调宣传 Agent 能力时，社区正在用专业任务基准和边界反思来追问『Agent 到底能不能可靠干活』。税务任务评测提供了可量化的可靠性证据，而『怪物出没』式的反思则提醒人类判断力不可让渡。这两条线共同构成对 Agent 叙事的外部校验机制。",
+      "tension": "厂商侧强调 Agent 能力跃升与商业化落地，而社区侧通过专业基准和风险反思指出 Agent 在真实工作中的可靠性边界与人类监督的必要性，形成『能力宣传』与『实证审慎』的张力。"
+    },
+    {
+      "name": "企业级 Agent 工作流的商业化提速",
+      "articles": [
+        {
+          "title": "Retell uses OpenAI models to help power 100M monthly calls",
+          "link": "https://openai.com/index/retell-ai",
+          "source": "OpenAI Blog",
+          "ai_summary": "Retell 借助 OpenAI 模型支撑每月 1 亿次通话，GPT-6 Astra 在其语音 Agent 基准中排名第一。案例还显示 Codex 帮助其达到每名员工 160 万美元年收入，体现了语音 Agent 的商业化潜力。"
+        },
+        {
+          "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+          "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
+          "source": "OpenAI Blog",
+          "ai_summary": "OpenAI 与 ServiceNow 扩大合作，将 OpenAI 模型和 Agent 引入 ServiceNow，同时把 ServiceNow 工作流接入 ChatGPT 和 Codex。这反映出企业级 Agent 工作流集成正成为大模型商业化的重要方向。"
+        }
+      ],
+      "narrative": "Agent 的商业化正从单点工具走向规模化工作流：Retell 用语音 Agent 撑起每月 1 亿次通话并实现极高人效，OpenAI 与 ServiceNow 则把模型嵌入企业核心流程。这标志着大模型收入模式从 API 调用转向深度嵌入企业运营的 Agent 工作流。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今天最重要的变化是：Agent 竞争的主战场从模型能力转向分发入口、开发工具链与企业工作流的全面卡位，安全与专业场景的可靠性成为新的差异化标尺。",
+  "cross_theme_connection": "Google 与 Cursor 抢占 Agent 分发和开发入口，OpenAI 通过 Retell 和 ServiceNow 把 Agent 嵌入企业工作流，而社区的专业基准与边界反思则对这两条商业化路径构成外部校验——生态扩张越快，对 Agent 可靠性与人类监督的追问就越紧迫。"
+}
