@@ -1,25 +1,39 @@
-# Agent 的胜负手已经不是模型了，是入口
+# Agent 的胜负手不再是模型，而是谁握住企业工作流的入口
 
-Agent 的胜负手已经不是模型了，是入口。
+Agent 的胜负手不再是模型，而是谁握住企业工作流的入口。
 
-今天 OpenAI 一口气把 ServiceNow、Oracle 和 Legora 接进 ChatGPT——注意，它没自己做法律软件，也没重写 ERP，只是让这些系统和垂直 Agent 都跑在自己的入口上。这招很聪明：通用入口归我，行业操作系统你们去卷。企业工作流一旦默认从 ChatGPT 发起，OpenAI 就卡住了分发层，模型跑分反而成了次要变量。
+OpenAI 今天连发三条合作：ServiceNow 的企业工作流、Oracle 的应用、还有法律垂直 Agent Legora，全部接进 ChatGPT。注意它的姿势——它没说要自己做法律软件，也没说要替代 ServiceNow，它只是让这些东西都跑在自己的入口上。这是典型的分发层打法：你们做行业深度，我做统一入口，用户先打开我。
 
-Google 同一天发 Gemini 4 Carbon，主打网络安全「显著跃升」。听起来是能力秀，其实是防守：当对手在抢入口，你只能强调「我更安全」。但 OpenAI 自己那篇对齐偏差检测的文章说得很直白——模型存在对齐偏差和 Agent 越权风险，需要分层监控兜底。一边把安全当已交付的特性卖，一边把不安全当常态来监测，这两种叙事对「安全是否已解决」给出了完全不同的答案。
+这比发一个更强的模型狠多了。模型能力是会被追平的，入口不会。一旦企业员工的默认动作是「先问 ChatGPT」，垂直 Agent 再强也只是它货架上的一个 SKU。
 
-我的判断：安全监控不是卖点，是 Agent 大规模部署的入场费。Wabi 估值 12.5 亿美元、Simantic 做 Agent 硬件仿真测试、YC 在游戏沙盒里跑 Agent 群体——这些都在说明 Agent 生态开始长出自己的工具链和估值体系。但跑得越快，越权监控就越躲不掉。
+但这条路有个前提没解决：Agent 越往企业核心流程里钻，越权和对齐偏差的代价就越高。OpenAI 自己今天也发了 frontier model misalignment 的检测方法，等于承认「不安全是常态，得靠监控兜底」。而 Google 同一天发 Gemini 4 Carbon，把网络安全直接当卖点——两种叙事其实在打架：一个说安全是已交付的特性，一个说安全是需要持续盯着的风险。
 
-所以真正的卡位战是：谁同时握住企业入口和风险闸门，谁才是平台。只卖模型能力的，最后都是供应商。
+我的判断：入口战会先分出胜负，安全叙事的分歧会在大规模部署出事之后才被迫统一。现在拼的是谁先让企业习惯「Agent 从我这个口进」，而不是谁的跑分高。
+
+参考：
+- OpenAI × ServiceNow https://openai.com/index/openai-servicenow-partnership-expansion
+- OpenAI × Oracle https://openai.com/index/oracle-apps-in-chatgpt
+- Legora https://openai.com/index/legora
+- OpenAI 对齐检测 https://openai.com/index/how-we-detect-frontier-model-misalignment
+- Gemini 4 Carbon https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier
 
 ---
 
-# The Agent War Is No Longer About Models. It's About Who Owns the Door.
+# The Agent Race Is No Longer About Models — It's About Who Owns the Enterprise Workflow Entry Point
 
-The agent war is no longer about models. It's about who owns the door.
+The agent race is no longer about models. It's about who owns the enterprise workflow entry point.
 
-Look at what OpenAI did today: ServiceNow, Oracle, and Legora all plugged into ChatGPT. Notice what OpenAI didn't do—it didn't build legal software, didn't rewrite ERP. It just made every enterprise system and vertical agent run through its front door. That's the play: you own the general entry point, let everyone else fight over industry OS. Once enterprise workflows default to starting inside ChatGPT, OpenAI sits on the distribution layer and model benchmarks become a secondary variable.
+Look at what OpenAI shipped today: ServiceNow workflows, Oracle apps, and Legora — a legal vertical agent — all plugged into ChatGPT. Notice the posture. It's not building legal software. It's not replacing ServiceNow. It's making all of them run through its front door. That's a distribution-layer play: you do the vertical depth, I own the entry point, and the user opens me first.
 
-Google shipped Gemini 4 Carbon the same day, leading with a "significant leap" in cybersecurity. Sounds like a capability flex. It's actually defense—when your rival is grabbing the door, you emphasize being safer. But OpenAI's own post on detecting frontier model misalignment is blunt: models have alignment deviations and agents can overstep, so you need layered monitoring as a backstop. One side sells safety as a shipped feature; the other treats unsafety as the baseline to monitor. Those two narratives imply very different answers to "is safety solved?"
+That's a sharper move than shipping a better model. Model capability gets commoditized. Entry points don't. Once the default enterprise behavior is "ask ChatGPT first," even a strong vertical agent is just another SKU on the shelf.
 
-My take: safety monitoring isn't a selling point, it's the cover charge for deploying agents at scale. Wabi at a $1.25B valuation, Simantic doing firmware simulation for agents, YC running agent swarms in game sandboxes—the agent ecosystem is growing its own toolchain and valuation logic. But the faster it runs, the less you can skip overreach monitoring.
+But there's an unresolved precondition. The deeper agents crawl into core enterprise processes, the more expensive misalignment and overreach become. OpenAI itself published its frontier-model misalignment detection method today — effectively admitting unsafe is the baseline and monitoring is the backstop. Google, same day, launched Gemini 4 Carbon with cybersecurity as the headline feature. Those two narratives are quietly fighting: one says safety is a shipped feature, the other says safety is an ongoing risk you watch.
 
-The real positioning battle: whoever holds both the enterprise door and the risk gate becomes the platform. Everyone else selling model capability ends up a vendor.
+My call: the entry-point war resolves first. The safety-narrative split only gets forced into alignment after something breaks at scale. Right now the game is who gets enterprises habituated to "agents come through my door" — not who tops the benchmark.
+
+Sources:
+- OpenAI × ServiceNow https://openai.com/index/openai-servicenow-partnership-expansion
+- OpenAI × Oracle https://openai.com/index/oracle-apps-in-chatgpt
+- Legora https://openai.com/index/legora
+- OpenAI misalignment detection https://openai.com/index/how-we-detect-frontier-model-misalignment
+- Gemini 4 Carbon https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier
