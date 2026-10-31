@@ -1,72 +1,72 @@
 {
-  "date": "2026-10-30",
-  "question": "当 Agent 从单体走向集群、从云端走进硬件仿真环境时，企业应优先投资「更聪明的 Agent 能力」还是「更严密的监控与测试基础设施」？你所在的组织会如何划定这条投入的边界？",
-  "context": "今日资讯同时出现了 Agent 能力跃升（Gemini 4 Carbon、Wabi 估值 12.5 亿美元）、多 Agent 集群实验和面向 Agent 的固件仿真测试设施，以及 OpenAI 的前沿模型对齐监控体系。能力扩张与安全可控之间的张力，正在成为 Agent 规模化落地前必须回答的资源配置问题。",
+  "date": "2026-10-31",
+  "question": "DoorDash 仅收到数百单 AI Agent 订单，而 Zest 已能通过短信协调多人偏好并完成预订——当 Agent 在消费场景的渗透仍处早期时，平台方应优先开放 Agent 接入接口，还是先建立 Agent 行为的验证与问责机制？",
+  "context": "Agent 落地真实消费场景面临信任与规模的双重瓶颈：DoorDash 的数据显示渗透极低，但平台已表态愿意合作；Zest 则展示了 Agent 协调多方需求并执行预订的可行性。同时 OpenAI 披露的前沿模型失准监控体系提示，Agent 未授权行为需要工程化干预。这决定了平台在 Agent 生态中是先做“通道”还是先做“闸门”。",
   "related_articles": [
+    {
+      "title": "DoorDash said it’s only received ‘several hundred’ orders from AI agents",
+      "source": "TechCrunch AI",
+      "link": ""
+    },
+    {
+      "title": "Zest’s new AI agent finds restaurants and books reservations over text",
+      "source": "TechCrunch AI",
+      "link": ""
+    },
     {
       "title": "How we detect frontier model misalignment",
       "source": "OpenAI Blog",
-      "link": ""
-    },
-    {
-      "title": "We ran AI agent swarms in Minecraft and Mindustry",
-      "source": "Hacker News",
-      "link": ""
-    },
-    {
-      "title": "Launch HN: Simantic (YC F26) – Firmware Simulation for AI Agents",
-      "source": "Hacker News",
       "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
-      "source": "The Verge AI",
-      "link": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
-      "ai_summary": "Google 发布新一代前沿模型 Gemini 4 Carbon，在编程、Agent 任务和网络安全方面均有显著提升。这是头部厂商在大模型能力与安全防护上的又一次正面交锋，值得关注其对 Agent 应用生态的影响。"
+      "title": "We ran AI agent swarms in Minecraft and Mindustry",
+      "source": "Hacker News",
+      "link": "https://labs.ycombinator.com/projects/games/index.html",
+      "ai_summary": "Y Combinator Labs 在 Minecraft 和 Mindustry 两款游戏中运行了 AI Agent 集群实验，探索多智能体在开放环境中的协作与任务执行能力。该实验在 HN 上获得 395 分和 163 条评论，社区关注度极高。它为多 Agent 系统的实际表现提供了难得的公开实证，对研究 Agent 协作与涌现行为具有参考价值。"
     },
     {
       "title": "How we detect frontier model misalignment",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
-      "ai_summary": "OpenAI 介绍了其分层监控体系，用于检测前沿模型的对齐偏差和 Agent 越权行为，以便在事件升级前及时干预。随着 Agent 自主性增强，这类监控机制对行业安全实践具有参考价值。"
+      "ai_summary": "OpenAI 介绍了其检测前沿模型失准（misalignment）和 Agent 未授权行为的分层监控体系，目标是在事件升级前及时干预。这揭示了头部实验室在 Agent 安全与对齐方面的工程实践，对理解前沿模型风险治理和 Agent 行为边界具有重要意义。"
     },
     {
-      "title": "Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round",
+      "title": "Zest’s new AI agent finds restaurants and books reservations over text",
       "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/29/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after-latest-round/",
-      "ai_summary": "AI 应用 Wabi 以“个人 Agent”定位完成 5500 万美元融资，估值达 12.5 亿美元。其核心能力是自动构建迷你应用，反映出 Agent 产品化与商业化正快速升温。"
-    },
-    {
-      "title": "We ran AI agent swarms in Minecraft and Mindustry",
-      "source": "Hacker News",
-      "link": "https://labs.ycombinator.com/projects/games/index.html",
-      "ai_summary": "YC 实验室分享了在 Minecraft 和 Mindustry 中运行 AI Agent 集群的实验，展示了多 Agent 协作在复杂开放环境中的表现。这类沙盒实验为评估 Agent 群体行为与协作能力提供了新视角。"
-    },
-    {
-      "title": "Launch HN: Simantic (YC F26) – Firmware Simulation for AI Agents",
-      "source": "Hacker News",
-      "link": "https://news.ycombinator.com/item?id=50291116",
-      "ai_summary": "YC 孵化项目 Simantic 推出面向 AI Agent 的固件仿真环境，让 Agent 能在模拟硬件上安全测试与执行任务。这填补了 Agent 与真实设备交互时的测试基础设施空白。"
+      "link": "https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/",
+      "ai_summary": "Zest 推出 AI 礼宾 Agent，可通过短信综合多人饮食偏好、发起餐厅投票并直接完成预订。这是 AI Agent 落地日常生活场景的典型案例，展示了 Agent 在协调多方需求并执行真实世界任务方面的能力。"
     },
     {
       "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
-      "ai_summary": "OpenAI 与 ServiceNow 扩大合作，将 OpenAI 模型和 Agent 引入 ServiceNow，同时把 ServiceNow 工作流接入 ChatGPT 和 Codex。这体现了企业级 Agent 工作流整合的加速趋势。"
+      "ai_summary": "OpenAI 与 ServiceNow 扩大合作，将 OpenAI 模型和 Agent 引入 ServiceNow，同时把 ServiceNow 工作流接入 ChatGPT 和 Codex。这标志着企业级 Agent 工作流集成的进一步深化，对 AI Agent 在大型企业场景中的规模化落地有风向标意义。"
     },
     {
-      "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/oracle-apps-in-chatgpt",
-      "ai_summary": "OpenAI 与 Oracle 扩大合作，将 Oracle 业务应用和 AI Agent 接入 ChatGPT，并支持 Oracle 的新产品。此举进一步把 ChatGPT 打造为企业应用与 Agent 的统一入口。"
+      "title": "DoorDash said it’s only received ‘several hundred’ orders from AI agents",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/",
+      "ai_summary": "DoorDash 透露目前仅收到“数百单”由 AI Agent 下达的订单，并表示愿意与第三方 Agent 开发者合作。这一数据直观反映了 Agent 在真实消费场景中的渗透仍处早期，同时也暗示平台侧对 Agent 接入的态度正在开放。"
     },
     {
       "title": "Legora is building the agentic operating system for legal work",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/legora",
-      "ai_summary": "Legora 基于 OpenAI 模型、ChatGPT 和 Codex 构建法律领域的 Agent 操作系统，加速合同分析等法律工作流。这是垂直行业 Agent 落地的典型案例，展示了专业场景中的实际价值。"
+      "ai_summary": "Legora 基于 OpenAI 模型、ChatGPT 和 Codex 构建法律领域的 Agent 操作系统，加速合同分析等法律工作流。这是垂直行业 Agent 化的代表性案例，展示了 Agent 在专业服务领域释放高价值人力的潜力。"
+    },
+    {
+      "title": "Show HN: Sketch Stadium – watch your agent play Pictionary",
+      "source": "Hacker News",
+      "link": "https://sketch.wakeshift.ai/games/q5ucru",
+      "ai_summary": "Sketch Stadium 是一个让用户观看 AI Agent 玩你画我猜（Pictionary）的互动项目，以游戏形式检验 Agent 的视觉理解与表达协作能力。虽然规模较小，但为 Agent 能力的趣味化评测提供了新思路。"
+    },
+    {
+      "title": "Last-minute Halloween costumes for tech nerds",
+      "source": "TechCrunch AI",
+      "link": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/",
+      "ai_summary": "TechCrunch 盘点了面向科技爱好者的万圣节临时装扮创意，包括 AI Agent 图标、PHP 漏洞等元素。属于轻松向的行业花絮内容，信息价值有限，仅作趣味参考。"
     }
   ],
   "answered": false
