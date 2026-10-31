@@ -1,25 +1,29 @@
-# Agent 不缺能力，缺的是被信任的资格
+# Agent 的瓶颈不是能力，是信任
 
-Agent 不缺能力，缺的是被信任的资格。
+Agent 的瓶颈不是能力，是信任。
 
-今天两条新闻放在一起看，特别刺眼。一边是 Zest 的 Agent 能跨多人偏好协调、直接发短信把餐厅订好（https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/），OpenAI 也把 Agent 塞进了 ServiceNow 的工作流和 Legora 的法律操作系统。另一边，DoorDash 轻描淡写地说：AI Agent 下的单，只有「数百」量级（https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/）。
+同一天看到两组数据，几乎把行业现状摊开了：Zest 已经能跨多人偏好协调、用短信完成真实餐厅预订（https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/），OpenAI 把 Agent 塞进了 ServiceNow 的工作流和 Legora 的法律操作系统（https://openai.com/index/openai-servicenow-partnership-expansion）。另一边，DoorDash 说它从 AI Agent 收到的订单只有「数百单」（https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/）。
 
-这不是技术问题。Zest 能订餐厅，说明能力已经跑通。DoorDash 的数百单说明的是另一件事：真实消费者根本还没把决策权交出去。企业端愿意嵌入，因为流程有人兜底、有审计；消费端每一单都是真金白银，没人愿意为 Agent 的「大概对」买单。
+不是技术不行。是没人敢把真实生活交给它。
 
-所以 OpenAI 今天发失准检测（https://openai.com/index/how-we-detect-frontier-model-misalignment）不是巧合。YC Labs 在 Minecraft 里放 Agent 集群、Sketch Stadium 让 Agent 玩你画我猜，这些开放实验测的是能力上限和涌现行为——而实验室侧要的是事前干预和分层监控。一边踩油门，一边装刹车，因为大家都清楚：没有可干预的边界，就没有人敢把真实任务交出去。
+企业侧敢用，是因为有流程、有审核、有人兜底——Agent 出错，损失可控。消费侧不敢用，是因为一次订错餐厅、一次下错单，代价直接落在用户身上，没有回滚。所以渗透率卡在「数百单」，不是需求不存在，是信任没建立。
 
-结论很直接：Agent 的下一场竞争不在 benchmark，在信任基础设施。谁能把「可观测、可干预、可追责」做成产品默认项，谁才拿得到消费级的那张门票。DoorDash 的数百单不是坏消息，是提醒——能力已经够用了，信任还没到货。
+这也解释了 OpenAI 为什么这时候推失准检测（https://openai.com/index/how-we-detect-frontier-model-misalignment）：Agent 越往真实世界走，越需要一条可观测、可干预的边界。YC Labs 在 Minecraft 里跑 Agent 集群（https://labs.ycombinator.com/projects/games/index.html），看的是能力上限和涌现行为；OpenAI 看的是行为越界。两边其实在回答同一个问题：这个系统在没人盯着的时候，还值不值得信。
+
+结论很直接：下一阶段的竞争，不是谁的 Agent 更能干，是谁先让用户敢放手。企业工作流是信任的试验田，消费场景才是终局考场。现在还在极早期，别被 demo 骗了。
 
 ---
 
-# Agents Don't Lack Capability—They Lack the Credibility to Be Trusted
+# The agent bottleneck isn't capability — it's trust
 
-Agents don't lack capability—they lack the credibility to be trusted.
+The agent bottleneck isn't capability. It's trust.
 
-Two stories today sit uncomfortably side by side. Zest's agent can coordinate multiple people's preferences and actually book a restaurant over text (https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/). OpenAI is embedding agents into ServiceNow workflows and Legora's legal OS. Meanwhile, DoorDash casually mentions it has received only "several hundred" orders from AI agents (https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/).
+Two data points landed on the same day and basically mapped the whole industry: Zest now coordinates multi-person preferences and books real restaurant reservations over text (https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/), while OpenAI pushed agents into ServiceNow workflows and Legora's legal OS (https://openai.com/index/openai-servicenow-partnership-expansion). Meanwhile DoorDash says it has received only "several hundred" orders from AI agents (https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/).
 
-This isn't a capability problem. Zest booking a table proves the tech works. DoorDash's several hundred orders prove something else: real consumers haven't handed over the decision-making power yet. Enterprises embed agents because there's a human backstop and an audit trail. Consumers spend real money on every order—nobody wants to pay for an agent's "probably right."
+The tech works. Nobody trusts it with their actual life yet.
 
-That's why OpenAI publishing its misalignment detection work today (https://openai.com/index/how-we-detect-frontier-model-misalignment) isn't a coincidence. YC Labs running agent swarms in Minecraft and Sketch Stadium letting agents play Pictionary are testing capability ceilings and emergent behavior in open environments. The lab side wants pre-emptive intervention and layered monitoring. One foot on the gas, one on the brake—because everyone knows: without an intervenable boundary, nobody hands over real tasks.
+Enterprises adopt because there are workflows, approvals, and humans in the loop — when the agent screws up, the blast radius is contained. Consumers don't, because a wrong reservation or a wrong order lands directly on them with no rollback. That's why adoption is stuck at "several hundred." The demand isn't missing. The trust is.
 
-The takeaway is blunt: the next agent race isn't on benchmarks, it's on trust infrastructure. Whoever makes "observable, intervenable, accountable" a product default wins the consumer ticket. DoorDash's several hundred orders isn't bad news—it's a reminder. The capability is ready. The trust hasn't shipped yet.
+Which is exactly why OpenAI is shipping misalignment detection now (https://openai.com/index/how-we-detect-frontier-model-misalignment). The further agents reach into the real world, the more you need an observable, interruptible boundary. YC Labs runs agent swarms in Minecraft (https://labs.ycombinator.com/projects/games/index.html) to probe capability ceilings and emergent behavior; OpenAI watches for behavior crossing the line. Both are answering the same question: is this system still worth trusting when no one's watching?
+
+So the next competitive axis isn't who has the most capable agent. It's who gets users to let go first. Enterprise workflows are the trust testbed; consumer scenarios are the final exam. We're very early — don't let the demos fool you.
