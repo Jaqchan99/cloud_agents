@@ -1,72 +1,43 @@
 {
-  "date": "2026-10-31",
-  "question": "DoorDash 仅收到数百单 AI Agent 订单，而 Zest 已能通过短信协调多人偏好并完成预订——当 Agent 在消费场景的渗透仍处早期时，平台方应优先开放 Agent 接入接口，还是先建立 Agent 行为的验证与问责机制？",
-  "context": "Agent 落地真实消费场景面临信任与规模的双重瓶颈：DoorDash 的数据显示渗透极低，但平台已表态愿意合作；Zest 则展示了 Agent 协调多方需求并执行预订的可行性。同时 OpenAI 披露的前沿模型失准监控体系提示，Agent 未授权行为需要工程化干预。这决定了平台在 Agent 生态中是先做“通道”还是先做“闸门”。",
+  "date": "2026-11-01",
+  "question": "当 DoorDash 仅收到数百单 AI Agent 订单、而 Zest 已能通过短信完成多步预订时，你认为阻碍 Agent 在交易链路中规模渗透的核心瓶颈是模型能力、平台接口开放度，还是用户信任与授权机制？",
+  "context": "Agent 在生活服务场景已能串联协商、决策与执行，但真实交易渗透仍处早期；这一差距决定了平台应优先投入 Agent 对接生态还是等待能力成熟，也影响开发者选择切入场景的策略。",
   "related_articles": [
-    {
-      "title": "DoorDash said it’s only received ‘several hundred’ orders from AI agents",
-      "source": "TechCrunch AI",
-      "link": ""
-    },
     {
       "title": "Zest’s new AI agent finds restaurants and books reservations over text",
       "source": "TechCrunch AI",
       "link": ""
     },
     {
-      "title": "How we detect frontier model misalignment",
-      "source": "OpenAI Blog",
+      "title": "DoorDash said it’s only received ‘several hundred’ orders from AI agents",
+      "source": "TechCrunch AI",
       "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "We ran AI agent swarms in Minecraft and Mindustry",
-      "source": "Hacker News",
-      "link": "https://labs.ycombinator.com/projects/games/index.html",
-      "ai_summary": "Y Combinator Labs 在 Minecraft 和 Mindustry 两款游戏中运行了 AI Agent 集群实验，探索多智能体在开放环境中的协作与任务执行能力。该实验在 HN 上获得 395 分和 163 条评论，社区关注度极高。它为多 Agent 系统的实际表现提供了难得的公开实证，对研究 Agent 协作与涌现行为具有参考价值。"
-    },
-    {
       "title": "How we detect frontier model misalignment",
       "source": "OpenAI Blog",
       "link": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
-      "ai_summary": "OpenAI 介绍了其检测前沿模型失准（misalignment）和 Agent 未授权行为的分层监控体系，目标是在事件升级前及时干预。这揭示了头部实验室在 Agent 安全与对齐方面的工程实践，对理解前沿模型风险治理和 Agent 行为边界具有重要意义。"
+      "ai_summary": "OpenAI 介绍了其检测前沿模型失准（misalignment）与未授权 Agent 行为的分层监控体系，目标是在风险升级前让响应人员及时介入。该文对理解大模型安全治理与 Agent 行为监管具有参考价值，属于模型能力边界与安全对齐方向的重要一手信息。"
     },
     {
       "title": "Zest’s new AI agent finds restaurants and books reservations over text",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/",
-      "ai_summary": "Zest 推出 AI 礼宾 Agent，可通过短信综合多人饮食偏好、发起餐厅投票并直接完成预订。这是 AI Agent 落地日常生活场景的典型案例，展示了 Agent 在协调多方需求并执行真实世界任务方面的能力。"
-    },
-    {
-      "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
-      "ai_summary": "OpenAI 与 ServiceNow 扩大合作，将 OpenAI 模型和 Agent 引入 ServiceNow，同时把 ServiceNow 工作流接入 ChatGPT 和 Codex。这标志着企业级 Agent 工作流集成的进一步深化，对 AI Agent 在大型企业场景中的规模化落地有风向标意义。"
+      "ai_summary": "Zest 推出可通过短信交互的 AI 礼宾 Agent，能综合多人偏好、发起餐厅选项投票并直接完成预订。它展示了 AI Agent 在真实生活服务场景中串联多步任务（协商、决策、执行）的落地能力，是 Agent 商业化应用的典型案例。"
     },
     {
       "title": "DoorDash said it’s only received ‘several hundred’ orders from AI agents",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/",
-      "ai_summary": "DoorDash 透露目前仅收到“数百单”由 AI Agent 下达的订单，并表示愿意与第三方 Agent 开发者合作。这一数据直观反映了 Agent 在真实消费场景中的渗透仍处早期，同时也暗示平台侧对 Agent 接入的态度正在开放。"
-    },
-    {
-      "title": "Legora is building the agentic operating system for legal work",
-      "source": "OpenAI Blog",
-      "link": "https://openai.com/index/legora",
-      "ai_summary": "Legora 基于 OpenAI 模型、ChatGPT 和 Codex 构建法律领域的 Agent 操作系统，加速合同分析等法律工作流。这是垂直行业 Agent 化的代表性案例，展示了 Agent 在专业服务领域释放高价值人力的潜力。"
-    },
-    {
-      "title": "Show HN: Sketch Stadium – watch your agent play Pictionary",
-      "source": "Hacker News",
-      "link": "https://sketch.wakeshift.ai/games/q5ucru",
-      "ai_summary": "Sketch Stadium 是一个让用户观看 AI Agent 玩你画我猜（Pictionary）的互动项目，以游戏形式检验 Agent 的视觉理解与表达协作能力。虽然规模较小，但为 Agent 能力的趣味化评测提供了新思路。"
+      "ai_summary": "DoorDash 透露目前仅收到“数百单”由 AI Agent 下达的订单，并表示愿意与第三方 Agent 开发者合作。该数据反映出 Agent 在电商与本地生活交易链路中的渗透仍处早期，但也预示平台与 Agent 生态对接将成为下一阶段关注点。"
     },
     {
       "title": "Last-minute Halloween costumes for tech nerds",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/",
-      "ai_summary": "TechCrunch 盘点了面向科技爱好者的万圣节临时装扮创意，包括 AI Agent 图标、PHP 漏洞等元素。属于轻松向的行业花絮内容，信息价值有限，仅作趣味参考。"
+      "ai_summary": "这是一篇科技极客万圣节临时装扮的趣味盘点，涉及 AI Agent 图标、PHP 漏洞等梗。内容偏娱乐消遣，与 AI 技术与产业进展关联度低，信息价值有限，仅作轻松阅读。"
     }
   ],
   "answered": false
