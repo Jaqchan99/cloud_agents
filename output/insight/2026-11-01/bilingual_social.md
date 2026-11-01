@@ -1,33 +1,39 @@
-# Agent 不缺能力，缺的是收银台
+# Agent 不缺能力，缺的是平台肯不肯把收银台交出来
 
-Agent 不缺能力，缺的是收银台。
+Agent 不缺能力，缺的是平台肯不肯把收银台交出来。
 
-Zest 那个短信礼宾 Agent 已经能端到端跑完一整套生活服务流程：帮你找餐厅、跟朋友投票、协商时间、最后把位子订掉（https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/）。技术上，这事儿已经通了。
+Zest 那个短信礼宾 Agent 已经能端到端跑完一整套生活服务流程：帮你找餐厅、在群里协商、投票、最后把位子订了。技术上，多步任务串联这件事早就不是问题了。
 
-但同一天 DoorDash 披露：他们从 AI Agent 那里只收到"数百单"（https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/）。数百。不是数十万。
+但同一天 DoorDash 自己披露：从 AI Agent 收到的订单只有"数百单"。
 
-这两个数字放在一起才是今天的真信号。能力演示早就过剩了，真实交易渗透却还停在冷启动刻度上。差在哪？不在模型，在分发入口和交易链路——Agent 再聪明，也得有人愿意把下单接口开给它。DoorDash 表态愿意接第三方 Agent，这才是转折点：平台开始算这笔账了。
+一个能订位的 Agent，和一个真的在规模化下单的 Agent，中间隔的不是模型能力，是分发入口和交易链路。DoorDash 表态愿意对接第三方 Agent，才是这条新闻里真正值钱的一句——它意味着平台开始考虑把收银台开放给外部 Agent，而不只是自己做个助手。
 
-所以别再把 Agent 落地当成模型能力问题来解。它是个生态谈判问题。谁先开放交易链路，谁就先拿到 Agent 时代的流量入口。
+这也解释了 OpenAI 为什么同一天把"未授权 Agent 行为"写进前沿模型监控体系。逻辑很简单：平台一旦开放下单链路，未授权行为的风险面就同步放大。监控和生态对接是同一枚硬币的两面，不是两件事。
 
-顺带说一句：OpenAI 同一天把"未授权 Agent 行为"塞进前沿模型监控体系（https://openai.com/index/how-we-detect-frontier-model-misalignment），不是巧合。平台一旦真把下单链路交出去，未授权行为的风险面同步放大，监控和对接本来就是同一枚硬币的两面。
+所以别再看 Agent 的 demo 了。接下来该盯的是：哪些平台愿意开放交易接口，开放到什么程度，以及它们配套的 Agent 身份与授权机制长什么样。能力演示已经过剩，接入许可才是稀缺品。
 
-治理和商业化在同步推进，说明行业已经从"Agent 能不能用"翻篇到"谁来监管、谁来接入"。还在卷 demo 的团队，方向可能已经偏了。
+参考：
+- Zest 的短信订位 Agent：https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/
+- DoorDash 只收到"数百单"Agent 订单：https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/
+- OpenAI 前沿模型失准检测：https://openai.com/index/how-we-detect-frontier-model-misalignment
 
 ---
 
-# Agents Don't Lack Capability. They Lack a Checkout Counter.
+# Agents Don't Lack Capability — They Lack a Checkout Counter
 
 Agents don't lack capability. They lack a checkout counter.
 
-Zest's new SMS concierge agent can already run an entire errand end to end: find restaurants, poll your friends, negotiate a time, and book the table (https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/). Technically, this is solved.
+Zest's new SMS concierge agent can already run a full errand end to end — find restaurants, negotiate in a group chat, take a vote, book the table. Multi-step task chaining is solved. That's not the interesting part.
 
-Same day, DoorDash says it has received "several hundred" orders from AI agents (https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/). Several hundred. Not several hundred thousand.
+The interesting part is that on the same day, DoorDash admitted it has received only "several hundred" orders from AI agents, total.
 
-Those two data points together are the actual signal. Capability demos are oversupplied; real transaction penetration is still at cold-start scale. The gap isn't the model — it's distribution and the transaction path. An agent can be brilliant and still go nowhere if nobody will hand it the ordering API. DoorDash saying it's open to third-party agents is the turn: platforms are starting to do the math.
+The gap between an agent that can book a table and an agent that actually moves volume isn't model quality. It's distribution and transaction rails. And the one line in that story that actually matters is DoorDash saying it's willing to integrate third-party agents — that's a platform starting to think about handing over the register, not just shipping its own assistant.
 
-So stop treating agent adoption as a model-capability problem. It's an ecosystem negotiation. Whoever opens the transaction path first owns the entry point of the agent era.
+Which is exactly why OpenAI's frontier misalignment monitoring now lists unauthorized agent behavior alongside model misalignment. Once platforms open ordering rails to outside agents, the risk surface for unauthorized actions scales with it. Monitoring and ecosystem access are two sides of the same coin.
 
-One more thing: OpenAI putting "unauthorized agent behavior" into its frontier-model monitoring stack the same day (https://openai.com/index/how-we-detect-frontier-model-misalignment) is not a coincidence. The moment platforms actually hand over the checkout path, the risk surface of unauthorized actions scales with it. Monitoring and integration are two sides of the same coin.
+So stop watching agent demos. Watch which platforms open transaction APIs, how far they open them, and what agent identity and authorization layer they build around it. Capability demos are oversupplied. Access is the scarce good.
 
-Governance and commercialization are moving in lockstep. The industry has moved past "can agents work" to "who governs them, who integrates them." If you're still grinding on demos, you may be optimizing the wrong thing.
+Sources:
+- Zest's SMS booking agent: https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/
+- DoorDash's "several hundred" agent orders: https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/
+- OpenAI on detecting frontier model misalignment: https://openai.com/index/how-we-detect-frontier-model-misalignment
