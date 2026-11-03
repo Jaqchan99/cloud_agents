@@ -1,33 +1,29 @@
-# Agent 越能干，越不可信：能力与攻击面同源的一周
+# Agent 越能干，越不该被信任
 
-这周两件事放在一起看，味道很冲。
+Agent 越能干，越不该被信任。
 
-LongCat-2.5 把原生多模态和 Agent 行动能力绑在一起卖，逻辑很顺：感知越强、操作越自然，Agent 才越像真的能干活。同一天，一篇后门研究告诉你，同一套预训练管线可以被投毒，定向植入触发行为。
+这周两件事摆在一起看，味道很冲。一边是 LongCat-2.5 把原生多模态和 Agent 行动能力深度绑定，卖点是让智能体更自然地理解和操作真实环境（https://longcat.ai/blog/longcat-2.5/）。另一边，一篇预训练投毒研究直接指出：同一套训练管线，正是植入定向后门、劫持 Agent 行为的通道（https://arxiv.org/abs/2610.37741）。
 
-这不是巧合，是同一个硬币。能力从哪来，攻击面就从哪来。
+这不是巧合，是结构性的。能力越强，攻击面越大，而且两者共用同一条供应链。你没法只要前者不要后者。
 
-更值得警惕的是落地速度。Momentic 这类产品让 Agent 直接「像用户一样」操作真实应用去抓 bug，这是 Agent 商业化最健康的一步——从通用助手叙事退到具体工程环节。但换个角度看，Agent 越深入生产系统，预训练里埋的触发行为破坏力就越大。落地每快一步，安全验证的欠账就多一分。
+更扎心的是落地速度。Momentic 这类产品已经把 Agent 塞进软件测试流程，让它像用户一样点应用、找 bug（https://momentic.ai/）。方向没错——高重复、高维护的工程环节确实该被 Agent 接管。但这也意味着 Agent 开始拿到真实系统的操作权限，一旦预训练阶段被埋了触发行为，破坏半径直接从「答错一句话」变成「在生产环境里做错一串操作」。
 
-行业现在的定价逻辑是「能不能干」，而不是「敢不敢信」。模型厂商比的是 benchmark 和 demo 流畅度，采购方问的是能不能省人力，几乎没人问：这条训练数据供应链，我验证过吗？
+行业现在的定价逻辑还停在「能不能干」上，谁 demo 惊艳谁拿钱。但真正该被定价的是「敢不敢信」：训练数据从哪来、有没有完整性校验、Agent 的权限边界怎么收。这些问题不解决，落地越快，雷埋得越深。
 
-Agent 的信任边界不会自己长出来。它得靠数据来源审计、行为可观测性、权限最小化这些又土又慢的工程手段堆出来。谁先把「可信」做成可交付的指标，谁才配谈企业级 Agent。
-
-能干是入场券，可信才是护城河。这周的新闻，把这句话从口号变成了账单。
+能干是入场券，可信才是护城河。现在大部分团队只买了前者。
 
 ---
 
-# The More Capable the Agent, the Less Trustworthy: When Capability and Attack Surface Share a Root
+# The More Capable the Agent, the Less It Deserves Trust
 
-Two stories this week deserve to be read together.
+Your agent got more capable this week. It also got easier to hijack.
 
-LongCat-2.5 sells native multimodality as the key to agentic tasks — stronger perception, more natural action, a more useful agent. Same week, a backdoor paper shows the same pretraining pipeline can be poisoned to plant targeted trigger behaviors.
+Look at two things that landed side by side. LongCat-2.5 binds native multimodality tightly to agentic action — the pitch is that agents finally understand and operate real environments naturally (https://longcat.ai/blog/longcat-2.5/). Meanwhile, a pretraining-poisoning paper shows the exact same training pipeline is a clean channel for planting targeted backdoors that hijack agent behavior (https://arxiv.org/abs/2610.37741).
 
-That's not a coincidence. It's the same coin. Capability and attack surface come from the same place.
+That's not a coincidence. Capability and attack surface grow from the same root, and they share a supply chain. You don't get to buy one without the other.
 
-The part that should worry you is the deployment speed. Momentic puts agents directly into real apps, using them like a user to catch bugs — arguably the healthiest commercialization move in the space, trading the general-assistant story for a concrete engineering loop. But flip it: the deeper agents go into production, the more damage a pretrained trigger can do. Every step faster in deployment is a step further behind on verification.
+The scarier part is how fast this is hitting production. Momentic already drops agents into software testing — they use your app like a user and catch bugs (https://momentic.ai/). Right call: repetitive, high-maintenance engineering work is exactly what agents should own. But it also means agents now hold real operational permissions. If a trigger behavior was baked in at pretraining, the blast radius jumps from "wrong sentence" to "wrong sequence of actions in prod."
 
-The industry is pricing 'can it do the job,' not 'should I trust it.' Vendors compete on benchmarks and demo smoothness. Buyers ask whether it saves headcount. Almost nobody asks: have I audited this training data supply chain?
+The industry is still pricing agents on capability — whoever demos best raises the round. What actually needs pricing is trust: where the training data came from, whether integrity was verified, how tightly the agent's permissions are scoped. Skip those, and the faster you ship, the deeper the mine.
 
-Trust boundaries for agents won't emerge on their own. They get built from unglamorous, slow engineering — data provenance audits, behavior observability, least-privilege action scopes. Whoever turns 'trustworthy' into a deliverable metric first gets to talk about enterprise agents seriously.
-
-Capable is the ticket. Trustworthy is the moat. This week turned that from a slogan into an invoice.
+Capable gets you in the door. Trustworthy is the moat. Most teams only bought the first one.
