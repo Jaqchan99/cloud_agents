@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-03",
+  "language": "zh",
+  "article_count": 3,
+  "themes": [
+    {
+      "name": "Agent 能力与安全的一体两面",
+      "articles": [
+        {
+          "title": "LongCat-2.5: Native Multimodality for Agentic Tasks",
+          "link": "https://longcat.ai/blog/longcat-2.5/",
+          "source": "Hacker News",
+          "ai_summary": "LongCat-2.5 主打原生多模态能力，面向 Agentic 任务设计，强调模型在感知与行动之间的统一。它代表了多模态模型向 Agent 场景深度融合的趋势，对构建能理解并操作真实环境的智能体具有参考价值。"
+        },
+        {
+          "title": "Agentic backdoors via pretraining poisoning",
+          "link": "https://arxiv.org/abs/2610.37741",
+          "source": "Hacker News",
+          "ai_summary": "该研究揭示可通过预训练数据投毒在模型中植入面向 Agent 行为的后门，使模型在特定触发条件下执行恶意动作。这为 AI Agent 的安全与可信部署敲响警钟，凸显了训练数据供应链安全的重要性。"
+        }
+      ],
+      "narrative": "一边是模型厂商把原生多模态与 Agent 行动能力深度绑定，试图让智能体更自然地理解并操作真实环境；另一边是研究证明，这种能力可以被预训练数据投毒定向劫持。两件事共同说明 Agent 的能力边界正在扩张，而与之匹配的信任边界尚未建立，训练数据供应链已成为攻击面。",
+      "tension": "LongCat-2.5 将更强的感知-行动统一视为 Agent 落地的关键卖点，而后门研究恰恰指出，同一套预训练管线正是植入恶意触发行为的通道——能力增强与攻击面扩大同源，行业对 Agent 能力的推进速度明显快于对训练数据完整性的验证能力。"
+    },
+    {
+      "name": "Agent 从演示走向工程化落地",
+      "articles": [
+        {
+          "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
+          "link": "https://momentic.ai/",
+          "source": "Hacker News",
+          "ai_summary": "Momentic 推出通过实际使用应用来自动发现缺陷的 AI Agent，将测试流程从脚本化转向智能体自主探索。它体现了 AI Agent 在软件质量保障领域的落地潜力，有望降低测试维护成本并提升覆盖率。"
+        }
+      ],
+      "narrative": "Momentic 把 Agent 的自主探索能力直接嵌入软件测试流程，用「像用户一样使用应用」替代脆弱的脚本化用例。这标志着 Agent 的商业化正从通用助手叙事转向具体、可衡量的工程环节，测试这类高重复、高维护成本的场景成为首批受益者。",
+      "tension": null
+    }
+  ],
+  "key_signal": "今天最重要的变化是：Agent 正同时被推入真实生产流程与真实攻击面——能力落地与安全暴露在同一周内被摆上台面，行业开始为 Agent 的「可信」而非仅「能干」定价。",
+  "cross_theme_connection": "Momentic 这类让 Agent 自主操作真实应用的落地，正是后门研究所警示的高价值攻击场景：Agent 越深入生产系统，预训练投毒植入的触发行为造成的破坏就越大，落地速度因此反过来抬高了安全验证的紧迫性。"
+}

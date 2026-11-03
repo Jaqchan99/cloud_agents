@@ -1,54 +1,42 @@
 {
-  "date": "2026-11-02",
-  "question": "当 AI Agent 从单任务执行走向多 Agent 协作（如 Minecraft 实验）和跨平台交易（如 Zest、DoorDash）时，我们应优先解决“组织协调机制”还是“用户信任与数据边界”？为什么？",
-  "context": "Minecraft 实验暴露了多 Agent 协作在目标一致性和协调上的失败，而 Muse 的争议和 DoorDash 的早期数据则揭示了 Agent 商业化中隐私与交易信任的瓶颈。这两类问题分别对应 Agent 系统的“内部效率”与“外部接受度”，决定了 Agent 能否从演示走向规模化落地。",
+  "date": "2026-11-03",
+  "question": "当 Agent 的能力越来越依赖预训练阶段注入的多模态与行动先验时，我们是否应该把“数据供应链可审计”作为 Agent 上线的前置条件，而不是等出事后再打补丁？",
+  "context": "LongCat-2.5 展示了原生多模态与 Agentic 能力的深度融合，而预训练投毒后门研究则说明这种能力底座本身可能被污染；Momentic 这类自主探索型 Agent 又放大了被触发后的实际危害。能力越强、行动越自主，训练数据来源的可追溯与可验证就越应成为工程默认项。",
   "related_articles": [
     {
-      "title": "AI agent swarms in Minecraft fail to build civilization, drown in bureaucracy",
+      "title": "LongCat-2.5: Native Multimodality for Agentic Tasks",
       "source": "Hacker News",
       "link": ""
     },
     {
-      "title": "Muse AI agent is a commercial surveillance network disguised as an AI assistant",
+      "title": "Agentic backdoors via pretraining poisoning",
       "source": "Hacker News",
       "link": ""
     },
     {
-      "title": "DoorDash said it’s only received ‘several hundred’ orders from AI agents",
-      "source": "TechCrunch AI",
+      "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
+      "source": "Hacker News",
       "link": ""
     }
   ],
   "all_articles": [
     {
-      "title": "AI agent swarms in Minecraft fail to build civilization, drown in bureaucracy",
+      "title": "LongCat-2.5: Native Multimodality for Agentic Tasks",
       "source": "Hacker News",
-      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-agent-swarms-unleashed-in-minecraft-to-build-a-thriving-civilization-50-agent-teams-fail-after-falling-into-paralyzing-bureaucracy",
-      "ai_summary": "一项在《我的世界》中让 50 个 AI Agent 组队尝试建立文明的多智能体实验以失败告终，Agent 群体陷入繁文缛节式的内耗而无法推进目标。该实验直观暴露了当前多 Agent 协作在组织协调、目标一致性上的短板，对多智能体系统设计具有警示意义。"
+      "link": "https://longcat.ai/blog/longcat-2.5/",
+      "ai_summary": "LongCat-2.5 主打原生多模态能力，面向 Agentic 任务设计，强调模型在感知与行动之间的统一。它代表了多模态模型向 Agent 场景深度融合的趋势，对构建能理解并操作真实环境的智能体具有参考价值。"
     },
     {
-      "title": "Muse AI agent is a commercial surveillance network disguised as an AI assistant",
+      "title": "Agentic backdoors via pretraining poisoning",
       "source": "Hacker News",
-      "link": "https://paulfwalsh.substack.com/p/metas-muse-ai-agent-is-a-commercial-surveillance-network",
-      "ai_summary": "文章批评 Meta 的 Muse AI Agent 实为披着助手外衣的商业监控网络，借 Agent 能力收集用户数据。该讨论触及 AI Agent 普及过程中的隐私与数据治理风险，值得关注 Agent 产品商业化边界。"
+      "link": "https://arxiv.org/abs/2610.37741",
+      "ai_summary": "该研究揭示可通过预训练数据投毒在模型中植入面向 Agent 行为的后门，使模型在特定触发条件下执行恶意动作。这为 AI Agent 的安全与可信部署敲响警钟，凸显了训练数据供应链安全的重要性。"
     },
     {
-      "title": "Zest’s new AI agent finds restaurants and books reservations over text",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/",
-      "ai_summary": "Zest 推出可通过短信对话完成找餐厅、汇总众人口味投票并直接订位的 AI 礼宾 Agent。它展示了 Agent 在真实生活服务场景中串联多方偏好与执行交易的落地能力。"
-    },
-    {
-      "title": "DoorDash said it’s only received ‘several hundred’ orders from AI agents",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/",
-      "ai_summary": "DoorDash 透露目前仅收到数百笔由 AI Agent 下达的订单，并表示愿意与第三方 Agent 开发者合作。这一数据反映出 Agent 代用户执行交易仍处早期，但平台开放态度预示 Agent 电商入口的潜在空间。"
-    },
-    {
-      "title": "Last-minute Halloween costumes for tech nerds",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/",
-      "ai_summary": "TechCrunch 的万圣节应景盘点，建议装扮成 AI Agent 图标、PHP 漏洞等科技梗角色。属于轻松娱乐内容，与 AI 技术进展关联度较低。"
+      "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
+      "source": "Hacker News",
+      "link": "https://momentic.ai/",
+      "ai_summary": "Momentic 推出通过实际使用应用来自动发现缺陷的 AI Agent，将测试流程从脚本化转向智能体自主探索。它体现了 AI Agent 在软件质量保障领域的落地潜力，有望降低测试维护成本并提升覆盖率。"
     }
   ],
   "answered": false
